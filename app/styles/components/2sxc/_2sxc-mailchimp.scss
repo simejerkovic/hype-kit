@@ -1,0 +1,38 @@
+//
+#mc_embed_signup {
+  padding: $base-spacing-unit;
+  background-color: $color-newsletter-background;
+  border: 1px solid $color-newsletter-border;
+  margin-bottom: ($base-spacing-unit * 1.5);
+
+  .mc_title {
+    @include FontSizeFor(newsletter, 3);
+    @include FontWeight(normal);
+    color: $color-newsletter-title;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .mc-field-group {
+    padding-bottom: $base-spacing-unit / 2;
+  }
+
+  .mc-field-input {
+    @include FontSizeFor(newsletter, 2);
+    padding: ($base-spacing-unit - 5px);
+    border: 1px solid $color-newsletter-border;
+    width: 100%;
+
+    @include placeholder {
+      color:$color-newsletter-text;
+    }
+
+    @include hocus {
+      outline-color:$color-newsletter-input-border-hover;
+    }
+  }
+
+  .c-btn {
+    border: 0;
+  }
+}

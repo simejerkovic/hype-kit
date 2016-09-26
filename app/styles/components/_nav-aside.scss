@@ -1,0 +1,33 @@
+//  #NAV-ASIDE
+
+.c-nav-aside {
+
+  > ul {
+
+  }
+
+  .c-nav-aside__item {
+    border: 0 solid $color-nav-aside-border;
+    border-bottom-width: 1px;
+
+    &.is-first, &:first-child {
+      border-top-width: 1px;
+    }
+  }
+  .c-nav-aside__link {
+    @include FontWeight(normal);
+    display: block;
+    padding: 10px 0;
+    color: $color-nav-aside-links;
+
+    @include hocus() {
+      text-decoration: none;
+      color: $color-nav-aside-links-hover;
+    }
+
+    &--active {
+      cursor: default;
+      color: $color-nav-aside-links-current;
+    }
+  }
+}

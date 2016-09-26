@@ -1,0 +1,35 @@
+// LOGO
+
+.c-logo__wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+.c-logo {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  float: left;
+  background-image: url($base-images-path + 'brand/hnk-split-logo.png');
+
+  @include size(50px 44px);
+
+  @include oGridRespondTo($from: M) {
+    @include size(70px 62px);
+  }
+  @include oGridRespondTo($from: L) {
+    @include size(90px 80px);
+  }
+
+  &.c-logo--black {
+    background-image: url($base-images-path + 'brand/hnk-split-logo-black.png');
+  }
+
+  .c-nav-mobile & {
+    display: block;
+    float: none;
+    margin: $base-spacing-unit auto;
+  }
+}

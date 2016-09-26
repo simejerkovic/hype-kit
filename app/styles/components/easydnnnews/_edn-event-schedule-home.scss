@@ -1,0 +1,124 @@
+// Scroll
+.event-schedule-group {
+	height: 100%;
+
+	@include oGridRespondTo($from: L) {
+		position: relative;
+		overflow: hidden;
+    height: 500px!important;
+		/* Prevent native touch events on Windows */
+		-ms-touch-action: none;
+		/* Prevent the callout on tap-hold and text selection */
+		user-select: none;
+		/* Prevent text resize on orientation change, useful for web-apps */
+		text-size-adjust: none; 
+		> div {
+			position: absolute;
+			width: 100%;
+			/* Prevent elements to be highlighted on tap */
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			/* Put the scroller into the HW Compositing layer right from the start */
+			transform: translateZ(0);
+		}
+  }
+}
+
+.event-schedule--home {
+  font-family: $base-ff-display;
+
+  .event-schedule {
+    &__item {
+      padding: 5px;
+      padding-left: 0;
+      position: relative;
+
+      &--Drama:hover .event-schedule__date {
+        background-color: $color-section-drama;
+      }
+      &--Opera:hover .event-schedule__date {
+        background-color: $color-section-opera;
+      }
+      &--Balet:hover .event-schedule__date,
+      &--Ballet:hover .event-schedule__date {
+        background-color: $color-section-balet;
+      }
+      &--Koncert:hover .event-schedule__date,
+      &--Concert:hover .event-schedule__date {
+        background-color: $color-section-koncerti;
+      }
+      &--Gostovanja:hover .event-schedule__date {
+        background-color: $color-section-drama;
+      }
+      &--Premijera {
+        padding-top: 19px;
+      }
+    }
+
+    &__body {
+      @include oGridRespondTo($until: L) {
+        margin-left: -($base-spacing-unit / 2);
+      }
+    }
+
+    &__content {
+      @include oGridColspan((default: 10));
+      padding-top: 0;
+      padding-left: ($base-spacing-unit / 2)!important;
+    }
+
+    &__btn-list {
+      @include oGridColspan((default: 2));
+      padding: 0!important;
+    }
+
+    &__headline {
+      margin-bottom: 0;
+    }
+
+    &__date {
+      @include size(52px 50px);
+      padding: 10px 0;
+    }
+
+    &__start-date, &__start-time {
+      @include FontSizeFor(event-schedule-start-date, 1);
+    }
+
+    &__author, &__title {
+      @include FontSizeFor(event-schedule-title, 5);
+      margin-bottom: 0;
+    }
+
+    &__title {
+      @include FontWeight(bold);
+      text-transform: uppercase;
+    }
+  }
+
+  .story-card__show-type {
+    display: block;
+    position: relative;
+    top: -14px;
+    right: 0;
+    font-family: $base-ff-text;
+    @include FontSizeFor(story-card-title, 4);
+    padding: 0;
+    margin: -10px 0px;
+  }
+
+  .c-btn {
+    width: auto;
+    padding: .8rem;
+    @include FontSizeFor(button, 3);
+    background-color: black;
+    color: white;
+  }
+
+  .event-canceled__title {
+    @include FontSizeFor(headings, 4);
+    position: absolute;
+    right: $base-spacing-unit;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

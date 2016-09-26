@@ -1,0 +1,210 @@
+// Osnovni dnn stilovi
+.DNNEmptyPane { display:none;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { letter-spacing:normal; }
+.Normal { font-size:16px; }
+body > form #ControlBar_ControlPanel {
+  z-index: 9999 !important;
+}
+
+// DNN login hidden
+//.login-link { display:block; width:53px; height:53px; position:absolute; right:0; top:0; z-index:1002; text-indent:-5000px; @extend .hide-until-wide;  }
+
+
+// Box sizing fix za admin dio
+#ControlBar, #ControlBar *, .dnn_mact, .dnn_mact * { -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
+
+//-------------------------------------
+// POPUP
+//-------------------------------------
+
+// Popup Menu
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+  z-index: 9999;
+}
+
+.dnnFormPopup {
+    position: absolute;
+    padding: 18px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.75);
+  z-index: 100000;
+    color: #000;
+}
+    // Popup header
+    .dnnFormPopup .ui-dialog-titlebar {
+        position: relative;
+        padding: 0 0 18px 0;
+        border-bottom: 1px solid #ddd;
+        cursor: move;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .dnnFormPopup .dnnModalCtrl {
+        display: block;
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 69px;
+        height: 26px;
+        border-radius: 10px;
+        background-color: #fff;
+        -webkit-border-radius: 10px;
+        box-shadow: 0px 0px 5px #666;
+    }
+
+        .dnnFormPopup .dnnModalCtrl .ui-dialog-titlebar-close {
+            float: right;
+            display: block;
+            height: 18px;
+            width: 30px;
+            margin: 4px 4px 0 1px;
+            overflow: hidden;
+            -webkit-border-top-right-radius: 8px;
+            -webkit-border-bottom-right-radius: 8px;
+          border: none;
+          outline: none;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background: #585858 url(../../../../../../images/closeBtn.png) no-repeat;
+            background-position: 8px 4px;
+            text-indent: -9999em;
+          min-width: 0 !important;
+        }
+
+            .dnnFormPopup .dnnModalCtrl .ui-dialog-titlebar-close:hover {
+                background: #358EEA url(../../../../../images/closeBtn.png) no-repeat;
+                background-position: 8px 4px;
+              cursor: pointer;
+            }
+
+        .dnnFormPopup .dnnModalCtrl a.dnnToggleMax {
+            float: left;
+            display: block;
+            height: 18px;
+            width: 30px;
+            margin: 4px 0 0 4px;
+            overflow: hidden;
+            -webkit-border-top-left-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background: #585858 url(../../../../../images/resizeBtn.png) no-repeat;
+            background-position: 10px 2px;
+            text-indent: -9999em;
+        }
+
+            .dnnFormPopup .dnnModalCtrl a.dnnToggleMax:hover {
+                background: #358EEA url(../../../../../images/resizeBtn.png) no-repeat;
+                background-position: 10px 2px;
+            }
+
+div.ui-dialog-titlebar > .ui-dialog-titlebar-close {
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    height: 24px;
+    width: 24px;
+    margin: 0px;
+    overflow: hidden;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: #585858 url(../../../../../images/closeBtn.png) no-repeat;
+    background-position: 4px 4px;
+    border: 3px solid #fff;
+    text-indent: -9999em;
+  min-width: 0 !important;
+}
+
+// Popup Iframe styles
+.dnnFormPopup #iPopUp {
+    width: 100%!important; // to overwrite inline javscript styles
+    padding-top: 10px;
+}
+
+.dnnFormPopup .ui-dialog-content, #iPopUp .ui-dialog-content {
+    position: relative;
+    border: 0;
+    padding: 0px;
+    overflow: auto;
+    background: #fff;
+    zoom: 1;
+}
+
+.dnnFormPopup .ui-dialog-buttonpane {
+    margin: .5em 0 0 0;
+    padding: .3em 1em 0em 0em;
+    overflow: hidden;
+    border-width: 1px 0 0 0;
+    background-image: none;
+    text-align: left;
+    border-top: 1px solid #ddd;
+}
+
+    .dnnFormPopup .ui-dialog-buttonpane button {
+        margin: 0.5em 0.4em 0.5em 0em;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+.dnnFormPopup .ui-resizable-se {
+    float: right;
+    height: 24px;
+    width: 24px;
+    background: url(../../../../../images/modal-resize-icn.png) no-repeat bottom;
+}
+
+.dnnFormPopup .dnnDialog {
+    padding: 10px;
+}
+
+.dnnLoading {
+    background: #fff url(../../../../../images/loading.gif) no-repeat center center;
+    position: absolute;
+    z-index: 9999;
+}
+
+
+// Profil stranice korisnika
+#Body:not(.UPR_Administrators) {
+    #dnn_ctr_EditUser_Profile_ProfileProperties {
+        span {
+            display:none;
+        }
+
+        .dnnDropdownSettings {
+        display:none!important;
+        }
+    }
+    .dnnProfile {
+        .dnnPrimaryAction {
+            font-size:16px;
+            font-weight:400;
+            text-transform:uppercase;
+        }
+    }
+
+     #dnnUserDetails .dnnHelpText  {
+        display:none!important;
+    }
+   #dnnEditUser {
+       .dnnPrimaryAction {
+            font-size:16px;
+            font-weight:400;
+            text-transform:uppercase;
+        }
+       #dnn_ctr_EditUser_adminTabNav li:last-child {
+           display:none!important;
+       }
+   }
+}

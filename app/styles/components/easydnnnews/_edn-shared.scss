@@ -1,0 +1,65 @@
+// Easy DNN News Shared styles
+
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper {
+  margin: $base-spacing-unit*2 0;
+  padding: 0;
+  border: 0;
+  font-size: 0;
+  line-height: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper > button.trigger {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+  overflow: hidden;
+  //
+  @extend .c-btn;
+  @extend .c-btn--primary;
+}
+
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper > button.trigger > span.actionTextContainer span {
+  font-size: 16px;
+}
+
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper > button.trigger > span.loadingOverlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url($base-images-path + "vendor/easydnnnews/spin.gif") center center no-repeat $color-red;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper > button.trigger > span.loadingOverlay > span {
+  display: none;
+}
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper > button.trigger:hover {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.44), 0 3px 6px -4px #FFFFFF inset;
+}
+.eds_news_NewsOne.eds_subCollection_news .ednMoreArticlesTriggerWrapper > button.trigger:hover > span.actionTextContainer span {
+  color: #595959;
+}
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper.loading > button.trigger > span.loadingOverlay {
+  top: 0;
+  opacity: 1;
+}
+.eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper.hide {
+  display: none;
+}

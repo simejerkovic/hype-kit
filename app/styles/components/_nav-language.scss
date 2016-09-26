@@ -1,0 +1,22 @@
+//  #NAV-PRIMARY
+
+.c-nav-language {
+  @include FontSizeOnlyFor(language-object, 1);
+  text-transform: uppercase;
+  color: $color-nav-language;
+  @include FontWeight(medium);
+}
+
+.c-nav-language__item {
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &.is-active {
+    color: $color-nav-language-active;
+  }
+}
+
+.c-nav-language__link {
+  color: $color-nav-language-link;
+  @include FontWeight(medium);
+}
