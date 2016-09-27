@@ -79,23 +79,13 @@
 
 // ==========================================================================
 // 6. Vendor
-// @description: Third party components
+// @description: Third party components, jquery plugins
 // ==========================================================================
-// PhotoSwipe gallery styles
-//"vendor/photoswipe/main",
-//"vendor/photoswipe/default-skin",
-// Magnific Popup styles
-//"vendor/magnific-popup/main",
 // Slick carousel styles
 "vendor/slick/slick",
 "vendor/slick/slick-theme",
 // Custom DNN fixes
 "vendor/dnn/_dnn-styles",
-//"vendor/dnn/_admin",
-// Animate.css library
-//"vendor/animate/animate",
-// Fotorama styles
-"vendor/fotorama/fotorama",
 
 // ==========================================================================
 // 7. Components
@@ -127,34 +117,6 @@
 "components/dnn/_form-items",
 "components/dnn/_login",
 
-// Bootstrap > Collapse and Tabs scripts
-"components/bootstrap/_transitions", // Basic animation required for Bootstrap scripts
-"components/bootstrap/_collapse", // Bootstrap collapse
-
-// EasyDNNNews
-"components/easydnnnews/_edn-shared", // Shared styles for all easydnnnews modules
-"components/easydnnnews/_edn-event-schedule", // Schedule
-"components/easydnnnews/_edn-event-schedule-home", // Schedule - Home
-"components/easydnnnews/_edn-story-card", // Shows - Card layout
-"components/easydnnnews/_edn-story-feed", // News - Feed layout
-"components/easydnnnews/_edn-article-detail", // Shows - Article detail
-"components/easydnnnews/_edn-article-novosti-detail", // News - Article detail
-"components/easydnnnews/_edn-article-ansambl-detail", // Ansambl - Article detail
-"components/easydnnnews/_edn-article-tags", // Article Tags
-"components/easydnnnews/_edn-article-ansambl-face", // Article Face
-"components/easydnnnews/_edn-video-gallery", // Home-video gallery
-"components/easydnnnews/_edn-gallery",
-// "components/easydnnnews/_edn-article-header",
-
-// 2sxc
-"components/2sxc/_2sxc-shared", // Shared settings for all 2sxc applications
-"components/2sxc/_2sxc-content", // App: Basic content
-"components/2sxc/_2sxc-documents", // App: Document list
-"components/2sxc/_2sxc-sponsors", // App: Sponsors
-"components/2sxc/_2sxc-slider", // App: FullWidthSlider
-"components/2sxc/_2sxc-mailchimp", // App: Mailchimp
-"components/2sxc/_2sxc-promotion", // App: Promotion
-
 
 
 // ==========================================================================
@@ -167,6 +129,5 @@
 "trumps/_widths",
 "trumps/_debug",
 "trumps/_shame",
-"trumps/_hnk-colors",
 "trumps/_ie-fix", // IE fix
 "trumps/_print"; // Print
