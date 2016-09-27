@@ -1,0 +1,106 @@
+//------------------------------------
+//  #BUTTONS
+//------------------------------------
+//
+// 1. Allow us to style box model properties.
+// 2. Line different sized buttons up a little nicer.
+// 3. Make buttons inherit font styles (often necessary when styling `input`s as
+//    buttons).
+// 4. Reset/normalize some styles.
+// 5. Force all button-styled elements to appear clickable.
+// 6. Subtract the border size from the padding value so that buttons do not
+//    grow larger as we add borders.
+//
+
+.c-btn {
+  display: inline-block;
+  // [1]
+  vertical-align: middle;
+  // [2]
+  font: inherit;
+  // [3]
+  text-align: center;
+  // [4]
+  margin: 0;
+  // [4]
+  cursor: pointer;
+  // [5]
+  padding: 14px 20px;
+
+  @include hocus() {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.c-btn--primary {
+  @include FontSizeFor(button, 6);
+  color: $color-btn;
+  background-color: $color-btn-background;
+  transition: $base-transition;
+  border-radius: $base-radius;
+
+  @include hocus() {
+    background-color: $color-btn-background-hover;
+  }
+}
+
+.c-btn--secondary {
+  @include FontSizeFor(button, 6);
+  color: $color-btn-secondary;
+  background-color: $color-btn-secondary-background;
+  transition: $base-transition;
+  border-radius: $base-radius;
+
+  @include hocus() {
+    background-color: $color-btn-secondary-background-hover;
+  }
+}
+
+.c-btn--small {
+  @include FontSizeFor(button, 3);
+  padding: 10px 12px;
+
+  @include oGridRespondTo(M) {
+    @include FontSizeFor(button, 4);
+    padding: 15px 17px;
+  }
+}
+
+.c-btn--medium {
+  @include FontSizeFor(button, 4);
+  padding: 12px 25px;
+
+  @include oGridRespondTo(M) {
+    @include FontSizeFor(button, 6);
+    padding: 15px 35px;
+  }
+}
+
+.c-btn--large {
+  padding: $base-spacing-unit ($base-spacing-unit * 2);
+}
+
+
+.c-btn--schedule-more {
+
+  background-color: $color-btn-schedule-background;
+  color: $color-btn-schedule;
+  transition: $base-transition;
+  border-radius: $base-radius;
+  @include hocus() {
+    background-color: $color-btn-schedule-background-hover;
+  }
+}
+
+.c-btn--neutral {
+  color: $color-btn-neutral;
+  border: solid 1px $color-btn-neutral-border;
+  transition: $base-transition;
+  border-radius: $base-radius;
+
+  @include hocus() {
+    color: $color-btn-neutral-hover;
+    border-color: $color-btn-neutral-border-hover;
+  }
+}

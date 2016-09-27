@@ -1,0 +1,60 @@
+.article-tags {
+  padding-top: $base-spacing-unit/2;
+  padding-bottom: $base-spacing-unit/2;
+  background-color: $color-article-tags-background;
+  border-top: 1px solid $color-article-tags-border;
+
+  @include oGridRespondTo($from: M) {
+    padding-top: $base-spacing-unit;
+    padding-bottom: $base-spacing-unit;
+  }
+}
+
+ .article-tags--show {
+   background-color: $color-article-tags-background-show;
+ }
+
+.article-tags__list {
+  @include oGridColspan((default: 12));
+  //@include oGridRespondTo($from: M) {
+    //@include oGridOffset(3);
+  //}
+
+  > a {
+    display: inline-block;
+    margin: 0 5px 10px 0;
+    padding: 8px 15px;
+    vertical-align: middle;
+    //
+    font-size: 12px;
+    color: $color-article-tags-links;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $color-article-tags-links-border;
+
+    @include hocus() {
+      background-color: $color-article-tags-links-background;
+      color: $color-article-tags-links-hover;
+      text-decoration: none;
+    }
+
+    @include oGridRespondTo($from: M) {
+      font-size: 14px;
+    }
+  }
+}
+
+.article-tags__label {
+  @include FontWeight(medium);
+
+  display: inline-block;
+  margin: 0 5px 10px 0;
+  padding: 8px 0 8px 0;
+  font-size: 16px;
+  vertical-align: middle;
+  text-transform: uppercase;
+
+  @include oGridRespondTo($from: M) {
+    font-size: 18px;
+  }
+}

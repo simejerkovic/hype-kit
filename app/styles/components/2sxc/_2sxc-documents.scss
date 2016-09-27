@@ -1,0 +1,23 @@
+.document-list {}
+.document-list__item {
+  padding: $base-spacing-unit/2 0;
+}
+.document-list__description {
+  @include FontSizeFor(documents-description, 1);
+  > p {
+    margin-bottom: 0;
+  }
+}
+.document-list__link {
+  @include FontSizeFor(documents-link, 1);
+  text-decoration: none;
+  color: $color-document-links;
+  @include hocus() {
+    text-decoration: none;
+    color: $color-document-links-hover;
+  }
+  > .icon {
+    @include FontSizeFor(documents-icon, 1);
+    color: $color-document-icon;
+  }
+}

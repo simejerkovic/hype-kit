@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  #HEADINGS
+\*------------------------------------*/
+
+.u-h1 {
+    @include FontSizeOnlyFor(headings, 1);
+}
+
+.u-h2 {
+    @include FontSizeOnlyFor(headings, 2);
+}
+
+.u-h3 {
+    @include FontSizeOnlyFor(headings, 3);
+}
+
+.u-h4 {
+    @include FontSizeOnlyFor(headings, 4);
+}
+
+.u-h5 {
+    @include FontSizeOnlyFor(headings, 5);
+}
+
+.u-h6 {
+    @include FontSizeOnlyFor(headings, 6);
+}

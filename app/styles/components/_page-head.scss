@@ -1,0 +1,99 @@
+//  #PAGE-HEAD
+
+.c-page-head {
+  font-family: $base-ff-text;
+  @include FontSizeFor(headings, 5);
+  z-index: $zindex-sticky;
+  background-image: url($base-images-path + 'brand/header-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color:$color-black;
+  background-size: cover;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Top part of header
+.c-page-head {
+  &__main {
+    @include clearfix;
+    line-height: $page-header-height;
+    padding-bottom: 2px;
+    position: relative;
+
+    @include oGridRespondTo(M) {
+      line-height: $page-header-height-L;
+    }
+
+    ul.main-links  {
+      float: left;
+      list-style-type: none;
+      margin-left: 40px;
+
+      li {
+        float: left;
+        padding-right: 30px;
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        a {
+          font-weight: normal;
+          color: $color-page-head-link;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__language-column {
+    float: right;
+    padding: 0 25px;
+
+    .language-object {
+      .c-nav-language__item {
+        margin-right: 5px;
+
+        &:nth-child(2) {
+          margin-right: 0;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.buy-tickets__wrap {
+  margin-right: 20px;
+  float: right;
+
+  @include oGridRespondTo(S) {
+    margin-right: 30px;
+  }
+}
+
+// Header search
+
+.c-page-head__search {
+  float: right;
+  padding: 0 25px;
+  border-left: 1px solid $color-page-head-border;
+  border-right: 1px solid $color-page-head-border;
+
+  a {
+    @include hocus() {
+      text-decoration: none;
+    }
+    .icon:before {
+      font-size: 18px;
+      color: $color-grey-tint7;
+    }
+  }
+}

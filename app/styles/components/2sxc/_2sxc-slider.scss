@@ -1,0 +1,237 @@
+.slider {
+  @include oGridRespondTo($until: S) {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  @include oGridRespondTo($from: S, $until:L) {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
+.slider__nav {
+  list-style-type: none;
+  background: $color-slider-nav-bg;
+  margin: 0;
+  height: 42px;
+
+  li {
+    a {
+      @include FontSizeFor(slider, 3);
+      @include FontWeight(bold);
+      text-transform: uppercase;
+      padding: 9px 14px;
+      border-right: 1px solid #fff;
+      display: block;
+      height: 39px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:last-child a {
+      border-right: 0;
+    }
+  }
+}
+
+// Is active Slider-nav
+
+.slider__nav .item-1 a {
+  @extend .icon;
+  @extend .icon-home;
+  text-indent: -9999px;
+  position: relative;
+  width: 40px;
+  padding-top: 11px;
+
+  &:before {
+    text-indent: 0;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+}
+
+.slider__nav {
+
+  .item-1:hover a {
+    background-color: $color-slider-nav-bg2;
+      &:before {
+        color: $color-slider-item-font;
+      }
+  }
+
+  .item-2:hover {
+    background-color: $color-section-drama;
+      a {
+        color: $color-slider-item-font;
+      }
+  }
+
+  .item-3:hover {
+    background-color: $color-section-opera;
+      a {
+        color: $color-slider-item-font;
+      }
+  }
+
+  .item-4:hover {
+    background-color: $color-section-balet;
+      a {
+        color: $color-slider-item-font;
+      }
+  }
+
+  .item-5:hover {
+    background-color: $color-section-koncerti;
+      a {
+        color: $color-slider-item-font;
+      }
+  }
+}
+
+.c-page--Naslovnica, .c-page--Home {
+  .slider__nav {
+    border-bottom: 3px solid $color-black;
+
+    .item-1 a {
+      background: $color-slider-nav-bg2;
+
+      &:before {
+        color: $color-slider-item-font;
+      }
+    }
+  }
+}
+
+.c-page--Drama {
+  .slider__nav {
+    border-bottom: 3px solid $color-section-drama;
+
+    .item-2 a {
+      background: $color-section-drama;
+      color: $color-slider-item-font;
+    }
+  }
+}
+
+.c-page--Opera {
+  .slider__nav {
+    border-bottom: 3px solid $color-section-opera;
+
+    .item-3 a {
+      background: $color-section-opera;
+      color: $color-slider-item-font;
+    }
+  }
+}
+
+.c-page--Balet, .c-page--Ballet {
+  .slider__nav {
+    border-bottom: 3px solid $color-section-balet;
+
+    .item-4 a {
+      background: $color-section-balet;
+      color: $color-slider-item-font;
+    }
+  }
+}
+
+.c-page--Koncerti, .c-page--Concerts {
+  .slider__nav {
+    border-bottom: 3px solid $color-section-koncerti;
+
+    .item-5 a {
+      background: $color-section-koncerti;
+      color: $color-slider-item-font;
+    }
+  }
+}
+
+//
+
+.slider__items {
+  position: relative;
+  background-color: #000;
+
+  @include oGridRespondTo($from: L) {
+    height: 500px;
+  }
+
+  .edit-actions {
+    position: absolute;
+    z-index: 1000;
+  }
+}
+
+.slider__content {
+  background: $color-black;
+  color: $color-slider-item-font;
+  padding: 20px;
+  text-align: center;
+
+  @include oGridRespondTo($from: L) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 50px 40px;
+    width: 320px;
+    background: none;
+    text-align: left;
+  }
+
+  h2 {
+    color: $color-slider-item-font;
+
+    @include oGridRespondTo($from: L) {
+      @include FontSizeFor(slider, 1);
+    }
+  }
+
+  .slider__link {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+}
+
+.slider__overlay {
+  @include size(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(105deg,#000 30%,rgba(0,0,0,.59) 50%,transparent 70%);
+}
+
+.slider__desc {
+  font-weight: 300;
+  margin-bottom: $base-spacing-unit;
+  @include text-clamp(4, 24px);
+
+  @include oGridRespondTo($from: L) {
+    @include text-clamp(7, 24px);
+  }
+
+  p {
+      margin-bottom: 0;
+  }
+}
+
+.slider__items--img {
+  left: inherit;
+
+  @include oGridRespondTo($from: L) {
+    right: -100px;
+  }
+  // @include oGridRespondTo($from: XL) {
+  //   right: -200px;
+  // }
+}
+
+// .slick-dots {
+//   @include oGridRespondTo($from: L) {
+//     display: none;
+//   }
+// }

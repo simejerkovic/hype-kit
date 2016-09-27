@@ -1,0 +1,18 @@
+.module-container__title {
+  @include FontSizeFor(module-container-title, 1);
+  @include FontWeight(normal);
+  //
+
+  .c-page--front & {
+    font-family: $base-ff-display;
+    @include FontSizeFor(event-schedule-module-title, 1);
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+  }
+
+  .pane--schedule & {
+    padding-bottom: $base-spacing-unit / 2;
+    border-bottom: 0;
+  }
+}

@@ -1,0 +1,88 @@
+///*----------------------------------*\
+//  #TYPOGRAPHY
+//\*----------------------------------*/
+
+// Mixins to help generating typographical rules.
+
+/// Font family mixin
+///
+/// Human friendly font family keywords
+///
+/// @example scss
+///    @include FontFamily(source-sans-pro);
+///
+/// @group mixins
+@mixin FontFamily($family) {
+
+    @if ($family == "source-sans-pro") {
+        font-family: 'source-sans-pro', sans-serif;
+    }
+
+    @elseif ($family == "encode-sans-condensed") {
+        font-family: 'encode-sans-condensed', sans-serif;
+    }
+
+    @else {
+        @warn "#{$family} is not a valid font-family."
+    }
+
+};
+
+/// Font weight mixin
+///
+/// Human friendly font weight keywords
+/// Map keywords onto our numbered weights for convenience.
+///
+/// @example scss
+///    @include FontWeight(bold);
+///
+/// @group mixins
+@mixin FontWeight($weight) {
+
+    @if ($weight == normal) {
+        font-weight: 400;
+    }
+
+    @elseif ($weight == extralight) {
+        font-weight: 200;
+    }
+
+    @elseif ($weight == light) {
+        font-weight: 300;
+    }
+
+    @elseif ($weight == semibold or $weight == medium ) {
+        font-weight: 600;
+    }
+
+    @elseif ($weight == bold) {
+        font-weight: 700;
+    }
+
+    @elseif ($weight == black) {
+        font-weight: 900;
+    }
+
+    @else {
+        @warn "#{$weight} is not a valid font-weight."
+    }
+
+};
+
+
+// Simple truncation mixin to cut off text using an ellipsis after a certain
+// width.
+//
+// .simple-usage {
+//   @include truncate();
+// }
+//
+// .detailed-usage {
+//   @include truncate(<value>);
+// }
+@mixin truncate($width: 100%) {
+  max-width: $width;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

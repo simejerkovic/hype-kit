@@ -1,0 +1,25 @@
+/*------------------------------------*\
+  #FONTS Call
+\*------------------------------------*/
+
+// HNK Pro - PF Din Display Pro
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-light-webfont", 300, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-lightital-webfont", 300, italic, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-reg-webfont", normal, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-italic-webfont", normal, italic, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-med-webfont", 600, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-medital-webfont", 600, italic, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-bold-webfont", 700, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-boldital-webfont", 700, italic, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-black-webfont", 800, $file-formats: eot woff2 woff);
+@include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-blackit-webfont", 800, italic, $file-formats: eot woff2 woff);
+
+// HNK Comp Pro - PF Din Text Comp Pro
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-light-webfont", 300, $file-formats: eot woff2 woff);
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-lightital-webfont", 300, italic, $file-formats: eot woff2 woff);
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-regular-webfont", normal, $file-formats: eot woff2 woff);
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-italic-webfont", normal, italic, $file-formats: eot woff2 woff);
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-medium-webfont", 600, $file-formats: eot woff2 woff);
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-medital-webfont", 600, italic, $file-formats: eot woff2 woff);
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-bold-webfont", 700, $file-formats: eot woff2 woff);
+@include font-face("HNK-Comp-Pro", $base-font-path + "hnk-comp-pro/hnk-comppro-boldital-webfont", 700, italic, $file-formats: eot woff2 woff);

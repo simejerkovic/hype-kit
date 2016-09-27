@@ -1,0 +1,105 @@
+// IE FIXS
+//
+.ie9 {
+
+  //DEFAULT
+  .o-list-inline {
+    @include clearfix();
+  }
+
+  // pane fix
+  .pane {
+    @include clearfix();
+  }
+
+  // sections fixs
+  .c-page-section {
+    @include clearfix();
+  }
+
+  .c-page-section--sponsors {
+    @include clearfix();
+  }
+
+  // footer fix
+  .c-page-footer__bottom {
+      @include clearfix();
+    }
+
+  // hide mobile menu and icon
+  .c-nav-mobile  {
+    display: none;
+  }
+
+  .mobile-menu--box  {
+    visibility: hidden;
+  }
+
+  //
+  // fix primaty nav
+  header .c-nav-primary {
+    z-index: 9999;
+    position: relative;
+    &__item {
+      padding-right: $base-spacing-unit;
+      list-style-type: none;
+      &:last-child {
+        padding-right: 0;
+      }
+      &--has-child {
+        .c-nav-primary__link--child {
+          padding-left: $base-spacing-unit / 2;
+        }
+      }
+    }
+    &__link {
+      padding-left: $base-spacing-unit;
+    }
+  }
+
+  //FRONT PAGE
+  //
+  // home slider fix
+  .c-page--front {
+    .slider {
+      &__nav-item {
+        // display: inline-block;
+        float:left;
+      }
+
+      &__items--img {
+        right: 0;
+      }
+    }
+  }
+
+  // easydnn video galery fix
+  .edsgg__section--homepage {
+      @include clearfix();
+  }
+
+  // footer top fix
+  .pane--virtual-tour, .pane--about-theater {
+    float: left;
+  }
+
+  // INNER PAGE
+  //
+  .c-page-content {
+    @include clearfix();
+  }
+
+  .inner-page__wrapper {
+    @include clearfix();
+  }
+
+  // SHOWS DETAILS
+  .show-header__meta-data, .article-tags {
+    @include clearfix();
+  }
+
+  // NEWS DETAILS
+  .article-detail--novosti .article-detail--header {
+    background-color: $color-black;
+  }
+}

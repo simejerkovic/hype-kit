@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <data name="HomeTitle.Text">
+    <value>Početna</value>
+  </data>
+  <data name="GoToTop.Text">
+    <value>Vrh</value>
+  </data>
+  <data name="Developer.Text">
+    <value><![CDATA[]]></value>
+  </data>
+  <data name="Schedule.Text">
+    <value>Raspored</value>
+  </data>
+  <data name="Menu.Text">
+    <value>Izbornik</value>
+  </data>
+  <data name="News.Text">
+    <value>Novosti</value>
+  </data>
+  <data name="Festival.Text">
+    <value>O festivalu</value>
+  </data>
+  <data name="Locations.Text">
+    <value>Lokacije</value>
+  </data>
+  <data name="Sponsors.Text">
+    <value>Sponzori</value>
+  </data>
+  <data name="Shows.Text">
+    <value>Predstave</value>
+  </data>
+  <data name="SearchBoxButton.Text">
+    <value>Pretraga</value>
+  </data>
+  <data name="SearchBoxDescription.Text">
+      <value>Upišite pojam koji želite pretražiti</value>
+    </data>
+  <data name="Naslovna.Text">
+    <value>naslovna</value>
+  </data>
+  <data name="Ulaznice.Text">
+    <value><![CDATA[<a class="c-btn c-btn--secondary" href="http://linux.netgen.hr/theatron-web/app;jsessionid=E67039419212FC4245EF8ACD4DD389F1?service=page/Izvedbe" target="_blank">Online prodaja karata</a>]]></value>
+  </data>
+  <data name="UlazniceMobile.Text">
+    <value><![CDATA[<a class="c-btn c-btn--secondary c-btn--small" href="http://linux.netgen.hr/theatron-web/app;jsessionid=E67039419212FC4245EF8ACD4DD389F1?service=page/Izvedbe" target="_blank"><span class="icon icon-ticket"></span> Ulaznice</a>]]></value>
+  </data>
+   <data name="VirtualnaSetnjaTitle.Text">
+    <value><![CDATA[<h4>UPUTITE SE U <br /> VIRTUALNU <br /> ŠETNJU <br /> KAZALIŠTEM</h4>]]></value>
+  </data>
+  <data name="VirtualnaSetnjaBtn.Text">
+    <value><![CDATA[<a class="c-btn c-btn--primary c-btn--medium" href="/virtualna-setnja/walkthrough/teatar.html" target="_blank">Pokrenite šetnju</a>]]></value>
+  </data>
+     <data name="oKazalistuTitle.Text">
+    <value><![CDATA[<h4>HRVATSKO NARODNO KAZALIŠTE U SPLITU</h4>]]></value>
+  </data>
+  <data name="oKazalistuText.Text">
+     <value><![CDATA[<p>„Mi nismo ovu zgradu podigli praznom namjerom da narodu poklanjamo pukih zabava; ne, nas je vodila i bodrila uzvišena namjera da podignemo kulturni Hram, gdje će puk, a navlastito naš mlađi naraštaj naučiti kako valja ljubiti domovinu i vršiti svoje građanske dužnosti...“, tim je riječima gradonačelnik Splita dr. Gajo Bulat 6. svibnja 1893. na trgu koji će se kasnije nazvati njegovim imenom svečano otvorio novu zgradu Obćinskog kazališta, jednu od najreprezentativnijih u ovom dijelu Europe u to doba. Iako je splitska kazališna tradicija trajala stoljećima prije, još od doba antike, važan je to trenutak bio za umjetnost, ali iza nacionalnu svijest građana Splita, jer je upravo na otvaranju po prvi put u Splitu s pozornice izvedena živa hrvatska riječ – Demetrova Teuta u izvedbi Hrvatskog dramatičkog društva iz Zagreba...</p>]]></value>
+  </data>
+  <data name="oKazalistuBtn.Text">
+    <value><![CDATA[<a class="c-btn c-btn--primary c-btn--medium" href="/o-kazalistu" target="_blank">Pročitajte više</a>]]></value>
+  </data>
+  <data name="PokroviteljstvoTitle.Text">
+    <value><![CDATA[<h5>SPONZORI</h5>]]></value>
+  </data>
+   <data name="SponzoriTitle.Text">
+    <value><![CDATA[<h5>MEDIJSKI POKROVITELJI</h5>]]></value>
+  </data>
+  <data name="MedijskiSponzoriTitle.Text">
+    <value><![CDATA[<h5>MEDIJSKI POKROVITELJI</h5>]]></value>
+  </data>
+  <data name="KontaktInfoLijevoContent.Text">
+    <value><![CDATA[<p>HRVATSKO NARODNO KAZALIŠTE <br />
+                Croatia - 2010 Split - Trg Gaje Bulata 1<br />
+				Matični broj: 3156648<br />
+				OIB: 69204356406<br />
+                IBAN: HR 4623300031100380455<br />
+              </p>
+			  <span class="contact-info--title">Pratite nas:</span>]]></value>
+  </data>
+  <data name="KontaktInfoSredinaContent.Text">
+    <value><![CDATA[<p><span class="contact-info--title">Blagajna:</span><br />
+                Telefon: +385 21 306 908<br />
+                Email: <a href="mailto:blagajna@hnk-split.hr">blagajna@hnk-split.hr</a><br />
+                  <br />
+                <span class="contact-info--title">Prodaja:</span><br />
+                Telefoni:  <br />
+                +385 21 347 377<br />
+                +385 21 306 915<br />
+                  <br />
+                <span class="contact-info--title">Odnosi s javnošću:</span><br />
+                Telefoni: <br />
+                +385 21 344399<br />
+                +385 21 306921<br />
+                Email: <a href="mailto:davor.vukovic@hnk-split.hr">davor.vukovic@hnk-split.hr</a><br />
+              </p>]]></value>
+  </data>
+  <data name="KontaktInfoDesnoContent.Text">
+    <value><![CDATA[<p><span class="contact-info--title">Radno vrijeme blagajne:</span><br />
+                pon - pet. od 09 do početka predstave<br />
+                sub: 9-12 te 1h i 30 min prije početka izvedbe<br />
+                ned: 1h i 30 min prije početka izvedbe (samo ako ima predstave)<br />
+                  <br />
+                <span class="contact-info--title">Radno vrijeme ureda prodaje:</span><br />
+                Pon-pet od 08 do 15 h<br />
+              </p>]]></value>
+  </data>
+  <data name="KontaktInfoDesnoInvaliditetContent.Text">
+    <value><![CDATA[
+			<p>Kako bi posjet Kazalištu učinili dostupnijim osobama s poteškoćama u kretanju,
+            molimo vas da svoj posjet najavite telefonom na broj +385 21 306 908
+            ili e-mailom na <a href="mailto:blagajna@hnk-split.hr">blagajna@hnk-split.hr</a>
+            </p>]]></value>
+  </data>
+  <data name="Izrada.Text">
+	<value><![CDATA[
+			<span>| Izrada: <a href="http://www.sistemi.hr/" target="_blank">Sistemi.hr</a></a>
+			</span>]]>
+	</value>
+  </data>
+</root>

@@ -1,0 +1,226 @@
+////
+/// @group o-typography
+////
+
+
+/// When silent mode is active, css classes will not be output
+/// @type Bool
+$o-typography-is-silent: true !default;
+
+
+// Base font
+$base-ff-display: 'HNK-Pro', Arial, sans-serif;
+$base-ff-text: 'HNK-Comp-Pro', Arial, sans-serif;
+
+// Font scaling
+$font-scale: (
+  root: (
+    1: (font-size: 10, line-height: 13)
+  ),
+
+  body: (
+    1: (font-size: 10, line-height: 10),
+    2: (font-size: 11, line-height: 11),
+    3: (font-size: 14, line-height: 18),
+    4: (font-size: 16, line-height: 21),
+    5: (font-size: 18, line-height: 24),
+  ),
+
+  headings: (
+    1: (font-size: 35, line-height: 38),
+    2: (font-size: 25, line-height: 32),
+    3: (font-size: 20, line-height: 26),
+    4: (font-size: 18, line-height: 22),
+    5: (font-size: 16, line-height: 20),
+    6: (font-size: 14, line-height: 18),
+  ),
+
+  header: (
+    1: (font-size: 10, line-height: 10), // not used
+    2: (font-size: 11, line-height: 11),
+    3: (font-size: 12, line-height: 15),
+    4: (font-size: 14, line-height: 14), // not used
+    5: (font-size: 16, line-height: 16),
+    6: (font-size: 18, line-height: 18),
+  ),
+
+  footer: (
+    1: (font-size: 14, line-height: 19),
+    2: (font-size: 16, line-height: 80),
+    3: (font-size: 16, line-height: 16), // not used
+    4: (font-size: 18, line-height: 22),
+    5: (font-size: 20, line-height: 20), // not used
+    6: (font-size: 28, line-height: 28),
+    7: (font-size: 34, line-height: 40),
+  ),
+
+  header-icons: (
+    1: (font-size: 14, line-height: 35), // not used
+    2: (font-size: 16, line-height: 35), // not used
+    3: (font-size: 22, line-height: 35), // not used
+    4: (font-size: 30, line-height: 35), // not used
+    5: (font-size: 34, line-height: 35), // not used
+  ),
+
+  // Buttons
+  button: (
+    1: (font-size: 10, line-height: 10), // not used
+    2: (font-size: 11, line-height: 11), // not used
+    3: (font-size: 12, line-height: 15),
+    4: (font-size: 14, line-height: 16),
+    5: (font-size: 16, line-height: 18), // not used
+    6: (font-size: 16, line-height: 16),
+    7: (font-size: 18, line-height: 18),
+  ),
+
+  nav-top-icons: (
+    1: (font-size: 11px, line-height: 14),
+  ),
+
+  // Mobile nav - OffCanvas
+  nav-mobile: (
+    1: (font-size: 10, line-height: 10),
+    2: (font-size: 12, line-height: 13),
+    3: (font-size: 14, line-height: 15),   // not used
+  ),
+
+  // Module container
+  module-container-title: (
+    1: (font-size: 35, line-height: 38)
+  ),
+
+  // Event schedule
+  event-schedule-module-title: (
+    1: (font-size: 22, line-height: 22),
+  ),
+  event-schedule-title: (
+    1: (font-size: 10, line-height: 12),
+    2: (font-size: 12, line-height: 14),
+    3: (font-size: 16, line-height: 18),
+    4: (font-size: 20, line-height: 24),
+    5: (font-size: 14, line-height: 24),
+  ),
+  event-schedule-description: (
+    1: (font-size: 12, line-height: 14),
+    2: (font-size: 14, line-height: 16),
+    3: (font-size: 16, line-height: 18),
+  ),
+  event-schedule-start-date: (
+    1: (font-size: 13, line-height: 14),
+    2: (font-size: 16, line-height: 18),
+    3: (font-size: 20, line-height: 22),
+    4: (font-size: 22, line-height: 26),
+  ),
+  event-schedule-start-time: (
+    1: (font-size: 10, line-height: 12),
+    2: (font-size: 12, line-height: 14),
+    3: (font-size: 14, line-height: 16),
+    4: (font-size: 16, line-height: 18),
+    5: (font-size: 18, line-height: 22),
+  ),
+
+  // Story card
+  story-card-meta: (
+    1: (font-size: 10, line-height: 12),
+    2: (font-size: 12, line-height: 14),
+    3: (font-size: 14, line-height: 16),
+    4: (font-size: 16, line-height: 18),
+  ),
+  story-card-title: (
+    1: (font-size: 14, line-height: 16),
+    2: (font-size: 16, line-height: 18),
+    3: (font-size: 18, line-height: 21),
+    4: (font-size: 11, line-height: 24),
+  ),
+  story-card-summary: (
+    1: (font-size: 14, line-height: 16),
+    2: (font-size: 16, line-height: 20),
+  ),
+
+  // Story feed
+  story-feed-meta: (
+    1: (font-size: 10, line-height: 12),
+    2: (font-size: 12, line-height: 14),
+    3: (font-size: 14, line-height: 16),
+    4: (font-size: 16, line-height: 18),
+  ),
+  story-feed-title: (
+    1: (font-size: 14, line-height: 16),
+    2: (font-size: 16, line-height: 18),
+    3: (font-size: 18, line-height: 21),
+    4: (font-size: 20, line-height: 24),
+    5: (font-size: 22, line-height: 26),
+  ),
+  story-feed-summary: (
+    1: (font-size: 14, line-height: 16),
+    2: (font-size: 16, line-height: 20),
+    3: (font-size: 18, line-height: 24),
+  ),
+
+ // Lokacije detalj
+  lokacije-detalj: (
+    1: (font-size: 30, line-height: 32),
+    3: (font-size: 24, line-height: 24),
+    4: (font-size: 18, line-height: 18), // NOT USED
+    5: (font-size: 16, line-height: 16),
+  ),
+
+ // EDN novosti detalj
+  edn-article-title: (
+    1: (font-size: 18, line-height: 24),
+    2: (font-size: 20, line-height: 28),
+    3: (font-size: 25, line-height: 28),
+    4: (font-size: 35, line-height: 42),
+  ),
+
+  edn-article-meta: (
+    1: (font-size: 18, line-height: 24),
+    2: (font-size: 20, line-height: 28),
+    3: (font-size: 25, line-height: 28),
+    4: (font-size: 35, line-height: 42),
+  ),
+
+  edn-article-summary: (
+    1: (font-size: 16, line-height: 21),
+    2: (font-size: 18, line-height: 24),
+    3: (font-size: 20, line-height: 24),
+  ),
+
+  // O festivalu
+  festival: (
+    1: (font-size: 21, line-height: 28),
+    2: (font-size: 18, line-height: 26),
+    3: (font-size: 16, line-height: 24),
+    4: (font-size: 14, line-height: 22),
+  ),
+
+  // 2sxc App: Documents
+  documents-link: (
+    1: (font-size: 20, line-height: 24),
+  ),
+  documents-description: (
+    1: (font-size: 16, line-height: 21),
+  ),
+  documents-icon: (
+    1: (font-size: 16, line-height: 21),
+  ),
+
+  // Slider naslovnica
+  slider: (
+    1: (font-size: 38, line-height: 36),
+    2: (font-size: 13, line-height: 16),
+    3: (font-size: 17, line-height: 23),
+  ),
+
+  // Newsletter naslovnica
+  newsletter: (
+    1: (font-size: 16, line-height: 18),
+    2: (font-size: 18, line-height: 22),
+    3: (font-size: 22, line-height: 22),
+  ),
+
+  language-object: (
+    1: (font-size: 18, line-height: 24),
+  ),
+
+);

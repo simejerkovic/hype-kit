@@ -1,0 +1,30 @@
+// Main table styles
+// TODO: Fix colors
+table {
+  width: 100%;
+}
+
+
+.main-table, .article-detail__content-main--left table {
+  width: 100% !important; // Fix for CK editor CMS shenanigans
+
+  font-size: 18px;
+  line-height: 26px;
+  text-align: left;
+
+  th, td {
+    padding: 15px;
+    border-bottom: 1px solid $color-main-table-border;
+    width: 50% !important;  // Fix for CK editor CMS shenanigans
+  }
+
+  th, td:first-child {
+    color: $color-main-table-head-text;
+    font-weight: 400;
+    text-align: right;
+  }
+
+  td {
+    color: $color-black;
+  }
+}
