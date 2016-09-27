@@ -1,0 +1,26 @@
+{
+  "name": "sistemi-build-kit",
+  "version": "1.0.2",
+  "description": "Front-end build kit we use in our projects",
+  "author": "Net media Sistemi d.o.o.",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.2.8",
+    "gulp-sass": "^2.0.1",
+    "postcss-pxtorem": "^2.3.2",
+    "gulp-postcss": "latest",
+    "gulp-cssnano": "^2.0.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-size": "^1.2.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.2",
+    "gulp-util": "^3.0.5",
+    "autoprefixer": "^6.3.6"
+  }
+}
