@@ -4,6 +4,7 @@
 /// than simple font-size changes should likely be applied via classes
 ///
 /// @link http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+/// @todo Add default variables 
 
 h1 {
   @include FontSizeOnlyFor(headings, 1);
