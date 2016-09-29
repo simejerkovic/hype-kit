@@ -4,11 +4,11 @@
 // Vartiables
 @import "../settings/_colors";
 
-$color-table-background:          $color-transparent;
+$color-table-background:          transparent !default;
 //
-$color-table-row-background:      $color-grey-tint1;
-$color-table-row-border:          $color-grey-tint4;
-$color-table-row-border-alt:      $color-grey-tint7;
+$color-table-row-background:      gray !default;
+$color-table-row-border:          gray !default;
+$color-table-row-border-alt:      silver !default;
 
 // Mixins
 
