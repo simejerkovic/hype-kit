@@ -1,4 +1,5 @@
-// Table component
+/// Table component
+/// @todo Split into separated files
 
 // Vartiables
 @import "../settings/_colors";
@@ -366,35 +367,4 @@ $color-table-row-border-alt:      $color-grey-tint7;
 /// would allow the user to swipe left or right going through the data.
 .c-table--responsive-scroll {
   @include TableResponsiveScroll;
-}
-
-
-// Pretplate
-.subscriptions-table {
-  @include TableHorizontalLines;
-
-  background-color: $color-grey-tint1;
-  @include oGridRespondTo(S) {
-    @include TableVerticalLines;
-  }
-}
-
-.subscriptions-table__head-row {
-  color: $color-white;
-  background-color: $color-grey-tint11;
-  th:nth-child(2) {
-    background-color: $color-red;
-  }
-  th:nth-child(3) {
-    background-color: darken($color-red, 6%);
-  }
-  th:nth-child(4) {
-    background-color: darken($color-red, 12%);
-  }
-  th:nth-child(5) {
-    background-color: darken($color-red, 21%);
-  }
-  th:nth-child(6) {
-    background-color: darken($color-red, 24%);
-  }
 }
