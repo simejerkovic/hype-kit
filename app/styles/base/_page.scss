@@ -21,7 +21,6 @@ html {
 
 body {
     @include FontSizeFor(body, 4);
-    //height: 100%;
     @include oGridRespondTo($from: M) {
         @include FontSizeFor(body, 5);
     }
