@@ -12,13 +12,12 @@ $o-crop-sizes: (
 
 
 
-/**
- * Provide a cropping container in order to display media (usually images)
- * cropped to certain ratios.
- *
- * 1. Set up a positioning context in which the image can sit.
- * 2. This is the crucial part: where the cropping happens.
- */
+
+// Provide a cropping container in order to display media (usually images)
+// cropped to certain ratios.
+//
+// 1. Set up a positioning context in which the image can sit.
+// 2. This is the crucial part: where the cropping happens.
 
 .o-crop {
   position: relative; /* [1] */
@@ -26,13 +25,10 @@ $o-crop-sizes: (
   overflow: hidden; /* [2] */
 }
 
-
-  /**
-   * Apply this class to the content (usually `img`) that needs cropping.
-   *
-   * 1. Image’s default positioning is top-left in the cropping box.
-   * 2. Make sure the media doesn’t stop itself too soon.
-   */
+// Apply this class to the content (usually `img`) that needs cropping.
+//
+// 1. Image’s default positioning is top-left in the cropping box.
+// 2. Make sure the media doesn’t stop itself too soon.
 
   .o-crop__content {
     position: absolute;
@@ -41,10 +37,7 @@ $o-crop-sizes: (
     max-width: none; /* [2] */
   }
 
-
-  /**
-   * We can position the media in different locations within the cropping area.
-   */
+// We can position the media in different locations within the cropping area.
 
   .o-crop__content--right {
     right: 0;
@@ -66,15 +59,10 @@ $o-crop-sizes: (
 
 /* stylelint-disable */
 
-/* Crop-ratio variants.
-   ========================================================================== */
-
-/**
- * Generate a series of crop classes to be used like so:
- *
- *   <div class="o-crop  o-crop--16:9">
- *
- */
+/// Crop-ratio variants.
+/// Generate a series of crop classes to be used like so:
+/// @example 
+/// <div class="o-crop  o-crop--16:9">
 
 @each $antecedent, $consequent in $o-crop-sizes {
 
