@@ -1,27 +1,15 @@
-/*------------------------------------*\
-  #HEADINGS
-\*------------------------------------*/
-/**
- * Simple default styles for headings 1 through 6.
- */
+/// Headings
+///
+/// Simple default styles for headings 1 through 6. Anything more opinionated
+/// than simple font-size changes should likely be applied via classes
+///
+/// @link http://csswizardry.com/2016/02/managing-typography-on-large-apps/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include FontWeight(medium);
-  color: $color-headings;
-  line-height: 1;
-}
 h1 {
   @include FontSizeOnlyFor(headings, 1);
-  @include FontWeight(normal);
 }
 h2 {
   @include FontSizeOnlyFor(headings, 2);
-  @include FontWeight(normal);
 }
 h3 {
   @include FontSizeOnlyFor(headings, 3);
