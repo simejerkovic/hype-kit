@@ -199,6 +199,9 @@ DNN [Pp]latform/Syndication/[Bb]in/*
 [Ww]ebsite/[Pp]ortals/_default/[Uu]ser*
 [Ww]ebsite/[Pp]ortals/[0-9]*/
 
+[Ww]eb/[Pp]ortals/[0-9]*/Cache/*
+[Ww]eb/[Pp]ortals/[0-9]*/[Ss]earch[Bb]oost/*
+
 [Ww]ebsite/[Pp]roviders/[Dd]ata[Pp]roviders/*/*.resources
 [Ww]ebsite/[Pp]roviders/*/*/license.txt
 [Ww]ebsite/[Pp]roviders/*/*/release[Nn]otes.txt
