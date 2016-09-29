@@ -1,6 +1,5 @@
-/*------------------------------------*\
-  #FONTS Call
-\*------------------------------------*/
+/// Fonts call
+/// @deprecated Find a better place for font calling
 
 // HNK Pro - PF Din Display Pro
 @include font-face("HNK-Pro", $base-font-path + "hnk-pro/hnk-pro-light-webfont", 300, $file-formats: eot woff2 woff);
