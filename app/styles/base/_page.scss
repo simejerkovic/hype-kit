@@ -10,7 +10,7 @@
 
 html {
     font-family: $base-ff-text;
-    @include FontSizeOnlyFor(root, 1); // 1
+    @include FontSizeFor(root, 1); // 1
     overflow-y: scroll; // 2
     min-height: 100%; // 3
     //
