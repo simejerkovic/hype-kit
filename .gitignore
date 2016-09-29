@@ -1,11 +1,23 @@
-#################
-## Git
-#################
-node_modules
 dist
-.sass-cache
+
+######################
+## Node.js & Bower
+######################
+
+## Ignore Node / NPM
+node_modules
+
+## Ignore Bower Components
 bower_components
 test/bower_components
+
+## Dont ignore Sxc Bower Components
+##![Ww]ebsite/[Dd]esktop[Mm]odules/bower_components
+
+#################
+## Sass
+#################
+.sass-cache
 
 #################
 ## Visual Studio
