@@ -30,14 +30,6 @@ var autoprefixer = require('autoprefixer');
 var skinPathHNK = 'Portals/0-System/Skins/HNK';
 
 /*******************************************************************************
-    ERROR HANDLER FOR GULP PLUMBER
-*******************************************************************************/
-var onError = function (err) {
-    console.log('An error occurred:', err.message);
-    this.emit('end');
-};
-
-/*******************************************************************************
  Compile Sass to CSS
 *******************************************************************************/
 gulp.task('styles:hnk', function () {
