@@ -29,6 +29,15 @@ var autoprefixer = require('autoprefixer');
 // ==========================================================================
 var skinPathHNK = 'Portals/0-System/Skins/HNK';
 
+// TODO: Make const paths
+const paths = {
+  haml: './source/views/*.haml',
+  coffee: './source/assets/javascripts/**/*.coffee',
+  scss: './source/assets/stylesheets/**/*.scss',
+  images: './source/assets/images/*',
+  fonts: './source/assets/fonts/*'
+};
+
 /*******************************************************************************
  Compile Sass to CSS
 *******************************************************************************/
