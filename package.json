@@ -1,6 +1,6 @@
 {
   "name": "sistemi-build-kit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Front-end build kit we use in our projects",
   "author": "Net media Sistemi d.o.o.",
   "private": true,
