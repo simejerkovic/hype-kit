@@ -81,18 +81,6 @@
   padding: $base-spacing-unit ($base-spacing-unit * 2);
 }
 
-
-.c-btn--schedule-more {
-
-  background-color: $color-btn-schedule-background;
-  color: $color-btn-schedule;
-  transition: $base-transition;
-  border-radius: $base-radius;
-  @include hocus() {
-    background-color: $color-btn-schedule-background-hover;
-  }
-}
-
 .c-btn--neutral {
   color: $color-btn-neutral;
   border: solid 1px $color-btn-neutral-border;
