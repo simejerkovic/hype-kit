@@ -51,6 +51,7 @@
   <!--  #include file="_includes/SharingBar.ascx" -->
 </main>
 
+<%-- Cookie Consent skin object --%>
 <dnn:CookieConsent runat="server" CookieTheme="" />
 
 <!--  #include file="_includes/Footer.ascx" -->
