@@ -79,38 +79,3 @@
 <!--  #include file="_includes/_Scripts.ascx" -->
 
 <%-- Frontpage only scripts go here --%>
-<%--<dnn:DnnJsInclude runat="server" FilePath="js/" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="102" />--%>
-<script>
-$(document).ready(function() {
-    // IScroll
-    var myScroll;
-    var width;
-
-    function createScroll() {
-        myScroll = new IScroll('.event-schedule-group', {
-            scrollbars: true,
-            mouseWheel: true,
-            interactiveScrollbars: true,
-            shrinkScrollbars: 'scale',
-            fadeScrollbars: true
-        });
-    }
-
-    function checkWidth() {
-        width = $(window).width();
-
-        if (width < 980) { // if tablet destroy scroll
-            if (myScroll) { // if tablet destroy scroll
-                myScroll.destroy();
-                myScroll = null;
-                $('.event-schedule-group > div').removeAttr("style");
-            }
-        }
-        else {
-            createScroll();
-        }
-    }
-
-    checkWidth();
-});
-</script>
