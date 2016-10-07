@@ -1,10 +1,9 @@
-/*
-This file in the main entry point for defining Gulp tasks and using Gulp plugins.
-Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
-*/
+// This file in the main entry point for defining Gulp tasks and using Gulp plugins.
+// Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 
 // Include Gulp & Tools We'll Use
 // ==========================================================================
+
 // Include Gulp
 var gulp = require("gulp");
 
@@ -27,21 +26,28 @@ var autoprefixer = require('autoprefixer');
 
 // Local directory path
 // ==========================================================================
+
 var skinPathDev = 'app';
 
 // TODO: Make const paths
+// ==========================================================================
+
 const paths = {
   haml: './source/views/*.haml',
   coffee: './source/assets/javascripts/**/*.coffee',
   scss: './source/assets/stylesheets/**/*.scss',
   images: './source/assets/images/*',
-  fonts: './source/assets/fonts/*'
+  fonts: './source/assets/fonts/*',
+  //
+  skin: 'app';
 };
 
-/*******************************************************************************
- Compile Sass to CSS
-*******************************************************************************/
+// Compile Sass to CSS
+// ==========================================================================
+
 gulp.task('styles:dev', function () {
+  
+    // px-to-rem & autoprefixer
     var processors = [
         autoprefixer({browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7']}),
         pxtorem({
@@ -56,21 +62,20 @@ gulp.task('styles:dev', function () {
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(postcss(processors)) // px-to-rem & autoprefixer
-        // .pipe(nano({ safe: true, autoprefixer: false, discardComments: { removeAll: false }, zindex: false }))
+        .pipe(postcss(processors))
         //.pipe(nano({ safe: true, autoprefixer: false, zindex: false }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(skinPathDev))
         .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
-/*******************************************************************************
- Watch files for changes & reload
-*******************************************************************************/
+// Watch files for changes & reload
+// ==========================================================================
+
 gulp.task('serve:dev', ['styles:dev'], function () {
   browserSync.init({
         injectChanges: true,
         proxy: "http://hnksplit.dev.sistemi.hr"
     });
-    gulp.watch([skinPathHNK + '/styles/**/*.{scss,css}'], ['styles:dev']);
+    gulp.watch([skinPathDev + '/styles/**/*.{scss,css}'], ['styles:dev']);
 });
