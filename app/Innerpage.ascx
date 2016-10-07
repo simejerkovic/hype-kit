@@ -14,8 +14,6 @@
 <%@ Register TagPrefix="fortyfingers" TagName="STYLEHELPER" Src="~/DesktopModules/40Fingers/SkinObjects/StyleHelper/StyleHelper.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="COOKIECONSENT" Src="~/DesktopModules/DnnC_CookieConsent/CookieConsent.ascx" %>
 
-<!--  #include file="_includes/_Meta.ascx" -->
-
 <%-- Main Sylehelper call --%>
 <fortyfingers:STYLEHELPER ID="SHmain" runat="server"
   Doctype="HTML 5"
@@ -26,6 +24,7 @@
   RemoveCssFile="default.css,portal.css,container.css,module.css,searchskinobjectpreview.css,admin.css"
   IfUserMode="None" />
 
+<!--  #include file="_includes/_Meta.ascx" -->
 <!--  #include file="_includes/Header.ascx" -->
 
 <main class="c-page-content c-page-content--inner-page" role="main">
@@ -42,5 +41,3 @@
 
 <%-- All script calls go here --%>
 <!--  #include file="_includes/_Scripts.ascx" -->
-
-<%-- Innerpage only scripts go here --%>
