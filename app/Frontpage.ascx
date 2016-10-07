@@ -26,11 +26,6 @@
   RemoveCssFile="default.css,admin.css,portal.css,module.css,container.css,searchskinobjectpreview.css"
   IfUserMode="None" />
 
-<%-- Sylehelper call for IE8 --%>
-<fortyfingers:STYLEHELPER ID="SHie" runat="server"
-  IfBrowser="IE<9"
-  AddJsFile="[S]scripts/respond/respond.min.js" />
-
 <!--  #include file="_includes/Header.ascx" -->
 
 <main class="c-page-content" role="main">
