@@ -15,8 +15,6 @@
 <%@ Register TagPrefix="fortyfingers" TagName="STYLEHELPER" Src="~/DesktopModules/40Fingers/SkinObjects/StyleHelper/StyleHelper.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="COOKIECONSENT" Src="~/DesktopModules/DnnC_CookieConsent/CookieConsent.ascx" %>
 
-<!--  #include file="_includes/_Meta.ascx" -->
-
 <%-- Main Sylehelper call --%>
 <fortyfingers:STYLEHELPER ID="SHmain" runat="server"
   Doctype="HTML 5"
@@ -24,40 +22,27 @@
 
 <%-- Sylehelper Call To remove DNN css --%>
 <fortyfingers:STYLEHELPER ID="SHremove" runat="server"
-  RemoveCssFile="default.css,portal.css,container.css,module.css,searchskinobjectpreview.css,admin.css"
+  RemoveCssFile="default.css,admin.css,portal.css,module.css,container.css,searchskinobjectpreview.css"
   IfUserMode="None" />
 
-<%-- Sylehelper call for IE8 --%>
-<fortyfingers:STYLEHELPER ID="SHie" runat="server"
-  IfBrowser="IE<9"
-  AddJsFile="[S]scripts/respond/respond.min.js" />
-
-
-
+<!--  #include file="_includes/_Meta.ascx" -->
 <!--  #include file="_includes/Header.ascx" -->
 
 <main class="c-page-content c-page-content--inner-page has-children" role="main">
   <div class="o-grid-container inner-page__wrapper">
     <div class="o-grid-row">
-      <div class="inner-page--aside">
+      <div class="inner-page__aside">
         <dnn:MENU ID="navAside" MenuStyle="aside-nav" NodeSelector="RootChildren" ExcludeNodes="" runat="server"></dnn:MENU>
         <div id="AsideContent_Left" runat="server" class="pane pane--aside"></div>
       </div>
-      <div class="inner-page--main">
+      <div class="inner-page__main">
         <div id="ContentPane" runat="server" class="pane pane--main"></div>
       </div>
     </div>
   </div>
-  <!--  #include file="_includes/SharingBar.ascx" -->
 </main>
-
-<%-- Cookie Consent skin object --%>
-<dnn:CookieConsent runat="server" CookieTheme="" />
 
 <!--  #include file="_includes/Footer.ascx" -->
 
 <%-- All script calls go here --%>
 <!--  #include file="_includes/_Scripts.ascx" -->
-
-<%-- Innerpage only scripts go here --%>
-<%--<dnn:DnnJsInclude runat="server" FilePath="js/" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="102" />--%>
