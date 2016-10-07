@@ -1,10 +1,9 @@
-﻿@import '../settings/_global';
-
+﻿////
 /// Media object
 ///
 /// BEMIT / OOCSS CSS markup extraction pattern for media object
 ///
-/// @group Objects
+/// @group objects
 ///
 /// @example
 ///   <div class="o-media">
@@ -16,6 +15,7 @@
 ///     </div>
 ///   </div>
 ///
+////
 
 .no-flexbox {
   .o-media {
@@ -36,7 +36,7 @@
   .o-media__img {
     float: left;
     margin-right: $base-spacing-unit/2;
-    
+
     @include oGridRespondTo(L) {
       margin-right: $base-spacing-unit;
     }

@@ -1,4 +1,15 @@
-// Easy DNN News Shared styles
+////
+/// Shared styles for EasyDnnNews
+/// @group components
+///
+/// @todo Make variable class for theme template name, clean these styles
+////
+
+// Fix for EDN article wrapper
+.story-group [class$="_article_list_wrapper"],
+.story-group [class*="_article_list_wrapper "] {
+  @include oGridRow();
+}
 
 .eds_news_HNK.eds_subCollection_news .ednMoreArticlesTriggerWrapper {
   margin: $base-spacing-unit*2 0;

@@ -1,18 +1,25 @@
-﻿/* Accessible hidden content.
-   ========================================================================== */
+/// Visually hidden element﻿
+/// Hide only visually, but have it available for screen readers:
+/// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+/// @example
+/// <div class="u-hidden-visually">I'm a ghost to you but screen readers see me.</div>
 
 %u-h,
-.u-h {
+.u-h,
+.u-hidden-visually {
   @include u-h;
 }
 
+/// Hide visually and from screen readers.
 .hide,
 .is-hidden,
-[hidden] {
+[hidden],
+.u-hidden {
   display: none !important;
 }
 
-//
+/// Hide and Show based on media queries and grid layout
+/// @todo Make smarter. Turn into a function repeat. Merge with mq and o-grid
 .hide-until\@sm {
   @include oGridRespondTo($until: S) {
     display: none !important;
@@ -96,25 +103,21 @@
     display: block !important;
   }
 }
-//
-.u-cf {
+
+// Bind our clearfix onto a utility class.
+.u-cf,
+.u-clearfix {
   @include clearfix;
 }
 
-.u-baseline-top {
-  margin-top: $base-spacing-unit;
-}
 
-
-/**
- * Responsive media (images, videos…)
- *
- * 1. Give the block an initial ratio of 5/3 to avoid FOUC
- * 2. Stretch the contained media to the dimensions of its container
- */
+/// Responsive media (images, videos…)
+///
+/// 1. Give the block an initial ratio of 5/3 to avoid FOUC
+/// 2. Stretch the contained media to the dimensions of its container
 
 .u-responsive-ratio {
-  @include fix-aspect-ratio(5, 3); // 1
+  @include fixAspectRatio(5, 3); // 1
   img,
   object,
   embed,
@@ -130,15 +133,15 @@
 }
 
 .u-responsive-ratio--hd {
-  padding-bottom: aspect-ratio-height(16, 9);
+  padding-bottom: aspectRatioHeight(16, 9);
 }
 
 .u-responsive-ratio--hd2 {
-  padding-bottom: aspect-ratio-height(9, 3);
+  padding-bottom: aspectRatioHeight(9, 3);
 }
 
 .u-responsive-ratio--letterbox {
-  padding-bottom: aspect-ratio-height(5, 2);
+  padding-bottom: aspectRatioHeight(5, 2);
 }
 
 

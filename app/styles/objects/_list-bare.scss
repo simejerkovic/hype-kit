@@ -1,6 +1,11 @@
+////
 /// List bare
+///
 /// Strip list-like appearance from lists by removing their bullets, and any
 /// indentation.
+///
+/// @group objects
+////
 
 .o-list-bare {
     list-style: none;

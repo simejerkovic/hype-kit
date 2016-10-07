@@ -1,9 +1,14 @@
+////
 /// Box
+///
 /// The box object simply boxes off content. Extend with cosmetic styles in the
 /// Components layer.
 ///
+/// @group objects
+/// @link http://www.css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+////
+
 /// 1. So we can apply the `.o-box` class to naturally-inline elements.
-/// @todo Add this object to main sass file
 
 .o-box {
   @include %clearfix;

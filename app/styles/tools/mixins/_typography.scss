@@ -1,8 +1,8 @@
-///*----------------------------------*\
-//  #TYPOGRAPHY
-//\*----------------------------------*/
-
-// Mixins to help generating typographical rules.
+////
+/// Mixins to help generating typographical rules.
+/// @group: tools
+///
+////
 
 /// Font family mixin
 ///
@@ -12,6 +12,7 @@
 ///    @include FontFamily(source-sans-pro);
 ///
 /// @group mixins
+
 @mixin FontFamily($family) {
 
     @if ($family == "source-sans-pro") {
@@ -68,21 +69,3 @@
     }
 
 };
-
-
-// Simple truncation mixin to cut off text using an ellipsis after a certain
-// width.
-//
-// .simple-usage {
-//   @include truncate();
-// }
-//
-// .detailed-usage {
-//   @include truncate(<value>);
-// }
-@mixin truncate($width: 100%) {
-  max-width: $width;
-  white-space:nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}

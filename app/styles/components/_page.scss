@@ -1,4 +1,8 @@
-// #PAGE
+////
+/// Page styles
+/// @group components
+/// @example
+////
 
 ::selection {
   background: $color-selection-background; // WebKit/Blink Browsers
@@ -9,20 +13,22 @@
   color: $color-selection-text;
 }
 
+.wow { visibility: hidden; }
 
-.wow {
-   visibility: hidden;
-}
+/// Styles for lazysizes.js script
+/// @group components
 
 .lazyload,
 .lazyloading {
-    opacity: 0;
+  opacity: 0;
 }
 
 .lazyloaded {
-    opacity: 1;
-    transition: opacity 400ms;
+  opacity: 1;
+  transition: opacity 400ms;
 }
+
+/// Styles for language object
 
 // If language: Hrvatski
 .c-page--lang-hr {
@@ -38,140 +44,5 @@
   }
 }
 
-
-.c-page {
-  color: $color-page-text;
-
-  &.has-fixed-page-head {
-
-  }
-
-  &-section--highlight {
-    padding-bottom: $base-spacing-unit*2;
-
-    @include oGridRespondTo($from: L) {
-      padding-top: $base-spacing-unit*2;
-    }
-  }
-
-  &-section--content {
-    padding-top: $base-spacing-unit*2;
-    padding-bottom: $base-spacing-unit*2;
-    background-color: $color-grey-tint1;
-  }
-}
-
-.pane--hero {
-  @include oGridColspan((default: 12));
-
-  @include oGridRespondTo(L) {
-    -ms-flex-preferred-size: 65%;
-    flex-basis: 65%;
-    min-width: 65%;
-    max-width: 65%;
-  }
-
-  @include oGridRespondTo(XL) {
-    -ms-flex-preferred-size: 70%;
-    flex-basis: 70%;
-    min-width: 70%;
-    max-width: 70%;
-  }
-}
-
-.pane--schedule {
-  @include oGridColspan((default: 12));
-
-  @include oGridRespondTo($until: L) {
-    padding-top: $base-spacing-unit;
-  }
-
-  @include oGridRespondTo(L) {
-    -ms-flex-preferred-size: 35%;
-    flex-basis: 35%;
-    min-width: 35%;
-    max-width: 35%;
-  }
-
-  @include oGridRespondTo(XL) {
-    -ms-flex-preferred-size: 30%;
-    flex-basis: 30%;
-    min-width: 30%;
-    max-width: 30%;
-  }
-}
-
-.pane--news {
-  @include oGridColspan((default: 12, L: 8));
-}
-
-.pane--extra-info {
-  @include oGridColspan((default: 12, L: 4));
-
-  @include oGridRespondTo($until: L) {
-    .DnnModule:not(:first-child) {
-      @include oGridColspan((default: 12, S: 6, L: 12));
-    }
-
-    .DnnModule:nth-child(2) {
-      padding-left: 0;
-    }
-
-    .DnnModule:last-child {
-      height: 332px;
-      overflow: hidden;
-    }
-  }
-
-  @include oGridRespondTo($until: S) {
-    .DnnModule:nth-child(3) {
-      padding-left: 0;
-    }
-  }
-}
-
-.pane--virtual-tour {
-  width: 50%;
-}
-
-.pane--about-theater {
-  width: 50%;
-}
-
-.pane--sponsors {
-  @include oGridColspan((default: 6));
-}
-
-.pane--sponsorship {
-  @include oGridColspan((default: 6));
-}
-
-.pane--promotion {
-
-}
-
-.pane--media-sponsors {
-  @include oGridColspan((default: 12));
-}
-
-.inner-page__wrapper {
-  margin-top: 25px;
-  margin-bottom: 80px;
-  @include oGridRespondTo(S) {
-    margin-top: 50px;
-    margin-bottom: 160px;
-  }
-}
-
-.inner-page--full {
-  @include oGridColspan((default: 12));
-}
-
-.inner-page--aside {
-  @include oGridColspan((default: hide, L: 3));
-  padding-right: 10px;
-}
-
-.inner-page--main {
-  @include oGridColspan((default: 12, L: 9));
-}
+/// Page component styles
+.c-page {}

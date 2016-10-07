@@ -27,7 +27,7 @@ var autoprefixer = require('autoprefixer');
 
 // Local directory path
 // ==========================================================================
-var skinPathHNK = 'Portals/0-System/Skins/HNK';
+var skinPathDev = 'app';
 
 // TODO: Make const paths
 const paths = {
@@ -41,7 +41,7 @@ const paths = {
 /*******************************************************************************
  Compile Sass to CSS
 *******************************************************************************/
-gulp.task('styles:hnk', function () {
+gulp.task('styles:dev', function () {
     var processors = [
         autoprefixer({browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7']}),
         pxtorem({
@@ -52,25 +52,25 @@ gulp.task('styles:hnk', function () {
         })
     ];
 
-    return gulp.src(skinPathHNK + '/styles/skin.scss')
+    return gulp.src(skinPathDev + '/styles/skin.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(postcss(processors)) // px-to-rem & autoprefixer
         // .pipe(nano({ safe: true, autoprefixer: false, discardComments: { removeAll: false }, zindex: false }))
-        .pipe(nano({ safe: true, autoprefixer: false, zindex: false }))
+        //.pipe(nano({ safe: true, autoprefixer: false, zindex: false }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(skinPathHNK))
+        .pipe(gulp.dest(skinPathDev))
         .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
 /*******************************************************************************
  Watch files for changes & reload
 *******************************************************************************/
-gulp.task('serve:hnk', ['styles:hnk'], function () {
+gulp.task('serve:dev', ['styles:dev'], function () {
   browserSync.init({
         injectChanges: true,
         proxy: "http://hnksplit.dev.sistemi.hr"
     });
-    gulp.watch([skinPathHNK + '/styles/**/*.{scss,css}'], ['styles:hnk']);
+    gulp.watch([skinPathHNK + '/styles/**/*.{scss,css}'], ['styles:dev']);
 });

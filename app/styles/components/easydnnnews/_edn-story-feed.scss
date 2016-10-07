@@ -1,9 +1,3 @@
-.story-group [class$="_article_list_wrapper"],
-.story-group [class*="_article_list_wrapper "],
-.story-group .list {
-  @include oGridRow();
-}
-
 .story-feed {
   @include oGridColspan((default: 12));
 }

@@ -11,8 +11,7 @@
 
 
 // 1. Settings
-// @name Settings
-// @description Variables, global config and colors
+// Variables, global config and colors
 // ==========================================================================
 "settings/_config",
 "settings/_global",
@@ -28,45 +27,45 @@
 
 // ==========================================================================
 // 2. Tools
-// @description: Helper functions, mixins and aliases
+// Helper functions, mixins and aliases
 // ==========================================================================
-// General functions to help with development
-"tools/_functions",
-// General mixins to help with development
-"tools/_mixins",
-// Bourbon mixin library
+"tools/_functions", // General functions to help with development
+"tools/_mixins", // General mixins to help with development
+
+// Mixins
+"tools/mixins/_clearfix", // Clearfix
+"tools/mixins/_typography", // Typography mixins
+// Vendor: Bourbon mixin library
 "tools/bourbon/_bourbon",
-// Typography functions
-"tools/_typography",
 // Aliases
 "tools/_aliases",
 
 // ==========================================================================
 // 3. Generic
-// @description: Resets and normalize styles
+// Resets and normalize styles
 // ==========================================================================
-"generic/_normalize",
 "generic/_box-sizing",
+"generic/_normalize",
 "generic/_reset",
 "generic/_shared",
 
 // ==========================================================================
-// 4. Base
-// @description: Basic element styles
+// 4. Elements
+// Base elements and styles
 // ==========================================================================
-"base/_fonts",
-"base/_page",
-"base/_headings",
-"base/_icons",
-"base/_links",
-"base/_lists",
-"base/_images",
-"base/_quotes",
-"base/_table",
+// "elements/_fonts", // @deprecated TODO: Find a better place for font calling
+// "elements/_icons", // @deprecated TODO: Start using svg's instead of fonts for icons
+"elements/_page", //
+"elements/_headings", //
+"elements/_links", //
+"elements/_lists", //
+"elements/_images", //
+"elements/_quotes", //
+"elements/_table", //
 
 // ==========================================================================
 // 5. Objects
-// @description: Basic layout styles, headlines, lists
+// Basic layout styles, headlines, lists
 // ==========================================================================
 "objects/_grid",
 "objects/_wrappers",
@@ -79,7 +78,7 @@
 
 // ==========================================================================
 // 6. Vendor
-// @description: Third party components, jquery plugins
+// Third party components, jquery plugins
 // ==========================================================================
 // Slick carousel styles
 "vendor/slick/slick",
@@ -89,7 +88,7 @@
 
 // ==========================================================================
 // 7. Components
-// @description: Styles for components, modules and widgets
+// Styles for components, modules and widgets
 // ==========================================================================
 
 // 7.1 Base components
@@ -99,12 +98,8 @@
 "components/_page-footer",
 "components/_nav-mobile",
 "components/_nav-primary",
-"components/_nav-primary-footer",
-"components/_nav-language",
-"components/_nav-aside",
 "components/_buttons",
 "components/_table",
-"components/_cookie-consent.scss",
 
 // 7.2 Site components
 "components/_module-container",
@@ -113,21 +108,23 @@
 "components/search/_search-box",
 "components/search/_search-results",
 
-// DNN
+// DNN components and skin objects
 "components/dnn/_form-items",
 "components/dnn/_login",
+"components/dnn/_cookie-consent.scss",
 
 
 
 // ==========================================================================
-// 8. Trumps
-// @description: Utilities, Heading styles, Helper classes
+// 8. Utilities
+// Utilities, Heading styles, Helper classes
 // ==========================================================================
-"trumps/_helpers",
-"trumps/_faux-block-link",
-"trumps/_headings",
-"trumps/_widths",
-"trumps/_debug",
-"trumps/_shame",
-"trumps/_ie-fix", // IE fix
-"trumps/_print"; // Print
+"utilities/_helpers",
+"utilities/_faux-block-link",
+"utilities/_widths",
+"utilities/_headings",
+"utilities/_spacing",
+"utilities/_debug",
+"utilities/_shame",
+"utilities/_ie-fix", // IE fix
+"utilities/_print"; // Print

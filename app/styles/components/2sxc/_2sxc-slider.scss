@@ -1,3 +1,9 @@
+////
+/// 2sxc Slider / Carousel application
+/// @group 2sxc app
+/// @todo Create basic styles for 2sxc slider / carousel application
+////
+
 .slider {
   @include oGridRespondTo($until: S) {
     margin-left: -10px;

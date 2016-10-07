@@ -1,4 +1,10 @@
-// Vartiables
+////
+/// Bootstrap styles for Collapse
+/// @group bootstrap
+/// @link http://getbootstrap.com/javascript/#collapse
+////
+
+// Variables
 @import "../../settings/_colors";
 //
 $color-collapse-item-border: $color-grey-tint3;
@@ -90,6 +96,3 @@ $color-collapse-item-border: $color-grey-tint3;
 .c-panel__heading + .list-group .list-group-item:first-child {
   border-top-width: 0;
 }
-
-//
-#subscriptions-panel .c-content > .c-headline { display: none; }

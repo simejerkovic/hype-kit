@@ -1,4 +1,12 @@
-﻿.dnnLogin > div {
+////
+/// DNN Login
+/// Basic styles for DNN Login control
+/// @group components
+///
+/// @todo Clean these styles and use mixins from form-items
+////
+
+.dnnLogin > div {
   @include oGridContainer();
   padding: 0 !important;
 }

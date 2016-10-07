@@ -1,6 +1,9 @@
-/*------------------------------------*\
-  #HEADINGS
-\*------------------------------------*/
+/// Headings
+/// @group Utilities
+/// @example
+/// <span class="u-h2">Simulated headline</span>
+/// <h2 class="u-h3">Headline with smaller sizing</h2>
+///
 
 .u-h1 {
     @include FontSizeOnlyFor(headings, 1);

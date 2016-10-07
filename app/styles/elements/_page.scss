@@ -1,5 +1,8 @@
+////
 /// Simple page-level setup (e.g. HTML and BODY elements).
-///
+/// @group elements
+////
+
 /// 1. Set the default `font-size` and `line-height` for the entire project,
 ///    sourced from our default variables. The `font-size` is calculated to exist
 ///    in ems, the `line-height` is calculated to exist unitlessly.
@@ -21,7 +24,4 @@ html {
 
 body {
     @include FontSizeFor(body, 4);
-    @include oGridRespondTo($from: M) {
-        @include FontSizeFor(body, 5);
-    }
 }

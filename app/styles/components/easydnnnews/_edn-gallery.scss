@@ -1,5 +1,11 @@
-/// Component: Gallery
-/// dependency: EasyDnnGallery - Gravity
+////
+/// EasyDnnGallery
+/// Basic styles for EasyDnnGallery Gravity theme
+/// @group components
+///
+/// @todo Clean these styles and use mixins from form-items
+////
+
 .c-gallery {
   @include oGridRespondTo($from: L) {
     margin-top: $base-spacing-unit*2;

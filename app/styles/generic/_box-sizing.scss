@@ -1,11 +1,8 @@
-/*------------------------------------*\
-  #BOX-SIZING
-\*------------------------------------*/
-
-/**
- * More sensible default box-sizing:
- * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- */
+////
+/// More sensible default box-sizing
+/// @group generic
+/// @link http://www.css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+////
 
 html {
     -webkit-box-sizing: border-box;
