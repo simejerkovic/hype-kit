@@ -11,7 +11,7 @@ var gulp = require("gulp");
 // Include plugins
 var cache = require("gulp-cache");
 var eslint = require("gulp-eslint");
-//var if = require("gulp-if");
+var if = require("gulp-if");
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var sass = require("gulp-sass");
