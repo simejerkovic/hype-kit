@@ -10,8 +10,8 @@ var gulp = require("gulp");
 // Include plugins
 var cache = require("gulp-cache");
 var eslint = require("gulp-eslint");
-var if = require("gulp-if");
-var imagemin = require('gulp-imagemin');
+//var if = require("gulp-if");
+//var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
 var sass = require("gulp-sass");
 var postcss = require('gulp-postcss');
@@ -39,7 +39,7 @@ const paths = {
   images: './source/assets/images/*',
   fonts: './source/assets/fonts/*',
   //
-  skin: 'app';
+  skin: 'app'
 };
 
 // Compile Sass to CSS
@@ -75,7 +75,7 @@ gulp.task('styles:dev', function () {
 gulp.task('serve:dev', ['styles:dev'], function () {
   browserSync.init({
         injectChanges: true,
-        proxy: "http://hnksplit.dev.sistemi.hr"
+        proxy: "http://dev.sistemi.hr"
     });
     gulp.watch([skinPathDev + '/styles/**/*.{scss,css}'], ['styles:dev']);
 });
