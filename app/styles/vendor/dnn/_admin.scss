@@ -1,0 +1,45 @@
+////
+/// DNN Default.css resets
+/// @group vendors
+////
+// If user is in administration mode
+.showControlBar {
+  .Normal {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: inherit;
+    font-family: inherit;
+  }
+
+  a {
+    color: inherit;
+  }
+
+}
+
+body > form #ControlBar_ControlPanel {
+  z-index: 9999 !important;
+}
+// Box sizing fix
+#ControlBar,
+#ControlBar *,
+.dnn_mact,
+.dnn_mact * {
+  box-sizing: content-box;
+}
