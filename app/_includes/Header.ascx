@@ -32,36 +32,20 @@
     </div>
 </div>
 
-
 <header id="header" class="c-page-head" role="banner">
   <div class="c-page-head__main">
     <div class="mobile-menu--box">
         <button class="c-nav-mobile__button" type="button">
             <i class="icon icon-burger"></i>
+            <dnn:TEXT runat="server" id="menuText" resourceKey="Menu" CssClass="" />
         </button>
-        <span><dnn:TEXT runat="server" id="menuText" resourceKey="Menu" CssClass="" /></span>
     </div>
-    <ul class="main-links hide-until@lg">
-        <li><a href="http://www.splitsko-ljeto.hr" target="_blank" rel="nofollow">Splitsko ljeto</a></li>
-        <li><a href="#" target="_blank" rel="nofollow">Marulićevi dani</a></li>
-    </ul>
     <div class="c-logo__wrap">
         <a href="<%= NavigateURL(PortalSettings.HomeTabId) %>" class="c-logo"></a>
-    </div>
-    <div class="c-page-head__language-column hide-until@lg">
-        <dnn:LANGUAGE runat="server" visible="true" ID="LANGUAGE1" ShowLinks="True" ShowMenu="False" HeaderTemplate='<ul class="c-nav-language o-list-inline">' ItemTemplate='<li class="c-nav-language__item o-list-inline__item"><a href="[URL]" class="c-nav-language__link">[CULTURE:TWOLETTERISOCODE]</a></li>'
-        AlternateTemplate='<li class="c-nav-language__item o-list-inline__item o-list-inline__item--alt"><a href="[URL]" class="c-nav-language__link">[CULTURE:TWOLETTERISOCODE]</a></li>' SelectedItemTemplate='<li class="c-nav-language__item o-list-inline__item is-active">[CULTURE:TWOLETTERISOCODE]</li>'
-        FooterTemplate='</ul>' SeparatorTemplate='/' />
     </div>
     <div class="c-page-head__search hide-until@sm">
         <button type="button" id="js-open-search-box" class="search-form__open-button"><span class="icon icon-search"></span></button>
     </div>
-<%--    <dnn:TEXT runat="server" id="ulazniceMmobile" resourceKey="UlazniceMobile" CssClass="buy-tickets__wrap hide-from@lg" />
-    <dnn:TEXT runat="server" id="ulaznice" resourceKey="Ulaznice" CssClass="buy-tickets__wrap hide-until@lg" />--%>
   </div>
-  <div class="c-page-head__menu">
-    <div class="o-grid-container">
-      <dnn:MENU ID="navPrimary" MenuStyle="primary-nav" NodeSelector="*,0,1" ExcludeNodes="236,248,250,256" runat="server"></dnn:MENU>
-    </div>
-  </div>
+  <dnn:MENU ID="navPrimary" MenuStyle="primary-nav" NodeSelector="*,0,1" ExcludeNodes="" runat="server"></dnn:MENU>
 </header>
