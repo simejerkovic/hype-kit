@@ -12,7 +12,7 @@
 
             <a href="#" class="ly-nav-mobile-trigger pull-left" title="Menu"></a>
             <nav id="nav-mobile">
-				<a href="#" class="ly-close"><%= LocalizeString("CloseNav.Text") %> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+		            <a href="#" class="ly-close"><%= LocalizeString("CloseNav.Text") %> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
                 <dnn:MENU MenuStyle="nav/main-mobile" NodeSelector="*,0,6" runat="server" />
             </nav>
 
@@ -56,7 +56,7 @@
 		<a class="ly-top" href="#" title="Nach oben"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
 	</div>
 </div>
-	
+
 <footer>
     <div class="container-fluid">
         <div class="ly-container-inner clearfix">
@@ -88,30 +88,61 @@
 <%-- All script calls go here --%>
 <dnn:DnnJsInclude runat="server" FilePath="dist/scripts.js" ForceProvider="DnnFormBottomProvider" Priority="130" PathNameAlias="SkinPath" />
 
-<%-- All script calls go here --%>
+<%-- DNN: Inject into head, OnPreRender and onLoad --%>
 <script runat="server">
 	protected override void OnPreRender(EventArgs e)
 	{
 		base.OnPreRender(e);
 	}
-	
+
 	protected override void OnLoad(EventArgs e)
 	{
 		base.OnLoad(e);
-		
+
 		AttachCustomHeader("<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no' />");
 		AttachCustomHeader("<!--[if lt IE 9]>" +
 			"<script type='text/javascript' src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></scr" + "ipt>" +
 			"<script type='text/javascript' src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></scr" + "ipt>" +
 			"<![endif]-->");
 	}
-	
+
 	protected void AttachExternalCSS(string CSSPath) { AttachCustomHeader("<link type='text/css' rel='stylesheet' href='" + CSSPath + "' />"); }
 	protected void AttachExternalJS(string JSPath) { AttachCustomHeader("<script type='text/javascript' src='" + JSPath + "'></scr" + "ipt>"); }
 	protected void AttachCustomHeader(string CustomHeader) { HtmlHead HtmlHead = (HtmlHead)Page.FindControl("Head"); if ((HtmlHead != null)) { HtmlHead.Controls.Add(new LiteralControl(CustomHeader));	}	}
-	
+
 	protected string LocalizeString(string key)
 	{
 			return Localization.GetString(key, Localization.GetResourceFile(this, System.IO.Path.GetFileName(this.AppRelativeVirtualPath)));
+	}
+
+</script>
+
+<%-- DNN: Body css classes --%>
+<script runat="server">
+	protected override void OnPreRender(EventArgs e)
+	{
+		base.OnPreRender(e);
+		AddCSSClassesForSkinning();
+	}
+
+	private void AddCSSClassesForSkinning()
+	{
+		var PortalSettings = DotNetNuke.Entities.Portals.PortalSettings.Current;
+		//add language, edit mode, tab-id and root-tab-id to body css class
+		string CssClass = "tab-" + PortalSettings.ActiveTab.TabID.ToString() + " ";
+		if(DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName))
+			CssClass += "role-admin ";
+    CssClass += "tab-level-" + PortalSettings.ActiveTab.Level + " ";
+		CssClass += "root-" + ((DotNetNuke.Entities.Tabs.TabInfo)PortalSettings.ActiveTab.BreadCrumbs[0]).TabID.ToString() + " ";
+		var rootTab = ((DotNetNuke.Entities.Tabs.TabInfo)PortalSettings.ActiveTab.BreadCrumbs[0]);
+		rootTab = rootTab.IsDefaultLanguage || rootTab.IsNeutralCulture ? rootTab : rootTab.DefaultLanguageTab;
+		CssClass += "lang-root-" + rootTab.TabID + " ";
+		CssClass += "lang-" + System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName.ToLower() + " ";
+		CssClass += (PortalSettings.HomeTabId == PortalSettings.ActiveTab.TabID ? "tab-home " : "") + " ";
+		CssClass += "portal-" + PortalSettings.Current.PortalId;
+		CssClass += " va-layout-default "; // va-layout-wide, va-layout-default, va-layout-box
+		CssClass += " va-mainnav-right "; // va-mainnav-left, va-mainnav-right, va-mainnav-center
+		HtmlGenericControl body = (HtmlGenericControl)this.Page.FindControl("ctl00$body");
+		body.Attributes["class"] = CssClass;
 	}
 </script>
