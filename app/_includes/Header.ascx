@@ -47,5 +47,5 @@
         <button type="button" id="js-open-search-box" class="search-form__open-button"><span class="icon icon-search"></span></button>
     </div>
   </div>
-  <dnn:MENU ID="navPrimary" MenuStyle="primary-nav" NodeSelector="*,0,1" ExcludeNodes="" runat="server"></dnn:MENU>
+  <dnn:MENU ID="navPrimary" MenuStyle="nav/primary-nav" NodeSelector="*,0,1" ExcludeNodes="" runat="server"></dnn:MENU>
 </header>

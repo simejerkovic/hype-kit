@@ -31,7 +31,7 @@
   <div class="o-grid-container inner-page__wrapper">
     <div class="o-grid-row">
       <div class="inner-page__aside">
-        <dnn:MENU ID="navAside" MenuStyle="aside-nav" NodeSelector="RootChildren" ExcludeNodes="" runat="server"></dnn:MENU>
+        <dnn:MENU ID="navAside" MenuStyle="nav/aside-nav" NodeSelector="RootChildren" ExcludeNodes="" runat="server"></dnn:MENU>
         <div id="AsideContent_Left" runat="server" class="pane pane--aside"></div>
       </div>
       <div class="inner-page__main">
