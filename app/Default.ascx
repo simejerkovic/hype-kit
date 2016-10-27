@@ -3,10 +3,6 @@
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
 <%@ Register TagPrefix="dnn" TagName="MENU" src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
-<%@ Register TagPrefix="tosic" TagName="PageTitle" src="controls/optimize-page-title.ascx" %>
-<tosic:PageTitle runat="server" />
-<%@ Register TagPrefix="tosic" TagName="BodyCssClasses" src="controls/body-css-classes.ascx" %>
-<tosic:BodyCssClasses runat="server" />
 
 <a class="sr-only sr-only-focusable" href="#content"><%= LocalizeString("SkipLink.MainContent") %></a>
 
@@ -89,18 +85,10 @@
     </div>
 </footer>
 
-<!-- include files in head -->
-<dnn:DnnCssInclude runat="server" FilePath="dist/bootstrap.css" Priority="100" PathNameAlias="SkinPath" />
-<dnn:DnnCssInclude runat="server" FilePath="dist/typography.css" Priority="120" PathNameAlias="SkinPath" />
-<dnn:DnnCssInclude runat="server" FilePath="dist/contactform.css" Priority="125" PathNameAlias="SkinPath" />
-<dnn:DnnCssInclude runat="server" FilePath="dist/layout.css" Priority="130" PathNameAlias="SkinPath" />
-<dnn:DnnCssInclude runat="server" FilePath="dist/print.css" Priority="140" PathNameAlias="SkinPath" />
-<dnn:DnnCssInclude runat="server" FilePath="~/Portals/_default/Skins/_default/ToEasyDNN.css" Priority="150" />
-
-<dnn:DnnJsInclude runat="server" FilePath="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="100" PathNameAlias="SkinPath" />
-<dnn:DnnJsInclude runat="server" FilePath="bower_components/sidr/dist/jquery.sidr.min.js" ForceProvider="DnnFormBottomProvider" Priority="110" PathNameAlias="SkinPath" />
+<%-- All script calls go here --%>
 <dnn:DnnJsInclude runat="server" FilePath="dist/scripts.js" ForceProvider="DnnFormBottomProvider" Priority="130" PathNameAlias="SkinPath" />
 
+<%-- All script calls go here --%>
 <script runat="server">
 	protected override void OnPreRender(EventArgs e)
 	{
