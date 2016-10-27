@@ -1,9 +1,8 @@
 {
-  "name": "sistemi-build-kit",
+  "name": "hype-build-kit",
   "version": "1.0.3",
   "description": "Front-end build kit we use in our projects",
-  "author": "Net media Sistemi d.o.o.",
-  "private": true,
+  "author": "Sime Jerkovic",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.4.0",
