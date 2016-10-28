@@ -55,13 +55,9 @@
 <%-- All script calls go here --%>
 <dnn:DnnJsInclude runat="server" FilePath="dist/scripts.js" ForceProvider="DnnFormBottomProvider" Priority="130" PathNameAlias="SkinPath" />
 
-<%-- DNN: Inject into head, OnPreRender and onLoad --%>
+<%-- DNN: Inject into head, onLoad and OnPreRender --%>
 <script runat="server">
-	protected override void OnPreRender(EventArgs e)
-	{
-		base.OnPreRender(e);
-	}
-
+  
 	protected override void OnLoad(EventArgs e)
 	{
 		base.OnLoad(e);
@@ -91,7 +87,6 @@
 		base.OnPreRender(e);
 		AddCSSClassesForSkinning();
 	}
-
 	private void AddCSSClassesForSkinning()
 	{
 		var PortalSettings = DotNetNuke.Entities.Portals.PortalSettings.Current;
