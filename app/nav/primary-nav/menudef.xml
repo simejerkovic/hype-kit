@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <template>ULRazor.cshtml</template>
+  <template>template.cshtml</template>
 </manifest>
