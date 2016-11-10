@@ -1,8 +1,11 @@
+////
 /// Visually hidden element﻿
 /// Hide only visually, but have it available for screen readers:
+/// @group utilities
 /// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 /// @example
-/// <div class="u-hidden-visually">I'm a ghost to you but screen readers see me.</div>
+///   <div class="u-hidden-visually">I'm a ghost to you but screen readers see me.</div>
+////
 
 %u-h,
 .u-h,
@@ -104,17 +107,21 @@
   }
 }
 
-// Bind our clearfix onto a utility class.
+
+/// Bind our clearfix onto a utility class.
 .u-cf,
 .u-clearfix {
   @include clearfix;
 }
 
-
+////
 /// Responsive media (images, videos…)
 ///
 /// 1. Give the block an initial ratio of 5/3 to avoid FOUC
 /// 2. Stretch the contained media to the dimensions of its container
+///
+/// @group utilities
+////
 
 .u-responsive-ratio {
   @include fixAspectRatio(5, 3); // 1
@@ -145,13 +152,15 @@
 }
 
 
-///
+////
 /// Text hyphenation
 ///
 /// Break strings when their length exceeds the width of their container
 /// and hyphenate words at the end of lines using the `hyphens` property.
 /// Browser support for hyphenation: http://caniuse.com/#search=hyphenation
 ///
+/// @group utilities
+////
 
 .u-text-hyphenate {
   word-wrap: break-word;
@@ -163,9 +172,11 @@
 }
 
 
-/**
- * Reset button styles
- */
+////
+/// Reset button styles
+/// @group utilities
+/// @todo Consider merging with button component?
+////
 
 .u-button-reset {
   display: block;
@@ -181,9 +192,10 @@
 }
 
 
-/**
- * Fakes text underline with a border
- */
+////
+/// Fakes text underline with a border
+/// @group utilities
+////
 
 .u-underline,
 %u-underline {
@@ -202,20 +214,22 @@
 }
 
 
-/**
- * Prevent line breaks
- */
+////
+/// Prevent line breaks
+/// @group utilities
+////
 
 .u-nobr {
   white-space: nowrap;
 }
 
-/**
- * Add/Remove padding
- *
- * Modification of Harry Roberts's
- * https://github.com/csswizardry/inuit.css/blob/master/generic/_helper.scss
- */
+////
+/// Add/Remove padding
+///
+/// Modification of Harry Roberts's
+/// @link https://github.com/csswizardry/inuit.css/blob/master/generic/_helper.scss
+/// @group utilities
+////
 
 .flushp {
   padding: 0 !important;
@@ -249,12 +263,12 @@
     vertical-align: middle;
   }
 }
-
+////
 /// Float elements
-///
 /// Element helpers for floating
 ///
-/// @group helpers
+/// @group utilities
+////
 
 .u-pull--left {
   float: left;
@@ -312,11 +326,12 @@
   }
 }
 
+////
 /// Text alignment
-///
 /// Element helpers for text alignment
 ///
-/// @group helpers
+/// @group utilities
+////
 
 .u-text-left {
   text-align: left;
@@ -330,7 +345,12 @@
   text-align: center;
 }
 
-//
+////
+/// Hide border
+/// Element helper to hide border
+///
+/// @group utilities
+////
 .u-hide-border {
   border: none;
 }

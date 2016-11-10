@@ -1,7 +1,6 @@
 ////
 /// Page styles
 /// @group components
-/// @example
 ////
 
 ::selection {
@@ -15,8 +14,10 @@
 
 .wow { visibility: hidden; }
 
+////
 /// Styles for lazysizes.js script
 /// @group components
+////
 
 .lazyload,
 .lazyloading {
@@ -28,16 +29,19 @@
   transition: opacity 400ms;
 }
 
-/// Styles for language object
+////
+/// Styles for DNN Language object
+/// @group components
+////
 
-// If language: Hrvatski
+// If language: Hrvatski hide English
 .c-page--lang-hr {
   .lang-en {
     display: none !important;
   }
 }
 
-// If language: English
+// If language: English hide Hrvatski
 .c-page--lang-en {
   .lang-hr {
     display: none !important;

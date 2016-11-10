@@ -1,10 +1,11 @@
+////
 /// Faux block link utility
 ///
 /// A Faux block-level link. Used for when you need a block-level link with
 /// clickable areas within it as directly nesting a tags breaks things.
 /// Thanks to @BPScott http://codepen.io/BPScott/pen/Erwan
 /// for this great technique
-/// 
+///
 /// @group utilities
 /// @example
 ///   <div class="u-faux-block-link">
@@ -22,6 +23,7 @@
 ///
 ///     <a href="#" class="u-faux-block-link__overlay" tabindex="-1">headline</a>
 ///   </div>
+////
 
 .u-faux-block-link {
     position: relative;

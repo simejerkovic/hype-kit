@@ -41,7 +41,7 @@
         </button>
     </div>
     <div class="c-logo__wrap">
-        <a href="<%= NavigateURL(PortalSettings.HomeTabId) %>" class="c-logo"></a>
+        <a href="/" class="c-logo"></a>
     </div>
     <div class="c-page-head__search hide-until@sm">
         <button type="button" id="js-open-search-box" class="search-form__open-button"><span class="icon icon-search"></span></button>

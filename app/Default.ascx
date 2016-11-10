@@ -7,13 +7,13 @@
 <a class="sr-only sr-only-focusable" href="#content"><%= LocalizeString("SkipLink.MainContent") %></a>
 
 <header>
-  
+
   <dnn:MENU MenuStyle="nav/primary-nav" NodeSelector="*,0,6" runat="server" />
-  
+
   <a class="c-logo" href="/" title="">
     <img src="<%=SkinPath%>images/brand/logo.png?w=340&amp;quality=100" alt="" />
   </a>
-  
+
 </header>
 
 <div class="header-pane__inner<%= (HeaderPane.Attributes["class"] ?? "").Contains("DNNEmptyPane") ? "header-pane-empty" : "" %>">
@@ -25,39 +25,41 @@
 <dnn:MENU MenuStyle="nav/sub" NodeSelector="CurrentChildren" runat="server" />
 
 <footer>
-    <div class="container-fluid">
-        <div class="ly-container-inner clearfix">
-            <ul class="ly-footer-address clearfix" itemscope itemtype="http://schema.org/LocalBusiness">
-				<li>
-					<strong itemprop="name">IMMO trend AG</strong>
-				</li>
-				<li>
-					<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-						<span itemprop="streetAddress">Standardstrasse 77</span>,
-						<span itemprop="postalCode">9470</span>
-						<span itemprop="addressLocality">Buchs</span>,
-						<span itemprop="addressCountry">Schweiz</span>
-					</span>
-				</li>
-                <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<a href="tel:+41817506777">+41 81 750 67 77</a></li>
-				<li>
-					<span class="glyphicon glyphicon-envelope"></span>&nbsp;<span data-madr1="info" data-madr2="immotrend" data-madr3="com"></span>
-				</li>
-            </ul>
-            <div class="ly-footer-imprint">
-                <dnn:login id="DnnLogin" cssclass="ly-login hidden-xs" runat="server" />
-                <a href="<%= LocalizeString("Imprint.Url") %>" title="Impressum"><%= LocalizeString("Imprint.Text") %></a>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <div class="ly-container-inner clearfix">
+      <ul class="ly-footer-address clearfix" itemscope itemtype="http://schema.org/LocalBusiness">
+    		<li>
+    			<strong itemprop="name"></strong>
+    		</li>
+    		<li>
+    			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    				<span itemprop="streetAddress"></span>,
+    				<span itemprop="postalCode">21000</span>
+    				<span itemprop="addressLocality">Split</span>,
+    				<span itemprop="addressCountry">Croatia</span>
+    			</span>
+    		</li>
+        <li>
+          tel: <a href="tel:+0000">0000</a>
+        </li>
+    		<li>
+    		  email:
+    		</li>
+      </ul>
+      <div class="ly-footer-imprint">
+          <dnn:login id="DnnLogin" cssclass="ly-login hidden-xs" runat="server" />
+          <a href="<%= LocalizeString("Imprint.Url") %>" title="Impressum"><%= LocalizeString("Imprint.Text") %></a>
+      </div>
     </div>
+  </div>
 </footer>
 
 <%-- All script calls go here --%>
-<dnn:DnnJsInclude runat="server" FilePath="dist/scripts.js" ForceProvider="DnnFormBottomProvider" Priority="130" PathNameAlias="SkinPath" />
+<dnn:DnnJsInclude runat="server" FilePath="scripts/all.js" ForceProvider="DnnFormBottomProvider" Priority="130" PathNameAlias="SkinPath" />
 
 <%-- DNN: Inject into head, onLoad and OnPreRender --%>
 <script runat="server">
-  
+
 	protected override void OnLoad(EventArgs e)
 	{
 		base.OnLoad(e);

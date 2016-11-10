@@ -1,47 +1,14 @@
 .u-bg-color {
 
-  &--Drama {
-    background-color: $color-section-drama;
-  }
-  &--Opera {
-    background-color: $color-section-opera;
-  }
-  &--Balet,
-  &--Ballet {
-    background-color: $color-section-balet;
-  }
-  &--Koncert,
-  &--Concert {
-    background-color: $color-section-koncerti;
-  }
-  &--Gostovanja {
-    background-color: $color-section-drama;
-  }
-  &--Ostalo {
-    background-color: $color-section-other;
+  &--all {
+    background-color: $color-section-all;
   }
 }
 
 .u-color {
 
-  &--Drama {
-    color: $color-section-drama;
+  &--all {
+    color: $color-section-all;
   }
-  &--Opera {
-    color: $color-section-opera;
-  }
-  &--Balet,
-  &--Ballet {
-    color: $color-section-balet;
-  }
-  &--Koncert,
-  &--Concert {
-    color: $color-section-koncerti;
-  }
-  &--Gostovanja {
-    color: $color-section-drama;
-  }
-  &--Ostalo {
-    color: $color-section-other;
-  }
+
 }

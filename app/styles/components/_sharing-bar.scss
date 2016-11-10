@@ -9,11 +9,13 @@
   border-top: 1px solid $color-sharing-bar-border;
   border-bottom: 1px solid $color-sharing-bar-border;
 }
+
 .sharing-bar__container {
   font-size: 0;
   text-align: center;
   margin: 0 auto;
 }
+
 .sharing-bar__item {
   display: inline-block;
   font-size: 16px;
@@ -26,6 +28,7 @@
     border-left: none;
   }
 }
+
 .sharing-bar__link {
   @include size(69px);
   display: block;
@@ -41,11 +44,11 @@
     color: $color-sharing-bar-icon-hover;
     outline: none;
   }
-
   @include oGridRespondTo($from: L) {
-    @include size(90px 69px);
+     @include size(90px 69px);
   }
 }
+
 .sharing-bar__icon {
   @include size(20px);
   display: block;

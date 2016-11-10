@@ -1,12 +1,11 @@
-/*------------------------------------*\
-  #DEBUG
-\*------------------------------------*/
+////
+/// Debug
+/// Highlight types of class to visually see the makeup of our UIs.
+////
 
 @if (config(debug) == true) {
 
-    /**
-     * Highlight types of class to visually see the makeup of our UIs.
-     */
+    /// Highlight types of class to visually see the makeup of our UIs.
     [class^="o-"],
     [class*=" o-"] {
         outline: 10px solid orange;
