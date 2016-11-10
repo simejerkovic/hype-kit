@@ -2,14 +2,6 @@
 /// Map some nicer/shorter aliases to make things a little easier to work with.
 ///
 /// @group tools
-/// @todo fix it!!
 ////
 
-
-
-$spacing-unit:                $base-spacing-unit;
-$global-spacing-unit:         $base-spacing-unit;
-$global-spacing-unit-tiny:    $base-spacing-unit / 2;
-$global-spacing-unit-small:   $base-spacing-unit / 1.5;
-$global-spacing-unit-large:   $base-spacing-unit * 1.5;
-$global-spacing-unit-huge:    $base-spacing-unit * 2;
+$spacing-unit:                $global-spacing-unit;
