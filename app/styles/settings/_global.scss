@@ -3,21 +3,24 @@
 /// @group settings
 //  ==========================================================================
 
-$base-line-height: 1.3;
-$base-radius: 3px;
-$base-transition: 0.333333333s;
-$base-spacing-unit: 20px;
-$base-unit-testing: 1;
+$global-line-height: 1.3;
+$global-radius: 3px;
+$global-transition: 0.333333333s;
 
+// Simple unit testing
+$global-unit-testing: 1;
 
-// Base paths
-$base-skin-path: '/Portals/0-System/Skins/HNK/';
+// Spacing variables
+$global-spacing-unit:         30px;
+$global-spacing-unit-tiny:    $global-spacing-unit / 2;
+$global-spacing-unit-small:   $global-spacing-unit / 1.5;
+$global-spacing-unit-large:   $global-spacing-unit * 1.5;
+$global-spacing-unit-huge:    $global-spacing-unit * 2;
+
+// Global paths
+$global-skin-path: '/Portals/_default/Skins/SDZ2016/';
+
 // Font path
-$base-font-path: $base-skin-path + 'fonts/';
+$global-font-path: $global-skin-path + 'fonts/';
 // Images path
-$base-images-path: $base-skin-path + 'images/';
-
-
-// Page header
-$page-header-height: 60px;
-$page-header-height-L: 110px;
+$global-images-path: $global-skin-path + 'images/';
