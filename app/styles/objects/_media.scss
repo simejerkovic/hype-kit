@@ -1,9 +1,11 @@
-﻿////
+@import '../settings/_global';
+
+////
 /// Media object
 ///
 /// BEMIT / OOCSS CSS markup extraction pattern for media object
 ///
-/// @group objects
+/// @group Objects
 ///
 /// @example
 ///   <div class="o-media">
@@ -35,10 +37,10 @@
 
   .o-media__img {
     float: left;
-    margin-right: $base-spacing-unit/2;
+    margin-right: $global-spacing-unit-tiny;
 
     @include oGridRespondTo(L) {
-      margin-right: $base-spacing-unit;
+      margin-right: $global-spacing-unit;
     }
 
     img {
@@ -59,15 +61,17 @@
     display: flex;
 
     &__img {
-      @include flex(0 0 auto);
-      margin-right: $base-spacing-unit/2;
+      flex: 0 0 auto;
+      margin-right: $global-spacing-unit-tiny;
+
       @include oGridRespondTo(L) {
-        margin-right: $base-spacing-unit;
+        margin-right: $global-spacing-unit;
       }
+
     }
 
     &__body {
-      @include flex(1 1 auto);
+      flex: 1 1 auto;
     }
   }
 }
