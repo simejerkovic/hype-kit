@@ -22,8 +22,8 @@
   RemoveCssFile="default.css,admin.css,portal.css,module.css,container.css,searchskinobjectpreview.css"
   IfUserMode="None" />
 
-<!--  #include file="_includes/_Meta.ascx" -->
-<!--  #include file="_includes/Header.ascx" -->
+<!--  #include file="_includes/_meta.ascx" -->
+<!--  #include file="_includes/header.ascx" -->
 
 <main class="c-page-content" role="main">
   <section class="c-page-section c-page-section--front">
@@ -37,7 +37,7 @@
 
 <dnn:CookieConsent runat="server" CookieTheme="" />
 
-<!--  #include file="_includes/Footer.ascx" -->
+<!--  #include file="_includes/footer.ascx" -->
 
 <%-- All script calls go here --%>
-<!--  #include file="_includes/_Scripts.ascx" -->
+<!--  #include file="_includes/_scripts.ascx" -->
