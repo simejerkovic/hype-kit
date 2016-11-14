@@ -12,6 +12,7 @@ test/bower_components
 ## Don't ignore 2sxc Bower Components
 ![Ww]ebsite/[Dd]esktop[Mm]odules/[Tt]oSIC_SexyContent/bower_components
 
+
 ## Ignore distrubution files
 dist
 
@@ -107,18 +108,20 @@ DNN_*.zip
 
 [Ww]ebsite/[Aa]pp_[Dd]ata
 
-[Ww]eb/[Dd]esktop[Mm]odules/*/Upgrade/[Ll]og*
-![Ww]eb/[Pp]ortals/_default/[Ll]ogs/LogConfig/
+[Ww]ebsite/[Dd]esktop[Mm]odules/*/Upgrade/[Ll]og*
+![Ww]ebsite/[Pp]ortals/_default/[Ll]ogs/LogConfig/
+
+[Ww]ebsite/[Pp]ortals/_default/[Ll]ogs
 
 [Ww]ebsite/[Pp]ortals/_default/[Uu]ser*
-[Ww]ebsite/[Pp]ortals/[0-9]*/
+#[Ww]ebsite/[Pp]ortals/[0-9]*/
 
-[Ww]eb/[Pp]ortals/[0-9]*/Cache/*
-[Ww]eb/[Pp]ortals/[0-9]*/[Ss]earch[Bb]oost/*
+[Ww]ebsite/[Pp]ortals/[0-9]*/Cache/*
+[Ww]ebsite/[Pp]ortals/[0-9]*/[Ss]earch[Bb]oost/*
 
 [Ww]ebsite/app_offline.htm
 
-[Ww]eb/[Ii]magecache/*
+[Ww]ebsite/[Ii]magecache/*
 
 # ignore all other language resx files
 *.de-DE.resx
@@ -145,11 +148,11 @@ Thumbs.db
 
 # Folder config file
 Desktop.ini
-Website/Install/Temp/
-Website/Providers/HtmlEditorProviders/
-Website/Portals/_default/CK*.xml
-Website/Portals/_default/Install/CK*.xml
+[Ww]ebsite/Install/Temp/
+[Ww]ebsite/Providers/HtmlEditorProviders/
+[Ww]ebsite/Portals/_default/CK*.xml
+[Ww]ebsite/Portals/_default/Install/CK*.xml
 DNN Platform/Dnn.AuthServices.Jwt/Package/
-Website/Portals/_default/Install/Dnn.CKEditorDefaultSettings.xml
-Website/Portals/_default/Install/Dnn.CKToolbarButtons.xml
-Website/Portals/_default/Install/Dnn.CKToolbarSets.xml
+[Ww]ebsite/Portals/_default/Install/Dnn.CKEditorDefaultSettings.xml
+[Ww]ebsite/Portals/_default/Install/Dnn.CKToolbarButtons.xml
+[Ww]ebsite/Portals/_default/Install/Dnn.CKToolbarSets.xml
