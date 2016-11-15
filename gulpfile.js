@@ -1,6 +1,3 @@
-// This file in the main entry point for defining Gulp tasks and using Gulp plugins.
-// Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
-
 // Include Gulp & Tools We'll Use
 // ==========================================================================
 
@@ -24,8 +21,9 @@ var pxtorem = require('postcss-pxtorem');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('autoprefixer');
 
-// Local directory path
-// ==========================================================================
+//----------------------------------------------------------------------
+//	Setup
+//----------------------------------------------------------------------
 
 var skinPathDev = 'app';
 
