@@ -113,7 +113,6 @@ DNN_*.zip
 [Ww]ebsite/[Pp]ortals/_default/[Ll]ogs
 
 [Ww]ebsite/[Pp]ortals/_default/[Uu]ser*
-#[Ww]ebsite/[Pp]ortals/[0-9]*/
 
 [Ww]ebsite/[Pp]ortals/[0-9]*/Cache/*
 [Ww]ebsite/[Pp]ortals/[0-9]*/[Ss]earch[Bb]oost/*
@@ -148,10 +147,7 @@ Thumbs.db
 # Folder config file
 Desktop.ini
 [Ww]ebsite/Install/Temp/
-[Ww]ebsite/Providers/HtmlEditorProviders/
-[Ww]ebsite/Portals/_default/CK*.xml
-[Ww]ebsite/Portals/_default/Install/CK*.xml
-DNN Platform/Dnn.AuthServices.Jwt/Package/
-[Ww]ebsite/Portals/_default/Install/Dnn.CKEditorDefaultSettings.xml
-[Ww]ebsite/Portals/_default/Install/Dnn.CKToolbarButtons.xml
-[Ww]ebsite/Portals/_default/Install/Dnn.CKToolbarSets.xml
+[Ww]ebsite/Portals/_default/[Ii]nstall/CK*.xml
+[Ww]ebsite/Portals/_default/[Ii]nstall/Dnn.CKEditorDefaultSettings.xml
+[Ww]ebsite/Portals/_default/[Ii]nstall/Dnn.CKToolbarButtons.xml
+[Ww]ebsite/Portals/_default/[Ii]nstall/Dnn.CKToolbarSets.xml
