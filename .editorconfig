@@ -1,6 +1,8 @@
 # EditorConfig helps developers define and maintain consistent
 # coding styles between different editors and IDEs
 # editorconfig.org
+## For Visual Studio you need to install this extension:
+## https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig
 
 root = true
 
