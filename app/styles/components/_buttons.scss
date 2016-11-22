@@ -40,8 +40,8 @@
   @include FontSizeFor(button, 6);
   color: $color-btn;
   background-color: $color-btn-background;
-  transition: $base-transition;
-  border-radius: $base-radius;
+  transition: $global-transition;
+  border-radius: $global-radius;
 
   @include hocus() {
     background-color: $color-btn-background-hover;
@@ -52,8 +52,8 @@
   @include FontSizeFor(button, 6);
   color: $color-btn-secondary;
   background-color: $color-btn-secondary-background;
-  transition: $base-transition;
-  border-radius: $base-radius;
+  transition: $global-transition;
+  border-radius: $global-radius;
 
   @include hocus() {
     background-color: $color-btn-secondary-background-hover;
@@ -81,14 +81,14 @@
 }
 
 .c-btn--large {
-  padding: $base-spacing-unit ($base-spacing-unit * 2);
+  padding: $global-spacing-unit ($global-spacing-unit * 2);
 }
 
 .c-btn--neutral {
   color: $color-btn-neutral;
   border: solid 1px $color-btn-neutral-border;
-  transition: $base-transition;
-  border-radius: $base-radius;
+  transition: $global-transition;
+  border-radius: $global-radius;
 
   @include hocus() {
     color: $color-btn-neutral-hover;
