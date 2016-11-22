@@ -107,7 +107,7 @@ body.is-active\@sm {
 }
 .c-nav-mobile.is-opened {
   @include transition-property(transform);
-  @include transition-duration($base-transition);
+  @include transition-duration($global-transition);
   @include transition-timing-function(ease-out);
   @include transition-delay(0s);
 }
@@ -130,8 +130,8 @@ body.is-active\@sm {
   // padding-top: 15px;
   padding-bottom: 25px;
   clear: left;
-  margin-left: $base-spacing-unit;
-  margin-right: $base-spacing-unit;
+  margin-left: $global-spacing-unit;
+  margin-right: $global-spacing-unit;
 
   .c-nav-mobile__secondary & {
     padding-top: 0;
@@ -189,7 +189,7 @@ body.is-active\@sm {
   line-height: 70px;
   top: 0;
   right: 0;
-  margin-right: $base-spacing-unit/2;
+  margin-right: $global-spacing-unit/2;
 
   @include oGridRespondTo($until: M) {
     line-height: 50px;
@@ -197,8 +197,8 @@ body.is-active\@sm {
 }
 
 .c-nav-mobile .c-nav-language__item {
-  padding-left: $base-spacing-unit/2;
-  padding-right: $base-spacing-unit/2;
+  padding-left: $global-spacing-unit/2;
+  padding-right: $global-spacing-unit/2;
   font-size: 16px;
 }
 
@@ -234,7 +234,7 @@ body.is-active\@sm {
     visibility: visible;
     background: rgba( $color-black, .6 );
     @include transition-property(background);
-    @include transition-duration($base-transition);
+    @include transition-duration($global-transition);
     @include transition-timing-function(ease-out);
     @include transition-delay(0s);
   }
@@ -244,7 +244,7 @@ body.is-active\@sm {
 .c-nav-mobile__search-button {
   display: block;
   width: 100%;
-  padding: 0 $base-spacing-unit;
+  padding: 0 $global-spacing-unit;
   border: 0;
   text-align: left;
   border-top: 1px solid #e6e6e6;
@@ -254,7 +254,7 @@ body.is-active\@sm {
   background-color: #000;
 
   > .icon {
-    margin-right: $base-spacing-unit/2;
+    margin-right: $global-spacing-unit/2;
     color: #999;
   }
   @include oGridRespondTo($until: M) {

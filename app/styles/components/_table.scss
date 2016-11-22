@@ -18,11 +18,11 @@ $color-table-row-border-alt:      silver !default;
 
 /// Base tables styles - add to <table>
 @mixin TableBase {
-  margin: $base-spacing-unit/2 0 $base-spacing-unit 0;
+  margin: $global-spacing-unit/2 0 $global-spacing-unit 0;
   background-color: $color-table-background;
   border-collapse: collapse;
   border-spacing: 0;
-  margin: 0 0 $base-spacing-unit*2;
+  margin: 0 0 $global-spacing-unit*2;
   width: 100%;
   font-size: 18px;
 
@@ -48,12 +48,12 @@ $color-table-row-border-alt:      silver !default;
 
   td,
   th {
-    padding: $base-spacing-unit/2;
+    padding: $global-spacing-unit/2;
     text-align: left;
     vertical-align: top;
 
     @include oGridRespondTo($from: S) {
-      padding: $base-spacing-unit $base-spacing-unit/2;
+      padding: $global-spacing-unit $global-spacing-unit/2;
     }
   }
 

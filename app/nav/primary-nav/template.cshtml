@@ -5,35 +5,38 @@
 @{ var root = Model.Source.root; }
 
 @helper RenderNodes(IList<MenuNode> nodes) {
+
   if (nodes.Count > 0) {
 
-    foreach (var node in nodes) {
-      var cssClasses = new List<string>();
-      if (node.HasChildren()) { cssClasses.Add("c-nav-primary__item--has-child"); }
-      //if (node.Selected) { cssClasses.Add("is-selected"); }
-      //if (node.First) { cssClasses.Add("is-first"); }
-      //if (node.Last) { cssClasses.Add("is-last"); }
-      var classString = new HtmlString((cssClasses.Count == 0) ? "" : ("" + String.Join(" ", cssClasses.ToArray()) + ""));
+	<ul class="@(nodes[0].Depth == 0 ? "main-navigation js-main-nav" : "sub-menu")">
+  
+		@foreach (var node in nodes) {
+			var cssClasses = new List<string>();
+		  if (node.HasChildren()) { cssClasses.Add("c-nav-primary__item--has-child"); }
+		  //if (node.Selected) { cssClasses.Add("is-selected"); }
+		  //if (node.First) { cssClasses.Add("is-first"); }
+		  //if (node.Last) { cssClasses.Add("is-last"); }
+		  var classString = new HtmlString((cssClasses.Count == 0) ? "" : ("" + String.Join(" ", cssClasses.ToArray()) + ""));
 
-        <div class="@(node.Depth == 0 ? "c-nav-primary__item" : "c-nav-primary__item--child") @(classString)">
-            @if (node.Enabled)
-            {
-                <a href="@node.Url" class="c-nav-primary__link @(node.Depth == 0 ? "c-nav-primary__link--parent" : "c-nav-primary__link--child")@(node.Breadcrumb ? " c-nav-primary__link--active" : "")" target="@node.Target">@node.Text</a>
-            }
-            else
-            {
-                <a class="c-nav-primary__link @(node.Depth == 0 ? "c-nav-primary__link--parent" : "c-nav-primary__link--child") is-disabled">@node.Text</a>
-            }
+			<li class="@(node.Depth == 0 ? "c-nav-primary__item" : "c-nav-primary__item--child") @(classString)">
+				@if (node.Enabled)
+				{
+					<a href="@node.Url" class="c-nav-primary__link @(node.Depth == 0 ? "c-nav-primary__link--parent" : "c-nav-primary__link--child")@(node.Breadcrumb ? " c-nav-primary__link--active" : "")" target="@node.Target">@node.Text</a>
+				}
+				else
+				{
+					<a class="c-nav-primary__link @(node.Depth == 0 ? "c-nav-primary__link--parent" : "c-nav-primary__link--child") is-disabled">@node.Text</a>
+				}
 
-            @if (node.HasChildren())
-            {
-                    <div class="c-nav-primary__sub">
-                    @RenderNodes(node.Children)
-                    </div>
-            }
-        </div>
-    }
-
+				@if (node.HasChildren())
+				{
+						@RenderNodes(node.Children)
+				}
+			</li>
+		}
+		
+	</ul>
+	
   }
 }
 

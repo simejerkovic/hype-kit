@@ -12,7 +12,7 @@
 .o-box {
   @include %clearfix;
   display: block; // [1]
-  padding: $base-spacing-unit;
+  padding: $global-spacing-unit;
 
   > :last-child {
     margin-bottom: 0;
@@ -28,17 +28,17 @@
 }
 
 .o-box--tiny {
-  padding: $base-spacing-unit-tiny;
+  padding: $global-spacing-unit-tiny;
 }
 
 .o-box--small {
-  padding: $base-spacing-unit-small;
+  padding: $global-spacing-unit-small;
 }
 
 .o-box--large {
-  padding: $base-spacing-unit-large;
+  padding: $global-spacing-unit-large;
 }
 
 .o-box--huge {
-  padding: $base-spacing-unit-huge;
+  padding: $global-spacing-unit-huge;
 }

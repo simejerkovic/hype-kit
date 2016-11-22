@@ -213,7 +213,7 @@
 
 .slider__desc {
   font-weight: 300;
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: $global-spacing-unit;
   @include text-clamp(4, 24px);
 
   @include oGridRespondTo($from: L) {

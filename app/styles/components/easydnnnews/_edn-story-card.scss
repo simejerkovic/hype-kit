@@ -1,15 +1,15 @@
 .story-card {
   @include oGridColspan((default: 12, S: 6, M: 4, L: 4, XL: 3));
-  margin-bottom: $base-spacing-unit*2;
+  margin-bottom: $global-spacing-unit*2;
 }
 .story-card--inner {
   height: 100%;
 }
 .story-card__image-wrap {
-  margin-bottom: $base-spacing-unit/2;
+  margin-bottom: $global-spacing-unit/2;
 
   @include oGridRespondTo($from: L) {
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: $global-spacing-unit;
   }
 }
 
@@ -30,7 +30,7 @@
   @include FontWeight(medium);
   font-family: $base-ff-display;
   color: $story-card-meta;
-  margin-bottom: $base-spacing-unit/2;
+  margin-bottom: $global-spacing-unit/2;
   @include oGridRespondTo($from: L) {
      @include FontSizeFor(story-card-meta, 3);
   }
@@ -39,7 +39,7 @@
   @include FontSizeFor(story-card-title, 3);
   @include FontWeight(medium);
   font-family: $base-ff-display;
-  margin-bottom: $base-spacing-unit/2;
+  margin-bottom: $global-spacing-unit/2;
 
   @include oGridRespondTo($from: L) {
      @include FontSizeFor(story-card-title, 3);
@@ -119,7 +119,7 @@
   border-radius: $base-radius;
 }
 .list-filter {
-  margin-bottom: $base-spacing-unit*2;
+  margin-bottom: $global-spacing-unit*2;
 }
 .list-filter__button {
   margin: 0;
@@ -149,16 +149,16 @@
 }
 
 .list-filter__button-group {
-  margin-top: -($base-spacing-unit/2);
+  margin-top: -($global-spacing-unit/2);
   .list-filter__button + .list-filter__button {
-    margin-left: $base-spacing-unit/2;
+    margin-left: $global-spacing-unit/2;
 
     @include oGridRespondTo($from: S) {
-      margin-left: $base-spacing-unit
+      margin-left: $global-spacing-unit
     }
 
     @include oGridRespondTo($from: M) {
-      margin-left: $base-spacing-unit*2;
+      margin-left: $global-spacing-unit*2;
     }
   }
 }

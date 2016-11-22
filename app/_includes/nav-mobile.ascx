@@ -1,5 +1,5 @@
 <div id="nav-mobile" class="c-nav-mobile" role="navigation" aria-label="Mobile navigation">
-  <a href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" class="c-logo c-logo--black"></a>
+  <a href="<%=DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId)%>" class="c-logo c-logo--black"></a>
   <nav class="c-nav-mobile__inner">
     <button type="button" id="js-open-search-box--mobile" class="c-nav-mobile__search-button"><span class="icon icon-search"></span> <dnn:TEXT runat="server" id="searchBoxBtn" resourceKey="SearchBoxButton" CssClass="" /></button>
     <dnn:LANGUAGE runat="server" visible="true" ID="MOBILELANGUAGE" ShowLinks="True" ShowMenu="False" HeaderTemplate='<ul class="c-nav-language o-list-inline">' ItemTemplate='<li class="c-nav-language__item o-list-inline__item"><a href="[URL]">[CULTURE:THREELETTERISOCODE]</a></li>'

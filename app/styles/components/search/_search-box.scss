@@ -32,7 +32,7 @@ html.no-touchevents .Lightbox--body-open {
   height: 100%;
 }
 .light-box__content {
-  margin: $base-spacing-unit*2 auto;
+  margin: $global-spacing-unit*2 auto;
   display: table-cell;
   vertical-align: middle;
 }
@@ -75,8 +75,8 @@ html.no-touchevents .Lightbox--body-open {
   fill: $color-search-popup-icon;
 }
 .search-popup .search-popup--results-text {
-  margin-top: $base-spacing-unit;
-  margin-left: $base-spacing-unit;
+  margin-top: $global-spacing-unit;
+  margin-left: $global-spacing-unit;
   color: $color-search-popup-results-text;
   display: inline-block;
   font-size: 18px;

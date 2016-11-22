@@ -5,10 +5,10 @@
 ////
 
 #mc_embed_signup {
-  padding: $base-spacing-unit;
+  padding: $global-spacing-unit;
   background-color: $color-newsletter-background;
   border: 1px solid $color-newsletter-border;
-  margin-bottom: ($base-spacing-unit * 1.5);
+  margin-bottom: ($global-spacing-unit * 1.5);
 
   .mc_title {
     @include FontSizeFor(newsletter, 3);
@@ -19,12 +19,12 @@
   }
 
   .mc-field-group {
-    padding-bottom: $base-spacing-unit / 2;
+    padding-bottom: $global-spacing-unit / 2;
   }
 
   .mc-field-input {
     @include FontSizeFor(newsletter, 2);
-    padding: ($base-spacing-unit - 5px);
+    padding: ($global-spacing-unit - 5px);
     border: 1px solid $color-newsletter-border;
     width: 100%;
 

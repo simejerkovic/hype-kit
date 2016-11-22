@@ -14,7 +14,7 @@
 
 
   .o-block__img {
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: $global-spacing-unit;
 
 
     // Size variants.
@@ -24,19 +24,19 @@
     }
 
     .o-block--tiny > & {
-      margin-bottom: $base-spacing-unit-tiny;
+      margin-bottom: $global-spacing-unit-tiny;
     }
 
     .o-block--small > & {
-      margin-bottom: $base-spacing-unit-small;
+      margin-bottom: $global-spacing-unit-small;
     }
 
     .o-block--large > & {
-      margin-bottom: $base-spacing-unit-large;
+      margin-bottom: $global-spacing-unit-large;
     }
 
     .o-block--huge > & {
-      margin-bottom: $base-spacing-unit-huge;
+      margin-bottom: $global-spacing-unit-huge;
     }
 
   }

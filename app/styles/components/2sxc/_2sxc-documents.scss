@@ -6,7 +6,7 @@
 
 .document-list {}
 .document-list__item {
-  padding: $base-spacing-unit/2 0;
+  padding: $global-spacing-unit/2 0;
 }
 .document-list__description {
   @include FontSizeFor(documents-description, 1);

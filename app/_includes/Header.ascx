@@ -22,7 +22,7 @@
                   </i>
                 </button>
                 <div class="search-form">
-                    <avt:SearchBoost runat="server" id="avtSearch" />
+                    <%-- <avt:SearchBoost runat="server" id="avtSearch" /> --%>
                 </div>
                 <p class="search-popup--results-text" id="js-results-text">
                   <dnn:TEXT runat="server" id="searchBoxDesc" resourceKey="SearchBoxDescription" CssClass="" />
@@ -41,7 +41,7 @@
         </button>
     </div>
     <div class="c-logo__wrap">
-        <a href="/" class="c-logo"></a>
+        <a href="<%=DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId)%>" class="c-logo"></a>
     </div>
     <div class="c-page-head__search hide-until@sm">
         <button type="button" id="js-open-search-box" class="search-form__open-button"><span class="icon icon-search"></span></button>

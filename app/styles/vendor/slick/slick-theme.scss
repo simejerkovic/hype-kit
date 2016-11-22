@@ -2,9 +2,9 @@
 
 // Default Variables
 
-$slick-font-path: $base-font-path + "hnk-icons/" !default;
+$slick-font-path: $global-font-path + "hnk-icons/" !default;
 $slick-font-family: "hnk-icons" !default;
-$slick-loader-path: $base-images-path + "vendor/slick/" !default;
+$slick-loader-path: $global-images-path + "vendor/slick/" !default;
 $slick-arrow-color: $color-black !default;
 $slick-dot-color: $color-black !default;
 $slick-dot-color-active: $slick-dot-color !default;

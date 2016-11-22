@@ -97,7 +97,7 @@ input.dnnForm__captcha-input {
 // Login - Register message
 //
 .login-register-account__message {
-  margin: ($base-spacing-unit*2) 0;
+  margin: ($global-spacing-unit*2) 0;
   font-size: 12px;
   text-align: center;
 
@@ -124,13 +124,13 @@ input.dnnForm__captcha-input {
 
   .icon {
     font-size: 9px;
-    margin-left: $base-spacing-unit/4;
-    margin-right: $base-spacing-unit/4;
+    margin-left: $global-spacing-unit/4;
+    margin-right: $global-spacing-unit/4;
 
     @include oGridRespondTo(S) {
       font-size: 11px;
-      margin-left: $base-spacing-unit/2;
-      margin-right: $base-spacing-unit/2;
+      margin-left: $global-spacing-unit/2;
+      margin-right: $global-spacing-unit/2;
     }
   }
 
@@ -149,8 +149,8 @@ input.dnnForm__captcha-input {
 // Validation messages
 .dnnFormMessage.dnnFormValidationSummary,
 .dnnFormItem .dnnFormMessage.dnnFormError {
-  // margin-top: $base-spacing-unit/4;
-  margin-bottom: $base-spacing-unit;
+  // margin-top: $global-spacing-unit/4;
+  margin-bottom: $global-spacing-unit;
 }
 
 .dnnFormMessage.dnnFormValidationSummary {

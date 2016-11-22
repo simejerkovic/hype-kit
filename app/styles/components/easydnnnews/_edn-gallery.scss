@@ -8,7 +8,7 @@
 
 .c-gallery {
   @include oGridRespondTo($from: L) {
-    margin-top: $base-spacing-unit*2;
+    margin-top: $global-spacing-unit*2;
   }
   background-color: $color-gallery-background;
 }
@@ -32,7 +32,7 @@
 
 .c-gallery__download-link {
   display: block;
-  padding: $base-spacing-unit/2 $base-spacing-unit;
+  padding: $global-spacing-unit/2 $global-spacing-unit;
   font-size: 16px;
   color: $color-gallery-download-links;
 

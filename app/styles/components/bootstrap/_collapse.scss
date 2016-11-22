@@ -11,10 +11,10 @@ $color-collapse-item-border: $color-grey-tint3;
 
 
 .c-panel-group {
-  margin-top: $base-spacing-unit;
+  margin-top: $global-spacing-unit;
   border-top: 1px solid $color-collapse-item-border;
   @include oGridRespondTo($from: L) {
-    margin-top: $base-spacing-unit*2;
+    margin-top: $global-spacing-unit*2;
   }
 }
 .c-panel {
@@ -22,7 +22,7 @@ $color-collapse-item-border: $color-grey-tint3;
   border-bottom: 1px solid $color-collapse-item-border;
 }
 .c-panel__body {
-  padding: $base-spacing-unit 0;
+  padding: $global-spacing-unit 0;
 }
 .c-panel__heading {
 
@@ -51,7 +51,7 @@ $color-collapse-item-border: $color-grey-tint3;
 .c-panel__title > a,
 .c-panel__link {
     display: block; // Reset normal link behavior to block
-    padding: $base-spacing-unit 0;
+    padding: $global-spacing-unit 0;
 }
 
 .c-panel__title > a {
