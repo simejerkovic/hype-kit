@@ -8,7 +8,7 @@
   </symbol>
 </svg>
 
-<!--  #include file="Nav_mobile.ascx" -->
+<!--  #include file="nav-mobile.ascx" -->
 
 <div class="light-box light-box--dark js-search-input-box is-hidden">
     <div class="light-box__wrapper">
