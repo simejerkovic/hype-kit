@@ -31,6 +31,7 @@
     "gulp-util": "^3.0.5",
     "main-bower-files": "^2.5.0",
     "postcss-pxtorem": "^2.3.2",
+    "sassdoc": "^2.1.20",
     "wiredep": "^2.2.2"
   }
 }

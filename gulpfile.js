@@ -21,6 +21,8 @@ var pxtorem = require('postcss-pxtorem');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('autoprefixer');
 
+var sassdoc = require('sassdoc'); // Sass documentation
+
 //----------------------------------------------------------------------
 //	Setup
 //----------------------------------------------------------------------
@@ -31,29 +33,29 @@ var skinPathDev = 'app';
 // ==========================================================================
 
 const paths = {
-  haml: './source/views/*.haml',
-  coffee: './source/assets/javascripts/**/*.coffee',
-  scss: './source/assets/stylesheets/**/*.scss',
-  images: './source/assets/images/*',
-  fonts: './source/assets/fonts/*',
-  //
-  skin: 'app'
+    haml: './source/views/*.haml',
+    coffee: './source/assets/javascripts/**/*.coffee',
+    scss: './source/assets/stylesheets/**/*.scss',
+    images: './source/assets/images/*',
+    fonts: './source/assets/fonts/*',
+    //
+    skin: 'app'
 };
 
 // Compile Sass to CSS
 // ==========================================================================
 
 gulp.task('styles:dev', function () {
-  
+
     // px-to-rem & autoprefixer
     var processors = [
-        autoprefixer({browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7']}),
-        pxtorem({
-            root_value: 10,
-            replace: true,
-            prop_white_list: [],
-            selector_black_list: ['html']
-        })
+        autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7'] }),
+        //pxtorem({
+        //    root_value: 10,
+        //    replace: true,
+        //    prop_white_list: [],
+        //    selector_black_list: ['html']
+        //})
     ];
 
     return gulp.src(skinPathDev + '/styles/skin.scss')
@@ -71,9 +73,22 @@ gulp.task('styles:dev', function () {
 // ==========================================================================
 
 gulp.task('serve:dev', ['styles:dev'], function () {
-  browserSync.init({
+    browserSync.init({
         injectChanges: true,
         proxy: "http://dev.sistemi.hr"
     });
     gulp.watch([skinPathDev + '/styles/**/*.{scss,css}'], ['styles:dev']);
+});
+
+
+
+// Generate Sass documentation
+// ==========================================================================
+gulp.task('sassdoc', function () {
+    var options = {
+        dest: 'resources/sassdoc/',
+    };
+
+    return gulp.src(skinPathDev + '/styles/**/*.scss')
+        .pipe(sassdoc(options));
 });
