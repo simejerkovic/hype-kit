@@ -12,108 +12,121 @@
 .u-hidden-visually {
   @include u-h;
 }
-
 /// Hide visually and from screen readers.
+
 .hide,
 .is-hidden,
-[hidden],
-.u-hidden {
+.u-hidden,
+[hidden] {
   display: none !important;
 }
-
 /// Hide and Show based on media queries and grid layout
 /// @todo Make smarter. Turn into a function repeat. Merge with mq and o-grid
+
 .hide-until\@sm {
   @include oGridRespondTo($until: S) {
     display: none !important;
   }
 }
+
 .hide-until\@md {
   @include oGridRespondTo($until: M) {
     display: none !important;
   }
 }
+
 .hide-until\@lg {
   @include oGridRespondTo($until: L) {
     display: none !important;
   }
 }
+
 .hide-until\@xl {
   @include oGridRespondTo($until: XL) {
     display: none !important;
   }
 }
 //
+
 .hide-from\@sm {
   @include oGridRespondTo($from: S) {
     display: none !important;
   }
 }
+
 .hide-from\@md {
   @include oGridRespondTo($from: M) {
     display: none !important;
   }
 }
+
 .hide-from\@lg {
   @include oGridRespondTo($from: L) {
     display: none !important;
   }
 }
+
 .hide-from\@xl {
   @include oGridRespondTo($from: XL) {
     display: none !important;
   }
 }
 //
+
 .show-from\@sm {
   @include oGridRespondTo($from: S) {
     display: block !important;
   }
 }
+
 .show-from\@md {
   @include oGridRespondTo($from: M) {
     display: block !important;
   }
 }
+
 .show-from\@lg {
   @include oGridRespondTo($from: L) {
     display: block !important;
   }
 }
+
 .show-from\@xl {
   @include oGridRespondTo($from: XL) {
     display: block !important;
   }
 }
 //
+
 .show-until\@sm {
   @include oGridRespondTo($until: S) {
     display: block !important;
   }
 }
+
 .show-until\@md {
   @include oGridRespondTo($until: M) {
     display: block !important;
   }
 }
+
 .show-until\@lg {
   @include oGridRespondTo($until: L) {
     display: block !important;
   }
 }
+
 .show-until\@xl {
   @include oGridRespondTo($until: XL) {
     display: block !important;
   }
 }
-
-
 /// Bind our clearfix onto a utility class.
+
 .u-cf,
 .u-clearfix {
   @include clearfix;
 }
-
 ////
 /// Responsive media (images, videos…)
 ///
@@ -125,12 +138,14 @@
 
 .u-responsive-ratio {
   @include fixAspectRatio(5, 3); // 1
-  img,
-  object,
+
   embed,
   iframe,
+  img,
+  object,
   svg,
-  video { // 2
+  video {
+    // 2
     width: 100%;
     height: 100%;
     position: absolute;
@@ -150,8 +165,6 @@
 .u-responsive-ratio--letterbox {
   padding-bottom: aspectRatioHeight(5, 2);
 }
-
-
 ////
 /// Text hyphenation
 ///
@@ -170,8 +183,6 @@
 .u-test-ellipsis {
   @include ellipsis();
 }
-
-
 ////
 /// Reset button styles
 /// @group utilities
@@ -190,21 +201,19 @@
     outline: 0;
   }
 }
-
-
 ////
 /// Fakes text underline with a border
 /// @group utilities
 ////
 
-.u-underline,
-%u-underline {
+%u-underline,
+.u-underline {
   text-decoration: none !important;
   border-bottom: 1px solid colour(neutral-4);
-  transition: border-color .15s ease-out;
+  transition: border-color 0.15s ease-out;
 
-  &:hover,
-  &:focus {
+  &:focus,
+  &:hover {
     /*border-color: ;*/
   }
 
@@ -212,8 +221,6 @@
     /*border-color: ;*/
   }
 }
-
-
 ////
 /// Prevent line breaks
 /// @group utilities
@@ -222,7 +229,6 @@
 .u-nobr {
   white-space: nowrap;
 }
-
 ////
 /// Add/Remove padding
 ///
@@ -238,16 +244,18 @@
 .flushp--top {
   padding-top: 0 !important;
 }
-
 // Reset standard padding to specific values
+
 .u-p--top-3 {
   padding-top: 3px;
 }
+
 .u-p--bottom-3 {
   padding-bottom: 3px;
 }
 
-.meta-button { // unstyles button elements (so they can be used for semantics)
+.meta-button {
+  // unstyles button elements (so they can be used for semantics)
   background: transparent;
   border: 0;
   margin: 0;
@@ -278,6 +286,7 @@
   float: right;
 }
 //
+
 .u-pull--left\@sm {
   @include oGridRespondTo($from: S) {
     float: left;
@@ -290,6 +299,7 @@
   }
 }
 //
+
 .u-pull--left\@md {
   @include oGridRespondTo($from: M) {
     float: left;
@@ -302,6 +312,7 @@
   }
 }
 //
+
 .u-pull--left\@lg {
   @include oGridRespondTo($from: L) {
     float: left;
@@ -314,6 +325,7 @@
   }
 }
 //
+
 .u-pull--left\@xl {
   @include oGridRespondTo($from: XL) {
     float: left;
@@ -325,7 +337,6 @@
     float: right;
   }
 }
-
 ////
 /// Text alignment
 /// Element helpers for text alignment
@@ -344,13 +355,13 @@
 .u-text-center {
   text-align: center;
 }
-
 ////
 /// Hide border
 /// Element helper to hide border
 ///
 /// @group utilities
 ////
+
 .u-hide-border {
   border: none;
 }
