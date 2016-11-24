@@ -5,17 +5,19 @@
 /// indentation.
 ///
 /// @group objects
+/// @example
+///   <ul class="o-list-inline">
+///     <li class="o-list-inline__item"></li>
+///   </ul>
 ////
 
 .o-list-inline {
   margin: 0;
   padding: 0;
   list-style: none;
-
-  .flexbox & {
-    display: flex;
-  }
-
+  // .flexbox & {
+  //   display: flex;
+  // }
 }
 
 .o-list-inline__item {

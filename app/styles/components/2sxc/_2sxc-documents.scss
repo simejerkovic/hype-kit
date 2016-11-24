@@ -1,19 +1,23 @@
 ////
 /// 2sxc Documents application
-/// @group 2sxc app
+/// @group 2sxc-app
 /// @todo Create basic styles for 2sxc Documents application
 ////
 
 .document-list {}
+
 .document-list__item {
   padding: $global-spacing-unit/2 0;
 }
+
 .document-list__description {
   @include FontSizeFor(documents-description, 1);
+
   > p {
     margin-bottom: 0;
   }
 }
+
 .document-list__link {
   @include FontSizeFor(documents-link, 1);
   text-decoration: none;
@@ -22,6 +26,7 @@
     text-decoration: none;
     color: $color-document-links-hover;
   }
+
   > .icon {
     @include FontSizeFor(documents-icon, 1);
     color: $color-document-icon;

@@ -1,6 +1,6 @@
 ////
 /// 2sxc Slider / Carousel application
-/// @group 2sxc app
+/// @group 2sxc-app
 /// @todo Create basic styles for 2sxc slider / carousel application
 ////
 
@@ -41,9 +41,7 @@
     }
   }
 }
-
 // Is active Slider-nav
-
 .slider__nav .item-1 a {
   @extend .icon;
   @extend .icon-home;
@@ -61,44 +59,49 @@
 }
 
 .slider__nav {
-
   .item-1:hover a {
     background-color: $color-slider-nav-bg2;
-      &:before {
-        color: $color-slider-item-font;
-      }
+
+    &:before {
+      color: $color-slider-item-font;
+    }
   }
 
   .item-2:hover {
     background-color: $color-section-drama;
-      a {
-        color: $color-slider-item-font;
-      }
+
+    a {
+      color: $color-slider-item-font;
+    }
   }
 
   .item-3:hover {
     background-color: $color-section-opera;
-      a {
-        color: $color-slider-item-font;
-      }
+
+    a {
+      color: $color-slider-item-font;
+    }
   }
 
   .item-4:hover {
     background-color: $color-section-balet;
-      a {
-        color: $color-slider-item-font;
-      }
+
+    a {
+      color: $color-slider-item-font;
+    }
   }
 
   .item-5:hover {
     background-color: $color-section-koncerti;
-      a {
-        color: $color-slider-item-font;
-      }
+
+    a {
+      color: $color-slider-item-font;
+    }
   }
 }
 
-.c-page--Naslovnica, .c-page--Home {
+.c-page--Home,
+.c-page--Naslovnica {
   .slider__nav {
     border-bottom: 3px solid $color-black;
 
@@ -134,7 +137,8 @@
   }
 }
 
-.c-page--Balet, .c-page--Ballet {
+.c-page--Balet,
+.c-page--Ballet {
   .slider__nav {
     border-bottom: 3px solid $color-section-balet;
 
@@ -145,7 +149,8 @@
   }
 }
 
-.c-page--Koncerti, .c-page--Concerts {
+.c-page--Concerts,
+.c-page--Koncerti {
   .slider__nav {
     border-bottom: 3px solid $color-section-koncerti;
 
@@ -155,13 +160,10 @@
     }
   }
 }
-
 //
-
 .slider__items {
   position: relative;
   background-color: #000;
-
   @include oGridRespondTo($from: L) {
     height: 500px;
   }
@@ -192,7 +194,7 @@
     color: $color-slider-item-font;
 
     @include oGridRespondTo($from: L) {
-      @include FontSizeFor(slider, 1);
+       @include FontSizeFor(slider, 1);
     }
   }
 
@@ -200,7 +202,6 @@
     margin-bottom: 10px;
     text-transform: uppercase;
   }
-
 }
 
 .slider__overlay {
@@ -215,13 +216,12 @@
   font-weight: 300;
   margin-bottom: $global-spacing-unit;
   @include text-clamp(4, 24px);
-
   @include oGridRespondTo($from: L) {
-    @include text-clamp(7, 24px);
+     @include text-clamp(7, 24px);
   }
 
   p {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -235,7 +235,6 @@
   //   right: -200px;
   // }
 }
-
 // .slick-dots {
 //   @include oGridRespondTo($from: L) {
 //     display: none;

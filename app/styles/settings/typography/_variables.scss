@@ -15,15 +15,11 @@ $base-ff-text: 'HNK-Comp-Pro', Arial, sans-serif;
 // Font scaling
 $font-scale: (
   root: (
-    1: (font-size: 10, line-height: 13)
+    1: (font-size: 18, line-height: normal)
   ),
 
   body: (
-    1: (font-size: 10, line-height: 10),
-    2: (font-size: 11, line-height: 11),
-    3: (font-size: 14, line-height: 18),
-    4: (font-size: 16, line-height: 21),
-    5: (font-size: 18, line-height: 24),
+    1: (font-size: 18, line-height: 28.8),
   ),
 
   headings: (

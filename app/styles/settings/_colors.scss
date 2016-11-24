@@ -1,84 +1,72 @@
-///*----------------------------------*\
-//  #COLORS
-//\*----------------------------------*/
-
+////
+// Colors
 // Set up a colour palette which allows us to theme the entire project from one
 // location.
+////
 
 // Non-colour CSS values.
 $color-transparent:                     transparent;
 $color-inherit:                         inherit;
 
 // Colour palette.
-$color-black:                           #000000;
-$color-white:                           #ffffff;
+$color-black:                           #000;
+$color-white:                           #fff;
 
-$color-grey:                            #666666;
-$color-grey-tint1:                      #f2f2f2;
-$color-grey-tint2:                      #eeeeee;
-$color-grey-tint3:                      #e6e6e6;
-$color-grey-tint4:                      #d8d8d8;
-$color-grey-tint5:                      #999999;
-$color-grey-tint6:                      #7a7a7a;
-$color-grey-tint7:                      #717171;
-$color-grey-tint8:                      #424242;
-$color-grey-tint9:                      #262626;
-$color-grey-tint10:                     #191919;
-$color-grey-tint11:                     #171717;
+// Brand colour palette.
+$color-claret:                          #88143d;
+$color-melon:                           #f5b2b6;
+$color-charleston-green:                #242d33;
 
-$color-orange:                          #E68200;
-$color-orange-tint:                     #e78200;
-$color-orange-tint-dark:                #ce6900;
+// Color tints
+$color-gray:                            #424242;
+$color-gray-tint1:                      #d6d6d6;
+//$color-gray-tint2:                      #;
 
-$color-blue:                            #002680;
+$color-spanish-gray:                    #9d9e9e;
 
-$color-red:                             #e4002b;
-$color-red-tint:                        #b60022;
-$color-red-tint2:                       #960000;
-
-$color-pink:                            #d81a60;
-$color-pink-tint:                       #ffccbc;
-
-$color-teal:                            #00767e;
+$color-white-tint1:                     #fefefe;
 
 // Reassign literal variables to meaningful ones.
-$color-page-text:                       $color-grey-tint8;
+$color-page-text:                       $color-gray;
 $color-page-background:                 $color-white;
 $color-selection-text:                  $color-white;
-$color-selection-background:            $color-red;
+$color-selection-background:            $color-claret;
 
 $color-logo:                            $color-white;
 $color-logo-alt:                        $color-black;
 
-$color-links:                           $color-black;
-$color-links-hover:                     $color-grey-tint3;
-$color-links-current:                   $color-orange;
-$color-links-prose:                     $color-orange;
-$color-links-prose-hover:               $color-orange;
+$color-links:                           $color-claret;
+$color-links-hover:                     darken($color-claret, 5%);
+$color-links-current:                   darken($color-claret, 10%);
 
-$color-headings:                        $color-grey-tint8;
-$color-headings-alt:                    $color-grey-tint11;
+$color-headings:                        $color-black;
+$color-headings-alt:                    $color-white;
 
-$color-main-table-text:                 $color-grey-tint11;
-$color-main-table-border:               $color-grey-tint3;
-$color-main-table-background:           $color-transparent;
-$color-main-table-head-text:            $color-grey-tint7;
-
-
+// Page / global header
 $color-page-head:                       $color-white;
-$color-page-head-background:            $color-black;
-$color-page-head-border:                $color-grey-tint9;
+$color-page-head-background:            $color-charleston-green;
+$color-page-head-border:                $color-gray-tint1;
 $color-page-head-link:                  $color-white;
-$color-page-head-link-hover:            rgba( $color-white, .7 );
-$color-page-head-link-active:           $color-red;
-$color-nav-primary-accent-background:   $color-red;
+$color-page-head-link-hover:            rgba($color-white, 0.7);
+$color-page-head-link-active:           $color-black;
 
-$color-page-head-icon-links:            rgba(255,255,255,.5);
-$color-page-head-icon-links-hover:      rgba(255,255,255,.7);
+$color-page-head-nav-background:        $color-white;
 
-$color-page-footer-link:                $color-grey-tint6;
-$color-page-footer-link-active:         rgba( $color-grey-tint6, .7 );
-$color-page-footer-link-hover:          rgba( $color-grey-tint6, .7 );
+$color-nav-primary-link:                $color-black;
+$color-nav-primary-link-hover:          $color-claret;
+$color-nav-primary-link-active:         $color-claret;
+
+$color-page-head-icon-links:            rgba(255, 255, 255, 0.5);
+$color-page-head-icon-links-hover:      rgba(255, 255, 255, 0.7);
+
+$color-main-table-text:                 $color-black;
+$color-main-table-border:               $color-black;
+$color-main-table-background:           $color-transparent;
+$color-main-table-head-text:            $color-black;
+
+$color-page-footer-link:                $color-black;
+$color-page-footer-link-active:         rgba($color-black, 0.7);
+$color-page-footer-link-hover:          rgba($color-black, 0.7);
 $color-page-footer-title:               $color-white;
 
 $color-nav-language:                    darken($color-white, 40%);
@@ -86,170 +74,61 @@ $color-nav-language-link:               darken($color-white, 40%);
 $color-nav-language-active:             $color-white;
 
 $color-btn:                             $color-white;
-$color-btn-hover:                       $color-grey-tint2;
-$color-btn-background:                  $color-red;
-$color-btn-background-hover:            darken($color-red, 10%);
+$color-btn-hover:                       $color-btn;
+$color-btn-background:                  $color-black;
+$color-btn-background-hover:            darken($color-btn-background, 10%);
 
 $color-btn-secondary:                   $color-white;
-$color-btn-secondary-background:        $color-orange;
+$color-btn-secondary-background:        $color-black;
 $color-btn-secondary-background-hover:  darken($color-btn-secondary-background, 10%);
 
 $color-btn-schedule:                    $color-white;
-$color-btn-schedule-background:         $color-grey-tint11;
+$color-btn-schedule-background:         $color-black;
 $color-btn-schedule-background-hover:   darken($color-btn-schedule-background, 10%);
 
-$color-btn-neutral:                     $color-grey-tint11;
-$color-btn-neutral-border:              $color-grey-tint11;
-$color-btn-neutral-hover:               $color-grey-tint7;
-$color-btn-neutral-border-hover:        $color-grey-tint7;
+$color-btn-neutral:                     $color-gray;
+$color-btn-neutral-border:              $color-gray;
+$color-btn-neutral-hover:               $color-gray;
+$color-btn-neutral-border-hover:        $color-gray;
 
-$color-page-foot:                       $color-grey-tint5;
+$color-page-foot:                       $color-gray;
 $color-page-foot-background:            $color-black;
 
 $color-nav-mobile-background-alt:       $color-white;
-$color-nav-mobile-border:               $color-grey;
-$color-nav-mobile-border-alt:           rgba( $color-grey, .25 );
+$color-nav-mobile-border:               $color-gray;
+$color-nav-mobile-border-alt:           rgba($color-gray, 0.25);
 
 $color-headline:                        $color-black;
-$color-headline-border:                 $color-grey-tint3;
+$color-headline-border:                 $color-gray;
 
 $color-sub-content-bg:                  rgba(0, 0, 0, 0.05);
-$color-sub-content:                     $color-grey;
+$color-sub-content:                     $color-gray;
 
-// Plays section colors.
-$color-section-all:                     $color-red;
-$color-section-drama:                   $color-red-tint2;
-$color-section-balet:                   $color-pink;
-$color-section-opera:                   $color-blue;
-$color-section-koncerti:                $color-teal;
-$color-section-other:                   $color-grey;
-
-
-$color-nav-aside-links:                 $color-grey-tint7;
+// Nav > Aside nav
+$color-nav-aside-links:                 $color-gray;
 $color-nav-aside-links-hover:           $color-black;
 $color-nav-aside-links-current:         $color-black;
-$color-nav-aside-border:                $color-grey-tint3;
-
-$color-nav-boxed-text:                  $color-black;
-$color-nav-boxed-links:                 $color-black;
-$color-nav-boxed-links-hover:           $color-grey-tint3;
-$color-nav-boxed-links-current:         $color-grey-tint3;
-
-// Schedule / Raspored izvedbi
-$color-schedule-item-background:        rgba( $color-white, .90 );
-$color-schedule-item-background-p:      $color-white; // Premijera
-$color-schedule-date-background:        $color-red;
-$color-schedule-author:                 $color-grey-tint7;
-$color-schedule-title:                  $color-grey-tint11;
-$color-schedule-description:            $color-grey-tint11;
-$color-schedule-premiere-text:          $color-white;
-$color-schedule-premiere-background:    $color-red;
-$color-schedule-canceled-link:          $color-red;
-$color-schedule-canceled-link-hover:    darken($color-schedule-canceled-link, 10%);
-$color-schedule-canceled-background:    rgba( $color-pink-tint, .40 );
-$color-schedule-canceled-date:          $color-black;
-
-// Story Card / Lista predstava
-//$color-story-card-background:         $color-white; // Not used
-//$color-story-card-background-hover:   $color-grey; // Not used
-$story-card-meta:                       $color-grey-tint7;
-$color-story-card-link:                 $color-grey-tint11;
-$color-story-card-link-hover:           $color-grey-tint7;
-//$color-story-card-link-hover-border:    $color-grey-tint7; // Not used
-$color-story-card-show-type-background: $color-orange;
-
-// Story feed / Lista novosti
-$color-story-feed-meta:                 $color-grey-tint7;
-$color-story-feed-link:                 $color-grey-tint11; //
-$color-story-feed-link-hover:           $color-grey-tint7;
-$color-story-feed-background:           $color-white;
-$color-story-feed-border:               $color-grey-tint4;
-
-$color-play-header-background:          $color-black;
-$color-play-header-text:                $color-white;
-
-$color-article-detail-border:           $color-grey-tint9;
-$color-article-detail-meta:             $color-white;
-
-$border-post-detail-image-color:        rgba($color-white, .50);
-$background-post-detail-overlay:        rgba( $color-blue, .85 );
-$border-post-detail-social:             rgba($color-grey-tint4, 0.4);
-
-// Show detail
-$color-show-header-background:          $color-grey-tint11;
-$color-show-header-title:               $color-white;
-$color-show-header-meta-text:           $color-grey-tint5;
-// Show detail - Ansamble
-$color-show-nav-tab-title:              $color-grey-tint11;
-$color-show-nav-tab-title-active:       $color-grey-tint11;
-$color-show-nav-tab-background:         $color-grey-tint1;
-$color-show-nav-tab-background-active:  $color-white;
-
-
-// Article tags
-$color-article-tags-background:         $color-grey-tint1;
-$color-article-tags-background-show:    $color-white;
-$color-article-tags-border:             $color-grey-tint3;
-$color-article-tags-label:              $color-black;
-$color-article-tags-links:              $color-grey-tint11;
-$color-article-tags-links-hover:        $color-grey-tint11;
-$color-article-tags-links-border:       $color-grey-tint5;
-$color-article-tags-links-background:   rgba($color-white, .75);
-
-// Video gallery
-$color-video-gallery-text:              $color-white;
-$color-video-gallery-text-hover:       rgba($color-white, .75);
-$color-video-gallery-background:        $color-grey-tint10;
-$color-video-gallery-border:            rgba($color-grey-tint4, .45);
-$color-video-gallery-link:              $color-red;
-$color-video-gallery-link-hover:        darken($color-red, 10%);
-
-// 2sxc App: Sponsors
-$color-sponsors-category-name:          $color-orange;
-$color-sponsors-logo:                   $color-white;
-$color-sponsors-name:                   $color-white; // If sponsor has no image
-$color-sponsors-name-border:            rgba($color-white, .30); // If sponsor has no image
-$color-sponsors-name-border-hover:      rgba($color-white, .80); // If sponsor has no image
-
-// 2sxc App: Documents
-$color-document-icon:                   $color-grey-tint7;
-$color-document-icon-hover:             $color-grey-tint7;
-$color-document-links:                  $color-grey-tint7;
-$color-document-links-hover:            $color-grey-tint11;
-$color-document-description:            $color-grey-tint6;
-
-// 2sxc App: Newsletter
-$color-newsletter-background:           $color-white;
-$color-newsletter-border:               $color-grey-tint4;
-$color-newsletter-input-border-hover:   $color-red;
-$color-newsletter-title:                $color-red;
-$color-newsletter-text:                 $color-black;
+$color-nav-aside-border:                $color-gray;
 
 // Sharing bar
-$color-sharing-bar-icon:                #ccc;
-$color-sharing-bar-icon-hover:          #1a1a1a;
-$color-sharing-bar-border:              #e6e6e6;
+$color-sharing-bar-icon:                $color-gray;
+$color-sharing-bar-icon-hover:          $color-sharing-bar-icon;
+$color-sharing-bar-border:              $color-gray;
 
-// Slider
-$color-slider-nav-bg:                   $color-grey-tint3;
-$color-slider-item-font:                $color-white;
-$color-slider-item-link:                $color-red;
-$color-slider-nav-bg2:                  $color-black;
-
-// LightBox
-$color-lightbox-background:             rgba(0,0,0,.9);
-$color-lightbox-dark-background:        rgba(0,0,0,.9);
+// Lightbox
+$color-lightbox-background:             rgba(0, 0, 0, 0.9);
+$color-lightbox-dark-background:        rgba(0, 0, 0, 0.9);
 
 // Search popup
 $color-search-popup-icon:               #666;
-$color-search-popup-results-text:       rgba(152,152,152,.5);
-$color-search-box-text:                 rgba(255,255,255,.3);
+$color-search-popup-results-text:       rgba(152, 152, 152, 0.5);
+$color-search-box-text:                 rgba(255, 255, 255, 0.3);
 $color-search-box-background:           $color-transparent;
-$color-search-box-border:               #323232;
+$color-search-box-border:               $color-gray;
 
 // EasyDnnGallery - Gravity + fotorama
 $color-gallery-background:              $color-black;
-$color-gallery-download-background:     rgba(0,0,0,0.8);
+$color-gallery-download-background:     rgba(0, 0, 0, 0.8);
 $color-gallery-download-links:          $color-white;
-$color-gallery-download-links-hover:    $color-grey-tint3;
-$color-gallery-thumb-border:            $color-orange;
+$color-gallery-download-links-hover:    $color-gray;
+$color-gallery-thumb-border:            $color-gray;

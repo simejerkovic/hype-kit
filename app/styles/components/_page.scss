@@ -7,12 +7,11 @@
   background: $color-selection-background; // WebKit/Blink Browsers
   color: $color-selection-text;
 }
+
 ::-moz-selection {
   background: $color-selection-background; // Gecko Browsers
   color: $color-selection-text;
 }
-
-.wow { visibility: hidden; }
 
 ////
 /// Styles for lazysizes.js script
@@ -28,25 +27,22 @@
   opacity: 1;
   transition: opacity 400ms;
 }
-
 ////
 /// Styles for DNN Language object
 /// @group components
 ////
-
 // If language: Hrvatski hide English
-.c-page--lang-hr {
+
+.lang-hr {
   .lang-en {
     display: none !important;
   }
 }
-
 // If language: English hide Hrvatski
-.c-page--lang-en {
+
+.lang-en {
   .lang-hr {
     display: none !important;
   }
 }
-
-/// Page component styles
-.c-page {}
+// Page component styles

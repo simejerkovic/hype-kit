@@ -31,6 +31,7 @@
 
 .sharing-bar__link {
   @include size(69px);
+
   display: block;
   background-color: transparent;
   border: 0;
@@ -40,17 +41,20 @@
   position: relative;
   vertical-align: top;
   color: $color-sharing-bar-icon;
+
   @include hocus() {
     color: $color-sharing-bar-icon-hover;
     outline: none;
   }
+
   @include oGridRespondTo($from: L) {
-     @include size(90px 69px);
+    @include size(90px 69px);
   }
 }
 
 .sharing-bar__icon {
   @include size(20px);
+
   display: block;
   margin: auto;
   position: absolute;

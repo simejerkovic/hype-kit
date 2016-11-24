@@ -1,27 +1,26 @@
 ////
-/// Simple page-level setup (e.g. HTML and BODY elements).
-/// @group elements
+// Simple page-level setup (e.g. HTML and BODY elements).
+// @group elements
+// 1. Set the default `font-size` and `line-height` for the entire project,
+//    sourced from our default variables. The `font-size` is calculated to exist
+//    in ems, the `line-height` is calculated to exist unitlessly.
+// 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+//    navigating between pages that do/do not have enough content to produce
+//    scrollbars naturally.
+// 3. Ensure the page always fills at least the entire height of the viewport.
 ////
 
-/// 1. Set the default `font-size` and `line-height` for the entire project,
-///    sourced from our default variables. The `font-size` is calculated to exist
-///    in ems, the `line-height` is calculated to exist unitlessly.
-/// 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
-///    navigating between pages that do/do not have enough content to produce
-///    scrollbars naturally.
-/// 3. Ensure the page always fills at least the entire height of the viewport.
-
 html {
-    font-family: $base-ff-text;
-    @include FontSizeFor(root, 1); // 1
-    overflow-y: scroll; // 2
-    min-height: 100%; // 3
-    //
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  @include FontSizeFor(root, 1); // 1
+  font-family: $base-ff-text;
+  overflow-y: scroll; // 2
+  min-height: 100%; // 3
+  //
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-    @include FontSizeFor(body, 4);
+  @include FontSizeFor(body, 1);
 }

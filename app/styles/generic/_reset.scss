@@ -3,32 +3,35 @@
 /// @group generic
 ////
 
+blockquote,
 body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
+dd,
+dl,
+fieldset,
 figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 hr,
-fieldset, legend {
-  margin:  0;
+legend,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
   padding: 0;
 }
-
-
 // Remove trailing margins from nested lists.
-
 li > {
-
   ol,
   ul {
     margin-bottom: 0;
   }
-
 }
-
-
 // Remove default table spacing.
-
 table {
   border-collapse: collapse;
   border-spacing: 0;

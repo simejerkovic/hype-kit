@@ -5,4 +5,45 @@
 ///   <header class="c-page-head"></header>
 ////
 
-.c-page-head {}
+// header size
+$mastheader-height: 125px;
+$mastheader-main-height: 70px;
+$primary-nav-height: 55px;
+
+.c-page-head {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $mastheader-height;
+
+  // Force Hardware Acceleration
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 0.5s;
+
+  &.is-moved {
+    transform: translateY(-($mastheader-main-height));
+  }
+}
+
+.c-page-head__main {
+  background-color: $color-page-head-background;
+}
+
+.c-page-head__navigation {
+  @include padding(15px 0);
+
+  position: relative;
+  z-index: 1;
+  clear: both;
+  width: 100%;
+  height: $primary-nav-height;
+  background-color: $color-page-head-nav-background;
+  border-bottom: solid 1px $color-page-head-border;
+  // Force Hardware Acceleration
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 0.5s;
+}

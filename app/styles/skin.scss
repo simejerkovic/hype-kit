@@ -83,6 +83,7 @@
 "vendor/slick/slick",
 "vendor/slick/slick-theme",
 // Custom DNN fixes
+"vendor/dnn/_admin",
 "vendor/dnn/_dnn-styles",
 
 // ==========================================================================
@@ -95,7 +96,7 @@
 "components/_page",
 "components/_page-head",
 "components/_page-footer",
-"components/_nav-mobile",
+//"components/_nav-mobile",
 "components/_nav-primary",
 "components/_buttons",
 "components/_table",
@@ -112,8 +113,6 @@
 "components/dnn/_login",
 "components/dnn/_cookie-consent.scss",
 
-
-
 // ==========================================================================
 // 8. Utilities
 // Utilities, Heading styles, Helper classes
@@ -124,6 +123,6 @@
 "utilities/_headings",
 "utilities/_spacing",
 "utilities/_debug",
-"utilities/_shame",
-"utilities/_ie-fix", // IE fix
+//"utilities/_shame",
+//"utilities/_ie-fix", // IE fix
 "utilities/_print"; // Print

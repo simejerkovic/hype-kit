@@ -1,6 +1,6 @@
 ////
 /// 2sxc Mailchimp newsletter signup application
-/// @group 2sxc app
+/// @group 2sxc-app
 /// @todo Create basic styles for 2sxc Mailchimp application
 ////
 
@@ -27,13 +27,11 @@
     padding: ($global-spacing-unit - 5px);
     border: 1px solid $color-newsletter-border;
     width: 100%;
-
     @include placeholder {
-      color:$color-newsletter-text;
+      color: $color-newsletter-text;
     }
-
     @include hocus {
-      outline-color:$color-newsletter-input-border-hover;
+      outline-color: $color-newsletter-input-border-hover;
     }
   }
 
