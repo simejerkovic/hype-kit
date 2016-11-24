@@ -1,6 +1,6 @@
 ////
 /// Table component
-/// @group components
+/// @group table
 /// @todo Split into separated files
 ////
 
@@ -287,8 +287,7 @@ $color-table-row-border-alt:      silver !default;
 
 } // mixin
 
-
-///////////////////////////
+//
 
 .c-table-wrapper {
   @include TableWrapper;
@@ -349,26 +348,35 @@ $color-table-row-border-alt:      silver !default;
   @include TableCompact;
 }
 
-/// Table Responsive
-///
-/// There are three responsive options available for displaying data in a table.
+// Table Responsive
+//
+// There are three responsive options available for displaying data in a table.
 
+////
 /// Using the Responsive Flat version will render the table to change at narrow viewpoints
 /// into a row-based table with each row having a duplicate of the table headers on the left side.
 /// This uses JavaScript to inject the headers into each row.
+/// @group css
+////
 .c-table--responsive-flat {
   @include TableResponsiveFlat;
 }
 
+////
 /// On a narrow viewpoint, all this does is add an overflow which would allow the user to scroll
 /// through the data in a horizontal way.
+/// @group css
+////
 .c-table--responsive-overflow {
   @include TableResponsiveOverflow;
 }
 
+////
 /// On a narrow viewpoint the Responsive Scroll version will move the headers to the right hand
 /// side of the table, and be fixed. This allows the data to be displayed in a column format which
 /// would allow the user to swipe left or right going through the data.
+/// @group css
+////
 .c-table--responsive-scroll {
   @include TableResponsiveScroll;
 }
