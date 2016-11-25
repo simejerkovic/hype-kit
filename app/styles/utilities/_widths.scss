@@ -25,16 +25,19 @@
 // systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
 // word format (e.g. `.u-2-of-3`).
 //
-// @example
+// @example html
 //   <div class="u-7/12">
 ////
 @include widths(1 2 3 4 5);
+
 @media screen and (min-width: 720px) {
-   @include widths(1 2 3 4 5, \@sm);
+  @include widths(1 2 3 4 5, \@sm);
 }
+
 @media screen and (min-width: 1024px) {
-   @include widths(1 2 3 4 5, \@md);
+  @include widths(1 2 3 4 5, \@md);
 }
+
 @media screen and (min-width: 1200px) {
-   @include widths(1 2 3 4 5, \@lg);
+  @include widths(1 2 3 4 5, \@lg);
 }

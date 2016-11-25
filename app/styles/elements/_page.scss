@@ -12,7 +12,7 @@
 
 html {
   @include FontSizeFor(root, 1); // 1
-  font-family: $base-ff-text;
+  font-family: $global-ff-text;
   overflow-y: scroll; // 2
   min-height: 100%; // 3
   //
@@ -22,5 +22,7 @@ html {
 }
 
 body {
-  @include FontSizeFor(body, 1);
+  @include FontSizeOnlyFor(body, 1);
+
+  line-height: $global-line-height;
 }

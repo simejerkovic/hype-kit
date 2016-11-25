@@ -5,7 +5,7 @@
     <dnn:LANGUAGE runat="server" visible="true" ID="MOBILELANGUAGE" ShowLinks="True" ShowMenu="False" HeaderTemplate='<ul class="c-nav-language o-list-inline">' ItemTemplate='<li class="c-nav-language__item o-list-inline__item"><a href="[URL]">[CULTURE:THREELETTERISOCODE]</a></li>'
   AlternateTemplate='<li class="c-nav-language__item o-list-inline__item o-list-inline__item--alt"><a href="[URL]">[CULTURE:THREELETTERISOCODE]</a></li>' SelectedItemTemplate='<li class="c-nav-language__item o-list-inline__item is-selected">[CULTURE:THREELETTERISOCODE]</li>'
   FooterTemplate='</ul>' SeparatorTemplate='/' />
-    <dnn:menu id="navMobile" menustyle="nav/mobile-nav" NodeSelector="*,0,1" ExcludeNodes="" runat="server"></dnn:menu>
+    <!-- <dnn:menu id="navMobile" menustyle="nav/mobile-nav" NodeSelector="*,0,1" ExcludeNodes="" runat="server"></dnn:menu> -->
   </nav>
 </div>
 <div class="mobile-overlay"></div>

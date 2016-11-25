@@ -26,14 +26,14 @@
 
 <footer>
   <div class="container-fluid">
-    <div class="ly-container-inner clearfix">
-      <ul class="ly-footer-address clearfix" itemscope itemtype="http://schema.org/LocalBusiness">
+    <div class="c-container-inner clearfix">
+      <ul class="c-footer-address clearfix" itemscope itemtype="http://schema.org/LocalBusiness">
     		<li>
     			<strong itemprop="name"></strong>
     		</li>
     		<li>
     			<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-    				<span itemprop="streetAddress"></span>,
+    				<span itemprop="streetAddress">Velebitska 27</span>,
     				<span itemprop="postalCode">21000</span>
     				<span itemprop="addressLocality">Split</span>,
     				<span itemprop="addressCountry">Croatia</span>
@@ -46,8 +46,8 @@
     		  email:
     		</li>
       </ul>
-      <div class="ly-footer-imprint">
-          <dnn:login id="DnnLogin" cssclass="ly-login hidden-xs" runat="server" />
+      <div class="c-footer-imprint">
+          <dnn:login id="DnnLogin" cssclass="c-login hidden-xs" runat="server" />
           <a href="<%= LocalizeString("Imprint.Url") %>" title="Impressum"><%= LocalizeString("Imprint.Text") %></a>
       </div>
     </div>
@@ -64,7 +64,6 @@
 	{
 		base.OnLoad(e);
 
-		AttachCustomHeader("<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no' />");
 		AttachCustomHeader("<!--[if lt IE 9]>" +
 			"<script type='text/javascript' src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></scr" + "ipt>" +
 			"<script type='text/javascript' src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></scr" + "ipt>" +

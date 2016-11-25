@@ -160,14 +160,14 @@
 .fotorama__fullscreen-icon,
 .fotorama__video-close,
 .fotorama__video-play {
-  background: url($base-images-path + "vendor/fotorama/fotorama.png") no-repeat;
+  background: url($global-images-path + "vendor/fotorama/fotorama.png") no-repeat;
 }
 @media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:2dppx) {
   .fotorama__arr,
   .fotorama__fullscreen-icon,
   .fotorama__video-close,
   .fotorama__video-play {
-    background: url($base-images-path + "vendor/fotorama/fotorama@2x.png") 0 0/96px 160px no-repeat;
+    background: url($global-images-path + "vendor/fotorama/fotorama@2x.png") 0 0/96px 160px no-repeat;
   }
 }
 .fotorama__thumb {

@@ -2,12 +2,13 @@
   @include oGridColspan((default: 12, S: 6, M: 4, L: 4, XL: 3));
   margin-bottom: $global-spacing-unit*2;
 }
+
 .story-card--inner {
   height: 100%;
 }
+
 .story-card__image-wrap {
   margin-bottom: $global-spacing-unit/2;
-
   @include oGridRespondTo($from: L) {
     margin-bottom: $global-spacing-unit;
   }
@@ -25,33 +26,37 @@
 .story-card__content {
   // padding: 15px;
 }
+
 .story-card__meta {
   @include FontSizeFor(story-card-meta, 2);
   @include FontWeight(medium);
-  font-family: $base-ff-display;
+  font-family: $global-ff-display;
   color: $story-card-meta;
   margin-bottom: $global-spacing-unit/2;
   @include oGridRespondTo($from: L) {
      @include FontSizeFor(story-card-meta, 3);
   }
 }
+
 .story-card__title {
   @include FontSizeFor(story-card-title, 3);
   @include FontWeight(medium);
-  font-family: $base-ff-display;
+  font-family: $global-ff-display;
   margin-bottom: $global-spacing-unit/2;
-
   @include oGridRespondTo($from: L) {
      @include FontSizeFor(story-card-title, 3);
   }
 }
+
 .story-card__summary {
   @include FontSizeFor(story-card-title, 2);
   @include text-clamp(4, 18px);
+
   & div,
   & p {
     margin-bottom: 0;
   }
+
   b,
   strong {
     @include FontWeight(normal);
@@ -84,6 +89,7 @@
   font-size: 14px;
   padding: 5px 6px;
 }
+
 .story-card__show-type--raspored {
   position: inherit;
   display: inline-block;
@@ -91,36 +97,44 @@
   margin-right: 8px;
   margin-top: -3px;
 }
+
 .story-card--Ansambl {
   @include oGridColspan((default: 6, S: 3, L: 2));
 }
+
 .story-card__title--ansambl {
   font-size: 16px;
 }
 // Predstave
+
 .event-schedule-related {
   margin-top: 5px;
 }
+
 .event-schedule-related__list {
   flex-wrap: wrap;
 }
+
 .event-schedule-related__item {
   margin-right: 5px;
   margin-top: 5px;
 }
+
 .event-schedule-related__date {
   @include FontWeight(light);
   float: left;
   background-color: #018ee6;
   text-transform: uppercase;
-  font-family: $base-ff-display;
+  font-family: $global-ff-display;
   font-size: 13px;
   padding: 5px 6px;
-  border-radius: $base-radius;
+  border-radius: $global-radius;
 }
+
 .list-filter {
   margin-bottom: $global-spacing-unit*2;
 }
+
 .list-filter__button {
   margin: 0;
   padding: 0;
@@ -129,20 +143,18 @@
   //
   font-size: 14px;
   color: #717171;
-
   @include hocus() {
     color: #171717;
     outline: none;
   }
+
   &.is-active,
   &:active {
     color: #171717;
   }
-
   @include oGridRespondTo($from: S) {
     font-size: 16px;
   }
-
   @include oGridRespondTo($from: M) {
     font-size: 20px;
   }
@@ -150,13 +162,12 @@
 
 .list-filter__button-group {
   margin-top: -($global-spacing-unit/2);
+
   .list-filter__button + .list-filter__button {
     margin-left: $global-spacing-unit/2;
-
     @include oGridRespondTo($from: S) {
-      margin-left: $global-spacing-unit
+      margin-left: $global-spacing-unit;
     }
-
     @include oGridRespondTo($from: M) {
       margin-left: $global-spacing-unit*2;
     }
@@ -173,7 +184,6 @@
   .c-page--Naslovnica & {
     color: $color-red;
     border-color: $color-red;
-
     @include hocus () {
       color: darken($color-red, 10%);
       border-color: darken($color-red, 10%);
@@ -186,45 +196,57 @@
 
   &.c-btn--drama {
     color: $color-section-drama;
-    border-color:$color-section-drama;
+    border-color: $color-section-drama;
     @include hocus () {
       color: darken($color-section-drama,10%);
-      border-color: darken($color-section-drama,10%)
+      border-color: darken($color-section-drama,10%);
     }
+
     .c-page--Drama & {
       display: block;
     }
   }
+
   &.c-btn--opera {
     color: $color-section-opera;
-    border-color:$color-section-opera;
+    border-color: $color-section-opera;
     @include hocus () {
       color: darken($color-section-opera,10%);
-      border-color: darken($color-section-opera,10%)
+      border-color: darken($color-section-opera,10%);
     }
-    .c-page--Opera & , .c-page--Opera {
+
+    .c-page--Opera,
+    .c-page--Opera & {
       display: block;
     }
   }
+
   &.c-btn--concert {
     color: $color-section-koncerti;
-    border-color:$color-section-koncerti;
+    border-color: $color-section-koncerti;
+
     @include hocus () {
-      color: darken($color-section-koncerti,10%);
-      border-color: darken($color-section-koncerti,10%)
+      color: darken($color-section-koncerti, 10%);
+      border-color: darken($color-section-koncerti, 10%);
     }
-    .c-page--Koncerti &, .c-page--Concerts & {
+
+    .c-page--Concerts &,
+    .c-page--Koncerti & {
       display: block;
     }
   }
+
   &.c-btn--ballet {
     color: $color-section-balet;
-    border-color:$color-section-balet;
+    border-color: $color-section-balet;
+
     @include hocus () {
-      color: darken($color-section-balet,10%);
-      border-color: darken($color-section-balet,10%)
+      color: darken($color-section-balet, 10%);
+      border-color: darken($color-section-balet, 10%);
     }
-    .c-page--Balet &, .c-page--Ballet & {
+
+    .c-page--Balet &,
+    .c-page--Ballet & {
       display: block;
     }
   }

@@ -53,7 +53,6 @@
 // Base elements and styles
 // ==========================================================================
 // "elements/_fonts", // @deprecated TODO: Find a better place for font calling
-// "elements/_icons", // @deprecated TODO: Start using svg's instead of fonts for icons
 "elements/_page", //
 "elements/_headings", //
 "elements/_links", //
@@ -93,13 +92,13 @@
 
 // 7.1 Base components
 "components/_logo",
+"components/_buttons",
+"components/_table",
 "components/_page",
 "components/_page-head",
 "components/_page-footer",
-//"components/_nav-mobile",
 "components/_nav-primary",
-"components/_buttons",
-"components/_table",
+//"components/_nav-mobile",
 
 // 7.2 Site components
 "components/_module-container",
@@ -122,6 +121,7 @@
 "utilities/_widths",
 "utilities/_headings",
 "utilities/_spacing",
+"utilities/_icons",
 "utilities/_debug",
 //"utilities/_shame",
 //"utilities/_ie-fix", // IE fix

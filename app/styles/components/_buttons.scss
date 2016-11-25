@@ -16,19 +16,13 @@
 //
 
 .c-btn {
-  display: inline-block;
-  // [1]
-  vertical-align: middle;
-  // [2]
-  font: inherit;
-  // [3]
-  text-align: center;
-  // [4]
-  margin: 0;
-  // [4]
-  cursor: pointer;
-  // [5]
-  padding: 14px 20px;
+  display: inline-block; // [1]
+  vertical-align: middle; // [2]
+  font: inherit; // [3]
+  text-align: center; // [4]
+  margin: 0; // [4]
+  cursor: pointer; // [5]
+  padding: $global-spacing-unit-tiny $global-spacing-unit;
 
   @include hocus() {
     text-decoration: none;
@@ -38,10 +32,10 @@
 
 .c-btn--primary {
   @include FontSizeFor(button, 6);
+
   color: $color-btn;
   background-color: $color-btn-background;
   transition: $global-transition;
-  border-radius: $global-radius;
 
   @include hocus() {
     background-color: $color-btn-background-hover;
@@ -50,6 +44,7 @@
 
 .c-btn--secondary {
   @include FontSizeFor(button, 6);
+
   color: $color-btn-secondary;
   background-color: $color-btn-secondary-background;
   transition: $global-transition;
@@ -62,20 +57,24 @@
 
 .c-btn--small {
   @include FontSizeFor(button, 3);
+
   padding: 10px 12px;
 
   @include oGridRespondTo(M) {
     @include FontSizeFor(button, 4);
+
     padding: 15px 17px;
   }
 }
 
 .c-btn--medium {
   @include FontSizeFor(button, 4);
+
   padding: 12px 25px;
 
   @include oGridRespondTo(M) {
     @include FontSizeFor(button, 6);
+
     padding: 15px 35px;
   }
 }

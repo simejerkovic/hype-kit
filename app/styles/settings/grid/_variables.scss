@@ -14,7 +14,6 @@
 /// @link http://origami.ft.com/docs/syntax/scss/#silent-styles "Silent" styles in Origami's documentation
 $o-grid-is-silent: true !default;
 
-
 /// Offset, push and pull selectors
 ///
 /// @type Bool
@@ -28,7 +27,6 @@ $o-grid-shuffle-selectors: true !default;
 ///
 /// Toggle outputting offset, push and pull selectors
 $o-grid-human-friendly-selectors: true !default;
-
 
 /// Grid mode
 /// - fluid: full width up to the largest layout's width
@@ -64,7 +62,6 @@ $o-grid-debug-mode: false !default;
 /// @type Bool | String
 $o-grid-ie8-rules: 'inline' !default;
 
-
 // ----------------------------------------------------------------------------
 // Grid settings and dimensions
 // ----------------------------------------------------------------------------
@@ -86,7 +83,7 @@ $o-grid-min-width: 240px !default;
 ///
 /// @type Map
 $o-grid-layouts: (
-	S:  490px,  // column-width: 30px, inner width: 470px
+  S:  490px,  // column-width: 30px, inner width: 470px
 	M:  740px,  // column-width: 40px, inner width: 700px
 	L:  980px,  // column-width: 60px, inner width: 940px
 	XL: 1220px, // column-width: 80px, inner width: 1180px
@@ -102,8 +99,8 @@ $_o-grid-layout-names: map-keys($o-grid-layouts);
 ///
 /// @type Map
 $o-grid-gutters: (
-	default: 10px,
-	M:       20px,
+  default: 10px,
+  M:       20px,
 ) !default;
 
 // If layouts have changed but gutters haven't,
