@@ -1,8 +1,12 @@
 ; EditorConfig helps developers define and maintain consistent
 ; coding styles between different editors and IDEs
 ; editorconfig.org
-; For Visual Studio you need to install this extension:
-; https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig
+; For Visual Studio 2017 support is already baked in
+; For now this baked in implementation has 2 limitations:
+; Does not work for XML files
+; Does not support insert_final_newline and trim_trailing_whitespace
+; Future improvements coming : https://github.com/dotnet/roslyn/pull/15029
+
 
 root = true
 
