@@ -3,12 +3,10 @@
 /// @group 2sxc-app
 /// @todo Create basic styles for 2sxc Content application
 ////
-
 .c-content__text {
   strong {
     @include FontWeight(medium);
   }
-
   a {
     text-decoration: underline;
   }
