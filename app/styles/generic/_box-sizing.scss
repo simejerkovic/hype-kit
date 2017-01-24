@@ -1,8 +1,9 @@
-////
-/// More sensible default box-sizing
-/// @group generic
-/// @link http://www.css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
-////
+//
+// Set the global `box-sizing` state to `border-box`.
+// @group generic
+//
+// @link http://www.css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+// @link http://paulirish.com/2012/box-sizing-border-box-ftw
 
 html {
   -webkit-box-sizing: border-box;
@@ -11,6 +12,7 @@ html {
 }
 
 * {
+
   &,
   &:after,
   &:before {

@@ -50,6 +50,7 @@ gulp.task('styles:dev', function () {
     // px-to-rem & autoprefixer
     var processors = [
         autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7'] }),
+        //@deprecated Not used anymore, using sass mixins instead for font sizing
         //pxtorem({
         //    root_value: 10,
         //    replace: true,
@@ -63,10 +64,33 @@ gulp.task('styles:dev', function () {
         .pipe(sourcemaps.init())
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(postcss(processors))
+        // Nano is hidden in dev envirement to speed up Sass generation
         //.pipe(nano({ safe: true, autoprefixer: false, zindex: false }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(skinPathDev))
         .pipe(browserSync.stream({ match: '**/*.css' }));
+});
+
+gulp.task('styles:prod', function () {
+
+    // px-to-rem & autoprefixer
+    var processors = [
+        autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7'] }),
+        //@deprecated Not used anymore, using sass mixins instead for font sizing
+        //pxtorem({
+        //    root_value: 10,
+        //    replace: true,
+        //    prop_white_list: [],
+        //    selector_black_list: ['html']
+        //})
+    ];
+
+    return gulp.src(skinPathDev + '/styles/skin.scss')
+        .pipe(plumber())
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(nano({ safe: true, autoprefixer: false, zindex: false }))
+        .pipe(gulp.dest(skinPathDev));
 });
 
 // Watch files for changes & reload
@@ -75,7 +99,7 @@ gulp.task('styles:dev', function () {
 gulp.task('serve:dev', ['styles:dev'], function () {
     browserSync.init({
         injectChanges: true,
-        proxy: "http://dev.sistemi.hr"
+        proxy: 'http://dev.sistemi.hr'
     });
     gulp.watch([skinPathDev + '/styles/**/*.{scss,css}'], ['styles:dev']);
 });

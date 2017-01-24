@@ -5,27 +5,23 @@
 ///
 /// @todo Clean these styles and use mixins from form-items
 ////
-
-.dnnLogin > div {
+.dnnLogin>div {
   @include oGridContainer();
   padding: 0 !important;
 }
 
 .loginContent {
   @include oGridRow();
-
   .dnnFormItem input[type] {
-    color:$color-black;
+    color: $color-black;
     padding-left: 10px;
     font-size: 14px;
     line-height: 24px;
   }
-
   .LoginPanel {
     @include oGridColspan((default: 12, L: 8));
     padding-right: 0 !important;
   }
-
   .dnnSocialRegistration {
     @include oGridColspan((default: 12, L: 4));
     //padding:0!important;
@@ -36,54 +32,42 @@
       padding: 0 !important;
     }
   }
-
   .dnnFormItem:nth-child(3) {
-    width : auto;
-
-    & > a {
+    width: auto;
+    &>a {
       &.dnnPrimaryAction {
-        @extend .c-btn--medium;
         @extend .c-btn--secondary;
         margin: 0 10px;
         min-width: 110px;
       }
-
       &.dnnPrimaryAction {
         margin-left: 0;
-
         @include oGridRespondTo(S) {
           margin-left: 25%;
         }
       }
-
       &.dnnSecondaryAction {
         display: none;
       }
     }
-
     .dnnFormLabel {
       display: none;
     }
   }
-
   .dnnFormItem:nth-child(4) {
     .dnnFormLabel {
       display: none;
     }
   }
-
   .dnnLoginRememberMe,
   .dnnLoginActions {
     margin-left: 0;
-
     @include oGridRespondTo(S) {
       margin-left: 25%;
     }
   }
-
   .dnnLoginRememberMe {
     line-height: 0;
-
     .dnnCheckbox {
       .mark {
         position: relative;
@@ -97,15 +81,11 @@
         border: solid 1px #b9b9b9;
         background-color: #fff;
         cursor: pointer;
-
-
         &:before {
-          @include transition(transform .4s );
-          @include transition-property(transform);
-          @include transition-duration(.4s);
-          @include transition-timing-function(cubic-bezier(.45,1.8,.5,.75));
-
-          @include transform(rotate(-45deg) scale(0, 0));
+          transition-property: transform;
+          transition-duration: 0.4s;
+          transition-timing-function: cubic-bezier(.45, 1.8, .5, .75);
+          transform: rotate(-45deg) scale(0, 0);
           content: "";
           position: absolute;
           left: 1px;
@@ -118,32 +98,26 @@
           border-right-style: none;
         }
       }
-
       .mark.dnnCheckbox-hover {
         border: solid 1px #000;
       }
     }
-
     .dnnCheckbox-checked {
       .mark {
-
         &:before {
-          @include transform(rotate(-45deg) scale(1, 1));
+          transform: rotate(-45deg) scale(1, 1);
         }
       }
     }
   }
-
   .dnnFormItem:nth-child(5) {
     .dnnFormLabel {
       display: none;
     }
   }
-
   .dnnSocialRegistration {
     display: none;
   }
-
 }
 
 // Link registriraj me na dnu prijave

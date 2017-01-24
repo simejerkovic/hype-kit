@@ -1,15 +1,14 @@
 ////
 /// Crop
+/// A list of cropping ratios that get generated as modifier classes.
 ///
 /// @group objects
 ////
 
-// A list of cropping ratios that get generated as modifier classes.
-
-$crop-sizes: (
-  2:1,
-  4:3,
-  16:9,
+$crops: (
+  (2:1),
+  (4:3),
+  (16:9),
 ) !default;
 
 // Provide a cropping container in order to display media (usually images)
@@ -19,9 +18,9 @@ $crop-sizes: (
 // 2. This is the crucial part: where the cropping happens.
 
 .o-crop {
-  position: relative; /* [1] */
+  position: relative; // [1]
   display: block;
-  overflow: hidden; /* [2] */
+  overflow: hidden; // [2]
 }
 
 // Apply this class to the content (usually `img`) that needs cropping.
@@ -31,9 +30,9 @@ $crop-sizes: (
 
 .o-crop__content {
   position: absolute;
-  top:  0; /* [1] */
-  left: 0; /* [1] */
-  max-width: none; /* [2] */
+  top:  0; // [1]
+  left: 0; // [1]
+  max-width: none; // [2]
 }
 
 // We can position the media in different locations within the cropping area.
@@ -60,21 +59,26 @@ $crop-sizes: (
 
 /// Crop-ratio variants.
 /// Generate a series of crop classes to be used like so:
-/// @example
+///
+/// @example html
 /// <div class="o-crop o-crop--16:9">
 
-@each $antecedent, $consequent in $crop-sizes {
+@each $crop in $crops {
 
-  @if (type-of($antecedent) != number) {
-    @error "`#{$antecedent}` needs to be a number."
-  }
+  @each $antecedent, $consequent in $crop {
 
-  @if (type-of($consequent) != number) {
-    @error "`#{$consequent}` needs to be a number."
-  }
+    @if (type-of($antecedent) != number) {
+      @error "`#{$antecedent}` needs to be a number."
+    }
 
-  .o-crop--#{$antecedent}\:#{$consequent} {
-    padding-bottom: ($consequent/$antecedent) * 100%;
+    @if (type-of($consequent) != number) {
+      @error "`#{$consequent}` needs to be a number."
+    }
+
+    .o-crop--#{$antecedent}\:#{$consequent} {
+      padding-bottom: ($consequent/$antecedent) * 100%;
+    }
+
   }
 
 }

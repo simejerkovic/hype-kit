@@ -32,6 +32,10 @@
     "main-bower-files": "^2.5.0",
     "postcss-pxtorem": "^2.3.2",
     "sassdoc": "^2.1.20",
+    "stylelint": "^7.7.1",
+    "stylelint-order": "^0.2.2",
+    "stylelint-scss": "^1.4.1",
+    "stylelint-selector-bem-pattern": "^1.0.0",
     "wiredep": "^2.2.2"
   }
 }

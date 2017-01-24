@@ -5,63 +5,52 @@
 ///
 /// @todo Clear these styles and make mixins out of form styles
 ////
-
 .dnnForm {
-
   .dnnFormItem {
     @include oGridRow;
     margin-left: 0 !important;
     margin-bottom: 32px;
-
     .dnnLabel {
       @include oGridColspan((default: 12, S: 3));
       padding: 0 !important;
-
-      @media only screen and (min-width : map-get($o-grid-layouts, S)) {
+      @media only screen and (min-width: map-get($o-grid-layouts, S)) {
         text-align: right;
-
-        label.dnnFormLabel, label {
+        label.dnnFormLabel,
+        label {
           line-height: 28px;
           margin-right: 10px;
         }
       }
     }
-
-    & > input[type] {
+    &>input[type] {
       @include oGridColspan((default: 12, S: 9));
       // @include form-text-box;
       .c-page-section--registracija & {
         @include oGridColspan((S: 7));
       }
     }
-
     .dnnFormLabel {
       width: auto !important;
     }
   }
-
   .dnnActions {
     @extend .o-list-bare;
   }
 }
 
-
 .register-terms-agreement {
   margin-left: 0;
   margin-bottom: 32px;
-
   @include oGridRespondTo(S) {
     margin-left: 25%;
   }
-
   @include oGridRespondTo(M) {
     margin-left: 32.5%;
   }
 
   &__link {
-    @include FontWeight('semibold');
+    @include FontWeight(semibold);
   }
-
 }
 
 //
@@ -69,7 +58,6 @@
 // SJ: Klase ne postoje unutar FormAndList modula
 // Dependency: js/scripts.js // Form and list > Capcha fix
 //
-
 .dnnForm__captcha-container {
   position: relative;
 }
@@ -78,20 +66,20 @@
   position: relative;
   z-index: 1;
   // Sakrij div s captcha opisom
-  & + div {
+  &+div {
     display: none;
   }
 }
+
 // Pomakni input polje
 input.dnnForm__captcha-input {
-  @include size(100% 40px);
+  @include size(100%, 40px);
   // @include form-text-box;
   position: absolute;
   //top: 0;
   left: 0;
   padding-left: 150px !important;
 }
-
 
 //
 // Login - Register message
@@ -100,51 +88,42 @@ input.dnnForm__captcha-input {
   margin: ($global-spacing-unit*2) 0;
   font-size: 12px;
   text-align: center;
-
   @include oGridRespondTo(S) {
     margin-left: 25%;
     font-size: 15px;
     text-align: left;
   }
-
   @include oGridRespondTo(L) {
     margin-left: 16.5%;
   }
-
   .c-page-section--registracija & {
     @include oGridRespondTo(M) {
       margin-left: 32.5%;
     }
   }
-
   .icon,
   .login-register-account__link {
     // @include ColorsFor('sd-brand', text);
   }
-
   .icon {
     font-size: 9px;
     margin-left: $global-spacing-unit/4;
     margin-right: $global-spacing-unit/4;
-
     @include oGridRespondTo(S) {
       font-size: 11px;
       margin-left: $global-spacing-unit/2;
       margin-right: $global-spacing-unit/2;
     }
   }
-
   .login-register-account__link {
     @include FontWeight('bold');
     text-transform: uppercase;
     font-size: 12px;
-
     @include oGridRespondTo(S) {
       font-size: 13px;
     }
   }
 }
-
 
 // Validation messages
 .dnnFormMessage.dnnFormValidationSummary,
@@ -154,57 +133,51 @@ input.dnnForm__captcha-input {
 }
 
 .dnnFormMessage.dnnFormValidationSummary {
-
   @include oGridRespondTo(S) {
     margin-left: 25%;
   }
-
   @include oGridRespondTo(L) {
     margin-left: 16.5%;
   }
 }
 
 .dnnFormItem .dnnFormMessage.dnnFormError {
-
   @include oGridRespondTo(S) {
     margin-left: 25%;
   }
 }
 
-
 // Promijeni lozinku
-
 div.dnnPasswordResetContent {
-    max-width: 550px;
-    margin: 0 auto;
-    width: 100%;
-
-
+  max-width: 550px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 div.dnnForm.dnnPasswordReset {
-
-    ul.dnnActions, .dnnFormItem .dnnFormMessage.dnnFormError {
-      margin-left: 0 !important;
-    }
+  ul.dnnActions,
+  .dnnFormItem .dnnFormMessage.dnnFormError {
+    margin-left: 0 !important;
+  }
 }
-
 
 div.dnnForm.dnnPasswordReset .password-strength-container {
   //@include oGridColspan(12);
-
   .password-strength {
     //@include oGridColspan((default: 12, S: 9));
   }
 }
 
 div.dnnForm.dnnPasswordReset .dnnActions li:first-child {
-    padding-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 // DNN VALIDATION MESSAGE ON 404 & 500 page
 .c-page {
-  &--Gre_ka_500, &--Error_500, &--Gre_ka_404, &--Error_404 {
+  &--Gre_ka_500,
+  &--Error_500,
+  &--Gre_ka_404,
+  &--Error_404 {
     .dnnFormValidationSummary {
       display: none;
     }

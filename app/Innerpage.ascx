@@ -1,28 +1,43 @@
 <%@ Control Language="C#" AutoEventWireup="false" Explicit="True" Inherits="DotNetNuke.UI.Skins.Skin" %>
-<%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="TEXT" Src="~/Admin/Skins/Text.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
-<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
-<%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
-<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
-<%@ Register TagPrefix="dnn" TagName="COOKIECONSENT" Src="~/DesktopModules/DnnC_CookieConsent/CookieConsent.ascx" %>
 <!--  #include file="_includes/_common-resources.ascx" -->
 
-<!--  #include file="_includes/_meta.ascx" -->
 <!--  #include file="_includes/header.ascx" -->
 
-<main class="c-page-content c-page-content--inner-page" role="main">
-    <div class="o-grid-container inner-page__wrapper">
-        <div class="o-grid-row">
+<main class="c-page-content c-page-content--inner" role="main">
+    <div class="c-hero">
+        <div id="HeroPane" runat="server" class="pane"></div>
+        <%-- If HeroPane has content don't show breadcrumb and page title --%>
+        <% if((HeroPane.Attributes["class"] ?? "").Contains("DNNEmptyPane")) { %>
+            <div class="o-grid-container">
+                <div class="c-breadcrumb">
+                    <dnn:BREADCRUMB ID="dnnBreadcrumb" runat="server" CssClass="c-breadcrumb__link" RootLevel="0" Separator="<span class='c-breadcrumb__separator'>/</span>" HideWithNoBreadCrumb="true" />
+                </div>
+                <div class="c-headline">
+                    <h1 class="c-page__title"><%= PortalSettings.ActiveTab.Title %></h1>
+                </div>
+            </div>
+        <% } %>
+        <%-- End If --%>
+    </div>
+    <div class="inner-page__wrapper o-grid-container">
+        <div class="c-page-section">
             <div id="ContentPane" runat="server" class="pane"></div>
+        </div>
+        <div class="c-page-section o-grid-row">
+            <div class="c-page-content__navigation">
+                <dnn:MENU MenuStyle="nav/aside-nav" runat="server" NodeSelector="+0,0,1"></dnn:MENU>
+                <div id="P1_Content_Nav" runat="server" class="pane"></div>
+            </div>
+            <div class="c-page-content__main <%= (P1_Content_Sidebar.Attributes["class"] ?? "").Contains("DNNEmptyPane") ? "" : "has-sidebar" %>">
+                <div id="P1_Content_Main" runat="server" class="pane"></div>
+            </div>
+            <div id="P1_Content_Sidebar" runat="server" class="c-page-content__sidebar pane"></div>
         </div>
     </div>
 </main>
 
-<dnn:CookieConsent runat="server" CookieTheme="" />
+<%-- <dnn:CookieConsent runat="server" CookieTheme="" /> --%>
 
 <!--  #include file="_includes/footer.ascx" -->
 

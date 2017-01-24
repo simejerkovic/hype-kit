@@ -11,7 +11,7 @@
 ////
 
 .c-nav-primary {
-  font-size: 18px;
+  @include FontSize(18px, none);
 }
 
 .c-nav-primary__item {
@@ -29,7 +29,6 @@
 
 .c-nav-primary__icon-home {
   @include size(18px);
-
   margin-right: $global-spacing-unit-tiny;
 }
 

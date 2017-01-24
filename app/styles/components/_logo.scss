@@ -3,7 +3,7 @@
 /// Standard logo component
 /// @group components
 /// @todo Clean these styles
-/// @example
+/// @example html
 ///   <svg class="c-logo">
 ///     <use xlink:href="#brand-logo" />
 ///   </svg>
@@ -18,5 +18,6 @@
 }
 
 .c-logo {
-  @include size(326px 54px);
+  @include size(326px, 54px);
+  display: block;
 }

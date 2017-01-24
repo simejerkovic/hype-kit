@@ -1,35 +1,27 @@
-////
-/// Shared declarations for certain elements.
-/// @group generic
-/// @link http://csswizardry.com/2012/06/single-direction-margin-declarations/
-////
-// Always declare margins in the same direction:
-address,
-blockquote,
-dl,
-fieldset,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-ol,
-p,
-pre,
+//
+// Apply our base spacing unit as a `margin-bottom` to all block level elements
+// so that we get nice and consistent vertical rhythm very cheaply.
+//
+// @link http://csswizardry.com/2012/06/single-direction-margin-declarations/
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl,
+blockquote, p, address,
 table,
-ul {
+fieldset, figure,
+pre {
   margin-bottom: $global-spacing-unit;
 }
 
-dd,
-ol,
-ul {
+// We’ll also indent list elements by the same amount of spacing.
+
+ul,  ol,
+dd {
   margin-left: $global-spacing-unit;
 }
 
+// We'll also add max height to svg elements
 svg {
   max-height: 100%;
 }
+

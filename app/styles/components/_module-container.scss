@@ -6,6 +6,6 @@
 ////
 
 .module-container__title {
-  @include FontSizeFor(module-container-title, 1);
+  @include FontSize(20px, auto);
   @include FontWeight(normal);
 }

@@ -7,10 +7,10 @@
 /// @group objects
 ////
 
-/// 1. So we can apply the `.o-box` class to naturally-inline elements.
+// 1. So we can apply the `.o-box` class to naturally-inline elements.
 
 .o-box {
-  @include %clearfix;
+  @include clearfix();
   display: block; // [1]
   padding: $global-spacing-unit;
 
@@ -20,8 +20,7 @@
 
 }
 
-
-/// Size variants
+// Size variants
 
 .o-box--flush {
   padding: 0;

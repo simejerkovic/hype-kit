@@ -1,3 +1,21 @@
+<%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
+<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
+<%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
+<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
+<%@ Register TagPrefix="dnn" TagName="COOKIECONSENT" Src="~/DesktopModules/DnnC_CookieConsent/CookieConsent.ascx" %>
+
+<%-- DNN: Standard meta calls, injected into head tag --%>
+<dnn:META ID="META1" runat="server" InsertFirst="true" Name="viewport" Content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<dnn:META ID="META2" runat="server" Name="mobile-web-app-capable" Content="yes" />
+<dnn:META ID="META3" runat="server" Name="apple-mobile-web-app-title" Content="Hypekit" />
+<dnn:META ID="META4" runat="server" Name="application-name" Content="Hypekit" />
+<dnn:META ID="META5" runat="server" Name="msapplication-TileColor" Content="#2b5797" />
+<dnn:META ID="META6" runat="server" Name="msapplication-TileImage" content="/Portals/0/Images/favicons/mstile-144x144.png?v=dLLkRzL3MB" />
+<dnn:META ID="META7" runat="server" Name="msapplication-config" content="/Portals/0/browserconfig.xml?v=dLLkRzL3MB" />
+<dnn:META ID="META8" runat="server" Name="theme-color" content="#ffffff" />
+
 <%-- DNN: Inject into head and body onLoad and OnPreRender --%>
 <script runat="server">
 
@@ -13,8 +31,12 @@
 		var PortalSettings = DotNetNuke.Entities.Portals.PortalSettings.Current;
 		// add language, edit mode, tab-id and root-tab-id to body css class
 		string CssClass = "tab-id-" + PortalSettings.ActiveTab.TabID.ToString() + " ";
+        // add class role-admin if current user is in role Administrators
 		if(DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName))
 		CssClass += "role-admin ";
+        // add class role-editor if current user is in role Urednik
+        if(DotNetNuke.Security.PortalSecurity.IsInRoles("Urednik"))
+		CssClass += "role-editor ";
     	CssClass += "tab-level-" + PortalSettings.ActiveTab.Level + " ";
 		CssClass += "root-id-" + ((DotNetNuke.Entities.Tabs.TabInfo)PortalSettings.ActiveTab.BreadCrumbs[0]).TabID.ToString() + " ";
 		var rootTab = ((DotNetNuke.Entities.Tabs.TabInfo)PortalSettings.ActiveTab.BreadCrumbs[0]);

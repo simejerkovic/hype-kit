@@ -1,11 +1,11 @@
-////
-/// Widths
 /// A mixin to spit out our width classes. Pass in the columns we want the widths
 /// to have, and an optional suffix for responsive widths.
-/// @group mixin
-/// @example
-///   @include widths(3 4, -sm);
-////
+///
+/// @example scss
+///   .element {
+///     @include widths(3 4, -sm);
+///   }
+
 @mixin widths($widths-columns, $widths-breakpoint: null) {
   // Loop through the number of columns for each denominator of our fractions.
   @each $widths-denominator in $widths-columns {
@@ -19,25 +19,33 @@
     }
   }
 }
-////
+
 // Widths example
 // A series of width helper classes that you can use to size things like grid
 // systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
 // word format (e.g. `.u-2-of-3`).
 //
 // @example html
-//   <div class="u-7/12">
-////
+//   <div class="u-5/5 u-2/15@md">
+
 @include widths(1 2 3 4 5);
 
-@media screen and (min-width: 720px) {
+@include oGridRespondTo($from: XS) {
+  @include widths(1 2 3 4 5, \@xs);
+}
+
+@include oGridRespondTo($from: S) {
   @include widths(1 2 3 4 5, \@sm);
 }
 
-@media screen and (min-width: 1024px) {
+@include oGridRespondTo($from: M) {
   @include widths(1 2 3 4 5, \@md);
 }
 
-@media screen and (min-width: 1200px) {
+@include oGridRespondTo($from: L) {
   @include widths(1 2 3 4 5, \@lg);
+}
+
+@include oGridRespondTo($from: XL) {
+  @include widths(1 2 3 4 5, \@xl);
 }

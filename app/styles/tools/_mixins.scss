@@ -6,16 +6,17 @@
 ////
 
 
-
-
 /// Generate `:hover` and `:focus` styles in one go.
 ///
 /// @example
-///  .simple-usage {
-///   @include hocus();
-///  }
+///   .simple-usage {
+///     @include hocus();
+///   }
+///
+/// @link http://www.456bereastreet.com/archive/201004/whenever_you_use_hover_also_use_focus/
 
 @mixin hocus() {
+
     &:hover,
     &:focus {
         @content;
@@ -60,11 +61,16 @@
     width: 1px !important;
 }
 
+
 /// Clamps a block of text to a certain number of lines,
 /// followed by an ellipsis in Webkit and Blink based browsers
 ///
-/// @group mixins
 /// @link http://dropshado.ws/post/1015351370/webkit-line-clamp
+///
+/// @example scss
+///   .element {
+///     @include text-clamp(<value>, <value>);
+///   }
 
 @mixin text-clamp($lines: 2, $line-height: false) {
     overflow: hidden;
@@ -79,9 +85,13 @@
     }
 }
 
+
 /// Ellipsis
 ///
-/// @group mixins
+/// @example scss
+///   .element {
+///     @include ellipsis();
+///   }
 
 @mixin ellipsis() {
     white-space: nowrap;
@@ -89,16 +99,17 @@
     text-overflow: ellipsis;
 }
 
-/// Absolute center
+
+/// This is a pattern for horizontally and vertically centering an element within its container.
+/// The negative values expand the box in which the element is centered, which is required when the element
+/// is bigger than its container (can be increased if required).
 ///
-/// this is a pattern for horizontally and vertically centering an element within its container
-/// the negative values expand the box in which the element is centered, which is required when the element
-/// is bigger than its container (can be increased if required)
-///
-/// @group mixins
+/// @example scss
+///   .element {
+///     @include absolute-center;
+///   }
 
 @mixin absolute-center {
-
     position: absolute;
     top: -20px;
     bottom: -20px;
@@ -112,14 +123,16 @@
     @include absolute-center;
 }
 
+
 /// Simple truncation mixin to cut off text using an ellipsis after a certain
 /// width.
 ///
-/// @example
+/// @example scss
 ///   .simple-usage {
 ///     @include truncate();
 ///   }
 ///
+/// @example scss
 ///   .detailed-usage {
 ///     @include truncate(<value>);
 ///   }

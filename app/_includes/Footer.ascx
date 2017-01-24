@@ -9,7 +9,6 @@
         <div class="o-grid-row">
           <div class="c-page-footer--copyright">
             <dnn:Copyright runat="server" id="dnnCopyright" />
-            <dnn:TEXT runat="server" id="TEXT1" resourceKey="Izrada" CssClass="" />
           </div>
         </div>
     </div>

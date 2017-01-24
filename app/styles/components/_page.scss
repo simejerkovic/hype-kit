@@ -13,10 +13,8 @@
   color: $color-selection-text;
 }
 
-////
-/// Styles for lazysizes.js script
-/// @group components
-////
+// Styles for lazysizes.js script
+// @group components
 
 .lazyload,
 .lazyloading {
@@ -27,22 +25,24 @@
   opacity: 1;
   transition: opacity 400ms;
 }
-////
-/// Styles for DNN Language object
-/// @group components
-////
-// If language: Hrvatski hide English
 
+// Styles for DNN Language object
+// @group components
+
+// If language: Hrvatski hide English
 .lang-hr {
+
   .lang-en {
     display: none !important;
   }
 }
-// If language: English hide Hrvatski
 
+// If language: English hide Hrvatski
 .lang-en {
+
   .lang-hr {
     display: none !important;
   }
 }
+
 // Page component styles

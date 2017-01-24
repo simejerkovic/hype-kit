@@ -13,6 +13,10 @@
 //   .u-padding {}
 //   .u-padding-right-none {}
 
+
+/* stylelint-disable string-quotes */
+
+
 $spacing-directions: (
   null,
   '-top',
@@ -51,3 +55,5 @@ $spacing-sizes: (
   }
 
 }
+
+/* stylelint-enable string-quotes */

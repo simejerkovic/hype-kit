@@ -24,6 +24,16 @@
 
 <dnn:MENU MenuStyle="nav/sub" NodeSelector="CurrentChildren" runat="server" />
 
+
+<%-- Checks the current language and includes footer for that lanugage --%>
+<% if(System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName.ToLower() == "hr") { %>
+     <!--  #include file="_includes/Footer.ascx" -->
+<% }
+else { %>
+    <!--  #include file="_includes/Footer_en.ascx" -->
+<% } %>
+
+
 <footer>
   <div class="container-fluid">
     <div class="c-container-inner clearfix">

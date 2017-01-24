@@ -12,32 +12,13 @@
 // 1. Settings
 // Variables, global config and colors
 // ==========================================================================
-"settings/_config",
-"settings/_global",
-
-// oGrid System with SassMq
-"settings/_grid",
-// Colors
-'settings/_colors',
-// Typography
-"settings/_typography",
-// Z-index
-"settings/_z-index",
+"settings/_all",
 
 // ==========================================================================
 // 2. Tools
 // Helper functions, mixins and aliases
 // ==========================================================================
-"tools/_functions", // General functions to help with development
-"tools/_mixins", // General mixins to help with development
-
-// Mixins
-"tools/mixins/_clearfix", // Clearfix
-"tools/mixins/_typography", // Typography mixins
-// Vendor: Bourbon mixin library
-"tools/bourbon/_bourbon",
-// Aliases
-"tools/_aliases",
+"tools/_all",
 
 // ==========================================================================
 // 3. Generic
@@ -56,7 +37,6 @@
 "elements/_page", //
 "elements/_headings", //
 "elements/_links", //
-"elements/_lists", //
 "elements/_images", //
 "elements/_quotes", //
 "elements/_table", //
@@ -66,21 +46,26 @@
 // Basic layout styles, headlines, lists
 // ==========================================================================
 "objects/_grid",
-"objects/_wrappers",
+"objects/_wrapper",
 "objects/_layout",
-"objects/_headline",
 "objects/_media",
+"objects/_flag",
 "objects/_list-bare",
 "objects/_list-inline",
+"objects/_box",
+"objects/_block",
+"objects/_ratio",
 "objects/_crop",
+"objects/_pack",
+
 
 // ==========================================================================
 // 6. Vendor
 // Third party components, javascript plugins
 // ==========================================================================
 // Slick carousel styles
-"vendor/slick/slick",
-"vendor/slick/slick-theme",
+//"vendor/slick/slick",
+//"vendor/slick/slick-theme",
 // Custom DNN fixes
 "vendor/dnn/_admin",
 "vendor/dnn/_dnn-styles",
@@ -90,27 +75,29 @@
 // Styles for components, modules and widgets
 // ==========================================================================
 
-// 7.1 Base components
-"components/_logo",
-"components/_buttons",
-"components/_table",
-"components/_page",
-"components/_page-head",
-"components/_page-footer",
-"components/_nav-primary",
+// 7.1 Global components
+//"components/_logo",
+//"components/_buttons",
+//"components/_table",
+//"components/_page",
+//"components/_page-head",
+//"components/_page-footer",
+//"components/_nav-primary",
 //"components/_nav-mobile",
 
 // 7.2 Site components
-"components/_module-container",
-"components/_headline",
-"components/_sharing-bar",
-"components/search/_search-box",
-"components/search/_search-results",
+//"components/_module-container",
+//"components/_headline",
+//"components/_sharing-bar",
+
+// Search component
+//"components/search/_search-box",
+//"components/search/_search-results",
 
 // DNN components and skin objects
-"components/dnn/_form-items",
-"components/dnn/_login",
-"components/dnn/_cookie-consent.scss",
+//"components/dnn/_form-items",
+//"components/dnn/_login",
+//"components/dnn/_cookie-consent.scss",
 
 // ==========================================================================
 // 8. Utilities

@@ -1,8 +1,5 @@
-////
-/// Mixins to help generating typographical rules.
-/// @group: tools
-///
-////
+// Mixins to help generating typographical rules.
+// @group tools
 
 /// Font family mixin
 ///
@@ -10,62 +7,48 @@
 ///
 /// @example scss
 ///    @include FontFamily(source-sans-pro);
-///
-/// @group mixins
 
 @mixin FontFamily($family) {
+  @if ($family=="source-sans-pro") {
+    font-family: 'source-sans-pro', sans-serif;
+  }
 
-    @if ($family == "source-sans-pro") {
-        font-family: 'source-sans-pro', sans-serif;
-    }
+  @elseif ($family=="encode-sans-condensed") {
+    font-family: 'encode-sans-condensed', sans-serif;
+  }
 
-    @elseif ($family == "encode-sans-condensed") {
-        font-family: 'encode-sans-condensed', sans-serif;
-    }
-
-    @else {
-        @warn "#{$family} is not a valid font-family."
-    }
-
+  @else {
+    @warn "#{$family} is not a valid font-family."
+  }
 };
 
-/// Font weight mixin
-///
-/// Human friendly font weight keywords
+
+/// Human friendly font weight keywords.
 /// Map keywords onto our numbered weights for convenience.
 ///
 /// @example scss
 ///    @include FontWeight(bold);
-///
-/// @group mixins
+
 @mixin FontWeight($weight) {
-
-    @if ($weight == normal) {
-        font-weight: 400;
-    }
-
-    @elseif ($weight == extralight) {
-        font-weight: 200;
-    }
-
-    @elseif ($weight == light) {
-        font-weight: 300;
-    }
-
-    @elseif ($weight == semibold or $weight == medium ) {
-        font-weight: 600;
-    }
-
-    @elseif ($weight == bold) {
-        font-weight: 700;
-    }
-
-    @elseif ($weight == black) {
-        font-weight: 900;
-    }
-
-    @else {
-        @warn "#{$weight} is not a valid font-weight."
-    }
-
+  @if ($weight==normal) {
+    font-weight: 400;
+  }
+  @elseif ($weight==extralight) {
+    font-weight: 200;
+  }
+  @elseif ($weight==light) {
+    font-weight: 300;
+  }
+  @elseif ($weight==semibold or $weight==medium) {
+    font-weight: 600;
+  }
+  @elseif ($weight==bold) {
+    font-weight: 700;
+  }
+  @elseif ($weight==black) {
+    font-weight: 900;
+  }
+  @else {
+    @warn "#{$weight} is not a valid font-weight."
+  }
 };

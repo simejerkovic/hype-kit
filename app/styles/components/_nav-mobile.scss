@@ -40,7 +40,7 @@ $menu-width-L: 340px;
 
   > .icon-burger {
     @include transform(translate(-50%, -100%));
-    @include size(22px 2px);
+    @include size(22px, 2px);
     background-color: $color-page-head-icon-links;
     left: 50%;
     &:before {
@@ -93,7 +93,7 @@ body.is-active\@sm {
     color: $color-black;
   }
   @include oGridRespondTo($from: L) {
-    @include size($menu-width-L 100%);
+    @include size($menu-width-L, 100%);
   }
 }
 //

@@ -1,27 +1,55 @@
 ////
-// Global variables and settings
+// Global settings and variables
 // @group settings
 ////
 
-$global-line-height: 1.6;
-$global-radius: 3px;
-$global-transition: 0.333333333s;
+// Global typography settings
+// ==============================================
 
-// Simple unit testing
-$global-unit-testing: 1;
+$global-font-size: 20px !default;
+$global-line-height: 30px !default;
+$global-ff-display: 'OpenSans', Arial, sans-serif !default;
+$global-ff-text: 'OpenSans', Arial, sans-serif !default;
 
-// Spacing variables
-$global-spacing-unit:         20px;
-$global-spacing-unit-tiny:    $global-spacing-unit / 2;
-$global-spacing-unit-small:   $global-spacing-unit / 1.5;
-$global-spacing-unit-large:   $global-spacing-unit * 1.5;
-$global-spacing-unit-huge:    $global-spacing-unit * 2;
+// Global border settings
+// ==============================================
 
-// Global paths
-$global-skin-path: '/Portals/0-System/skins/unidu/';
+$global-border-width: 1px !default;
+$global-border-radius: 0.25em !default;
 
+// Global animation settings
+// ==============================================
+
+$global-animation-speed: 0.5s !default;
+$global-animation-speed-fast: $global-animation-speed / 2 !default;
+$global-animation-speed-slow: $global-animation-speed * 2 !default;
+
+// Global shadow settings
+// ==============================================
+
+$global-shadow-color: #000;
+$global-shadow-intensity: 0.2;
+$global-shadow-x: 1px;
+$global-shadow-y: 1px;
+$global-shadow-blur: 14px;
+$global-shadow-spread: 0;
+
+$global-shadow: unquote($global-shadow-x + " " + $global-shadow-y + " " + $global-shadow-blur + " " + $global-shadow-spread + " " + rgba($global-shadow-color, $global-shadow-intensity));
+
+// Global spacing settings
+// ==============================================
+
+$global-spacing-unit: 20px;
+$global-spacing-unit-tiny: round(0.25 * $global-spacing-unit);
+$global-spacing-unit-small: round(0.5 * $global-spacing-unit);
+$global-spacing-unit-large: round(2 * $global-spacing-unit);
+$global-spacing-unit-huge: round(4 * $global-spacing-unit);
+
+// Global path settings
+// ==============================================
+
+$global-skin-path: "/portals/0-System/skins/unidu/";
 // Global paths: Font
-$global-font-path: $global-skin-path + 'fonts/';
-
+$global-font-path: $global-skin-path + "fonts/";
 // Global paths: Images
-$global-images-path: $global-skin-path + 'images/';
+$global-images-path: $global-skin-path + "images/";

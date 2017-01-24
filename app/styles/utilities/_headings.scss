@@ -7,25 +7,25 @@
 ////
 
 .u-h1 {
-    @include FontSizeOnlyFor(headings, 1);
+    @include FontSize($font-size-h1, auto);
 }
 
 .u-h2 {
-    @include FontSizeOnlyFor(headings, 2);
+    @include FontSize($font-size-h2, auto);
 }
 
 .u-h3 {
-    @include FontSizeOnlyFor(headings, 3);
+    @include FontSize($font-size-h3, auto);
 }
 
 .u-h4 {
-    @include FontSizeOnlyFor(headings, 4);
+    @include FontSize($font-size-h4, auto);
 }
 
 .u-h5 {
-    @include FontSizeOnlyFor(headings, 5);
+    @include FontSize($font-size-h5, auto);
 }
 
 .u-h6 {
-    @include FontSizeOnlyFor(headings, 6);
+    @include FontSize($font-size-h6, auto);
 }

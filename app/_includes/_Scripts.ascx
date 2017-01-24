@@ -1,5 +1,3 @@
-<%@ Register TagPrefix="dnn" TagName="JavaScriptLibraryInclude" src="~/Admin/Skins/JavaScriptLibraryInclude.ascx" %>
-
 <%-- Remove default DNN css and js files --%>
 <dnn:DnnCssExclude runat="server" Name="DnnDefault" />
 <%-- Placed in head of the document --%>

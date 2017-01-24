@@ -1,0 +1,7 @@
+node_modules/
+Web/DesktopModules/**/*.css
+Web/**/*.css
+./generic/_generic.normalize.scss
+./tools/*.scss
+./settings/*.scss
+./test/*.scss

@@ -6,7 +6,7 @@
 ; Does not work for XML files
 ; Does not support insert_final_newline and trim_trailing_whitespace
 ; Future improvements coming : https://github.com/dotnet/roslyn/pull/15029
-
+; Code Style Configuration in the VS2017 RC Update : https://blogs.msdn.microsoft.com/dotnet/2016/12/15/code-style-configuration-in-the-vs2017-rc-update/
 
 root = true
 
