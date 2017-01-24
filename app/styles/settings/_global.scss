@@ -1,0 +1,27 @@
+////
+// Global variables and settings
+// @group settings
+////
+
+$global-line-height: 1.6;
+$global-radius: 3px;
+$global-transition: 0.333333333s;
+
+// Simple unit testing
+$global-unit-testing: 1;
+
+// Spacing variables
+$global-spacing-unit:         20px;
+$global-spacing-unit-tiny:    $global-spacing-unit / 2;
+$global-spacing-unit-small:   $global-spacing-unit / 1.5;
+$global-spacing-unit-large:   $global-spacing-unit * 1.5;
+$global-spacing-unit-huge:    $global-spacing-unit * 2;
+
+// Global paths
+$global-skin-path: '/Portals/0-System/skins/unidu/';
+
+// Global paths: Font
+$global-font-path: $global-skin-path + 'fonts/';
+
+// Global paths: Images
+$global-images-path: $global-skin-path + 'images/';

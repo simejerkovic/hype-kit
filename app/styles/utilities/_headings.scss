@@ -1,0 +1,31 @@
+////
+/// Headings
+/// @group utilities
+/// @example
+///   <span class="u-h2">Simulated headline</span>
+///   <h2 class="u-h3">Headline with smaller sizing</h2>
+////
+
+.u-h1 {
+    @include FontSizeOnlyFor(headings, 1);
+}
+
+.u-h2 {
+    @include FontSizeOnlyFor(headings, 2);
+}
+
+.u-h3 {
+    @include FontSizeOnlyFor(headings, 3);
+}
+
+.u-h4 {
+    @include FontSizeOnlyFor(headings, 4);
+}
+
+.u-h5 {
+    @include FontSizeOnlyFor(headings, 5);
+}
+
+.u-h6 {
+    @include FontSizeOnlyFor(headings, 6);
+}

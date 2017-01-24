@@ -1,0 +1,344 @@
+////
+/// Table component
+/// @group table
+/// @todo Split into separated files
+////
+// Variables
+@import "../settings/_colors";
+$color-table-background: transparent !default; //
+$color-table-row-background: gray !default;
+$color-table-row-border: gray !default;
+$color-table-row-border-alt: silver !default;
+// Mixins
+/// Base tables styles - add to <table>
+@mixin TableBase {
+  margin: $global-spacing-unit/2 0 $global-spacing-unit;
+  background-color: $color-table-background;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 0 $global-spacing-unit*2;
+  width: 100%;
+  font-size: 18px;
+  // CK editor fix
+  // Resets paragraphs inside table cells
+  p {
+    margin-bottom: 0;
+  }
+
+  caption {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  th {
+    @include FontWeight(medium);
+  }
+
+  td {
+    @include FontWeight(normal);
+  }
+
+  td,
+  th {
+    padding: $global-spacing-unit/2;
+    text-align: left;
+    vertical-align: top;
+
+    @include oGridRespondTo($from: S) {
+      padding: $global-spacing-unit $global-spacing-unit/2;
+    }
+  }
+
+  th:not([scope=row]) {
+    vertical-align: bottom;
+  }
+}
+/// Add to table's wrapper element (if there is one)
+@mixin TableWrapper {
+  overflow: auto;
+  width: 100%;
+}
+/// Base styles for caption element - add this to any <caption> you use
+@mixin TableCaption {
+  @include FontWeight(medium);
+  border-bottom: 2px solid #a7a59b;
+  border-top: 2px solid #a7a59b;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 9px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+/// Add this to a caption element at the top of a table
+@mixin TableCaptionTop {
+  caption-side: top;
+  margin-bottom: -2px;
+}
+/// Add this to a caption element at the bottom of a table
+@mixin TableCaptionBottom {
+  caption-side: bottom;
+  margin-bottom: 0;
+}
+/// Add this to the table cell class to align text right
+@mixin TableCellNumeric {
+  text-align: right;
+}
+/// Makes content block and a smaller font size for secondary text in a table cell.
+@mixin TableCellContentSecondary {
+  @include FontWeight(normal);
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+}
+/// Add this to the table element to get row stripes
+@mixin TableRowStripes {
+  background-color: $color-table-background;
+
+  caption {
+    background-color: $color-table-background;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: $color-table-row-background;
+  }
+}
+/// Add horizontal lines to a table
+@mixin TableHorizontalLines {
+  tr:not(:last-child) {
+    border-bottom: 1px solid $color-table-row-border;
+  }
+}
+/// Add verticle lines to a table
+@mixin TableVerticalLines {
+  td:not(:last-child):not(:first-child),
+  th:not(:last-child):not(:first-child) {
+    border-left: 1px solid $color-table-row-border;
+    border-right: 1px solid $color-table-row-border;
+  }
+}
+/// Horizontal borders
+@mixin TableHorizontalBorders {
+  border-bottom: 1px solid $color-table-row-border;
+  border-top: 1px solid $color-table-row-border;
+
+  th:not([scope=row]) {
+    border-top: 1px solid $color-table-row-border-alt;
+  }
+}
+/// Vertical borders
+@mixin TableVerticalBorders {
+  border-left: 1px solid $color-table-row-border;
+  border-right: 1px solid $color-table-row-border;
+
+  th[scope=row] {
+    border-left: 1px solid $color-table-row-border-alt;
+  }
+}
+/// Make a table 'compact'
+@mixin TableCompact {
+  th {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px 8px;
+  }
+
+  td {
+    font-size: 11px;
+    line-height: 15px;
+    padding: 6px 8px;
+  }
+}
+/// Make a table 'ResponsiveFlat'
+@mixin TableResponsiveFlat {
+  float: left;
+  width: 100%;
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+  @include oGridRespondTo(S) {
+    display: table;
+  }
+
+  td {
+    padding: 8px;
+    width: 50%;
+    @include oGridRespondTo(S) {
+      border-right: 1px solid $color-table-row-border;
+      display: table-cell;
+    }
+  }
+  // td
+
+  thead th {
+    display: none;
+    padding: 8px;
+    @include oGridRespondTo(S) {
+      border-right: 1px solid $color-table-row-border;
+      display: table-cell;
+    }
+  }
+  // thead th
+
+  tr {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    @include oGridRespondTo(S) {
+      display: table-row;
+    }
+  }
+  // tr
+
+  tbody tr th {
+    border-right: 1px solid $color-table-row-border;
+    float: left;
+    padding: 8px;
+    width: 50%;
+    @include oGridRespondTo(S) {
+      display: none;
+    }
+  }
+  // td th
+}
+// mixin
+/// Make a table 'ResponsiveOverflow'
+@mixin TableResponsiveOverflow {
+  margin: 0;
+  min-width: 500px;
+  width: 100%;
+}
+// mixin
+/// Make a table 'ResponsiveScroll'
+@mixin TableResponsiveScroll {
+  display: flex;
+  overflow: hidden;
+  @include oGridRespondTo(S) {
+    display: table;
+  }
+
+  thead {
+    display: flex;
+    flex-shrink: 0;
+    @include oGridRespondTo(S) {
+      display: table-header-group;
+    }
+  }
+
+  tbody {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    @include oGridRespondTo(S) {
+      display: table-row-group;
+    }
+  }
+
+  tr {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    @include oGridRespondTo(S) {
+      display: table-row;
+    }
+  }
+
+  td,
+  th {
+    display: block;
+    @include oGridRespondTo(S) {
+      display: table-cell;
+    }
+  }
+}
+// mixin
+//
+.c-table-wrapper {
+  @include TableWrapper;
+}
+
+.c-table {
+  @include TableBase;
+}
+
+.c-table .c-table__caption,
+.c-table .c-table__caption--bottom,
+.c-table .c-table__caption--top {
+  @include TableCaption;
+}
+
+.c-table .c-table__caption--top {
+  @include TableCaptionTop;
+}
+
+.c-table .c-table__caption--bottom {
+  @include TableCaptionBottom;
+}
+
+.c-table .c-table__cell--numeric {
+  @include TableCellNumeric;
+}
+
+.c-table .c-table__cell--content-secondary {
+  @include TableCellContentSecondary;
+}
+// Table Row stripes
+.c-table--row-stripes {
+  @include TableRowStripes;
+}
+// Table - Horizontal lines
+.c-table--horizontal-lines {
+  @include TableHorizontalLines;
+}
+// Table - Vertical lines
+.c-table--vertical-lines {
+  @include TableVerticalLines;
+}
+// Table - Horizontal borders
+.c-table--horizontal-borders {
+  @include TableHorizontalBorders;
+}
+// Table - Vertical borders
+.c-table--vertical-borders {
+  @include TableVerticalBorders;
+}
+// Table - Compact
+.c-table--compact {
+  @include TableCompact;
+}
+// Table Responsive
+//
+// There are three responsive options available for displaying data in a table.
+////
+/// Using the Responsive Flat version will render the table to change at narrow viewpoints
+/// into a row-based table with each row having a duplicate of the table headers on the left side.
+/// This uses JavaScript to inject the headers into each row.
+/// @group css
+////
+
+.c-table--responsive-flat {
+  @include TableResponsiveFlat;
+}
+////
+/// On a narrow viewpoint, all this does is add an overflow which would allow the user to scroll
+/// through the data in a horizontal way.
+/// @group css
+////
+
+.c-table--responsive-overflow {
+  @include TableResponsiveOverflow;
+}
+////
+/// On a narrow viewpoint the Responsive Scroll version will move the headers to the right hand
+/// side of the table, and be fixed. This allows the data to be displayed in a column format which
+/// would allow the user to swipe left or right going through the data.
+/// @group css
+////
+
+.c-table--responsive-scroll {
+  @include TableResponsiveScroll;
+}

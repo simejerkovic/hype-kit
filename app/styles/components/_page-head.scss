@@ -1,0 +1,109 @@
+////
+/// Page header
+/// @group components
+/// @example
+///   <header class="c-page-head"></header>
+////
+// header size
+$mastheader-height: 125px;
+$mastheader-main-height: 70px;
+$primary-nav-height: 55px;
+
+.c-page-head {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $mastheader-height;
+  // Force Hardware Acceleration
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 0.5s;
+
+  &.is-moved {
+    transform: translateY(-($mastheader-main-height));
+  }
+
+  .role-admin & {
+    top: 54px;
+  }
+}
+
+.c-page-head__main {
+  background-color: $color-page-head-background;
+}
+
+.c-page-head__navigation {
+  @include padding(15px 0);
+
+  position: relative;
+  z-index: 1;
+  clear: both;
+  width: 100%;
+  height: $primary-nav-height;
+  background-color: $color-page-head-nav-background;
+  border-bottom: solid 1px $color-page-head-border;
+  // Force Hardware Acceleration
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 0.5s;
+}
+
+// DNN Login link in header
+
+.loginGroup,
+.language-object {
+  float: left;
+}
+
+.c-dnn-login__link {
+  @include padding(24px 34px);
+
+  color: $color-dnn-login-link;
+  background-color: $color-dnn-login-link-background;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: $global-transition;
+
+  @include hocus() {
+    background-color: $color-dnn-login-link-background-hover;
+  }
+
+  &:active {
+    background-color: $color-dnn-login-link-background-active;
+  }
+}
+
+.c-nav-language {
+  color: $color-white;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c-nav-language__item {
+  @include padding(24px 34px);
+
+  &.is-selected {
+    display: none;
+  }
+}
+
+.c-nav-language__icon {
+  float: left;
+  fill: #e5e5e5; // colour for svg's
+}
+
+.c-nav-language__label {
+  margin-left: $global-spacing-unit-tiny;
+  float: left;
+  line-height: 18px;
+}
+
+.search-form__open-button {
+  padding-left: $global-spacing-unit;
+  padding-right: $global-spacing-unit;
+  fill: #e5e5e5; // colour for svg's
+}

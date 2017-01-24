@@ -1,0 +1,29 @@
+////
+/// Headings
+///
+/// Simple default styles for headings 1 through 6. Anything more opinionated
+/// than simple font-size changes should likely be applied via classes
+///
+/// @group elements
+/// @link http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+/// @todo Add default variables
+////
+
+h1 {
+  @include FontSizeOnlyFor(headings, 1);
+}
+h2 {
+  @include FontSizeOnlyFor(headings, 2);
+}
+h3 {
+  @include FontSizeOnlyFor(headings, 3);
+}
+h4 {
+  @include FontSizeOnlyFor(headings, 4);
+}
+h5 {
+  @include FontSizeOnlyFor(headings, 5);
+}
+h6 {
+  @include FontSizeOnlyFor(headings, 6);
+}

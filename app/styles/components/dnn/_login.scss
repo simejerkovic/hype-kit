@@ -1,0 +1,163 @@
+////
+/// DNN Login
+/// Basic styles for DNN Login control
+/// @group components
+///
+/// @todo Clean these styles and use mixins from form-items
+////
+
+.dnnLogin > div {
+  @include oGridContainer();
+  padding: 0 !important;
+}
+
+.loginContent {
+  @include oGridRow();
+
+  .dnnFormItem input[type] {
+    color:$color-black;
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .LoginPanel {
+    @include oGridColspan((default: 12, L: 8));
+    padding-right: 0 !important;
+  }
+
+  .dnnSocialRegistration {
+    @include oGridColspan((default: 12, L: 4));
+    //padding:0!important;
+    @include oGridRespondTo($from: S, $until: L) {
+      padding-left: 25%;
+    }
+    #socialControls {
+      padding: 0 !important;
+    }
+  }
+
+  .dnnFormItem:nth-child(3) {
+    width : auto;
+
+    & > a {
+      &.dnnPrimaryAction {
+        @extend .c-btn--medium;
+        @extend .c-btn--secondary;
+        margin: 0 10px;
+        min-width: 110px;
+      }
+
+      &.dnnPrimaryAction {
+        margin-left: 0;
+
+        @include oGridRespondTo(S) {
+          margin-left: 25%;
+        }
+      }
+
+      &.dnnSecondaryAction {
+        display: none;
+      }
+    }
+
+    .dnnFormLabel {
+      display: none;
+    }
+  }
+
+  .dnnFormItem:nth-child(4) {
+    .dnnFormLabel {
+      display: none;
+    }
+  }
+
+  .dnnLoginRememberMe,
+  .dnnLoginActions {
+    margin-left: 0;
+
+    @include oGridRespondTo(S) {
+      margin-left: 25%;
+    }
+  }
+
+  .dnnLoginRememberMe {
+    line-height: 0;
+
+    .dnnCheckbox {
+      .mark {
+        position: relative;
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-right: 5px;
+        padding-left: 6px;
+        padding-top: 5px;
+        font-size: 16px;
+        border: solid 1px #b9b9b9;
+        background-color: #fff;
+        cursor: pointer;
+
+
+        &:before {
+          @include transition(transform .4s );
+          @include transition-property(transform);
+          @include transition-duration(.4s);
+          @include transition-timing-function(cubic-bezier(.45,1.8,.5,.75));
+
+          @include transform(rotate(-45deg) scale(0, 0));
+          content: "";
+          position: absolute;
+          left: 1px;
+          top: -1px;
+          z-index: 1;
+          width: 12px;
+          height: 6px;
+          border: 2px solid #000;
+          border-top-style: none;
+          border-right-style: none;
+        }
+      }
+
+      .mark.dnnCheckbox-hover {
+        border: solid 1px #000;
+      }
+    }
+
+    .dnnCheckbox-checked {
+      .mark {
+
+        &:before {
+          @include transform(rotate(-45deg) scale(1, 1));
+        }
+      }
+    }
+  }
+
+  .dnnFormItem:nth-child(5) {
+    .dnnFormLabel {
+      display: none;
+    }
+  }
+
+  .dnnSocialRegistration {
+    display: none;
+  }
+
+}
+
+// Link registriraj me na dnu prijave
+#dnn_ctr797_Login_Login_DNN_registerLink {
+  display: none !important;
+}
+
+// Link zaboravili ste lozinku na dnu prijave
+#dnn_ctr797_Login_Login_DNN_passwordLink {
+  // @include ColorsFor('sd-brand', text);
+  font-style: italic;
+}
+
+#dnn_ctr797_ctl00_dnnSkinMessage {
+  margin-top: $global-spacing-unit/2;
+  margin-bottom: $global-spacing-unit/2;
+}

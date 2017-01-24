@@ -1,0 +1,148 @@
+////
+// Set up a colour palette which allows us to theme the entire project from one
+// location.
+////
+
+// Non-colour CSS values.
+$color-transparent:                     transparent;
+$color-inherit:                         inherit;
+
+// Colour palette.
+$color-black:                           #000;
+$color-white:                           #fff;
+
+// Brand colour palette.
+$color-claret:                          #88143d;
+$color-melon:                           #f5b2b6;
+$color-charleston-green:                #242d33;
+
+// Color tints
+$color-gray:                            #424242;
+$color-gray-tint1:                      #d6d6d6;
+//$color-gray-tint2:                      #;
+
+$color-spanish-gray:                    #9d9e9e;
+
+$color-white-tint1:                     #fefefe;
+
+// Reassign literal variables to meaningful ones.
+$color-page-text:                       $color-gray;
+$color-page-background:                 $color-white;
+$color-selection-text:                  $color-white;
+$color-selection-background:            $color-claret;
+
+// Global hyperlink
+$color-links:                           $color-claret;
+$color-links-hover:                     darken($color-claret, 5%);
+$color-links-current:                   darken($color-claret, 10%);
+
+// Global headings (h1,h2,h3 etc.)
+$color-headings:                        $color-black;
+$color-headings-alt:                    $color-white;
+
+// Global buttons
+$color-btn:                             $color-white;
+$color-btn-hover:                       $color-btn;
+$color-btn-background:                  $color-black;
+$color-btn-background-hover:            darken($color-btn-background, 10%);
+
+$color-btn-secondary:                   $color-white;
+$color-btn-secondary-background:        $color-black;
+$color-btn-secondary-background-hover:  darken($color-btn-secondary-background, 10%);
+
+$color-btn-schedule:                    $color-white;
+$color-btn-schedule-background:         $color-black;
+$color-btn-schedule-background-hover:   darken($color-btn-schedule-background, 10%);
+
+$color-btn-neutral:                     $color-gray;
+$color-btn-neutral-border:              $color-gray;
+$color-btn-neutral-hover:               $color-gray;
+$color-btn-neutral-border-hover:        $color-gray;
+
+// Global header
+$color-page-head:                       $color-white;
+$color-page-head-background:            $color-charleston-green;
+$color-page-head-border:                $color-gray-tint1;
+$color-page-head-link:                  $color-white;
+$color-page-head-link-hover:            rgba($color-page-head-link, 0.7);
+$color-page-head-link-active:           $color-black;
+
+$color-page-head-nav-background:        $color-white;
+
+$color-page-head-icon-links:            rgba(255, 255, 255, 0.5);
+$color-page-head-icon-links-hover:      rgba(255, 255, 255, 0.7);
+
+$color-dnn-login-link:                  $color-white;
+$color-dnn-login-link-background:       rgba(255, 255, 255, 0.25);
+$color-dnn-login-link-background-hover: rgba(255, 255, 255, 0.35);
+$color-dnn-login-link-background-active: rgba(255, 255, 255, 0.45);
+
+// Global / Primary navigation
+$color-nav-primary-link:                $color-black;
+$color-nav-primary-link-hover:          $color-claret;
+$color-nav-primary-link-active:         $color-claret;
+
+// Global footer
+$color-page-footer-link:                $color-black;
+$color-page-footer-link-active:         rgba($color-black, 0.7);
+$color-page-footer-link-hover:          rgba($color-black, 0.7);
+$color-page-footer-title:               $color-white;
+
+// Global mobile navigation
+$color-nav-mobile-background-alt:       $color-white;
+$color-nav-mobile-border:               $color-gray;
+$color-nav-mobile-border-alt:           rgba($color-gray, 0.25);
+
+// Component: Logo
+$color-logo:                            $color-white;
+$color-logo-alt:                        $color-black;
+
+// Component: Language
+$color-nav-language:                    darken($color-white, 40%);
+$color-nav-language-link:               darken($color-white, 40%);
+$color-nav-language-active:             $color-white;
+
+// Component: Table
+$color-main-table-text:                 $color-black;
+$color-main-table-border:               $color-black;
+$color-main-table-background:           $color-transparent;
+$color-main-table-head-text:            $color-black;
+
+// Component: Headline
+$color-headline:                        $color-black;
+$color-headline-border:                 $color-gray;
+
+// Component: Sub content
+// $color-sub-content-bg:                  rgba(0, 0, 0, 0.05);
+// $color-sub-content:                     $color-gray;
+
+// Component: Aside navigation
+// $color-nav-aside-links:                 $color-gray;
+// $color-nav-aside-links-hover:           $color-black;
+// $color-nav-aside-links-current:         $color-black;
+// $color-nav-aside-border:                $color-gray;
+
+// Component: Sharing bar
+$color-sharing-bar-icon:                $color-gray;
+$color-sharing-bar-icon-hover:          $color-sharing-bar-icon;
+$color-sharing-bar-border:              $color-gray;
+
+// Component: Lightbox
+$color-lightbox-background:             rgba(0, 0, 0, 0.9);
+$color-lightbox-dark-background:        rgba(0, 0, 0, 0.9);
+
+// Component: Search
+// Search box
+$color-search-box-text:                 rgba(255, 255, 255, 0.3);
+$color-search-box-background:           $color-transparent;
+$color-search-box-border:               $color-gray;
+// Search popup
+$color-search-popup-icon:               #666;
+$color-search-popup-results-text:       rgba(152, 152, 152, 0.5);
+
+// EasyDnnGallery - Gravity + fotorama
+// $color-gallery-background:              $color-black;
+// $color-gallery-download-background:     rgba(0, 0, 0, 0.8);
+// $color-gallery-download-links:          $color-white;
+// $color-gallery-download-links-hover:    $color-gray;
+// $color-gallery-thumb-border:            $color-gray;

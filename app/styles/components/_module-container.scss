@@ -1,0 +1,11 @@
+////
+/// DNN Module container component
+/// @group components
+///
+/// @todo Clean these styles
+////
+
+.module-container__title {
+  @include FontSizeFor(module-container-title, 1);
+  @include FontWeight(normal);
+}

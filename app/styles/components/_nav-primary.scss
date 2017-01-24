@@ -1,0 +1,43 @@
+////
+/// Primary navigation styles
+/// @group components
+/// @example
+///   <nav class="c-nav-primary">
+///     <ul class="c-nav-primary__list">
+///       <li class="c-nav-primary__item">
+///       </li>
+///     </ul>
+///   </nav>
+////
+
+.c-nav-primary {
+  font-size: 18px;
+}
+
+.c-nav-primary__item {
+  padding-left: $global-spacing-unit-tiny;
+  padding-right: $global-spacing-unit-tiny;
+}
+
+.c-nav-primary__link {
+  color: $color-nav-primary-link;
+
+  @include hocus() {
+    color: $color-nav-primary-link-hover;
+  }
+}
+
+.c-nav-primary__icon-home {
+  @include size(18px);
+
+  margin-right: $global-spacing-unit-tiny;
+}
+
+.c-nav-primary__sub-items {
+  display: none;
+  position: absolute;
+
+  .c-nav-primary__item:hover & {
+    display: block;
+  }
+}

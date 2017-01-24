@@ -1,0 +1,21 @@
+////
+/// Layout
+///
+/// @group objects
+/// @deprecated
+/// @todo Merge this object with o-grid
+////
+
+.o-layout {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+    margin-left: -$spacing-unit;
+}
+
+    .o-layout__item {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding-left: $spacing-unit;
+    }

@@ -1,0 +1,52 @@
+﻿@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@{ var root = Model.Source.root; }
+
+@helper RenderNodes(IList<MenuNode> nodes)
+{
+if (nodes.Count > 0)
+{
+        <ul class="o-list-bare c-nav-mobile__list">
+          @foreach (var node in nodes)
+          {
+            var cssClasses = new List<string>();
+            if (node.HasChildren()) { cssClasses.Add("c-nav-mobile__item--has-child"); }
+            //if (node.Selected) { cssClasses.Add("is-selected"); }
+            //if (node.First) { cssClasses.Add("is-first"); }
+            //if (node.Last) { cssClasses.Add("is-last"); }
+            var classString = new HtmlString((cssClasses.Count == 0) ? "" : ("" + String.Join(" ", cssClasses.ToArray()) + ""));
+
+              <li class="@(node.Depth == 0 ? "c-nav-mobile__item" : "c-nav-mobile__item--child") c-nav-mobile__item--@(node.TabId) @(classString) @(node.Breadcrumb ? " is-active" : "")">
+
+                @if (node.Enabled)
+                {
+                    <a href="@node.Url" class="c-nav-mobile__link @(node.Depth == 0 ? "c-nav-mobile__link--parent" : "c-nav-mobile__link--child")@(node.Breadcrumb ? " c-nav-mobile__link--active" : "")" target="@node.Target">
+                      @node.Text
+                    </a>
+                }
+                else
+                {
+                    <a class="c-nav-mobile__link @(node.Depth == 0 ? "c-nav-mobile__link--parent" : "c-nav-mobile__link--child") is-disabled">
+                      @node.Text
+                    </a>
+                }
+
+                @if (node.HasChildren())
+                {
+                    <i class="icon icon-expand-more js-btn-sub-nav @(node.Breadcrumb ? " isactive" : "")"></i>
+                    <div class="c-nav-mobile__secondary c-nav-mobile__secondary--lvl@(node.Depth + 1)">
+                      @RenderNodes(node.Children)
+                    </div>
+
+                }
+              </li>
+          }
+        </ul>
+}
+}
+
+@* Root navigacije *@
+
+@RenderNodes(root.Children)

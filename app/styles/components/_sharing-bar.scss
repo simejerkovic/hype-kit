@@ -1,0 +1,65 @@
+////
+/// Sharing bar component
+/// @group components
+/// @example sharing
+/// @todo make
+////
+
+.sharing-bar {
+  border-top: 1px solid $color-sharing-bar-border;
+  border-bottom: 1px solid $color-sharing-bar-border;
+}
+
+.sharing-bar__container {
+  font-size: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.sharing-bar__item {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-left: 1px solid $color-sharing-bar-border;
+
+  &:first-child {
+    border-left: none;
+  }
+}
+
+.sharing-bar__link {
+  @include size(69px);
+
+  display: block;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-top: -15px;
+  margin-bottom: -15px;
+  position: relative;
+  vertical-align: top;
+  color: $color-sharing-bar-icon;
+
+  @include hocus() {
+    color: $color-sharing-bar-icon-hover;
+    outline: none;
+  }
+
+  @include oGridRespondTo($from: L) {
+    @include size(90px 69px);
+  }
+}
+
+.sharing-bar__icon {
+  @include size(20px);
+
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
