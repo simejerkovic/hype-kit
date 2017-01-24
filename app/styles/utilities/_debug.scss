@@ -1,0 +1,21 @@
+/// Debug
+/// Highlight types of class to visually see the makeup of our UIs.
+
+@if (config(debug)==true) {
+  [class^="o-"],
+  [class*=" o-"] {
+    outline: 10px solid #ffa500;
+  }
+  [class^="c-"],
+  [class*=" c-"] {
+    outline: 10px solid #00ffff;
+  }
+  [class^="u-"],
+  [class*=" u-"] {
+    outline: 10px solid #fff0f5;
+  }
+  [class^="_"],
+  [class*=" _"] {
+    outline: 10px solid #ff0000;
+  }
+}

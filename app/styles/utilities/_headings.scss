@@ -1,0 +1,31 @@
+////
+/// Headings
+/// @group utilities
+/// @example
+///   <span class="u-h2">Simulated headline</span>
+///   <h2 class="u-h3">Headline with smaller sizing</h2>
+////
+
+.u-h1 {
+    @include FontSize($font-size-h1, auto);
+}
+
+.u-h2 {
+    @include FontSize($font-size-h2, auto);
+}
+
+.u-h3 {
+    @include FontSize($font-size-h3, auto);
+}
+
+.u-h4 {
+    @include FontSize($font-size-h4, auto);
+}
+
+.u-h5 {
+    @include FontSize($font-size-h5, auto);
+}
+
+.u-h6 {
+    @include FontSize($font-size-h6, auto);
+}

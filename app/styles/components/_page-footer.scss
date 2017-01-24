@@ -1,0 +1,32 @@
+////
+/// Page footer styles
+/// @group components
+/// @example
+///   <footer class="c-page-footer"></footer>
+////
+
+.c-page-footer {
+  color: $color-page-footer-text;
+}
+
+.c-page-footer a {
+  color: $color-page-footer-link;
+
+  @include hocus {
+    color: $color-page-footer-link-hover;
+  }
+
+  &:active {
+    color: $color-page-footer-link-active;
+  }
+}
+
+.c-page-footer svg {
+  display: inline-block;
+  fill: $color-page-footer-text;
+  text-align: center;
+
+  @include oGridRespondTo($from: M) {
+    text-align: left;
+  }
+}

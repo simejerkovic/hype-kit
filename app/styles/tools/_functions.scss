@@ -1,0 +1,47 @@
+////
+/// Custom functions.
+/// @group tools
+////
+
+/// Function to get text instead of using `map-get`.
+
+@function text($key, $variant:large) {
+  @if map-has-key($text, $key) {
+    @if ($variant != null) {
+      @return map-get(map-get($text, $key), $variant);
+    }
+
+    @return map-get($text, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $text.";
+  @return null;
+}
+
+/// Function to get color values instead of using nested `map-gets`.
+///
+/// @example scss
+///   .element {
+///     color: color(<key>);
+///   }
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+/// Convert any px value into its rem equivalent.
+
+@function rem($number) {
+  @return $number / $global-font-size * 1rem;
+}
+
+/// Halve any input and round the result.
+
+@function halve($number) {
+  @return round($number/2);
+}

@@ -1,0 +1,75 @@
+////
+/// @group o-grid
+/// @link http://registry.origami.ft.com/components/o-grid
+////
+
+@import 'grid/_variables';
+// Sass Media Queries
+@import 'sass-mq/_mq';
+@import 'grid/_main';
+
+// Grid settings
+
+// Switch Silent mode off
+$o-grid-is-silent: true;
+
+// Show the currently active breakpoint and output loaded settings
+$o-grid-debug-mode: false;
+
+// Add another layout
+// Special XS layout
+@include oGridAddLayout(
+    $layout-name: XS,
+    $layout-width: 321px
+);
+
+/// Output debug information about the currently loaded layouts.
+///
+/// @param {Map} $layouts - Map of layouts
+@mixin oGridDebugInfo($layouts: $o-grid-layouts) {
+	/*! DEBUG
+	 * Layouts:
+	 * #{inspect($layouts)}
+	 */
+}
+
+@if $o-grid-debug-mode {
+	@include oGridDebugInfo;
+	@include mq-show-breakpoints($_o-grid-layout-names, $o-grid-layouts);
+}
+
+/// Surface the layout currently displayed to make it readable in JS.
+///
+/// In IE 8, assume it is `$o-grid-fixed-layout` (`L`).
+///
+/// **n.b.:** Only works when silent mode is off.
+///
+/// @example js
+///  // your-app/main.js
+///  // Return the current layout (e.g. default, S, M, L, XL)
+///  var getCurrentLayout = require('o-grid').getCurrentLayout;
+///  console.log(getCurrentLayout());
+///
+///  // Return the current gutter (e.g. 10px, 20px)
+///  var getCurrentGutter = require('o-grid').getCurrentGutter;
+///  console.log(getCurrentGutter());
+@mixin oGridSurfaceCurrentLayout {
+	html:after {
+		content: '{ "layout": "default", "gutter": "' + oGridGutter() + '" }';
+		display: none;
+
+		@each $breakpoint in $_o-grid-layout-names {
+			@include oGridRespondTo($breakpoint) {
+				content: '{ "layout": "' + $breakpoint + '", "gutter": "' + oGridGutter($breakpoint) + '" }';
+			}
+		}
+	}
+}
+
+@if $o-grid-is-silent == false {
+	@include oGridSurfaceCurrentLayout;
+	@include oGridGenerate;
+
+	// Turn silent mode back on to avoid outputting the grid twice
+	$o-grid-is-silent: true;
+}

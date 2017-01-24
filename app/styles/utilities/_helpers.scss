@@ -1,0 +1,328 @@
+////
+/// @group utilities
+////
+
+
+/// Visually hidden element
+/// Hide only visually, but have it available for screen readers:
+///
+/// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+/// @example html
+///   <div class="u-hidden-visually">I'm a ghost to you but screen readers see me.</div>
+///
+/// @example scss
+///   <div class="u-h">I'm a ghost to you but screen readers see me.</div>
+///
+/// @example scss
+///   @extend %u-h;
+
+%u-h,
+.u-h,
+.u-hidden-visually {
+  @include u-h;
+}
+
+
+// Hide visually and from screen readers.
+
+.hide,
+.is-hidden,
+[hidden],
+.u-hidden {
+  display: none !important;
+}
+
+
+// Hide and Show based on media queries and grid layout
+// @todo Make smarter. Turn into a function repeat. Merge with mq and o-grid
+
+.hide-until\@sm {
+  @include oGridRespondTo($until: S) {
+    display: none !important;
+  }
+}
+
+.hide-until\@md {
+  @include oGridRespondTo($until: M) {
+    display: none !important;
+  }
+}
+
+.hide-until\@lg {
+  @include oGridRespondTo($until: L) {
+    display: none !important;
+  }
+}
+
+.hide-until\@xl {
+  @include oGridRespondTo($until: XL) {
+    display: none !important;
+  }
+}
+
+//
+.hide-from\@sm {
+  @include oGridRespondTo($from: S) {
+    display: none !important;
+  }
+}
+
+.hide-from\@md {
+  @include oGridRespondTo($from: M) {
+    display: none !important;
+  }
+}
+
+.hide-from\@lg {
+  @include oGridRespondTo($from: L) {
+    display: none !important;
+  }
+}
+
+.hide-from\@xl {
+  @include oGridRespondTo($from: XL) {
+    display: none !important;
+  }
+}
+
+//
+.show-from\@sm {
+  @include oGridRespondTo($from: S) {
+    display: block !important;
+  }
+}
+.show-from\@md {
+  @include oGridRespondTo($from: M) {
+    display: block !important;
+  }
+}
+.show-from\@lg {
+  @include oGridRespondTo($from: L) {
+    display: block !important;
+  }
+}
+.show-from\@xl {
+  @include oGridRespondTo($from: XL) {
+    display: block !important;
+  }
+}
+
+//
+.show-until\@sm {
+  @include oGridRespondTo($until: S) {
+    display: block !important;
+  }
+}
+.show-until\@md {
+  @include oGridRespondTo($until: M) {
+    display: block !important;
+  }
+}
+.show-until\@lg {
+  @include oGridRespondTo($until: L) {
+    display: block !important;
+  }
+}
+.show-until\@xl {
+  @include oGridRespondTo($until: XL) {
+    display: block !important;
+  }
+}
+
+
+/// Bind our clearfix onto a utility class.
+/// @example html
+///   <div class="u-cf"></div>
+///
+/// @example html
+///   <div class="u-clearfix"></div>
+///
+/// @example scss
+///   @extend %u-cf;
+
+%u-cf,
+.u-cf,
+.u-clearfix {
+  @include clearfix;
+}
+
+
+// Responsive media (images, videos…)
+//
+// 1. Give the block an initial ratio of 5/3 to avoid FOUC
+// 2. Stretch the contained media to the dimensions of its container
+
+.u-responsive-ratio {
+  @include fixAspectRatio(5, 3); // 1
+  img,
+  object,
+  embed,
+  iframe,
+  svg,
+  video { // 2
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.u-responsive-ratio--hd {
+  padding-bottom: aspectRatioHeight(16, 9);
+}
+
+.u-responsive-ratio--hd2 {
+  padding-bottom: aspectRatioHeight(9, 3);
+}
+
+.u-responsive-ratio--letterbox {
+  padding-bottom: aspectRatioHeight(5, 2);
+}
+
+
+// Text hyphenation
+//
+// Break strings when their length exceeds the width of their container
+// and hyphenate words at the end of lines using the `hyphens` property.
+// Browser support for hyphenation: http://caniuse.com/#search=hyphenation
+
+.u-text-hyphenate {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.u-test-ellipsis {
+  @include ellipsis();
+}
+
+
+// Reset button styles
+// @todo Consider merging with button component?
+
+.u-btn-reset {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  background: transparent;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+// Fakes text underline with a border
+
+%u-underline,
+.u-underline {
+  text-decoration: none !important;
+  border-bottom: 1px solid colour(neutral-4);
+  transition: border-color .15s ease-out;
+
+  &:hover,
+  &:focus {
+    /*border-color: ;*/
+  }
+
+  &:active {
+    /*border-color: ;*/
+  }
+}
+
+
+// Prevent line breaks
+
+.u-nobr {
+  white-space: nowrap;
+}
+
+
+// Float elements
+// Element helpers for floating
+
+.u-pull--left {
+  float: left;
+}
+
+.u-pull--right {
+  float: right;
+}
+
+// Small screens
+.u-pull--left\@sm {
+  @include oGridRespondTo($from: S) {
+    float: left;
+  }
+}
+
+.u-pull--right\@sm {
+  @include oGridRespondTo($from: S) {
+    float: right;
+  }
+}
+
+// Medium screens
+.u-pull--left\@md {
+  @include oGridRespondTo($from: M) {
+    float: left;
+  }
+}
+
+.u-pull--right\@md {
+  @include oGridRespondTo($from: M) {
+    float: right;
+  }
+}
+
+// Large screens
+.u-pull--left\@lg {
+  @include oGridRespondTo($from: L) {
+    float: left;
+  }
+}
+
+.u-pull--right\@lg {
+  @include oGridRespondTo($from: L) {
+    float: right;
+  }
+}
+
+// Extra-large screens
+.u-pull--left\@xl {
+  @include oGridRespondTo($from: XL) {
+    float: left;
+  }
+}
+
+.u-pull--right\@xl {
+  @include oGridRespondTo($from: XL) {
+    float: right;
+  }
+}
+
+
+// Text alignment
+// Element helpers for text alignment
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+
+// Hide border
+// Element helper to hide border
+
+.u-hide-border {
+  border: none;
+}

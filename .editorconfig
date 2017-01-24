@@ -1,0 +1,47 @@
+; EditorConfig helps developers define and maintain consistent
+; coding styles between different editors and IDEs
+; editorconfig.org
+; For Visual Studio 2017 support is already baked in
+; For now this baked in implementation has 2 limitations:
+; Does not work for XML files
+; Does not support insert_final_newline and trim_trailing_whitespace
+; Future improvements coming : https://github.com/dotnet/roslyn/pull/15029
+; Code Style Configuration in the VS2017 RC Update : https://blogs.msdn.microsoft.com/dotnet/2016/12/15/code-style-configuration-in-the-vs2017-rc-update/
+
+root = true
+
+[*]
+; change these settings to your own preference
+indent_style = space
+indent_size = 2
+; we recommend you to keep these unchanged
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+; Not change VS generated files
+[*.{sln,csproj}]
+trim_trailing_whitespace = false
+insert_final_newline = false
+
+[{package,bower}.json]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.cs]
+indent_style = space
+indent_size = 4
+
+[*.csproj]
+indent_size = 2
+
+[*.nuspec]
+indent_size = 2
+
+[*.ascx]
+indent_style = space
+indent_size = 4
