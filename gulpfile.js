@@ -33,8 +33,8 @@ var skinPathDev = 'app';
 // ==========================================================================
 
 const paths = {
-    haml: './source/views/*.haml',
-    coffee: './source/assets/javascripts/**/*.coffee',
+    ascx: './source/views/*.ascx',
+    js: './source/assets/javascripts/**/*.js',
     scss: './source/assets/stylesheets/**/*.scss',
     images: './source/assets/images/*',
     fonts: './source/assets/fonts/*',
