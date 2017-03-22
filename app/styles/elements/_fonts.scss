@@ -1,14 +1,43 @@
 // Fonts call
 // @deprecated Find a better place for font calling
-
 // Open Sans
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-Light-webfont", 300, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-LightItalic-webfont", 300, italic, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-Regular-webfont", normal, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-Italic-webfont", normal, italic, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-Semibold-webfont", 600, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-SemiboldItalic-webfont", 600, italic, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-Bold-webfont", 700, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-BoldItalic-webfont", 700, italic, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-ExtraBold-webfont", 800, $file-formats: eot woff2 woff);
-@include font-face("OpenSans", $global-font-path + "opensans/OpenSans-ExtraBoldItalic-webfont", 800, italic, $file-formats: eot woff2 woff);
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-Light-webfont", ("woff2", "woff")) {
+  font-style: normal;
+  font-weight: 300;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-LightItalic-webfont", ("woff2", "woff")) {
+  font-style: italic;
+  font-weight: 300;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-Regular-webfont", ("woff2", "woff")) {
+  font-style: normal;
+  font-weight: normal;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-Italic-webfont", ("woff2", "woff")) {
+  font-style: italic;
+  font-weight: normal;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-Semibold-webfont", ("woff2", "woff")) {
+  font-style: normal;
+  font-weight: 600;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-SemiboldItalic-webfont", ("woff2", "woff")) {
+  font-style: italic;
+  font-weight: 600;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-Bold-webfont", ("woff2", "woff")) {
+  font-style: normal;
+  font-weight: 700;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-BoldItalic-webfont", ("woff2", "woff")) {
+  font-style: italic;
+  font-weight: 700;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-ExtraBold-webfont", ("woff2", "woff")) {
+  font-style: normal;
+  font-weight: 800;
+}
+@include font-face( "OpenSans", $global-font-path + "opensans/OpenSans-ExtraBoldItalic-webfont", ("woff2", "woff")) {
+  font-style: italic;
+  font-weight: 800;
+}
