@@ -1,10 +1,14 @@
 @charset "UTF-8";
 html {
+  /*! autoprefixer: off */
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-*, *:after, *:before {
+*, *::before, *::after {
+  /*! autoprefixer: off */
   -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -414,24 +418,14 @@ template {
 [hidden] {
   display: none; }
 
-blockquote,
 body,
-dd,
-dl,
-fieldset,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
 figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-legend,
-ol,
-p,
-pre,
-ul {
+table, th, td, caption,
+hr {
   margin: 0;
   padding: 0; }
 
@@ -443,28 +437,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-address,
-blockquote,
-dl,
-fieldset,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-ol,
-p,
-pre,
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl,
+blockquote, p, address,
 table,
-ul {
+fieldset, figure,
+pre {
   margin-bottom: 20px; }
 
-dd,
-ol,
-ul {
+ul, ol,
+dd {
   margin-left: 20px; }
 
 svg {
@@ -474,6 +456,8 @@ html {
   font-size: 1.25em;
   line-height: 1.5;
   font-family: "OpenSans", Arial, sans-serif;
+  color: #424242;
+  background-color: #fff;
   overflow-y: scroll;
   min-height: 100%;
   -webkit-text-size-adjust: 100%;
@@ -481,34 +465,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
-h1 {
-  font-size: 36px;
-  font-size: 1.8rem; }
-
-h2 {
-  font-size: 28px;
-  font-size: 1.4rem;
-  line-height: 1.07143; }
-
-h3 {
-  font-size: 24px;
-  font-size: 1.2rem;
-  line-height: 1.25; }
-
-h4 {
+h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
   font-size: 1rem;
-  line-height: 1.5; }
-
-h5 {
-  font-size: 18px;
-  font-size: 0.9rem;
-  line-height: 1.66667; }
-
-h6 {
-  font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.875; }
+  font-weight: normal; }
 
 a {
   color: #88143d;
@@ -547,7 +507,47 @@ blockquote {
         content: close-quote; }
 
 table {
-  width: 100%; }
+  width: 100%;
+  /* [1] */ }
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+  /* [2] */ }
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+  /* [2] */ }
+
+/* stylelint-disable */
+/* stylelint-enable */
+.o-wrapper {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px; }
+  .o-wrapper::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+.o-wrapper--tiny {
+  padding-right: 5px;
+  padding-left: 5px; }
+
+.o-wrapper--small {
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.o-wrapper--large {
+  padding-right: 40px;
+  padding-left: 40px; }
+
+.o-wrapper--huge {
+  padding-right: 80px;
+  padding-left: 80px; }
 
 .o-grid-container {
   position: relative;
@@ -681,35 +681,6 @@ table {
   min-width: 75%;
   max-width: 75%;
   width: 75%; }
-
-/* stylelint-disable */
-/* stylelint-enable */
-.o-wrapper {
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1200px; }
-  .o-wrapper::after {
-    clear: both;
-    content: "";
-    display: block; }
-
-.o-wrapper--tiny {
-  padding-right: 5px;
-  padding-left: 5px; }
-
-.o-wrapper--small {
-  padding-right: 10px;
-  padding-left: 10px; }
-
-.o-wrapper--large {
-  padding-right: 40px;
-  padding-left: 40px; }
-
-.o-wrapper--huge {
-  padding-right: 80px;
-  padding-left: 80px; }
 
 .o-layout {
   display: block;
@@ -1103,6 +1074,77 @@ body > form #ControlBar_ControlPanel {
 
 #ControlBar table {
   margin-bottom: 0; }
+
+.jspContainer {
+  overflow: hidden;
+  position: relative; }
+
+.jspPane {
+  position: absolute; }
+
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 11px;
+  height: 100%;
+  background: #ccc; }
+
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 11px;
+  background: #ccc; }
+
+.jspVerticalBar *,
+.jspHorizontalBar * {
+  margin: 0;
+  padding: 0; }
+
+.jspCap {
+  display: none; }
+
+.jspHorizontalBar .jspCap {
+  float: left; }
+
+.jspTrack {
+  background: transparent;
+  position: relative; }
+
+.jspVerticalBar .jspTrack {
+  width: 10px;
+  margin: 0 0 0 3px; }
+
+.jspHorizontalBar .jspTrack {
+  height: 5px;
+  margin: 3px 0 3px 0; }
+
+.jspVerticalBar .jspCap {
+  display: block;
+  height: 3px;
+  width: 11px; }
+
+.jspHorizontalBar .jspCap {
+  display: block;
+  width: 3px;
+  height: 11px; }
+
+.jspDrag {
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  opacity: .75;
+  background: #000;
+  cursor: pointer; }
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 5px; }
 
 .DNNEmptyPane {
   display: none !important; }

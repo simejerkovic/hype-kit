@@ -7,68 +7,63 @@
 // This file should not contain anything but @import and comments.
 //
 
-@import
-
 // 1. Settings
-// Variables, global config and colors
+// Variables; global config and colors
 // ==========================================================================
-"settings/_all",
+@import "settings/_all";
 
 // ==========================================================================
 // 2. Tools
-// Helper functions, mixins and aliases
+// Helper functions; mixins and aliases
 // ==========================================================================
-"tools/_all",
+@import "tools/_all";
 
 // ==========================================================================
 // 3. Generic
 // Resets and normalize styles
 // ==========================================================================
-"generic/_box-sizing",
-"generic/_normalize",
-"generic/_reset",
-"generic/_shared",
+@import "generic/_box-sizing";
+@import "normalize.css/normalize";
+@import "generic/_reset";
+@import "generic/_shared";
 
 // ==========================================================================
 // 4. Elements
 // Base elements and styles
 // ==========================================================================
-// "elements/_fonts", // @deprecated TODO: Find a better place for font calling
-"elements/_page", //
-"elements/_headings", //
-"elements/_links", //
-"elements/_images", //
-"elements/_quotes", //
-"elements/_table", //
+// "elements/_fonts"; // @deprecated TODO: Find a better place for font calling
+@import "elements/_page"; //
+@import "elements/_headings"; //
+@import "elements/_links"; //
+@import "elements/_images"; //
+@import "elements/_quotes"; //
+@import "elements/_table"; //
 
 // ==========================================================================
 // 5. Objects
 // Basic layout styles, headlines, lists
 // ==========================================================================
-"objects/_grid",
-"objects/_wrapper",
-"objects/_layout",
-"objects/_media",
-"objects/_flag",
-"objects/_list-bare",
-"objects/_list-inline",
-"objects/_box",
-"objects/_block",
-"objects/_ratio",
-"objects/_crop",
-"objects/_pack",
+@import "objects/_wrapper";
+@import "objects/_grid";
+@import "objects/_layout";
+@import "objects/_media";
+@import "objects/_flag";
+@import "objects/_list-bare";
+@import "objects/_list-inline";
+@import "objects/_box";
+@import "objects/_block";
+@import "objects/_ratio";
+@import "objects/_crop";
+@import "objects/_pack";
 
 
 // ==========================================================================
 // 6. Vendor
 // Third party components, javascript plugins
 // ==========================================================================
-// Slick carousel styles
-//"vendor/slick/slick",
-//"vendor/slick/slick-theme",
 // Custom DNN fixes
-"vendor/dnn/_admin",
-"vendor/dnn/_dnn-styles",
+@import "vendor/dnn/_admin";
+@import "vendor/dnn/_dnn-styles";
 
 // ==========================================================================
 // 7. Components
@@ -76,40 +71,38 @@
 // ==========================================================================
 
 // 7.1 Global components
-//"components/_logo",
-//"components/_buttons",
-//"components/_table",
-//"components/_page",
-//"components/_page-head",
-//"components/_page-footer",
-//"components/_nav-primary",
-//"components/_nav-mobile",
+//@import "components/_logo";
+//@import "components/_buttons";
+//@import "components/_table";
+//@import "components/_page";
+//@import "components/_page-head";
+//@import "components/_page-footer";
+//@import "components/_nav-primary";
+//@import "components/_nav-mobile";
 
 // 7.2 Site components
-//"components/_module-container",
-//"components/_headline",
-//"components/_sharing-bar",
+//@import "components/_module-container";
+//@import "components/_headline";
+//@import "components/_sharing-bar";
 
 // Search component
-//"components/search/_search-box",
-//"components/search/_search-results",
+//@import "components/search/_search-box";
+//@import "components/search/_search-results";
 
 // DNN components and skin objects
-//"components/dnn/_form-items",
-//"components/dnn/_login",
-//"components/dnn/_cookie-consent.scss",
+//@import "components/dnn/_form-items";
+//@import "components/dnn/_login";
+//@import "components/dnn/_cookie-consent.scss";
 
 // ==========================================================================
 // 8. Utilities
 // Utilities, Heading styles, Helper classes
 // ==========================================================================
-"utilities/_helpers",
-"utilities/_faux-block-link",
-"utilities/_widths",
-"utilities/_headings",
-"utilities/_spacing",
-"utilities/_icons",
-"utilities/_debug",
-//"utilities/_shame",
-//"utilities/_ie-fix", // IE fix
-"utilities/_print"; // Print
+@import "utilities/_helpers";
+@import "utilities/_faux-block-link";
+@import "utilities/_widths";
+@import "utilities/_headings";
+@import "utilities/_spacing";
+@import "utilities/_icons";
+@import "utilities/_debug";
+@import "utilities/_print"; // Print

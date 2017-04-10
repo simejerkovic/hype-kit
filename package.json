@@ -3,6 +3,10 @@
   "version": "1.0.3",
   "description": "Front-end build kit we use in our projects",
   "author": "Šime Jerković",
+  "dependencies": {
+    "normalize.css": "4.1.1",
+    "sass-mq": "^3.3.2"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.4.0",
