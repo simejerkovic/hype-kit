@@ -7,54 +7,53 @@
 // This file should not contain anything but @import and comments.
 //
 
-// 1. Settings
+// Settings
 // Variables; global config and colors
 // ==========================================================================
-@import "settings/_all";
+@import "settings/all";
 
 // ==========================================================================
-// 2. Tools
+// Tools
 // Helper functions; mixins and aliases
 // ==========================================================================
-@import "tools/_all";
+@import "tools/all";
 
 // ==========================================================================
 // 3. Generic
 // Resets and normalize styles
 // ==========================================================================
-@import "generic/_box-sizing";
-@import "normalize.css/normalize";
-@import "generic/_reset";
-@import "generic/_shared";
+@import "generic/box-sizing";
+@import "./node_modules/normalize.css/normalize";
+@import "generic/reset";
+@import "generic/vertical-rhythm";
+//@import "generic/font-face"; // @deprecated TODO: Find a better place for font calling
+@import "generic/keyframes";
 
 // ==========================================================================
 // 4. Elements
 // Base elements and styles
 // ==========================================================================
-// "elements/_fonts"; // @deprecated TODO: Find a better place for font calling
-@import "elements/_page"; //
-@import "elements/_headings"; //
-@import "elements/_links"; //
-@import "elements/_images"; //
-@import "elements/_quotes"; //
-@import "elements/_table"; //
+@import "elements/page";
+@import "elements/typography";
+@import "elements/forms";
+@import "elements/links";
+@import "elements/tables";
+@import "elements/images";
 
 // ==========================================================================
 // 5. Objects
 // Basic layout styles, headlines, lists
 // ==========================================================================
-@import "objects/_wrapper";
-@import "objects/_grid";
-@import "objects/_layout";
-@import "objects/_media";
-@import "objects/_flag";
-@import "objects/_list-bare";
-@import "objects/_list-inline";
-@import "objects/_box";
-@import "objects/_block";
-@import "objects/_ratio";
-@import "objects/_crop";
-@import "objects/_pack";
+@import "objects/grid"; // o-grid
+@import "objects/container";
+@import "objects/media";
+@import "objects/flag";
+@import "objects/list-bare";
+@import "objects/list-block";
+@import "objects/list-inline";
+@import "objects/ratio";
+@import "objects/crop";
+@import "objects/pack";
 
 
 // ==========================================================================
@@ -62,8 +61,8 @@
 // Third party components, javascript plugins
 // ==========================================================================
 // Custom DNN fixes
-@import "vendor/dnn/_admin";
-@import "vendor/dnn/_dnn-styles";
+@import "vendor/dnn/admin";
+@import "vendor/dnn/dnn-styles";
 
 // ==========================================================================
 // 7. Components
@@ -71,38 +70,44 @@
 // ==========================================================================
 
 // 7.1 Global components
-//@import "components/_logo";
-//@import "components/_buttons";
-//@import "components/_table";
-//@import "components/_page";
-//@import "components/_page-head";
-//@import "components/_page-footer";
-//@import "components/_nav-primary";
-//@import "components/_nav-mobile";
+//@import "components/logo";
+//@import "components/buttons";
+//@import "components/table";
+//@import "components/page";
+//@import "components/page-head";
+//@import "components/page-footer";
+//@import "components/nav-primary";
+//@import "components/nav-mobile";
 
 // 7.2 Site components
-//@import "components/_module-container";
-//@import "components/_headline";
-//@import "components/_sharing-bar";
+//@import "components/module-container";
+//@import "components/headline";
+//@import "components/sharing-bar";
 
 // Search component
-//@import "components/search/_search-box";
-//@import "components/search/_search-results";
+//@import "components/search/search-box";
+//@import "components/search/search-results";
 
 // DNN components and skin objects
-//@import "components/dnn/_form-items";
-//@import "components/dnn/_login";
-//@import "components/dnn/_cookie-consent.scss";
+//@import "components/dnn/form-items";
+//@import "components/dnn/login";
+//@import "components/dnn/cookie-consent.scss";
 
 // ==========================================================================
 // 8. Utilities
 // Utilities, Heading styles, Helper classes
 // ==========================================================================
-@import "utilities/_helpers";
-@import "utilities/_faux-block-link";
-@import "utilities/_widths";
-@import "utilities/_headings";
-@import "utilities/_spacing";
-@import "utilities/_icons";
-@import "utilities/_debug";
-@import "utilities/_print"; // Print
+@import "utilities/clearfix";
+@import "utilities/hide";
+@import "utilities/typography";
+@import "utilities/spacing";
+//@import "utilities/widths"; // TODO
+@import "utilities/vertical-align";
+@import "utilities/ie9";
+@import "utilities/debug";
+//
+@import "utilities/faux-block-link";
+//@import "utilities/headings";
+//@import "utilities/icons";
+@import "utilities/print"; // Print
+@import "utilities/helpers"; // TODO: Separate helpers into different files

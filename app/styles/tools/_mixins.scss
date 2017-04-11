@@ -49,16 +49,28 @@
     overflow: hidden;
 }
 
-/// Hide content visually, still readable by screen readers
-@mixin u-h {
-    border: 0 !important;
-    clip: rect(0 0 0 0) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
+// Removing elements from view and/or ATs
+// ===========================================
+
+/// Visually hide content, leaving it accessible to screenreaders and ATs.
+/// link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin hide-visually() {
+  /* Hiding elements visually overrides any matching property declarations */
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+/// Completely hide content both visually from the screen, and from screenreaders
+/// and ATs.
+@mixin hide-completely() {
+  /* Hiding elements completely overrides any matching property declarations */
+  display: none !important;
 }
 
 

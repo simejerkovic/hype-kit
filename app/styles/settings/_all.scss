@@ -2,14 +2,9 @@
 // Settings
 // Variables, globals, configs, colors and typography
 // ==========================================================================
-@import "_config";
-@import "_global";
-
-// oGrid System with SassMq
-@import "_grid";
-// Colors
-@import "_colors";
-// Typography
-@import "_typography";
-// Z-index
-@import "_z-index";
+@import "config";
+@import "globals";
+@import "grid"; // oGrid System with SassMq
+@import "colors";
+@import "typography";
+@import "z-index";

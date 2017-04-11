@@ -3,35 +3,6 @@
 ////
 
 
-/// Visually hidden element
-/// Hide only visually, but have it available for screen readers:
-///
-/// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-/// @example html
-///   <div class="u-hidden-visually">I'm a ghost to you but screen readers see me.</div>
-///
-/// @example scss
-///   <div class="u-h">I'm a ghost to you but screen readers see me.</div>
-///
-/// @example scss
-///   @extend %u-h;
-
-%u-h,
-.u-h,
-.u-hidden-visually {
-  @include u-h;
-}
-
-
-// Hide visually and from screen readers.
-
-.hide,
-.is-hidden,
-[hidden],
-.u-hidden {
-  display: none !important;
-}
-
 
 // Hide and Show based on media queries and grid layout
 // @todo Make smarter. Turn into a function repeat. Merge with mq and o-grid
@@ -129,22 +100,6 @@
   }
 }
 
-
-/// Bind our clearfix onto a utility class.
-/// @example html
-///   <div class="u-cf"></div>
-///
-/// @example html
-///   <div class="u-clearfix"></div>
-///
-/// @example scss
-///   @extend %u-cf;
-
-%u-cf,
-.u-cf,
-.u-clearfix {
-  @include clearfix;
-}
 
 
 // Responsive media (images, videos…)

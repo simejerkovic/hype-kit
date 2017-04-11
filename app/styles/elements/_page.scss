@@ -1,6 +1,9 @@
+/* ==========================================================================
+   ELEMENTS / PAGE
+   ========================================================================== */
+
 // Simple page-level setup (e.g. HTML and BODY elements).
 // @group elements
-
 // 1. Set the default `font-size` and `line-height` for the entire project,
 //    sourced from our default variables. The `font-size` is calculated to exist
 //    in ems, the `line-height` is calculated to exist unitlessly.
@@ -13,13 +16,14 @@
 //    render text using sub-pixel anti-aliasing.
 
 html {
-  font-size: ($global-font-size / 16px) * 1em; // 1
-  line-height: $global-line-height / $global-font-size; // 1
+  /*! autoprefixer: off */
+  font-size: ($global-font-size / 16px) * 1em; // [1]
+  line-height: $global-line-height / $global-font-size; // [1]
   font-family: $global-ff-text;
-  color: $color-page-text;
-  background-color: $color-page-background;
-  overflow-y: scroll; // 2
-  min-height: 100%; // 3
+  color: color(text);
+  background-color: color(grey-10);
+  overflow-y: scroll; // [2]
+  min-height: 100%; // [3]
   -webkit-text-size-adjust: 100%; // [4]
   -ms-text-size-adjust: 100%; // [4]
   -moz-osx-font-smoothing: grayscale; // [5]

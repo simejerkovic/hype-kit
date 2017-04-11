@@ -1,0 +1,14 @@
+/// Bind our clearfix onto a utility class.
+/// @example html
+///   <div class="u-cf"></div>
+///
+/// @example html
+///   <div class="u-clearfix"></div>
+///
+/// @example scss
+///   @extend %u-cf;
+%u-cf,
+.u-cf,
+.u-clearfix {
+  @include clearfix;
+}

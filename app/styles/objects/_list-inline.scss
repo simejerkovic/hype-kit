@@ -1,19 +1,18 @@
-////
-/// List inline
-///
-/// Turns standard list into a inline list
-/// indentation.
-///
-/// @group objects
-/// @example
-///   <ul class="o-list-inline">
-///     <li class="o-list-inline__item"></li>
-///   </ul>
-////
+/* ==========================================================================
+   OBJECTS / LIST-INLINE
+   ========================================================================== */
+
+// Turns standard list into a inline list
+// indentation.
+//
+// @group objects
+// @example
+//   <ul class="o-list-inline">
+//     <li class="o-list-inline__item"></li>
+//   </ul>
 
 .o-list-inline {
-  margin: 0;
-  padding: 0;
+  margin-left: 0;
   list-style: none;
   // .flexbox & {
   //   display: flex;
@@ -22,4 +21,21 @@
 
 .o-list-inline__item {
   display: inline-block;
+}
+
+/* Spacing modifiers
+   =========================================== */
+
+.o-list-inline--wide {
+
+  > .o-list-inline__item {
+    margin-right: $global-spacing-unit;
+  }
+}
+
+.o-list-inline--narrow {
+
+  > .o-list-inline__item {
+    margin-right: $global-spacing-unit-small;
+  }
 }

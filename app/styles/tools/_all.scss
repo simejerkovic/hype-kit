@@ -2,15 +2,16 @@
 // Tools
 // Helper functions, mixins and aliases
 // ==========================================================================
-@import "_functions"; // General functions to help with development
-@import "_mixins"; // General mixins to help with development
+@import "functions"; // General functions to help with development
+@import "mixins"; // General mixins to help with development
 
 // Mixins
-@import "mixins/_font-size"; // Font size / line height mixin
-@import "mixins/_typography"; // Typography mixins
+@import "mixins/responsivize"; // Responsivize mixin
+@import "mixins/font-size"; // Font size / line height mixin
+@import "mixins/typography"; // Typography mixins
 
 // Vendor: Bourbon mixin library
-@import "_bourbon";
+@import "bourbon";
 
 // Aliases
-@import "_aliases";
+@import "aliases";
