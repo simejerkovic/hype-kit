@@ -1,5 +1,12 @@
 // Svg icon dimensions helper
-
 .u-icon-18x18 {
   @include size(18px);
+}
+
+.u-icon-25x25 {
+  @include size(25px);
+}
+
+.u-icon-32x32 {
+  @include size(32px);
 }

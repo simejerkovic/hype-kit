@@ -1,0 +1,215 @@
+/* ==========================================================================
+   COMPONENTS / ACCORDION
+   ========================================================================== */
+
+$accordion-animation-speed: $global-animation-speed !default;
+$accordion-background: transparent !default;
+$accordion-border: 1px solid color(grey-20) !default;
+$accordion-border-radius: 0 !default;
+$accordion-icon-size: 20px !default;
+$accordion-icon-color: #c2c2c2 !default;
+$accordion-section-background: #fafafa;
+$accordion-counter-width: 40px;
+$accordion-counter-width-L: 60px;
+$accordion-counter-border: solid 1px #e3e2e2;
+$accordion-counter-background: #f3f3f3;
+
+/**
+ * Accordions are useful for grouping content whilst saving screen space.
+ *
+ * 1. Allows styling of box-model properties and absolute potitioning of child/
+ *    pseudo-elements.
+ * 2. Sets outer border and "curved" edges.
+ */
+
+.c-accordion {
+  display: block;
+  /* [1] */
+  position: relative;
+  /* [1] */
+  counter-reset: accordion-section-counter;
+  margin-bottom: $global-spacing-unit-huge;
+}
+
+
+/**
+ * Accordion sections wrap the label and content into a single container.
+ */
+
+.c-accordion__section {
+  position: relative;
+  background-color: $accordion-section-background;
+  margin-top: $global-spacing-unit-tiny;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $accordion-counter-width;
+    height: 100%;
+    padding-top: $global-spacing-unit;
+    background-color: $accordion-counter-background;
+    text-align: center;
+    border-right: $accordion-counter-border;
+    @include oGridRespondTo($from: L) {
+      width: $accordion-counter-width-L;
+    }
+  }
+}
+
+
+/**
+ * Accordion labels provide context on the group and also toggles content.
+ *
+ * 1. Set the label's font properties.
+ * 2. Allows styling of box-model properties and absolute potitioning of child/
+ *    pseudo-elements.
+ * 3. Set padding which takes into account the icon indicator.
+ * 4. Overwrite default link styles.
+ * 5. Overwrite browser interaction styles to hide outline and show pointer.
+ */
+
+.c-accordion__label {
+  @include FontSize(text(text-body));
+  @include FontWeight(bold);
+  position: relative;
+  display: block;
+  margin-bottom: 0;
+  padding-top: $global-spacing-unit;
+  padding-bottom: $global-spacing-unit;
+  padding-left: $accordion-counter-width + $global-spacing-unit;
+  padding-right: $global-spacing-unit-large;
+  color: color(brand-alt);
+  outline: 0;
+  cursor: pointer;
+  @include oGridRespondTo($from: L) {
+    padding-left: $accordion-counter-width-L + $global-spacing-unit;
+    padding-right: 60px;
+  }
+  /**
+   * Accordion icons provide an extra form of 'toggle' indication.
+   *
+   * 1. Allows for absolute positioning from the top and right of the label.
+   * 2. Sets the icon size.
+   * 3. Sets background-image to the icon as Base64.
+   * 4. Prevents the pseudo-element partially blocking the label's click events.
+   * 5. Sets a starting position for the icon's movement.
+   *    translateY is required to align the absolute icon to 50% of the height.
+   *    translateZ is required to prevent pixel jumps in webkit browsers.
+   * 6. Animates the transform property on transition.
+   */
+  &::after {
+    /*! autoprefixer: off */
+    @include FontSize(19px);
+    @include FontWeight(bold);
+    content: "-";
+    position: absolute;
+    top: 50%;
+    right: $global-spacing-unit-small;
+    margin-top: -$accordion-icon-size / 2;
+    width: $accordion-icon-size;
+    height: $accordion-icon-size;
+    line-height: $accordion-icon-size;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    pointer-events: none;
+    transition: transform $accordion-animation-speed ease;
+    text-align: center;
+    color: $accordion-icon-color;
+    @include oGridRespondTo($from: L) {
+      right: $global-spacing-unit;
+    }
+  }
+  &::before {
+    @include FontSize(14px);
+    @include FontWeight(bold);
+    content: counter(accordion-section-counter);
+    counter-increment: accordion-section-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $accordion-counter-width;
+    height: 100%;
+    padding-top: $global-spacing-unit;
+    text-align: center;
+    @include oGridRespondTo($from: L) {
+      width: $accordion-counter-width-L;
+    }
+  }
+  &.collapsed {
+    @include FontWeight(normal);
+    color: color(text);
+    &::before {
+      @include FontWeight(normal);
+    }
+  }
+}
+
+
+/**
+ * The content for an accordion section, which is displayed on toggle.
+ *
+ * 1. Allows styling of box-model properties and absolute potitioning of child/
+ *    pseudo-elements.
+ * 2. Allows for the content to be completely hidden when toggled off.
+ * 3. Animates the opacity and height properties on transition.
+ */
+
+.c-accordion__content {
+  display: block;
+  /* [1] */
+  position: relative;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  overflow: hidden;
+  /* [2] */
+  opacity: 0;
+  /* [2] */
+  height: 0;
+  /* [2] */
+  transition: opacity $accordion-animation-speed ease, height $accordion-animation-speed ease;
+  /* [3] */
+}
+
+
+/**
+ * Any padding must be set on `.c-accordion__inner` to allow
+ * `.c-accordion__inner` to collapse completely when toggled.
+ */
+
+.c-accordion__inner {
+  @include FontSize(12px, 2);
+  padding-top: 0;
+  padding-left: $accordion-counter-width + $global-spacing-unit;
+  padding-bottom: $global-spacing-unit;
+  padding-right: $global-spacing-unit;
+  @include oGridRespondTo($from: L) {
+    padding-top: 0;
+    padding-left: $accordion-counter-width-L + $global-spacing-unit;
+    padding-bottom: $global-spacing-unit;
+    padding-right: $global-spacing-unit;
+  }
+}
+
+
+/**
+ * For Accordion Sections whose state is toggled.
+ * Sets full opacity with `height: auto;` fallback.
+ */
+
+.c-accordion__section {
+  .c-accordion__content.collapse.in {
+    height: auto;
+    opacity: 1;
+  }
+  /**
+   * Rotate indicator icon.
+   */
+  .c-accordion__label.collapsed {
+    &::after {
+      content: "+"
+    }
+  }
+}

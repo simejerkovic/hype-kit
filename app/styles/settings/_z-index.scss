@@ -18,12 +18,3 @@ $zindex: (
   overlay: 1050, // Lightbox
   offcanvas: 1060  // Offcanvas mobile navigation
 ) !default;
-
-/// @depricated Replaces with maps
-$zindex-ads: 1010;     // Ads
-$zindex-content: 1015; // Modals and overlays inside content
-$zindex-sticky: 1020;  // Sticky header
-$zindex-modal: 1030;   // Search modal
-$zindex-popover: 1040; // Breaking news
-$zindex-overlay: 1050; // Lightbox
-$zindex-offcanvas: 1060; // Offcanvas mobile navigation

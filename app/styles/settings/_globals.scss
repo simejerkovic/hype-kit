@@ -8,8 +8,8 @@
 
 $global-font-size: 20px !default;
 $global-line-height: 30px !default;
-$global-ff-display: 'OpenSans', Arial, sans-serif !default;
-$global-ff-text: 'OpenSans', Arial, sans-serif !default;
+$global-ff-display: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !default;
+$global-ff-text: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !default;
 
 // Global border settings
 // ==============================================
@@ -48,7 +48,7 @@ $global-spacing-unit-huge: round(4 * $global-spacing-unit);
 // Global path settings
 // ==============================================
 
-$global-skin-path: "/portals/0-System/skins/unidu/";
+$global-skin-path: "/portals/0-System/skins/SKIN_NAME/";
 // Global paths: Font
 $global-font-path: $global-skin-path + "fonts/";
 // Global paths: Images

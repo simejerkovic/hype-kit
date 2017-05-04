@@ -102,24 +102,30 @@
 
 	var rAF = (function(){
 		var running, waiting;
-		var fns = [];
+		var firstFns = [];
+		var secondFns = [];
+		var fns = firstFns;
 
 		var run = function(){
-			var fn;
+			var runFns = fns;
+
+			fns = firstFns.length ? secondFns : firstFns;
+
 			running = true;
 			waiting = false;
-			while(fns.length){
-				fn = fns.shift();
-				fn[0].apply(fn[1], fn[2]);
+
+			while(runFns.length){
+				runFns.shift()();
 			}
+
 			running = false;
 		};
 
-		return function(fn){
-			if(running){
+		var rafBatch = function(fn, queue){
+			if(running && !queue){
 				fn.apply(this, arguments);
 			} else {
-				fns.push([fn, this, arguments]);
+				fns.push(fn);
 
 				if(!waiting){
 					waiting = true;
@@ -127,6 +133,10 @@
 				}
 			}
 		};
+
+		rafBatch._lsFlush = run;
+
+		return rafBatch;
 	})();
 
 	var rAFIt = function(fn, simple){
@@ -148,7 +158,7 @@
 		var running;
 		var lastTime = 0;
 		var gDelay = 125;
-		var RIC_DEFAULT_TIMEOUT = 999;
+		var RIC_DEFAULT_TIMEOUT = 666;
 		var rICTimeout = RIC_DEFAULT_TIMEOUT;
 		var run = function(){
 			running = false;
@@ -170,7 +180,7 @@
 		return function(isPriority){
 			var delay;
 			if((isPriority = isPriority === true)){
-				rICTimeout = 66;
+				rICTimeout = 44;
 			}
 
 			if(running){
@@ -287,7 +297,7 @@
 
 				if(preloadExpand == null){
 					if(!('expand' in lazySizesConfig)){
-						lazySizesConfig.expand = docElem.clientHeight > 500 ? 500 : 400;
+						lazySizesConfig.expand = docElem.clientHeight > 500 && docElem.clientWidth > 500 ? 500 : 370;
 					}
 
 					defaultExpand = lazySizesConfig.expand;
@@ -439,13 +449,13 @@
 				}
 			}
 
-			rAF(function(){
-				if(elem._lazyRace){
-					delete elem._lazyRace;
-				}
-				removeClass(elem, lazySizesConfig.lazyClass);
+			if(elem._lazyRace){
+				delete elem._lazyRace;
+			}
+			removeClass(elem, lazySizesConfig.lazyClass);
 
-				if( !firesLoad || elem.complete ){
+			rAF(function(){
+				if( !firesLoad || (elem.complete && elem.naturalWidth > 1)){
 					if(firesLoad){
 						resetPreloading(event);
 					} else {
@@ -453,7 +463,7 @@
 					}
 					switchLoadingClass(event);
 				}
-			});
+			}, true);
 		});
 
 		var unveilElement = function (elem){
@@ -539,7 +549,12 @@
 					setTimeout(onload, 20000);
 				}
 
-				throttledCheckElements(lazyloadElems.length > 0);
+				if(lazyloadElems.length){
+					checkElements();
+					rAF._lsFlush();
+				} else {
+					throttledCheckElements();
+				}
 			},
 			checkElems: throttledCheckElements,
 			unveil: unveilElement

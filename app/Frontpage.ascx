@@ -2,10 +2,10 @@
 <!--  #include file="_includes/_common-resources.ascx" -->
 
 <!--  #include file="_includes/svg-icons.html" -->
-
+<!--  #include file="_includes/nav-mobile.ascx" -->
 <!--  #include file="_includes/header.ascx" -->
 
-<main class="c-page-content" role="main">
+<main class="c-page-content u-padding-top u-margin-bottom" role="main">
     <div class="c-hero" style="height: 630px">
         <div id="HeroPane" runat="server" class="pane"></div>
     </div>

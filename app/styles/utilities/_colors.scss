@@ -1,19 +1,42 @@
 ////
-/// Simple color helper classes
-/// @group utilities
+// Simple color helper classes
+// @group utilities
 ////
 
-.u-bg-color {
-
-  &--all {
-    background-color: $color-section-all;
-  }
+// Background colors
+.u-bg-color--brand {
+  background-color: color(brand);
 }
 
-.u-color {
+.u-bg-color--brand-alt {
+  background-color: color(brand-alt);
+}
 
-  &--all {
-    color: $color-section-all;
-  }
+.u-bg-color--white {
+  background-color: color(white);
+}
 
+.u-bg-color--black {
+  background-color: color(black);
+}
+
+// Text colors
+.u-color--brand {
+  color: color(brand);
+}
+
+.u-color--brand-alt {
+  color: color(brand-alt);
+}
+
+.u-color--white {
+  color: color(white);
+}
+
+.u-color--black {
+  color: color(black);
+}
+
+.u-color--grey-50 {
+  color: color(grey-50);
 }

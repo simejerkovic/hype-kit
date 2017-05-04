@@ -2,9 +2,11 @@
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <!--  #include file="_includes/_common-resources.ascx" -->
 
+<!--  #include file="_includes/svg-icons.html" -->
+<!--  #include file="_includes/nav-mobile.ascx" -->
 <!--  #include file="_includes/header.ascx" -->
 
-<main class="c-page-content c-page-content--inner" role="main">
+<main class="c-page-content c-page-content--inner u-padding-top u-margin-bottom" role="main">
     <div class="c-hero">
         <div id="HeroPane" runat="server" class="pane"></div>
         <%-- If HeroPane has content don't show breadcrumb and page title --%>
@@ -13,8 +15,8 @@
                 <div class="c-breadcrumb">
                     <dnn:BREADCRUMB ID="dnnBreadcrumb" runat="server" CssClass="c-breadcrumb__link" RootLevel="0" Separator="<span class='c-breadcrumb__separator'>/</span>" HideWithNoBreadCrumb="true" />
                 </div>
-                <div class="c-headline">
-                    <h1 class="c-page__title"><%= PortalSettings.ActiveTab.Title %></h1>
+                <div>
+                    <h1 class="c-heading-alpha"><%= PortalSettings.ActiveTab.Title %></h1>
                 </div>
             </div>
         <% } %>

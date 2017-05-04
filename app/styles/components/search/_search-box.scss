@@ -4,7 +4,14 @@
 //
 // @todo Clean these styles
 ////
-
+$color-lightbox-background: color(grey-10);
+$color-lightbox-dark-background: color(brand-alt);
+$color-search-popup-icon: color(brand);
+$color-search-popup-results-text: color(black);
+$color-page-head-icon-links: color(black);
+$color-search-box-text: color(grey-10);
+$color-search-box-border: color(grey-10);
+$color-search-box-background: transparent;
 html.no-touchevents .Lightbox--body-open {
   overflow: hidden;
 }
@@ -17,7 +24,7 @@ html.no-touchevents .Lightbox--body-open {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 1000;
+  z-index: zindex(modal);
   opacity: 1;
   transition: 0.15s ease-in opacity;
 }
@@ -33,7 +40,7 @@ html.no-touchevents .Lightbox--body-open {
 }
 
 .light-box__content {
-  margin: $global-spacing-unit*2 auto;
+  margin: $global-spacing-unit-large auto;
   display: table-cell;
   vertical-align: middle;
 }
@@ -43,7 +50,6 @@ html.no-touchevents .Lightbox--body-open {
   max-width: 1180px;
   min-height: 650px;
   margin: 0 auto;
-
   @include oGridRespondTo($until: M) {
     width: 100%;
     padding: 100px 15px 0;
@@ -51,11 +57,11 @@ html.no-touchevents .Lightbox--body-open {
 }
 
 .search-popup .search-form__close-button {
-  background-color: $color-transparent;
+  background-color: transparent;
   position: absolute;
   display: block;
-  top: 30px;
-  right: 40px;
+  top: 10px;
+  right: 10px;
   border: none;
   -webkit-appearance: none;
   padding: 0;
@@ -81,6 +87,31 @@ html.no-touchevents .Lightbox--body-open {
   fill: $color-search-popup-icon;
 }
 
+.search-form>span {
+  position: relative;
+  display: block;
+}
+
+#dnn_dnnSearch_ClassicSearch .button-search {
+  @include size(50px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  background-color: #fff;
+  &:before {
+    @include size(50px);
+    position: absolute;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    text-indent: 0;
+    color: color(brand-alt);
+  }
+}
+
 .search-popup .search-popup--results-text {
   margin-top: $global-spacing-unit;
   margin-left: $global-spacing-unit;
@@ -90,36 +121,32 @@ html.no-touchevents .Lightbox--body-open {
   -webkit-font-smoothing: antialiased;
 }
 
-.search-popup--results-text > span {
+.search-popup--results-text>span {
   font-size: 20px;
 }
 
 .search-form__open-button {
   color: $color-page-head-icon-links;
-  background-color: $color-transparent;
+  background-color: transparent;
   outline: none;
   border: none;
 }
 
-.search-popup .search-form .search-box {
+.search-popup .search-form #dnn_dnnSearch_txtSearch {
   @include FontWeight(normal);
-
-  font-family: $global-ff-display;
-  font-size: 35px;
-  line-height: 1.7;
+  @include FontSize(24px, 50px);
   color: $color-search-box-text;
   border: none;
   border-bottom: 1px solid $color-search-box-border;
   background: $color-search-box-background;
   outline: none;
   width: 100%;
-  max-height: 103px;
+  max-height: 50px;
   text-shadow: 0 0 0 #fff;
   text-indent: 6px;
   border-radius: 0;
   -webkit-appearance: none;
-
   @include oGridRespondTo(M) {
-    font-size: 54px;
+    @include FontSize(24px, 50px);
   }
 }

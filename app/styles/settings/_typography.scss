@@ -12,6 +12,12 @@
 ///   .element {
 ///     font-size: text(heading-alpha, large);
 ///   }
+///
+/// @example scss
+///
+///   .element {
+///     @include FontSize(text(heading-alpha, large), 1.4);
+///   }
 
 $text: (
   heading-alpha: (

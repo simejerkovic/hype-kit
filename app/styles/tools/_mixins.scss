@@ -155,3 +155,23 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+/// Focus outline
+/// Generates a consistent outline shadow for use on `:focus` or `.has-focus`.
+
+@mixin focus-styles($color: default) {
+  outline: none;
+
+  @if ($color == "default") {
+    box-shadow: 0 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(highlight), 0.75);
+  }
+
+  @elseif ($color == "invert") {
+    box-shadow: 0 1px 3px rgba(color(black), 0.75), 0 1px 15px 3px rgba(color(white), 0.75);
+  }
+
+  @else {
+    @warn "`#{$color}` is not a valid outline color, it must be `default` or `invert`.";
+  }
+}

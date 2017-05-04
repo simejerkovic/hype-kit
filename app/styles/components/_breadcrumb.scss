@@ -1,0 +1,21 @@
+/* ==========================================================================
+   COMPONENTS / BREADCRUMB
+   ========================================================================== */
+
+// Breadcrumb settings
+$breadcrumb-link-colour: color(grey-40);
+//
+.c-breadcrumb {
+  @include FontSize(11px, 1.2);
+  color: $breadcrumb-link-colour;
+}
+
+.c-breadcrumb__link {
+  @include FontSize(11px, 1.2);
+  color: $breadcrumb-link-colour;
+}
+
+.c-breadcrumb__separator {
+  margin-left: $global-spacing-unit-tiny;
+  margin-right: $global-spacing-unit-tiny;
+}

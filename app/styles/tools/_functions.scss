@@ -34,6 +34,21 @@
   @return null;
 }
 
+/// Function to get z-index values instead of using nested `map-gets`.
+///
+/// @example scss
+///   .element {
+///     z-index: zindex(<key>);
+///   }
+
+@function zindex($key) {
+  @if map-has-key($zindex, $key) {
+    @return map-get($zindex, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $zindex.";
+  @return null;
+}
 
 // Convert to em
 // ===========================================

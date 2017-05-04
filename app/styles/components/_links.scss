@@ -1,0 +1,63 @@
+/* ==========================================================================
+   COMPONENTS / LINKS
+   ========================================================================== */
+
+// Links settings
+$link-hover-animation-speed: $global-animation-speed-fast;
+//
+.c-link {
+  text-decoration: none;
+  transition: color $link-hover-animation-speed ease-in;
+}
+
+.c-link:link,
+.c-link:visited {
+  transition: color $link-hover-animation-speed ease-in;
+}
+
+.c-link:hover {
+  transition: color $link-hover-animation-speed ease-in;
+}
+
+.c-link:active {
+  transition: color $link-hover-animation-speed ease-in;
+}
+
+.c-link:focus {
+  transition: color $link-hover-animation-speed ease-in;
+}
+
+
+/**
+ * Adding icons to the end of any external links
+ *
+ * 1. c-link-external currently uses an inline Base64 png chevron icon.
+ *    This will eventually be replaced by SVG.
+ */
+
+.c-link-external {
+  &::after {
+    content: "";
+    display: inline-block;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAABACAMAAACnZz6fAAAAG1BMVEUAAAAAcskAcskAcskAcskAcskAcskAcskAcsk09XWDAAAACHRSTlMAMGBwgI+f7y/+m9wAAABGSURBVHgB7c3LDYBADAPRIXyc/iuGCmJuK6085ycNUFIxd/fXjKrbIrVHxw4oKCgIj/4b/3KkQkJC1hI8gdMTeDyBS5rJC7vhD7kuyMbFAAAAAElFTkSuQmCC");
+    /* [1] */
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: text-bottom;
+    margin-left: $global-spacing-unit-small;
+    width: 1em;
+    height: 1em;
+  }
+}
+
+
+/**
+ * Adds different colour effect on hover
+ */
+
+.c-link--brand {
+  color: color(brand-alt);
+  &:hover {
+    color: color(brand);
+  }
+}

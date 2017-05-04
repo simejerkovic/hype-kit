@@ -70,9 +70,12 @@
 // ==========================================================================
 
 // 7.1 Global components
+@import "components/typography";
+@import "components/buttons";
+@import "components/links";
+@import "components/table";
+@import "components/accordion";
 //@import "components/logo";
-//@import "components/buttons";
-//@import "components/table";
 //@import "components/page";
 //@import "components/page-head";
 //@import "components/page-footer";
@@ -80,13 +83,12 @@
 //@import "components/nav-mobile";
 
 // 7.2 Site components
-//@import "components/module-container";
-//@import "components/headline";
+@import "components/breadcrumb";
 //@import "components/sharing-bar";
 
 // Search component
-//@import "components/search/search-box";
-//@import "components/search/search-results";
+@import "components/search/search-box";
+@import "components/search/search-results";
 
 // DNN components and skin objects
 //@import "components/dnn/form-items";
@@ -101,13 +103,12 @@
 @import "utilities/hide";
 @import "utilities/typography";
 @import "utilities/spacing";
-//@import "utilities/widths"; // TODO
 @import "utilities/vertical-align";
 @import "utilities/ie9";
 @import "utilities/debug";
 //
+@import "utilities/colors";
 @import "utilities/faux-block-link";
-//@import "utilities/headings";
-//@import "utilities/icons";
+@import "utilities/icons";
 @import "utilities/print"; // Print
 @import "utilities/helpers"; // TODO: Separate helpers into different files

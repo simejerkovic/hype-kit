@@ -4,37 +4,60 @@
 //
 // @todo Clean these styles
 ////
-
-.sb-results {
-  //placeholder
+.searchSkinObjectPreview {
+  margin-left: 0;
+  list-style: none;
+  padding: 20px 0;
+  color: color(grey-10);
 }
 
-.sb-material-results {
-  .sb-results .media-list,
-  .sb-pnl-facets .material-nav-tabs {
-    list-style: none;
-    margin-left: 0;
-  }
+.searchSkinObjectPreview_group {
+  display: none;
+}
 
-  .avtsb-comment {
-    display: none;
+.searchSkinObjectPreview>li {
+  cursor: pointer;
+  padding: $global-spacing-unit $global-spacing-unit-small;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+  &:last-child {
+    border-bottom: none;
+  }
+  >span {
+    @include FontWeight(bold);
+    margin-bottom: $global-spacing-unit-tiny;
+  }
+  >p {
+    color: transparentize(color(grey-10), 0.2);
+    margin-bottom: $global-spacing-unit-tiny;
+  }
+  @include hocus() {
+    background-color: transparentize(color(grey-10), 0.9);
+  }
+  &:last-child {
+    padding-top: 0;
+    padding-left: 0;
+    cursor: default;
+    @include hocus() {
+      background-color: transparent;
+    }
   }
 }
 
-.avtsb-pager {
-  .lang-en {
-    display: none;
-
-    .c-page--lang-en & {
-      display: inline-block;
-    }
+.searchSkinObjectPreview_more {
+  @include FontSize(14px);
+  @include FontWeight(bold);
+  display: inline-block;
+  margin-top: 0;
+  margin-left: 0;
+  background-color: color(brand);
+  padding: $global-spacing-unit-small $global-spacing-unit;
+  color: color(grey-10);
+  transition: color $global-animation-speed ease, background-color $global-animation-speed ease, border-color $global-animation-speed ease, box-shadow $global-animation-speed ease;
+  @include hocus() {
+    text-decoration: none;
+    background-color: darken(color(brand), 10%);
   }
-
-  .lang-hr {
-    display: none;
-
-    .c-page--lang-hr & {
-      display: inline-block;
-    }
+  @include oGridRespondTo(M) {
+    @include FontSize(16px);
   }
 }

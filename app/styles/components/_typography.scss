@@ -1,0 +1,83 @@
+/* ==========================================================================
+   COMPONENTS / TYPOGRAPHY
+   ========================================================================== */
+
+
+/**
+ * In order to divorce our semantic decisions from our stylistic ones, we only
+ * define opinionated typographical styles against classes, NOT against
+ * typographic HTML elements.
+ *
+ * Further reading: http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ */
+
+
+/* Heading-level typography
+  =========================================== */
+
+.c-heading-alpha {
+  @include FontSize(text(heading-alpha, small), 1.3);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(heading-alpha, large), 1.2);
+  }
+}
+
+.c-heading-bravo {
+  @include FontSize(text(heading-bravo, small), 1.3);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(heading-bravo, large), 1.25);
+  }
+}
+
+.c-heading-charlie {
+  @include FontSize(text(heading-charlie, small), 1.3);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(heading-charlie, large), 1.25);
+  }
+}
+
+.c-heading-delta {
+  @include FontSize(text(heading-delta, small), 1.4);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(heading-delta, large), 1.3);
+  }
+}
+
+
+/* Text-level typography
+  =========================================== */
+
+.c-text-lead {
+  @include FontSize(text(text-lead, small), 1.4);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(text-lead, large), 1.4);
+  }
+}
+
+.c-text-body {
+  @include FontSize(text(text-body, small), 1.5);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(text-body, large), 1.6);
+  }
+}
+
+.c-text-lead-small {
+  @include FontSize(text(text-lead-small, small), 1.5);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(text-lead-small, large), 1.4);
+  }
+}
+
+.c-text-body-small {
+  @include FontSize(text(text-body-small, small), 1.5);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(text-body-small, large), 1.5);
+  }
+}
+
+.c-text-smallprint {
+  @include FontSize(text(text-smallprint, small), 1.4);
+  @include oGridRespondTo($from: M) {
+    @include FontSize(text(text-smallprint, large), 1.4);
+  }
+}

@@ -1,27 +1,4 @@
-<!--  #include file="nav-mobile.ascx" -->
-
-<%-- TODO: Move this lightbox into a separate file --%>
-<div class="light-box light-box--dark js-search-input-box is-hidden">
-    <div class="light-box__wrapper">
-        <div class="light-box__content">
-            <section class="search-popup">
-                <button type="button" id="js-close-search-box" class="search-form__close-button">
-                  <i class="icon-big-cross" style="background-image: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                      <path fill="none" stroke="#CCC" stroke-width="2.5" stroke-miterlimit="10" d="M15 0L0 15M0 0l15 15"></path>
-                    </svg>
-                  </i>
-                </button>
-                <div class="search-form">
-                    <%-- <avt:SearchBoost runat="server" id="avtSearch" /> --%>
-                </div>
-                <p class="search-popup--results-text" id="js-results-text">
-                  
-                </p>
-            </section>
-        </div>
-    </div>
-</div>
+<!--  #include file="search-box.ascx" -->
 
 <header id="header" class="c-page-head js-auto-hide-header" role="banner">
     <div class="c-page-head__main">
