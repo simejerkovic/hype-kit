@@ -2,18 +2,18 @@
 // ==========================================================================
 
 // Include Gulp
-var gulp = require("gulp");
+var gulp = require('gulp');
 
 // Include plugins
-var cache = require("gulp-cache");
-var eslint = require("gulp-eslint");
-//var if = require("gulp-if");
-//var imagemin = require('gulp-imagemin');
+var cache = require('gulp-cache');
+var eslint = require('gulp-eslint');
+//var if = require('gulp-if');
+var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
-var sass = require("gulp-sass");
+var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var nano = require('gulp-cssnano');
-var size = require("gulp-size");
+var size = require('gulp-size');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var util = require('gulp-util');
@@ -29,6 +29,10 @@ var sassdoc = require('sassdoc'); // Sass documentation
 
 var skinPathDev = 'app';
 
+var processors = [
+  autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7'] }),
+];
+
 // TODO: Make const paths
 // ==========================================================================
 
@@ -42,22 +46,18 @@ const paths = {
     skin: 'app'
 };
 
+// Minify PNG, JPEG, GIF and SVG images with imagemin
+// ==========================================================================
+gulp.task('minify-all-images', () =>
+	gulp.src('Website/Portals/0/Images/**/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('Website/Portals/0/dist/images'))
+);
+
 // Compile Sass to CSS
 // ==========================================================================
 
 gulp.task('styles:dev', function () {
-
-    // px-to-rem & autoprefixer
-    var processors = [
-        autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7'] }),
-        //@deprecated Not used anymore, using sass mixins instead for font sizing
-        //pxtorem({
-        //    root_value: 10,
-        //    replace: true,
-        //    prop_white_list: [],
-        //    selector_black_list: ['html']
-        //})
-    ];
 
     return gulp.src(skinPathDev + '/styles/skin.scss')
         .pipe(plumber())
@@ -72,18 +72,6 @@ gulp.task('styles:dev', function () {
 });
 
 gulp.task('styles:prod', function () {
-
-    // px-to-rem & autoprefixer
-    var processors = [
-        autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 6', 'ff ESR', 'bb >= 7', 'ios >= 7'] }),
-        //@deprecated Not used anymore, using sass mixins instead for font sizing
-        //pxtorem({
-        //    root_value: 10,
-        //    replace: true,
-        //    prop_white_list: [],
-        //    selector_black_list: ['html']
-        //})
-    ];
 
     return gulp.src(skinPathDev + '/styles/skin.scss')
         .pipe(plumber())
