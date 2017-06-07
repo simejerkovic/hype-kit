@@ -4,26 +4,38 @@
 <%@ Register TagPrefix="dnn" TagName="MENU" src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
+<%-- For classic localize string use this --%>
 <a class="sr-only sr-only-focusable" href="#content"><%= LocalizeString("SkipLink.MainContent") %></a>
 
+<%-- Header component with logo image located in skin and dimensions with c# image resizer --%>
 <header>
-
-  <dnn:MENU MenuStyle="nav/primary-nav" NodeSelector="*,0,6" runat="server" />
-
-  <a class="c-logo" href="/" title="">
-    <img src="<%=SkinPath%>images/brand/logo.png?w=340&amp;quality=100" alt="" />
-  </a>
-
+    <dnn:MENU MenuStyle="nav/primary-nav" NodeSelector="*,0,6" runat="server" />
+    <a class="c-logo" href="/" title="">
+        <img src="<%=SkinPath%>images/brand/logo.png?w=340&amp;quality=100" alt="" />
+    </a>
 </header>
 
+<%-- Checks the header pane is empty and adds class based on the result --%>
 <div class="header-pane__inner<%= (HeaderPane.Attributes["class"] ?? "").Contains("DNNEmptyPane") ? "header-pane-empty" : "" %>">
-		<div id="HeaderPane" runat="server" containertype="G" containername="clean-container" containersrc="default.ascx"></div>
+    <div id="HeaderPane" runat="server" containertype="G" containername="clean-container" containersrc="default.ascx"></div>
 </div>
 
+<%-- Checks if the page url is "shop.sistemi.hr" and displays login and register elements
+     Can be useful for webshop and catalog websites --%>
+<div class="links" runat="server" visible='<%# Context.Request.Url.Host = "shop.sistemi.hr" %>'>
+    <div class="myaccount">
+        <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+    </div>
+    <div class="login">
+        <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
+    </div>
+</div>
+
+<%-- Forces panes to always have specific container --%>
 <div id="ContentPane" runat="server" containertype="G" containername="clean-container" containersrc="default.ascx"></div>
 
+<%-- Standard sub navigation call that displays current children of the page --%>
 <dnn:MENU MenuStyle="nav/sub" NodeSelector="CurrentChildren" runat="server" />
-
 
 <%-- Checks the current language and includes footer for that lanugage --%>
 <% if(System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName.ToLower() == "hr") { %>
@@ -33,7 +45,7 @@ else { %>
     <!--  #include file="_includes/Footer_en.ascx" -->
 <% } %>
 
-
+<%-- Standard footer call with aria and itemscope types --%>
 <footer>
   <div class="container-fluid">
     <div class="c-container-inner clearfix">
