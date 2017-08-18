@@ -1,0 +1,12 @@
+// @include edge-position()
+// ==============================================
+//
+// Used to simplify and avoid repeated use of individual edge positioning.
+// eg. if 5px is passed in as a parameter, all offsets will be set at 5px.
+
+@mixin edge-position($edge-position-offset: 0) {
+  top: $edge-position-offset;
+  right: $edge-position-offset;
+  bottom: $edge-position-offset;
+  left: $edge-position-offset;
+}
