@@ -26,7 +26,7 @@
 @import "./node_modules/normalize.css/normalize";
 @import "generic/reset";
 @import "generic/vertical-rhythm";
-//@import "generic/font-face"; // @deprecated TODO: Find a better place for font calling
+@import "generic/font-face";
 @import "generic/keyframes";
 
 // ==========================================================================
