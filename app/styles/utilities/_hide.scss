@@ -7,7 +7,7 @@
 ///
 /// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 /// @example html
-///   <div class="u-hidden-visually">I'm a ghost to you but screen readers see me.</div>
+///   <div class="u-hide-completely">I'm a ghost to you but screen readers see me.</div>
 ///
 /// @example scss
 ///   <div class="u-h">I'm a ghost to you but screen readers see me.</div>
@@ -16,24 +16,16 @@
 ///   @extend %u-h;
 %u-h,
 .u-h,
-.u-hidden-visually {
-  @include hide-visually;
-}
-
-// Hide visually and from screen readers.
-.hide,
-.is-hidden,
-[hidden],
-.u-hidden {
-  display: none !important;
-}
-
 .u-hide-visually {
   @include responsivize() {
     @include hide-visually();
   }
 }
 
+// Hide visually and from screen readers.
+.is-hidden,
+[hidden],
+.u-hidden,
 .u-hide-completely {
   @include responsivize() {
     @include hide-completely();
