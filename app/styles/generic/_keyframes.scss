@@ -1,11 +1,11 @@
 /* ==========================================================================
-   GENERIC / KEYFRAMES
+   GENERIC / #KEYFRAMES
    ========================================================================== */
 
 /**
-* Spin animation keyframes
-*/
-@-webkit-keyframes spin {
+ * Spin animation keyframes
+ */
+ @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
   }

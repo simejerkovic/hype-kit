@@ -1,4 +1,12 @@
-/// Bind our clearfix onto a utility class.
+/* ==========================================================================
+   UTILITIES / #CLEARFIX
+   ========================================================================== */
+
+/**
+ * Class-based implementation of our clearfix mixin. Use in markup only when
+ * there is no other hook available to apply the mixin to.
+ */
+
 /// @example html
 ///   <div class="u-cf"></div>
 ///
@@ -7,6 +15,7 @@
 ///
 /// @example scss
 ///   @extend %u-cf;
+
 %u-cf,
 .u-cf,
 .u-clearfix {

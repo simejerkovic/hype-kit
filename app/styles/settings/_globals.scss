@@ -3,13 +3,34 @@
 // @group settings
 ////
 
+// Global path settings
+// ==============================================
+
+$global-skin-path: "/portals/0-System/skins/SKIN_NAME/";
+$global-font-path: $global-skin-path + "fonts/";
+$global-images-path: $global-skin-path + "images/";
+
 // Global typography settings
 // ==============================================
 
-$global-font-size: 20px !default;
-$global-line-height: 30px !default;
+$global-font-size: 18px !default;
+$global-line-height: 26px !default;
 $global-ff-display: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !default;
 $global-ff-text: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !default;
+
+// Global spacing settings
+// ==============================================
+
+$global-spacing-unit: 20px !default;
+$global-spacing-unit-tiny: round(0.25 * $global-spacing-unit);
+$global-spacing-unit-small: round(0.5 * $global-spacing-unit);
+$global-spacing-unit-large: round(2 * $global-spacing-unit);
+$global-spacing-unit-huge: round(4 * $global-spacing-unit);
+
+// Global Container Settings
+// ==============================================
+
+$global-container-width: 1200px !default;
 
 // Global border settings
 // ==============================================
@@ -21,35 +42,20 @@ $global-border-radius: 0.25em !default;
 // ==============================================
 
 $global-animation-speed: 0.5s !default;
-$global-animation-speed-fast: $global-animation-speed / 2 !default;
-$global-animation-speed-slow: $global-animation-speed * 2 !default;
+$global-animation-speed-fast: 0.5 * $global-animation-speed;
+$global-animation-speed-slow: 2 * $global-animation-speed;
 
-// Global shadow settings
+// Global Shadow Settings
 // ==============================================
 
 $global-shadow-color: #000;
 $global-shadow-intensity: 0.2;
-$global-shadow-x: 1px;
+$global-shadow-x: 0;
 $global-shadow-y: 1px;
-$global-shadow-blur: 14px;
+$global-shadow-blur: 10px;
 $global-shadow-spread: 0;
 
 $global-shadow: unquote($global-shadow-x + " " + $global-shadow-y + " " + $global-shadow-blur + " " + $global-shadow-spread + " " + rgba($global-shadow-color, $global-shadow-intensity));
 
-// Global spacing settings
-// ==============================================
 
-$global-spacing-unit: 20px;
-$global-spacing-unit-tiny: round(0.25 * $global-spacing-unit);
-$global-spacing-unit-small: round(0.5 * $global-spacing-unit);
-$global-spacing-unit-large: round(2 * $global-spacing-unit);
-$global-spacing-unit-huge: round(4 * $global-spacing-unit);
 
-// Global path settings
-// ==============================================
-
-$global-skin-path: "/portals/0-System/skins/SKIN_NAME/";
-// Global paths: Font
-$global-font-path: $global-skin-path + "fonts/";
-// Global paths: Images
-$global-images-path: $global-skin-path + "images/";

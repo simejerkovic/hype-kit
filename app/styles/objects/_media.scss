@@ -21,20 +21,19 @@
 $is-flex-ready: true !default;
 
 @if $is-flex-ready == true {
+
   .o-media {
     display: flex;
-
-    &__img {
-      flex: 0 0 auto;
-      margin-right: $global-spacing-unit-small;
-      @include oGridRespondTo(L) {
-        margin-right: $global-spacing-unit;
-      }
+  }
+  .o-media__img {
+    flex: 0 0 auto;
+    margin-right: $global-spacing-unit-small;
+    @include oGridRespondTo(L) {
+      margin-right: $global-spacing-unit;
     }
-
-    &__body {
-      flex: 1 1 auto;
-    }
+  }
+  .o-media__img__body {
+    flex: 1 1 auto;
   }
 } @else {
 
@@ -49,45 +48,64 @@ $is-flex-ready: true !default;
   .o-media__img {
     float: left;
     margin-right: $global-spacing-unit;
-
-    /**
-    * Small Media Objects simply have smaller gaps between the image and the body.
-    */
-    .o-media--small > & {
-      margin-right: $global-spacing-unit-small;
-    }
-
-    /**
-    * …and larger ones are, well, larger.
-    */
-    .o-media--large > & {
-      margin-right: $global-spacing-unit-large;
-    }
-
-    /**
-    * We can quite easily swap the image and body around by adding the
-    * `--reverse` Modifier to the Block.
-    */
-    .o-media--reverse > & {
-      float: right;
-      margin-right: 0;
-      margin-left: $global-spacing-unit;
-    }
-
-    /**
-    * …then we can have small or large versions of that.
-    */
-    .o-media--small.o-media--reverse > & {
-      margin-left: $global-spacing-unit-small;
-    }
-
-    .o-media--large.o-media--reverse > & {
-      margin-left: $global-spacing-unit-large;
-    }
-
   }
 }
 
 
+/* Modifiers
+   =========================================== */
+
+/**
+ * Smaller spacing between media items.
+ */
+.o-media--narrow {
+  > .o-media__img {
+    margin-right: $global-spacing-unit-small;
+  }
+}
+
+/**
+ * Wider spacing between media items.
+ */
+.o-media--wide {
+  > .o-media__img {
+    margin-right: $global-spacing-unit-large;
+  }
+}
+
+/**
+ * No spacing between media items.
+ */
+.o-media--flush {
+  > .o-media__img {
+    margin-right: 0;
+  }
+}
+
+/**
+ * Swap the image and body around.
+ */
+.o-media--reverse {
+  > .o-media__img {
+    float: right;
+    margin-right: 0;
+    margin-left: $global-spacing-unit;
+
+    /**
+     * Adjust our previously defined modifiers to work in reverse.
+     */
+    .o-media--narrow & {
+      margin-left: $global-spacing-unit-small;
+    }
+
+    .o-media--wide & {
+      margin-left: $global-spacing-unit-large;
+    }
+
+    .o-media--flush & {
+      margin-left: 0;
+    }
+  }
+}
 
 

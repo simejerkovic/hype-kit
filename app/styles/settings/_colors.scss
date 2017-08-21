@@ -1,4 +1,8 @@
-/// Our brand and project colours are held in maps. Access these colours using:
+// =============================================================================
+// SETTINGS / #COLORS
+// =============================================================================
+
+/// Our brand and project colors are held in maps. Access these colours using:
 ///
 ///   color($KEY)
 ///
@@ -7,10 +11,9 @@
 ///   .foo {
 ///     color: color(brand);
 ///   }
-
 $colors: (
   brand:     #5a4099,
-  brand-alt: #23C7DB, // bright cerulean
+  brand-alt: #23C7DB,
   highlight: #73add8,
   error:     #ff2744,
   success:   #299934,

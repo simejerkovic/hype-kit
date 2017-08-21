@@ -2,17 +2,33 @@
 // Tools
 // Helper functions, mixins and aliases
 // ==========================================================================
-@import "functions"; // General functions to help with development
-@import "mixins"; // General mixins to help with development
 
+// Sass MQ
+// Neat little library for managing and using Media Queries
+// throughout the rest of the project.
+@import "./node_modules/sass-mq/mq";
+
+// General functions to help with development
+// ==========================================================================
+@import "functions";
+// General mixins to help with development
+// ==========================================================================
+@import "mixins";
+// Typography
+// ==========================================================================
+@import "typography";
 // Mixins
-@import "mixins/responsivize"; // Responsivize mixin
-@import "mixins/edge-position"; // Edge position mixin
-@import "mixins/font-size"; // Font size / line height mixin
-@import "mixins/typography"; // Typography mixins
-
+// ==========================================================================
+// Responsivize mixin
+@import "mixins/responsivize";
+// Edge position mixin
+@import "mixins/edge-position";
+// Font size / line height mixin
+@import "mixins/font-size";
+// Typography mixins
+@import "mixins/typography";
+// Mixins specifically for helping with creating styles for use in panels.
+@import "mixins/panels";
 // Vendor: Bourbon mixin library
+// ==========================================================================
 @import "bourbon";
-
-// Aliases
-@import "aliases";

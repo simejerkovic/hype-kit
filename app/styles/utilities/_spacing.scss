@@ -1,59 +1,60 @@
-////
-/// Spacing classes
-///
-/// Utility classes to put specific spacing values onto elements. The below loop
-/// will generate us a suite of classes like:
-/// @group utilities
-////
+/* ==========================================================================
+   UTILITIES / #SPACING
+   ========================================================================== */
 
-//
-//   .u-margin-top {}
-//   .u-padding-left-large {}
-//   .u-margin-right-small {}
-//   .u-padding {}
-//   .u-padding-right-none {}
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-large {}
+ *   .u-margin-right-small {}
+ *   .u-padding-all {}
+ */
 
+/* Spacing utilities will override any matching property declarations */
 
-/* stylelint-disable string-quotes */
-
-
-$spacing-directions: (
+$global-spacing-directions: (
   null,
-  '-top',
-  '-right',
-  '-bottom',
-  '-left',
+  -top,
+  -right,
+  -bottom,
+  -left,
 );
 
-$spacing-properties: (
-  'padding',
-  'margin'
+$global-spacing-properties: (
+  padding,
+  margin
 );
 
-$spacing-sizes: (
+$global-spacing-sizes: (
   null: $global-spacing-unit,
-  '-tiny': $global-spacing-unit-tiny,
-  '-small': $global-spacing-unit-small,
-  '-large': $global-spacing-unit-large,
-  '-huge': $global-spacing-unit-huge,
-  '-none': 0
+  -tiny: $global-spacing-unit-tiny,
+  -small: $global-spacing-unit-small,
+  -large: $global-spacing-unit-large,
 ) !default;
 
+@each $property in $global-spacing-properties {
+  @each $direction in $global-spacing-directions {
 
-@each $property in $spacing-properties {
+    // This is a bit nasty… If we have a `null` direction, the implication is that
+    // we want to use the respective property on all sides (TRBL). Accordingly,
+    // create a string of `-all` to use in our class name.
+    $all: null;
 
-  @each $direction in $spacing-directions {
-
-    @each $size, $value in $spacing-sizes {
-
-      .u-#{$property}#{$direction}#{$size} {
-        #{$property}#{$direction}: $value !important;
-      }
-
+    @if ($direction == null) {
+      $all: -all;
     }
 
+    @each $size, $value in $global-spacing-sizes {
+      .u-#{$property}#{$direction}#{$all}#{$size} {
+        #{$property}#{$direction}: $value !important;
+      }
+    }
+
+    .u-#{$property}#{$direction}#{$all}-none {
+      #{$property}#{$direction}: 0 !important;
+    }
   }
 
 }
-
-/* stylelint-enable string-quotes */

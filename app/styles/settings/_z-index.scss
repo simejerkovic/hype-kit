@@ -1,15 +1,30 @@
-/// @todo
+// =============================================================================
+// SETTINGS / #Z-INDEX
+// =============================================================================
+
 /// This shall stop the z-index chaos
 ///
-///   color($KEY)
+///   z-index($KEY)
 ///
 /// @example
 ///
 ///   .foo {
-///     color: color(brand);
+///     color: z-index(ads);
 ///   }
 
-$zindex: (
+$z-index: (
+  0: 0,
+  1: 10,
+  2: 20,
+  3: 30,
+  4: 40,
+  5: 50,
+  6: 60,
+  7: 70,
+  8: 80,
+  9: 90,
+  10: 100,
+  //
   ads: 1010, // Ads
   content: 1015, // Modals and overlays inside content
   sticky: 1020, // Sticky header

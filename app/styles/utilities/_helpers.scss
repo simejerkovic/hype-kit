@@ -169,23 +169,6 @@
 }
 
 
-// Fakes text underline with a border
-
-%u-underline,
-.u-underline {
-  text-decoration: none !important;
-  border-bottom: 1px solid colour(neutral-4);
-  transition: border-color .15s ease-out;
-
-  &:hover,
-  &:focus {
-    /*border-color: ;*/
-  }
-
-  &:active {
-    /*border-color: ;*/
-  }
-}
 
 
 // Prevent line breaks
@@ -257,23 +240,6 @@
     float: right;
   }
 }
-
-
-// Text alignment
-// Element helpers for text alignment
-
-.u-text-left {
-  text-align: left;
-}
-
-.u-text-right {
-  text-align: right;
-}
-
-.u-text-center {
-  text-align: center;
-}
-
 
 // Hide border
 // Element helper to hide border

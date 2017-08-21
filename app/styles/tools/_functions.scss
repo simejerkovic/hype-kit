@@ -1,7 +1,83 @@
+// =============================================================================
+// TOOLS / #FUNCTIONS
+// =============================================================================
+
 ////
 /// Custom functions.
 /// @group tools
 ////
+
+// Maps
+// ==============================================
+
+// map-get-deep()
+// ------------------------------------
+
+// Access nested map values.
+// @author Hugo Giraudel (with modifications)
+@function map-get-deep($map, $keys...) {
+  @if map-has-keys-deep($map, $keys...) {
+    @each $key in $keys {
+      $map: map-get($map, $key);
+    }
+
+    @return $map;
+  }
+
+  @warn "Unknown keys of `#{$keys...}` in the defined map";
+  @return null;
+}
+
+// map-has-keys-deep()
+// ------------------------------------
+
+// Check for keys in nested maps.
+// @author Hugo Giraudel
+@function map-has-keys-deep($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+
+  @return true;
+}
+
+// Map Shorcuts
+// ==============================================
+
+// color()
+// ------------------------------------
+
+// Function to get color from `$colors` instead of using `map-get`.
+//
+// Usage:
+//
+//   .foo {
+//     color: color(<key>);
+//   }
+//
+@function color($key) {
+  @return map-get-deep($colors, $key);
+}
+
+// z-index()
+// ------------------------------------
+
+// Function to get value from `$z-index` instead of using `map-get`.
+//
+// Usage:
+//
+//   .foo {
+//     z-index: z-index(<key>);
+//   }
+//
+@function z-index($key) {
+  @return map-get-deep($z-index, $key);
+}
+
+
 
 /// Function to get text instead of using `map-get`.
 
@@ -18,40 +94,15 @@
   @return null;
 }
 
-/// Function to get color values instead of using nested `map-gets`.
-///
-/// @example scss
-///   .element {
-///     color: color(<key>);
-///   }
 
-@function color($key) {
-  @if map-has-key($colors, $key) {
-    @return map-get($colors, $key);
-  }
 
-  @warn "Unknown `#{$key}` in $colors.";
-  @return null;
-}
 
-/// Function to get z-index values instead of using nested `map-gets`.
-///
-/// @example scss
-///   .element {
-///     z-index: zindex(<key>);
-///   }
 
-@function zindex($key) {
-  @if map-has-key($zindex, $key) {
-    @return map-get($zindex, $key);
-  }
+// Conversion
+// ==============================================
 
-  @warn "Unknown `#{$key}` in $zindex.";
-  @return null;
-}
-
-// Convert to em
-// ===========================================
+// convert-to-em()
+// ------------------------------------
 
 // Function to remove the unit from a value to em i.e. strip-unit(30px) would
 // return 1.5em assuming $global-font-size was 20px.
@@ -65,21 +116,40 @@
   }
 
   @else {
-    @warn "Value must be em or px";
+    @warn "Value must be em or px.";
+  }
+}
+
+// reverse()
+// ------------------------------------
+
+// Function to reverse list of values
+//
+// Example:
+//    reverse(1,2,3,4) => 4,3,2,1
+//    reverse(a 1, b 2, c 3) => c 3, b 2, a 1
+//
+@function reverse($list) {
+  $reversed-list: ();
+
+  @for $index from length($list)*-1 through -1 {
+    $reversed-list: append($reversed-list, nth($list, abs($index)), comma);
   }
 
+  @return $reversed-list;
 }
 
-// Convert to rem
-// ===========================================
-/// Convert any px value into its rem equivalent.
+// strip-unit()
+// ------------------------------------
 
-@function rem($number) {
-  @return $number / $global-font-size * 1rem;
-}
+// Function to remove the unit from a value
+// i.e. strip-unit(20px) would return 20.
+@function strip-unit($num) {
+  @if type_of($num) == number {
+    @return $num / ($num * 0 + 1);
+  }
 
-/// Halve any input and round the result.
-
-@function halve($number) {
-  @return round($number/2);
+  @else {
+    @warn "Value must be a number i.e. 12, 24px etc.";
+  }
 }

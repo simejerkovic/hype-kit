@@ -1,22 +1,42 @@
-////
-/// A very simple reset that sits on top of Normalize.css.
-/// @group generic
-////
+/* ==========================================================================
+   GENERIC / #RESET
+   ========================================================================== */
+
+
+/**
+ * A very simple reset that sits on top of Normalize.css.
+ *
+ */
 
 body,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-dl, dd, ol, ul,
-form, fieldset, legend,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+form,
+fieldset,
+legend,
 figure,
-table, th, td, caption,
+table,
+th,
+td,
+caption,
 hr {
   margin: 0;
   padding: 0;
 }
 
 // Remove trailing margins from nested lists.
-li > {
+li> {
   ul,
   ol {
     margin-bottom: 0;
@@ -28,7 +48,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 
 // We'll also add max height to svg elements
 svg {

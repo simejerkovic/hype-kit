@@ -1,0 +1,12 @@
+/* ==========================================================================
+   UTILITIES / #FILL
+   ========================================================================== */
+
+/**
+ * Utility classes to position an element within its parent.
+ */
+ .u-fill-absolute {
+  position: absolute;
+
+  @include edge-position();
+}

@@ -1,3 +1,7 @@
+// =============================================================================
+// TOOLS / #MIXINS
+// =============================================================================
+
 ////
 /// Global mixins available to the entire project. Define file-specific
 /// mixins inside the file to which they relate.
@@ -5,6 +9,54 @@
 /// @group tools
 ////
 
+// @include add-color()
+// ==============================================
+
+// $name - Name of the color
+// $value - Hex value of the color
+
+// For example:
+//
+//   @include add-color(sky1, #0076be);
+//
+//   .foo {
+//     color: color(sky1);
+//   }
+@mixin add-color($key, $value) {
+  $new-color: ($key: $value);
+
+  @if type-of($value) == color {
+    $colors: map-merge($colors, $new-color) !global;
+  }
+
+  @else {
+    @warn "#{$value} is not a valid color.";
+  }
+}
+
+
+// @include focus-styles()
+// ==============================================
+
+// Generates a consistent outline shadow for use on `:focus` or `.has-focus`.
+@mixin focus-styles($color: default) {
+  outline: none;
+
+  @if ($color == "default") {
+    box-shadow: 0 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(highlight), 0.75);
+  }
+
+  @elseif ($color == "invert") {
+    box-shadow: 0 1px 3px rgba(color(black), 0.75), 0 1px 15px 3px rgba(color(white), 0.75);
+  }
+
+  @else {
+    @warn "`#{$color}` is not a valid outline color, it must be `default` or `invert`.";
+  }
+}
+
+// @include hocus()
+// ==============================================
 
 /// Generate `:hover` and `:focus` styles in one go.
 ///
@@ -14,46 +66,18 @@
 ///   }
 ///
 /// @link http://www.456bereastreet.com/archive/201004/whenever_you_use_hover_also_use_focus/
-
 @mixin hocus() {
-
-    &:hover,
-    &:focus {
-        @content;
-    }
+  &:hover,
+  &:focus {
+    @content;
+  }
 }
 
-/// Generate circular border radius
-///
-/// @example
-///  .simple-circle {
-///   @include circular();
-///  }
+// @include hide-visually()
+// ==============================================
 
-@mixin circular {
-    border-radius: 1000px; // Android 2.3 cannot deal with '50%'
-}
-
-/// Aspect ratio function
-@function aspectRatioHeight($x, $y, $startingWidth: 100%) {
-    @return ($y / $x) * $startingWidth;
-}
-
-/// Aspect ratio mixin
-@mixin fixAspectRatio($x, $y, $startingWidth: 100%) {
-    // To get this working, position the child element
-    // to 'absolute' in the top left corner
-    width: $startingWidth;
-    padding-bottom: aspectRatioHeight($x, $y, $startingWidth);
-    position: relative;
-    overflow: hidden;
-}
-
-// Removing elements from view and/or ATs
-// ===========================================
-
-/// Visually hide content, leaving it accessible to screenreaders and ATs.
-/// link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+// Visually hide content, leaving it accessible to screenreaders and ATs.
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 @mixin hide-visually() {
   /* Hiding elements visually overrides any matching property declarations */
   border: 0 !important;
@@ -66,12 +90,51 @@
   width: 1px !important;
 }
 
-/// Completely hide content both visually from the screen, and from screenreaders
-/// and ATs.
+// @include hide-completely()
+// ==============================================
+
+// Completely hide content both visually from the screen, and from screenreaders
+// and ATs.
 @mixin hide-completely() {
   /* Hiding elements completely overrides any matching property declarations */
   display: none !important;
 }
+
+
+
+// @include circular()
+// ==============================================
+
+/// Generate circular border radius
+///
+/// @example
+///  .simple-circle {
+///   @include circular();
+///  }
+
+@mixin circular {
+    border-radius: 1000px; // Android 2.3 cannot deal with '50%'
+}
+
+// Aspect ratio function
+// ==============================================
+
+@function aspectRatioHeight($x, $y, $startingWidth: 100%) {
+    @return ($y / $x) * $startingWidth;
+}
+
+// Aspect ratio mixin
+// ==============================================
+
+@mixin fixAspectRatio($x, $y, $startingWidth: 100%) {
+    // To get this working, position the child element
+    // to 'absolute' in the top left corner
+    width: $startingWidth;
+    padding-bottom: aspectRatioHeight($x, $y, $startingWidth);
+    position: relative;
+    overflow: hidden;
+}
+
 
 
 /// Clamps a block of text to a certain number of lines,
@@ -154,24 +217,4 @@
   white-space:nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-
-/// Focus outline
-/// Generates a consistent outline shadow for use on `:focus` or `.has-focus`.
-
-@mixin focus-styles($color: default) {
-  outline: none;
-
-  @if ($color == "default") {
-    box-shadow: 0 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(highlight), 0.75);
-  }
-
-  @elseif ($color == "invert") {
-    box-shadow: 0 1px 3px rgba(color(black), 0.75), 0 1px 15px 3px rgba(color(white), 0.75);
-  }
-
-  @else {
-    @warn "`#{$color}` is not a valid outline color, it must be `default` or `invert`.";
-  }
 }
