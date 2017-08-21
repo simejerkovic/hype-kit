@@ -1,5 +1,5 @@
 /* ==========================================================================
-   UTILITIES / HIDE
+   UTILITIES / #HIDE
    ========================================================================== */
 
 /// Visually hidden element
@@ -28,15 +28,14 @@
   display: none !important;
 }
 
+.u-hide-visually {
+  @include responsivize() {
+    @include hide-visually();
+  }
+}
 
-// .u-hide-visually {
-//   @include responsivize() {
-//     @include hide-visually();
-//   }
-// }
-
-// .u-hide-completely {
-//   @include responsivize() {
-//     @include hide-completely();
-//   }
-// }
+.u-hide-completely {
+  @include responsivize() {
+    @include hide-completely();
+  }
+}
