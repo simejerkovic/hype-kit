@@ -133,8 +133,8 @@ html.no-touchevents .Lightbox--body-open {
 }
 
 .search-popup .search-form #dnn_dnnSearch_txtSearch {
-  @include FontWeight(normal);
-  @include FontSize(24px, 50px);
+  @include font-weight(normal);
+  @include font-size(24px, 50px);
   color: $color-search-box-text;
   border: none;
   border-bottom: 1px solid $color-search-box-border;
@@ -147,6 +147,6 @@ html.no-touchevents .Lightbox--body-open {
   border-radius: 0;
   -webkit-appearance: none;
   @include oGridRespondTo(M) {
-    @include FontSize(24px, 50px);
+    @include font-size(24px, 50px);
   }
 }

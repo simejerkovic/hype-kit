@@ -17,10 +17,10 @@
 
 // For example:
 //
-//   @include add-color(sky1, #0076be);
+//   @include add-color(brand-alt, #0076be);
 //
 //   .foo {
-//     color: color(sky1);
+//     color: color(brand-alt);
 //   }
 @mixin add-color($key, $value) {
   $new-color: ($key: $value);
@@ -78,16 +78,23 @@
 
 // Visually hide content, leaving it accessible to screenreaders and ATs.
 // http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-@mixin hide-visually() {
-  /* Hiding elements visually overrides any matching property declarations */
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
+@mixin hide-visually($important: false) {
+
+  @if ($important == false) {
+    $important: null;
+  }
+  @else {
+    $important: !important;
+  }
+
+  border: 0 $important;
+  clip: rect(0 0 0 0) $important;
+  height: 1px $important;
+  margin: -1px $important;
+  overflow: hidden $important;
+  padding: 0 $important;
+  position: absolute $important;
+  width: 1px $important;
 }
 
 // @include hide-completely()
@@ -95,9 +102,16 @@
 
 // Completely hide content both visually from the screen, and from screenreaders
 // and ATs.
-@mixin hide-completely() {
-  /* Hiding elements completely overrides any matching property declarations */
-  display: none !important;
+@mixin hide-completely($important: false) {
+
+  @if ($important == false) {
+    $important: null;
+  }
+  @else {
+    $important: !important;
+  }
+
+  display: none $important;
 }
 
 
@@ -119,18 +133,18 @@
 // Aspect ratio function
 // ==============================================
 
-@function aspectRatioHeight($x, $y, $startingWidth: 100%) {
+@function aspect-ratio-height($x, $y, $startingWidth: 100%) {
     @return ($y / $x) * $startingWidth;
 }
 
 // Aspect ratio mixin
 // ==============================================
 
-@mixin fixAspectRatio($x, $y, $startingWidth: 100%) {
+@mixin fix-aspect-ratio($x, $y, $startingWidth: 100%) {
     // To get this working, position the child element
     // to 'absolute' in the top left corner
     width: $startingWidth;
-    padding-bottom: aspectRatioHeight($x, $y, $startingWidth);
+    padding-bottom: aspect-ratio-height($x, $y, $startingWidth);
     position: relative;
     overflow: hidden;
 }
@@ -214,7 +228,7 @@
 
 @mixin truncate($width: 100%) {
   max-width: $width;
-  white-space:nowrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }

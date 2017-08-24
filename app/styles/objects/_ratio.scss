@@ -4,33 +4,23 @@
 ///
 /// @group objects
 ////
-
-$ratios: (
-  (2:1),
-  (4:3),
-  (16:9),
-) !default;
-
-
+$ratios: ( (2:1), (4:3), (16:9), ) !default;
 // Create ratio-bound content blocks, to keep media (e.g. images, videos) in
 // their correct aspect ratios.
 //
 // @link http://alistapart.com/article/creating-intrinsic-ratios-for-video
 //
 // 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
-
 .o-ratio {
   position: relative;
   display: block;
   overflow: hidden;
-
   &:before {
     content: "";
     display: block;
     width: 100%;
     padding-bottom: 100%; // [1]
   }
-
 }
 
 .o-ratio__content,
@@ -38,12 +28,13 @@ $ratios: (
 .o-ratio > embed,
 .o-ratio > object {
   position: absolute;
-  top:    0;
+  top: 0;
   bottom: 0;
-  left:   0;
+  left: 0;
   height: 100%;
-  width:  100%;
+  width: 100%;
 }
+
 
 /* stylelint-disable */
 
@@ -52,25 +43,20 @@ $ratios: (
 ///
 /// @example html
 ///   <div class="o-ratio  o-ratio--16:9">
-
 @each $ratio in $ratios {
-
-  @each $antecedent, $consequent in $ratio {
-
-    @if (type-of($antecedent) != number) {
+  @each $antecedent,
+  $consequent in $ratio {
+    @if (type-of($antecedent) !=number) {
       @error "`#{$antecedent}` needs to be a number."
     }
-
-    @if (type-of($consequent) != number) {
+    @if (type-of($consequent) !=number) {
       @error "`#{$consequent}` needs to be a number."
     }
-
     .o-ratio--#{$antecedent}\:#{$consequent}:before {
       padding-bottom: ($consequent/$antecedent) * 100%;
     }
-
   }
-
 }
+
 
 /* stylelint-enable */

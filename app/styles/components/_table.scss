@@ -34,11 +34,11 @@ $color-table-row-border-alt: silver !default;
   }
 
   th {
-    @include FontWeight(medium);
+    @include font-weight(medium);
   }
 
   td {
-    @include FontWeight(normal);
+    @include font-weight(normal);
   }
 
   td,
@@ -63,7 +63,7 @@ $color-table-row-border-alt: silver !default;
 }
 /// Base styles for caption element - add this to any <caption> you use
 @mixin TableCaption {
-  @include FontWeight(medium);
+  @include font-weight(medium);
   border-bottom: 2px solid #a7a59b;
   border-top: 2px solid #a7a59b;
   font-size: 14px;
@@ -88,7 +88,7 @@ $color-table-row-border-alt: silver !default;
 }
 /// Makes content block and a smaller font size for secondary text in a table cell.
 @mixin TableCellContentSecondary {
-  @include FontWeight(normal);
+  @include font-weight(normal);
   display: block;
   font-size: 12px;
   line-height: 12px;

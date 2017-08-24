@@ -6,12 +6,12 @@
 $breadcrumb-link-colour: color(grey-40);
 //
 .c-breadcrumb {
-  @include FontSize(11px, 1.2);
+  @include font-size(11px, 1.2);
   color: $breadcrumb-link-colour;
 }
 
 .c-breadcrumb__link {
-  @include FontSize(11px, 1.2);
+  @include font-size(11px, 1.2);
   color: $breadcrumb-link-colour;
 }
 

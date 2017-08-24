@@ -813,7 +813,6 @@ img[height] {
  * Class-based implementation of our clearfix mixin. Use in markup only when
  * there is no other hook available to apply the mixin to.
  */
-
 .u-cf::after,
 .u-clearfix::after {
   clear: both;
@@ -823,7 +822,7 @@ img[height] {
 /* ==========================================================================
    UTILITIES / #HIDE
    ========================================================================== */
-.u-h, .u-hide-visually {
+.u-hide-visually {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: circle(1% at 1% 1%);
@@ -836,7 +835,7 @@ img[height] {
   width: 1px; }
 
 @media (min-width: 26.25em) {
-  .u-h, .u-hide-visually\@small {
+  .u-hide-visually\@small {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: circle(1% at 1% 1%);
@@ -849,7 +848,7 @@ img[height] {
     width: 1px; } }
 
 @media (min-width: 46.25em) {
-  .u-h, .u-hide-visually\@medium {
+  .u-hide-visually\@medium {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: circle(1% at 1% 1%);
@@ -862,7 +861,7 @@ img[height] {
     width: 1px; } }
 
 @media (min-width: 61.25em) {
-  .u-h, .u-hide-visually\@large {
+  .u-hide-visually\@large {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: circle(1% at 1% 1%);
@@ -875,7 +874,7 @@ img[height] {
     width: 1px; } }
 
 @media (min-width: 81.25em) {
-  .u-h, .u-hide-visually\@x-large {
+  .u-hide-visually\@x-large {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: circle(1% at 1% 1%);
@@ -887,27 +886,32 @@ img[height] {
     white-space: nowrap;
     width: 1px; } }
 
-.is-hidden, [hidden], .u-hidden, .u-hide-completely {
+.is-hidden,
+[hidden] {
+  /* Hiding elements completely overrides any matching property declarations */
+  display: none !important; }
+
+.u-hide-completely {
   /* Hiding elements completely overrides any matching property declarations */
   display: none !important; }
 
 @media (min-width: 26.25em) {
-  .is-hidden, [hidden], .u-hidden, .u-hide-completely\@small {
+  .u-hide-completely\@small {
     /* Hiding elements completely overrides any matching property declarations */
     display: none !important; } }
 
 @media (min-width: 46.25em) {
-  .is-hidden, [hidden], .u-hidden, .u-hide-completely\@medium {
+  .u-hide-completely\@medium {
     /* Hiding elements completely overrides any matching property declarations */
     display: none !important; } }
 
 @media (min-width: 61.25em) {
-  .is-hidden, [hidden], .u-hidden, .u-hide-completely\@large {
+  .u-hide-completely\@large {
     /* Hiding elements completely overrides any matching property declarations */
     display: none !important; } }
 
 @media (min-width: 81.25em) {
-  .is-hidden, [hidden], .u-hidden, .u-hide-completely\@x-large {
+  .u-hide-completely\@x-large {
     /* Hiding elements completely overrides any matching property declarations */
     display: none !important; } }
 
@@ -915,6 +919,7 @@ img[height] {
    UTILITIES / #TYPOGRAPHY
    ========================================================================== */
 /* Typography utilities will override any matching property declarations */
+/* stylelint-disable declaration-no-important */
 /* Text alignment utilities
    =========================================== */
 .u-text-left {
@@ -1017,6 +1022,7 @@ img[height] {
 .u-text-constrain {
   max-width: 30em !important; }
 
+/* stylelint-enable */
 /* ==========================================================================
    UTILITIES / #SPACING
    ========================================================================== */
@@ -1303,37 +1309,169 @@ a.u-faux-block-link__overlay {
   text-decoration: underline; }
 
 /* ==========================================================================
-     UTILITIES / #COLORS
-     ========================================================================== */
-/* Simple color helper classes
-     =========================================== */
-.u-bg-color--brand {
-  background-color: #5a4099; }
+   UTILITIES / #COLORS
+   ========================================================================== */
+/**
+ * Generate a suite of utility classes that map directly to our colour palette.
+ */
+/* stylelint-disable declaration-no-important */
+.u-color-brand {
+  color: #5a4099 !important; }
 
-.u-bg-color--brand-alt {
-  background-color: #23C7DB; }
+.u-color-bg-brand {
+  background-color: #5a4099 !important; }
 
-.u-bg-color--white {
-  background-color: #fff; }
+.u-color-brand\:hover:hover {
+  color: #5a4099 !important; }
 
-.u-bg-color--black {
-  background-color: #000; }
+.u-color-bg-brand\:hover:hover {
+  background-color: #5a4099 !important; }
 
-.u-color--brand {
-  color: #5a4099; }
+.u-color-brand-alt {
+  color: #23C7DB !important; }
 
-.u-color--brand-alt {
-  color: #23C7DB; }
+.u-color-bg-brand-alt {
+  background-color: #23C7DB !important; }
 
-.u-color--white {
-  color: #fff; }
+.u-color-brand-alt\:hover:hover {
+  color: #23C7DB !important; }
 
-.u-color--black {
-  color: #000; }
+.u-color-bg-brand-alt\:hover:hover {
+  background-color: #23C7DB !important; }
 
-.u-color--grey-50 {
-  color: #222; }
+.u-color-highlight {
+  color: #73add8 !important; }
 
+.u-color-bg-highlight {
+  background-color: #73add8 !important; }
+
+.u-color-highlight\:hover:hover {
+  color: #73add8 !important; }
+
+.u-color-bg-highlight\:hover:hover {
+  background-color: #73add8 !important; }
+
+.u-color-error {
+  color: #ff2744 !important; }
+
+.u-color-bg-error {
+  background-color: #ff2744 !important; }
+
+.u-color-error\:hover:hover {
+  color: #ff2744 !important; }
+
+.u-color-bg-error\:hover:hover {
+  background-color: #ff2744 !important; }
+
+.u-color-success {
+  color: #299934 !important; }
+
+.u-color-bg-success {
+  background-color: #299934 !important; }
+
+.u-color-success\:hover:hover {
+  color: #299934 !important; }
+
+.u-color-bg-success\:hover:hover {
+  background-color: #299934 !important; }
+
+.u-color-grey-10 {
+  color: #eaeaea !important; }
+
+.u-color-bg-grey-10 {
+  background-color: #eaeaea !important; }
+
+.u-color-grey-10\:hover:hover {
+  color: #eaeaea !important; }
+
+.u-color-bg-grey-10\:hover:hover {
+  background-color: #eaeaea !important; }
+
+.u-color-grey-20 {
+  color: #c0c0c0 !important; }
+
+.u-color-bg-grey-20 {
+  background-color: #c0c0c0 !important; }
+
+.u-color-grey-20\:hover:hover {
+  color: #c0c0c0 !important; }
+
+.u-color-bg-grey-20\:hover:hover {
+  background-color: #c0c0c0 !important; }
+
+.u-color-grey-30 {
+  color: #9f9f9f !important; }
+
+.u-color-bg-grey-30 {
+  background-color: #9f9f9f !important; }
+
+.u-color-grey-30\:hover:hover {
+  color: #9f9f9f !important; }
+
+.u-color-bg-grey-30\:hover:hover {
+  background-color: #9f9f9f !important; }
+
+.u-color-grey-40 {
+  color: #7f7f7f !important; }
+
+.u-color-bg-grey-40 {
+  background-color: #7f7f7f !important; }
+
+.u-color-grey-40\:hover:hover {
+  color: #7f7f7f !important; }
+
+.u-color-bg-grey-40\:hover:hover {
+  background-color: #7f7f7f !important; }
+
+.u-color-grey-50 {
+  color: #222 !important; }
+
+.u-color-bg-grey-50 {
+  background-color: #222 !important; }
+
+.u-color-grey-50\:hover:hover {
+  color: #222 !important; }
+
+.u-color-bg-grey-50\:hover:hover {
+  background-color: #222 !important; }
+
+.u-color-text {
+  color: #4a4a4a !important; }
+
+.u-color-bg-text {
+  background-color: #4a4a4a !important; }
+
+.u-color-text\:hover:hover {
+  color: #4a4a4a !important; }
+
+.u-color-bg-text\:hover:hover {
+  background-color: #4a4a4a !important; }
+
+.u-color-black {
+  color: #000 !important; }
+
+.u-color-bg-black {
+  background-color: #000 !important; }
+
+.u-color-black\:hover:hover {
+  color: #000 !important; }
+
+.u-color-bg-black\:hover:hover {
+  background-color: #000 !important; }
+
+.u-color-white {
+  color: #fff !important; }
+
+.u-color-bg-white {
+  background-color: #fff !important; }
+
+.u-color-white\:hover:hover {
+  color: #fff !important; }
+
+.u-color-bg-white\:hover:hover {
+  background-color: #fff !important; }
+
+/* stylelint-enable */
 .u-icon-18x18 {
   height: 18px;
   width: 18px; }

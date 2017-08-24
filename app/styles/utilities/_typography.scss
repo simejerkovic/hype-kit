@@ -5,6 +5,7 @@
 
 /* Typography utilities will override any matching property declarations */
 
+/* stylelint-disable declaration-no-important */
 
 /* Text alignment utilities
    =========================================== */
@@ -51,3 +52,5 @@
 .u-text-constrain {
   max-width: 30em !important;
 }
+
+  /* stylelint-enable */

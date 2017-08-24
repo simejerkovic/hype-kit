@@ -1,44 +1,31 @@
 /* ==========================================================================
-     UTILITIES / #COLORS
-     ========================================================================== */
+   UTILITIES / #COLORS
+   ========================================================================== */
 
-  /* Simple color helper classes
-     =========================================== */
+/**
+ * Generate a suite of utility classes that map directly to our colour palette.
+ */
 
-// Background colors
-.u-bg-color--brand {
-  background-color: color(brand);
-}
+/* stylelint-disable declaration-no-important */
 
-.u-bg-color--brand-alt {
-  background-color: color(brand-alt);
-}
+@each $name, $value in $colors {
 
-.u-bg-color--white {
-  background-color: color(white);
-}
+    .u-color-#{$name} {
+      color: $value !important;
+    }
 
-.u-bg-color--black {
-  background-color: color(black);
-}
+    .u-color-bg-#{$name} {
+      background-color: $value !important;
+    }
 
-// Text colors
-.u-color--brand {
-  color: color(brand);
-}
+    .u-color-#{$name}\:hover:hover {
+      color: $value !important;
+    }
 
-.u-color--brand-alt {
-  color: color(brand-alt);
-}
+    .u-color-bg-#{$name}\:hover:hover {
+      background-color: $value !important;
+    }
 
-.u-color--white {
-  color: color(white);
-}
+  }
 
-.u-color--black {
-  color: color(black);
-}
-
-.u-color--grey-50 {
-  color: color(grey-50);
-}
+  /* stylelint-enable */

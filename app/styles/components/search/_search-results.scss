@@ -15,7 +15,7 @@
   display: none;
 }
 
-.searchSkinObjectPreview>li {
+.searchSkinObjectPreview > li {
   cursor: pointer;
   padding: $global-spacing-unit $global-spacing-unit-small;
   border-bottom: solid 1px rgba(255, 255, 255, 0.5);
@@ -23,7 +23,7 @@
     border-bottom: none;
   }
   >span {
-    @include FontWeight(bold);
+    @include font-weight(bold);
     margin-bottom: $global-spacing-unit-tiny;
   }
   >p {
@@ -44,8 +44,8 @@
 }
 
 .searchSkinObjectPreview_more {
-  @include FontSize(14px);
-  @include FontWeight(bold);
+  @include font-size(14px);
+  @include font-weight(bold);
   display: inline-block;
   margin-top: 0;
   margin-left: 0;
@@ -58,6 +58,6 @@
     background-color: darken(color(brand), 10%);
   }
   @include oGridRespondTo(M) {
-    @include FontSize(16px);
+    @include font-size(16px);
   }
 }

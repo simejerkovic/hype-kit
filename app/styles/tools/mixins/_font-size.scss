@@ -2,10 +2,10 @@
 ///
 /// @example scss
 ///   .element {
-///     @include FontSize(20px, none, true);
+///     @include font-size(20px, none, true);
 ///   }
 
-@mixin FontSize($font-size, $line-height: auto, $important: false) {
+@mixin font-size($font-size, $line-height: auto, $important: false) {
   @if (type-of($font-size)==number) {
     @if (unit($font-size) !="px") {
       @error "`#{$font-size}` needs to be a pixel value.";

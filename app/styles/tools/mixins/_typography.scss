@@ -6,9 +6,9 @@
 /// Human friendly font family keywords
 ///
 /// @example scss
-///    @include FontFamily(source-sans-pro);
+///    @include font-family(source-sans-pro);
 
-@mixin FontFamily($family) {
+@mixin font-family($family) {
   @if ($family=="source-sans-pro") {
     font-family: 'source-sans-pro', sans-serif;
   }
@@ -27,9 +27,9 @@
 /// Map keywords onto our numbered weights for convenience.
 ///
 /// @example scss
-///    @include FontWeight(bold);
+///    @include font-weight(bold);
 
-@mixin FontWeight($weight) {
+@mixin font-weight($weight) {
   @if ($weight==normal) {
     font-weight: 400;
   }
