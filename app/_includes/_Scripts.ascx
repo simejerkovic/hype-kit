@@ -6,6 +6,10 @@
     <dnn:DnnCssInclude runat="server" FilePath="~/resources/shared/stylesheets/dnndefault/8.0.0/default.css" Name="dnndefault" Version="8.0.0" />
 <% } %>
 
+<% if (DotNetNuke.Security.PortalSecurity.IsInRoles(PortalSettings.AdministratorRoleName) || PortalSettings.Current.UserInfo.IsSuperUser){ %>
+       <dnn:DnnCssInclude runat="server" FilePath="~/resources/shared/stylesheets/dnndefault/8.0.0/default.css" Name="dnndefault" Version="8.0.0" />
+<% } %>
+
 <%-- Placed in head of the document --%>
 <dnn:DnnJsInclude runat="server" FilePath="scripts/modernizr/modernizr-custom.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="6" />
 <%-- Dependency: Modernizr, must be declared right after modernizr  --%>
