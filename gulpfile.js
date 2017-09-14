@@ -61,7 +61,7 @@ var processors = [
 // ==========================================================================
 
 // Use only for Development environment!
-// For production see task styles:prod
+// For production see task build
 gulp.task('styles:dev', function () {
 
     return gulp.src(skinPathDev + '/styles/skin.scss')
@@ -78,7 +78,7 @@ gulp.task('styles:dev', function () {
 
 // Use only for Production / Live environment!
 // For development see task styles:dev
-gulp.task('styles:prod', function () {
+gulp.task('build', function () {
 
     return gulp.src(skinPathDev + '/styles/skin.scss')
         .pipe(plumber())
