@@ -2,7 +2,7 @@
 
 An Evolving Starter kit for DNN Projects
 
-For CSS / Sass Style guide go visit: [CSS Style Guide](https://github.com/simejerkovic/hype-kit/blob/master/resources/css-style-guide.md#css-style-guide)
+For CSS / Sass Style guide, visit: [CSS Style Guide](https://github.com/simejerkovic/hype-kit/blob/master/resources/css-style-guide.md#css-style-guide)
 
 ## Getting Started
 
