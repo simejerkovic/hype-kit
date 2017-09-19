@@ -4,7 +4,7 @@
     <div class="c-page-head__main">
         <div class="o-grid-container u-cf">
             <div class="c-logo__wrap u-pull--left">
-                <a href="<%=DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId)%>" class="c-logo__link">
+                <a href="<%#DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId)%>" class="c-logo__link">
                     <svg class="c-logo">
                         <use xlink:href="#unidu-logo" />
                     </svg>
@@ -20,12 +20,12 @@
     </div>
     <div class="c-page-head__navigation">
         <div class="o-grid-container">
-            <a href="<%=DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId)%>" class="c-nav-primary__home-link u-pull--left">
+            <a href="<%#DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId)%>" class="c-nav-primary__home-link u-pull--left">
                 <svg class="c-nav-primary__icon-home u-icon-18x18">
                     <use xlink:href="#icon-home" />
                 </svg>
                 <span class="sr-only">
-                    <%= LocalizeString("HomeTabName.Text") %>
+                    <%# LocalizeString("HomeTabName.Text") %>
                 </span>
             </a>
             <dnn:MENU ID="navPrimary" MenuStyle="nav/primary-nav" NodeSelector="*,0,1" ExcludeNodes="59" runat="server"></dnn:MENU>
@@ -34,7 +34,7 @@
                     <use xlink:href="#icon-search" />
                 </svg>
                 <span class="sr-only">
-                    <%= LocalizeString("Search.Text") %>
+                    <%# LocalizeString("Search.Text") %>
                 </span>
             </button>
         </div>

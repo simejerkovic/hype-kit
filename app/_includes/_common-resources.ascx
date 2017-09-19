@@ -91,8 +91,8 @@
 	protected void AttachCustomHeader(string CustomHeader) { HtmlHead HtmlHead = (HtmlHead)Page.FindControl("Head"); if ((HtmlHead != null)) { HtmlHead.Controls.Add(new LiteralControl(CustomHeader));	}	}
 
     // Localization string to replace the standard DNN:TEXT control
-	protected string LocalizeString(string key)
-	{
-			return Localization.GetString(key, Localization.GetResourceFile(this, System.IO.Path.GetFileName(this.AppRelativeVirtualPath)));
-	}
+    protected string LocalizeString(string key)
+    {
+        return Localization.GetString(key, Localization.GetResourceFile(this, System.IO.Path.GetFileName(this.AppRelativeVirtualPath)));
+    }
 </script>

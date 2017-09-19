@@ -16,7 +16,7 @@
                     <dnn:BREADCRUMB ID="dnnBreadcrumb" runat="server" CssClass="c-breadcrumb__link" RootLevel="0" Separator="<span class='c-breadcrumb__separator'>/</span>" HideWithNoBreadCrumb="true" />
                 </div>
                 <div>
-                    <h1 class="c-heading-alpha"><%= PortalSettings.ActiveTab.Title %></h1>
+                    <h1 class="c-heading-alpha"><%# PortalSettings.ActiveTab.Title %></h1>
                 </div>
             </div>
         <% } %>
@@ -31,7 +31,7 @@
                 <dnn:MENU MenuStyle="nav/aside-nav" runat="server" NodeSelector="+0,0,1"></dnn:MENU>
                 <div id="P1_Content_Nav" runat="server" class="pane"></div>
             </div>
-            <div class="c-page-content__main <%= (P1_Content_Sidebar.Attributes["class"] ?? "").Contains("DNNEmptyPane") ? "" : "has-sidebar" %>">
+            <div class="c-page-content__main <%# (P1_Content_Sidebar.Attributes["class"] ?? "").Contains("DNNEmptyPane") ? "" : "has-sidebar" %>">
                 <div id="P1_Content_Main" runat="server" class="pane"></div>
             </div>
             <div id="P1_Content_Sidebar" runat="server" class="c-page-content__sidebar pane"></div>
