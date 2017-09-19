@@ -1,6 +1,6 @@
 {
   "name": "hype-build-kit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Front-end build kit we use in our projects",
   "author": "Šime Jerković",
   "dependencies": {
