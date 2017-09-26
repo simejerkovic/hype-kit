@@ -108,7 +108,7 @@
 // 2. Stretch the contained media to the dimensions of its container
 
 .u-responsive-ratio {
-  @include fixAspectRatio(5, 3); // 1
+  @include fix-aspect-ratio(5, 3); // 1
   img,
   object,
   embed,
