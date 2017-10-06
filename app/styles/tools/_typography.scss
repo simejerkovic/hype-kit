@@ -126,3 +126,62 @@
   font-size: $value;
   font-size: ($value / $global-font-size) * 1rem;
 }
+
+// @include font-family()
+// ------------------------------------
+
+/// Human friendly font family keywords.
+///
+/// @example scss
+///   .element {
+///     @include font-family(source-sans-pro);
+///   }
+
+@mixin font-family($family) {
+  @if ($family=="source-sans-pro") {
+    font-family: 'source-sans-pro', sans-serif;
+  }
+
+  @elseif ($family=="encode-sans-condensed") {
+    font-family: 'encode-sans-condensed', sans-serif;
+  }
+
+  @else {
+    @warn "#{$family} is not a valid font-family."
+  }
+};
+
+// @include font-weight()
+// ------------------------------------
+
+/// Human friendly font weight keywords.
+/// Map keywords onto our numbered weights for convenience.
+///
+/// @example scss
+///   .element {
+///     @include font-weight(bold);
+///   }
+
+@mixin font-weight($weight) {
+  @if ($weight==normal or $weight==regular) {
+    font-weight: 400;
+  }
+  @elseif ($weight==extralight) {
+    font-weight: 200;
+  }
+  @elseif ($weight==light) {
+    font-weight: 300;
+  }
+  @elseif ($weight==semibold or $weight==medium) {
+    font-weight: 600;
+  }
+  @elseif ($weight==bold) {
+    font-weight: 700;
+  }
+  @elseif ($weight==black) {
+    font-weight: 900;
+  }
+  @else {
+    @warn "#{$weight} is not a valid font-weight."
+  }
+};
