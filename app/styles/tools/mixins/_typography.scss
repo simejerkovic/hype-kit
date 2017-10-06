@@ -30,7 +30,7 @@
 ///    @include font-weight(bold);
 
 @mixin font-weight($weight) {
-  @if ($weight==normal) {
+  @if ($weight==normal or $weight==regular) {
     font-weight: 400;
   }
   @elseif ($weight==extralight) {
