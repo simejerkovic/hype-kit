@@ -2,6 +2,15 @@
    LAYER / #FILENAME
    ========================================================================== */
 
+// Settings
+$class-color: red;
+
+/* Heading
+  =========================================== */
+
+/* Sub-heading
+  ---------------------------------- */
+
 /**
  * Long-form comment.
  *
@@ -11,8 +20,5 @@
  * 1. Provide line-comments like this.
  */
 .X-class {
-  color: red; /* [1] */
+  color: $class-color; /* [1] */
 }
-
-/* Sub-heading
-   =========================================== */
