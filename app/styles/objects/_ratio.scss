@@ -1,16 +1,25 @@
-////
-/// Crop
+/* ==========================================================================
+   OBJECTS / #RATIO
+   ========================================================================== */
+
 /// A list of aspect ratios that get generated as modifier classes.
 ///
 /// @group objects
-////
-$ratios: ( (2:1), (4:3), (16:9), ) !default;
+
+$crops: (
+  (1:1),
+  (2:1),
+  (4:3),
+  (16:9),
+) !default;
+
 // Create ratio-bound content blocks, to keep media (e.g. images, videos) in
 // their correct aspect ratios.
 //
 // @link http://alistapart.com/article/creating-intrinsic-ratios-for-video
 //
 // 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
+
 .o-ratio {
   position: relative;
   display: block;
