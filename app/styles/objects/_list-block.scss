@@ -2,14 +2,13 @@
    OBJECTS / LIST-BLOCK
    ========================================================================== */
 
-//
-// The list-block object displays any list of items into stacked blocks.
-//
-// @example
-//   <ul class="o-list-block">
-//     <li class="o-list-block__item"></li>
-//   </ul>
-//
+/// The list-block object displays any list of items into stacked blocks.
+///
+/// @example
+///   <ul class="o-list-block">
+///     <li class="o-list-block__item"></li>
+///   </ul>
+
 .o-list-block {
   margin-left: 0;
   list-style: none;
