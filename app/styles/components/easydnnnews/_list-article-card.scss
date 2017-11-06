@@ -1,0 +1,91 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #LIST-ARTICLE-CARD
+   ========================================================================== */
+
+// Settings
+$edn-article-card-spacing: 15px !default;
+$edn-article-card-background-color: color(white) !default;
+$edn-article-card-animation-speed: $global-animation-speed !default;
+$edn-article-card-placeholder-background: color(grey-20) !default;
+
+$edn-article-card-title-color: color(black) !default;
+$edn-article-card-title-color-hover: color(brand) !default;
+
+/* Layout
+  =========================================== */
+
+.c-article-list--card-layout > .edn__articleListWrapper,
+.c-article-list--card-layout > [class$="_article_list_wrapper"],
+.c-article-list--card-layout > [class*="_article_list_wrapper "] {
+  @include oGridRow();
+}
+
+.c-article-list__item--card-layout {
+  @include oGridColspan((default: 12, S: 6, M: 4));
+  margin-bottom: 40px;
+}
+
+/* Base
+  =========================================== */
+
+/**
+ * Article card
+ */
+
+.c-article-card {}
+
+.c-article-card__media {
+  position: relative;
+  margin-bottom: 16px;
+  background-color: $edn-article-card-placeholder-background;
+}
+
+.c-article-card__image {
+  // This is a fix for chrome moving image 1px on hover sometimes
+  backface-visibility: hidden;
+}
+
+.c-article-card__label {
+  @include font-size(12px);
+  @include font-weight(medium);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4px 10px;
+  background-color: color(brand2);
+  color: color(black);
+}
+
+.c-article-card__title {
+  @include font-weight(bold);
+  color: $edn-article-card-title-color;
+
+  @include hocus() {
+    color: $edn-article-card-title-color-hover;
+  }
+}
+
+.c-article-card__title-link {
+  color: currentColor;
+
+  @include hocus() {
+    text-decoration: none;
+    color: $edn-article-card-title-color-hover;
+  }
+}
+
+/**
+ * Animations
+ */
+
+.c-article-card:not(.c-article-card--no-filter) {
+  .c-article-card__image {
+    transition: filter $edn-article-card-animation-speed ease;
+  }
+}
+
+.c-article-card:hover:not(.c-article-card--no-filter) {
+  .c-article-card__image {
+    filter: brightness(95%) contrast(95%);
+  }
+}

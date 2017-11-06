@@ -1,0 +1,84 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #LIST-ANNOUNCEMENT-CARD
+   ========================================================================== */
+
+// Settings
+$edn-announcement-card-spacing: 20px !default;
+$edn-announcement-card-background-color: transparent !default;
+$edn-announcement-card-background-color-hover: rgba(color(highlight), 0.6) !default;
+
+$edn-announcement-card-border-color: color(grey-20) !default;
+$edn-announcement-card-border-bottom-color: color(grey-20) !default;
+$edn-announcement-card-border-bottom-color-hover: color(brand) !default;
+
+$edn-announcement-card-border-bottom-width: 4px !default;
+
+$edn-announcement-card-animation-speed: $global-animation-speed !default;
+
+$edn-announcement-card-title-color: color(black) !default;
+$edn-announcement-card-title-color-hover: color(brand) !default;
+
+/* Layout
+  =========================================== */
+
+.c-announcement-list--card-layout > .edn__articleListWrapper,
+.c-announcement-list--card-layout > [class$="_article_list_wrapper"],
+.c-announcement-list--card-layout > [class*="_article_list_wrapper "] {
+  @include oGridRow();
+}
+
+.c-announcement-list__item--card-layout {
+  @include oGridColspan((default: 12, S: 6, XL: 4));
+  margin-bottom: 40px;
+}
+
+/* Base
+  =========================================== */
+
+/**
+ * Article card
+ */
+
+.c-announcement-card {
+  min-height: 100%;
+  padding: $edn-announcement-card-spacing;
+
+  border: solid 1px $edn-announcement-card-border-color;
+  border-bottom-width: $edn-announcement-card-border-bottom-width;
+  background-color: $edn-announcement-card-background-color;
+
+  transition: border-color $edn-announcement-card-animation-speed ease, background-color $edn-announcement-card-animation-speed ease;
+
+  @include hocus() {
+    border-color: $edn-announcement-card-border-color;
+    border-bottom-color: $edn-announcement-card-border-bottom-color-hover;
+  }
+}
+
+.c-announcement-card__meta {
+  margin-bottom: $edn-announcement-card-spacing;
+}
+
+.c-announcement-card__date {
+  @include font-size(12px);
+  padding-bottom: 2px;
+  border-bottom: 1px solid $edn-announcement-card-border-color;
+}
+
+.c-announcement-card__title {
+  @include font-weight(medium);
+  color: $edn-announcement-card-title-color;
+
+  @include hocus() {
+    color: $edn-announcement-card-title-color-hover;
+  }
+}
+
+.c-announcement-card__title-link {
+  color: currentColor;
+
+  @include hocus() {
+    text-decoration: none;
+    color: $edn-article-card-title-color-hover;
+  }
+}

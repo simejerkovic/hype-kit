@@ -1,0 +1,31 @@
+<!--HeaderTemplateBegin-->
+<!--[Has:EDG:ItemParentGalleryTitle]<h2 class="edsgg_mainTitle">[EDG:ItemParentGalleryTitle]</h1>[/Has:EDG:ItemParentGalleryTitle]-->
+<!--[Has:EDG:ItemParentGalleryDescription]<div class="edsgg_ItemParentGalleryDescription">[EDG:ItemParentGalleryDescription]</div>[/Has:EDG:ItemParentGalleryDescription]-->
+[Has:EDG:GalleryBackLink]<div class="edsgg_galleryBackLinkWrapper"><a class="edsgg_galleryBackLink" href="[EDG:GalleryBackLink]"><span>[EDG:LocalizedText:ViewInGravityGallery]</span></a></div>[/Has:EDG:GalleryBackLink]
+<!--HeaderTemplateEnd-->
+
+<!--ItemTemplateBegin-->
+<div class="edsgg_thumbnailContainer">
+	[EDG:EmbedInPage]
+	<div class="edsgg_image_thumbnail edsgg_mediaType_[EDG:MediaType]">
+		[EDG:EmbedMediaData]
+		<div class="edsgg_widthEnforcer" style="width: [EDG:ListItemThumbWidth]px;"></div>
+	</div>
+	[Has:EDG:ItemTitle]<span class="edsgg_title" style="max-width:[EDG:ListItemThumbWidth]px;">[EDG:ItemTitle]</span>[/Has:EDG:ItemTitle]
+	[/EDG:EmbedInPage]
+	[EDG:DontEmbedInPage]
+	<a class="edsgg__itemDetailsAndLightboxTrigger" href="[EDG:ItemMediaLink]">
+		<span class="edsgg_image_thumbnail">
+			<img src="[EDG:ItemThumbnail]" alt="[EDG:ItemTitle]">
+			<span class="edsgg_readMore edsgg_mediaType_[EDG:MediaType]"></span>
+		</span>
+		[Has:EDG:ItemTitle]<span class="edsgg_title" style="max-width:[EDG:ListItemThumbWidth]px;">[EDG:ItemTitle]</span>[/Has:EDG:ItemTitle]
+	</a>
+	[/EDG:DontEmbedInPage]
+</div>
+<div class="edsgg_description" style="max-width:[EDG:ListItemThumbWidth]px;">[EDG:ItemDescription]</div>
+	<!--ItemTemplateEnd-->
+
+<!--FooterTemplateBegin-->
+[EDG:ItemPaging]
+<!--FooterTemplateEnd-->

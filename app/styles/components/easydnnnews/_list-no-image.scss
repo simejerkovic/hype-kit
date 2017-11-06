@@ -1,0 +1,38 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #LIST-NO-IMAGE
+   ========================================================================== */
+
+// Settings
+$edn-article-links-spacing: 16px !default;
+$edn-article-links-title-color: color(white) !default;
+$edn-article-links-title-color-hover: color(highlight) !default;
+
+/* Layout
+  =========================================== */
+
+// .c-article-list--no-image > .edn__articleListWrapper,
+// .c-article-list--no-image > [class$="_article_list_wrapper"],
+// .c-article-list--no-image > [class*="_article_list_wrapper "] {
+//   @include oGridRow();
+// }
+
+// .c-article-list__item--no-image {
+//   @include oGridColspan((default: 12));
+// }
+
+/* Base
+  =========================================== */
+
+.c-article-list__item--no-image {
+  @include font(text-body, small);
+  margin-bottom: $edn-article-links-spacing;
+}
+
+.c-article__link--no-image {
+  color: $edn-article-links-title-color;
+
+  @include hocus() {
+    color: $edn-article-links-title-color-hover;
+    text-decoration: none;
+  }
+}

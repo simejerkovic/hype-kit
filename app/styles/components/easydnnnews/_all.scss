@@ -1,0 +1,41 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS
+   ========================================================================== */
+
+@import "dashboard";
+@import "load-more-button";
+//@import "pager";
+
+/* List styles
+  ---------------------------------- */
+@import "list-article-card";
+@import "list-article-feed";
+@import "list-announcement-card";
+@import "list-no-image";
+//@import "list-article-widget";
+
+/* Detail styles
+  ---------------------------------- */
+@import "detail-article";
+
+/* Gallery styles
+  ---------------------------------- */
+// Gravity gallery integrated with slick.js slider
+@import "gravity-gallery/gallery-slick";
+// Gravity gallery integrated with fotorama.js gallery
+@import "gravity-gallery/gallery-fotorama";
+
+/* Documents styles
+  ---------------------------------- */
+@import "documents/documents";
+
+/* Links styles
+  ---------------------------------- */
+@import "links/links";
+
+/* Temporary placement
+  ---------------------------------- */
+//@import "_archive/edn-detail-competitions";
+//@import "_archive/edn-list-sidebar";
+@import "_archive/edn-categories-list";
+//@import "_archive/edn-documents-links-lists";

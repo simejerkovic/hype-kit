@@ -1,0 +1,41 @@
+<!--TemplateGroup:newsListArticleDefault-->
+
+<!--ArticleTemplate-->
+<div class="c-article-list__item c-article-list__item--feed-layout">
+  <article class="c-article-feed u-faux-block-link">
+    <div class="c-article-feed__media-container">
+      <figure class="c-article-feed__media o-crop o-crop--16:9">
+        [EasyDNNnews:IfExists:Image]
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-src="[EasyDNNnews:Image]?w=480&mode=crop"
+          class="c-article-feed__image o-crop__content o-crop__content--center lazyload" alt="[EasyDNNnews:Title]" />
+        [EasyDNNnews:EndIf:Image]
+        [EasyDNNnews:IfNotExists:Image]
+          <img src="/Portals/0/images/brand/unist-placeholder.jpg" class="c-article-feed__image o-crop__content o-crop__content--center lazyload" alt="[EasyDNNnews:Title]" />
+        [EasyDNNnews:EndIf:Image]
+      </figure>
+    </div>
+    <div class="c-article-feed__content">
+      <h2 class="c-article-feed__title c-heading-charlie">
+        <a href="[EasyDNNnews:Title:Link]" class="c-article-feed__title-link">[EasyDNNnews:Title]</a>
+      </h2>
+      [EasyDNNnews:IfExists:Summary]
+      <div class="c-article-feed__summary c-text-body">
+        [EasyDNNnews:Summary]
+      </div>
+      [EasyDNNnews:EndIf:Summary]
+      <div class="c-article-feed__meta">
+        <span class="c-article-feed__date">[EasyDNNnews:PublishDate]</span>
+      </div>
+    </div>
+    <a href="[EasyDNNnews:Title:Link]" class="u-faux-block-link__overlay" tabindex="-1">[EasyDNNnews:Title]</a>
+  </article>
+</div>
+<!--ArticleEnd-->
+
+<!--ArticleRepeat:Before:-->
+<div class="c-article-list c-article-list--feed-layout">
+<!--RepeatEnd:Before:-->
+<!--ArticleRepeat:After:-->
+</div>
+<!--RepeatEnd:After:-->

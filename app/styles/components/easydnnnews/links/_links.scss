@@ -1,0 +1,68 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / LINKS / #LINKS
+   ========================================================================== */
+
+// Settings
+$edn-link-spacing: 16px !default;
+$edn-link-border: color(grey-20);
+$edn-link-font-size: text-body;
+$edn-link-link-color: color(brand);
+$edn-link-link-color-hover: color(brand-alt);
+$edn-link-icon-size: 24px;
+$edn-link-icon-color: color(grey-30);
+$edn-link-icon-color-hover: color(brand);
+$edn-link-animation-speed: $global-animation-speed-fast;
+
+/* Base
+  =========================================== */
+
+//.c-article-link-list {}
+
+.c-article-link-list__item {
+  margin-bottom: $edn-link-spacing / 2;
+  padding-bottom: $edn-link-spacing / 2;
+  border-bottom: solid 1px $edn-link-border;
+}
+
+.c-article-link {
+  @include font($edn-link-font-size, large);
+  color: $edn-link-link-color;
+  align-items: center;
+
+  @include hocus() {
+    text-decoration: none;
+    color: $edn-link-link-color-hover;
+  }
+}
+
+.c-article-link__icon {
+  @include size($edn-link-icon-size);
+  fill: $edn-link-icon-color;
+
+  @include hocus() {
+    fill: $edn-link-icon-color-hover;
+  }
+
+  .c-article-link:hover &,
+  .c-article-link:focus & {
+    fill: $edn-link-icon-color-hover;
+  }
+}
+
+.c-article-link__title {
+  margin-bottom: 2px;
+}
+
+.c-article-link__description {
+  margin-bottom: 4px;
+  color: color(grey-40);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.c-article-link__meta {
+  margin-bottom: 4px;
+  color: color(grey-40);
+}

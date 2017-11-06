@@ -1,0 +1,43 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / GALLERY / #GALLERY-FOTORAMA
+   ========================================================================== */
+
+// Settings
+$gallery-fotorama-spacing: 15px !default;
+
+/* Base
+  =========================================== */
+
+.c-gallery-fotorama {
+  margin-bottom: $global-spacing-unit-large;
+}
+
+.c-gallery-fotorama__item {}
+
+.c-gallery-fotorama__download {
+  display: none; // hide at start
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  .fotorama__loaded & {
+    display: block; // show on init
+  }
+}
+
+.fotorama__stage__frame > img {
+  margin-bottom: 40px;
+}
+
+.c-gallery-fotorama__download-link {
+  display: block;
+  padding: $global-spacing-unit/2 $global-spacing-unit;
+  font-size: 16px;
+  @include hocus() {
+    text-decoration: none;
+  }
+}
+
+.fotorama__thumb-border {
+  // border-color: $color-gallery-thumb-border;
+}

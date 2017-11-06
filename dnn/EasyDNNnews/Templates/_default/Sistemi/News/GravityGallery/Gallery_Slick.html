@@ -1,0 +1,38 @@
+<!--HeaderTemplateBegin-->
+[Has:EDG:GalleryBackLink]<div class="edsgg_galleryBackLinkWrapper"><a class="edsgg_galleryBackLink" href="[EDG:GalleryBackLink]"><span>[EDG:LocalizedText:ViewInGravityGallery]</span></a></div>[/Has:EDG:GalleryBackLink]
+<div class="c-gallery-slick js-gallery-slick">
+<!--HeaderTemplateEnd-->
+
+<!--ItemTemplateBegin-->
+	[EDG:EmbedInPage]
+	[/EDG:EmbedInPage]
+	[EDG:DontEmbedInPage]
+  [Has:EDG:MediaDownload]
+  <div class="c-gallery-slick__item js-gallery-unwrap">
+    <img src="[EDG:MediaData]?w=880&h=450&mode=crop" alt="">
+  </div>
+	[/Has:EDG:MediaDownload]
+	[/EDG:DontEmbedInPage]
+<!--ItemTemplateEnd-->
+
+<!--FooterTemplateBegin-->
+</div>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // Unwrap GravityGallery div containers so Slick can work properly
+    $(".js-gallery-unwrap").unwrap().unwrap();
+    //
+    setTimeout(function () {
+      $('.js-gallery-slick').slick({
+        dots: true,
+        nav: true,
+        speed: 300,
+        slidesToShow: 1
+      });
+    }, 80);
+  });
+</script>
+<!--FooterTemplateEnd-->

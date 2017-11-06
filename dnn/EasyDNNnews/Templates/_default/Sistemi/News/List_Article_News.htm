@@ -1,0 +1,39 @@
+<!--TemplateGroup:newsListArticleDefault-->
+<!--ArticleTemplate-->
+<article class="story-card story-card--news">
+  <div class="story-card--inner u-faux-block-link">
+      <div class="story-card__image-wrap">
+          <figure class="story-card__figure o-crop o-crop--news">
+              [EasyDNNnews:IfExists:Image]
+              <picture>
+                  <!--[if IE 9]><video style="display: none;><![endif]-->
+                  <source data-srcset="[EasyDNNnews:Image]?w=469&h=269&mode=crop" media="--small" />
+                  <source data-srcset="[EasyDNNnews:Image]?w=469&h=269&mode=crop" media="--medium" />
+                  <source data-srcset="[EasyDNNnews:Image]?w=469&h=269&mode=crop" media="--large" />
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src="data:image/gif;base64,R0lGODlhAQABAAAAADs=" data-src="[EasyDNNnews:Image]?w=469&h=269&mode=crop" class="story-card__image o-crop__content lazyload" alt="[EasyDNNnews:Title]" />
+              </picture>
+              [EasyDNNnews:EndIf:Image]
+              [EasyDNNnews:IfNotExists:Image]
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAADs=" data-src="/Portals/0/images/brand/unist-placeholder.jpg" class="story-card__image o-crop__content lazyload" alt="[EasyDNNnews:Title]" />
+              [EasyDNNnews:EndIf:Image]
+          </figure>
+          <div class="story-card__date">[EasyDNNnews:PublishDateShort]</div>
+      </div>
+      <div class="story-card__content">
+          <h3 class="story-card__title">
+              <a href="[EasyDNNnews:Title:Link]" class="story-card__link">[EasyDNNnews:Title]</a>
+          </h3>
+      </div>
+      <a href="[EasyDNNnews:Title:Link]" class="u-faux-block-link__overlay" tabindex="-1">[EasyDNNnews:Title]</a>
+</div>
+</article>
+<!--ArticleEnd-->
+
+<!--ArticleRepeat:Before:-->
+<div class="article-list--news story-group">
+  <!--RepeatEnd:Before:-->
+  <!--ArticleRepeat:After:-->
+</div>
+
+<!--RepeatEnd:After:-->

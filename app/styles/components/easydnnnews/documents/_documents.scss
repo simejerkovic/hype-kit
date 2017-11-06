@@ -1,0 +1,72 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / DOCUMENTS / #DOCUMENTS
+   ========================================================================== */
+
+// Settings
+$edn-document-spacing: 16px !default;
+$edn-document-border: color(grey-20);
+$edn-document-font-size: text-body;
+$edn-document-link-color: color(brand);
+$edn-document-link-color-hover: color(brand-alt);
+$edn-document-icon-size: 24px;
+$edn-document-icon-color: color(grey-30);
+$edn-document-icon-color-hover: color(brand);
+$edn-document-animation-speed: $global-animation-speed-fast;
+
+/* Layout
+  =========================================== */
+
+//.c-article-document-list {}
+
+.c-article-document-list__item {
+  margin-bottom: $edn-document-spacing / 2;
+  padding-bottom: $edn-document-spacing / 2;
+  border-bottom: solid 1px $edn-document-border;
+}
+
+
+/* Base
+  =========================================== */
+
+.c-article-document {
+  @include font($edn-document-font-size, large);
+  color: $edn-document-link-color;
+  align-items: center;
+
+  @include hocus() {
+    text-decoration: none;
+    color: $edn-document-link-color-hover;
+  }
+}
+
+.c-article-document__icon {
+  @include size($edn-document-icon-size);
+  fill: $edn-document-icon-color;
+
+  @include hocus() {
+    fill: $edn-document-icon-color-hover;
+  }
+
+  .c-article-document:hover &,
+  .c-article-document:focus & {
+    fill: $edn-document-icon-color-hover;
+  }
+}
+
+.c-article-document__title {
+  margin-bottom: 2px;
+}
+
+.c-article-document__description {
+  margin-bottom: 4px;
+  color: color(grey-40);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.c-article-document__meta {
+  margin-bottom: 4px;
+  color: color(grey-40);
+}

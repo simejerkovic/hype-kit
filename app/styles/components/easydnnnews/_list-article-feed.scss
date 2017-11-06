@@ -1,0 +1,145 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #LIST-ARTICLE-FEED
+   ========================================================================== */
+
+// Settings
+$edn-article-feed-spacing: 15px !default;
+$edn-article-feed-animation-speed: $global-animation-speed !default;
+$edn-article-feed-placeholder-background: color(grey-20) !default;
+
+$edn-article-feed-title-color: color(black) !default;
+$edn-article-feed-title-color-hover: color(brand) !default;
+
+$edn-article-feed-date-color: color(grey-30) !default;
+
+/* Layout
+  =========================================== */
+
+.c-article-list--feed-layout > .edn__articleListWrapper,
+.c-article-list--feed-layout > [class$="_article_list_wrapper"],
+.c-article-list--feed-layout > [class*="_article_list_wrapper "] {
+  @include oGridRow();
+}
+
+.c-article-list__item--feed-layout {
+  @include oGridColspan((default: 12, S: 11));
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+/* Base
+  =========================================== */
+
+/**
+ * Article feed
+ */
+
+.c-article-feed {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -($edn-article-feed-spacing);
+  margin-left: -($edn-article-feed-spacing);
+}
+
+.c-article-feed__media-container {
+  position: relative;
+  display: block;
+  margin-bottom: $edn-article-feed-spacing;
+  padding-left: $edn-article-feed-spacing;
+  padding-right: $edn-article-feed-spacing;
+  width: 100%;
+  min-height: 1px;
+  flex: none;
+  align-items: flex-start;
+  align-self: flex-start;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @include oGridRespondTo($from: S) {
+    margin-bottom: 0;
+    width: 40%;
+  }
+}
+
+.c-article-feed__media {
+  position: relative;
+  margin-bottom: 0;
+  background-color: $edn-article-feed-placeholder-background;
+}
+
+.c-article-feed__image {
+  // This is a fix for chrome moving image 1px on hover sometimes
+  backface-visibility: hidden;
+}
+
+.c-article-feed__content {
+  display: block;
+  flex: none;
+  align-items: flex-start;
+  align-self: stretch;
+  padding-left: $edn-article-feed-spacing;
+  padding-right: $edn-article-feed-spacing;
+  width: 100%;
+  min-height: 1px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+
+  @include oGridRespondTo($from: S) {
+    position: relative;
+    width: 60%;
+  }
+}
+
+.c-article-feed__title {
+  @include font-weight(bold);
+  color: $edn-article-feed-title-color;
+
+  @include hocus() {
+    color: $edn-article-feed-title-color-hover;
+  }
+
+  @include oGridRespondTo($from: XL) {
+    max-width: 80%;
+  }
+}
+
+.c-article-feed__title-link {
+  color: currentColor;
+
+  @include hocus() {
+    text-decoration: none;
+    color: $edn-article-feed-title-color-hover;
+  }
+}
+
+// .c-article-feed__meta {}
+
+.c-article-feed__date {
+  @include font-size(12px);
+  @include font-weight(bold);
+  margin-right: $edn-article-feed-spacing;
+  color: $edn-article-feed-date-color;
+  text-transform: uppercase;
+}
+
+/**
+ * Animations
+ */
+
+.c-article-feed:not(.c-article-feed--no-filter) {
+  .c-article-feed__image {
+    transition: filter $edn-article-feed-animation-speed ease;
+  }
+}
+
+.c-article-feed:hover:not(.c-article-feed--no-filter) {
+  .c-article-feed__image {
+    filter: brightness(95%) contrast(95%);
+  }
+}

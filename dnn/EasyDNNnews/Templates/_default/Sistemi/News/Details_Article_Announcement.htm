@@ -1,0 +1,121 @@
+<!--TemplateGroup:newsDetailsArticleDefault-->
+
+<!--ArticleTemplate-->
+<EDNHeader>
+    <article class="c-article-detail c-article-detail--announcement-layout">
+    </EDNHeader>
+    <!--Gallery TOP position-->
+    <EDNContentTop></EDNContentTop>
+
+    <EDNContent>
+      <div class="c-article-detail__head[EasyDNNnews:IfNotExists:Gallery]-no-gallery[EasyDNNnews:EndIf:Gallery][EasyDNNnews:IfNotExists:Image]-no-image[EasyDNNnews:EndIf:Image]">
+        <h1 class="c-article-detail__title c-heading-alpha">[EasyDNNnews:Title]</h1>
+        [EasyDNNnews:IfExists:SubTitle]
+        <h2 class="c-article-detail__subtitle c-text-lead">[EasyDNNnews:SubTitle]</h2>
+        [EasyDNNnews:EndIf:SubTitle]
+        [EasyDNNnews:IfNotExists:Gallery]
+        [EasyDNNnews:IfExists:Image]
+        <figure class="c-article-detail__media">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="[EasyDNNnews:Image]?w=880&mode=crop"
+            class="c-article-detail__image lazyload" alt="[EasyDNNnews:Title]" />
+        </figure>
+        [EasyDNNnews:EndIf:Image]
+        [EasyDNNnews:EndIf:Gallery]
+
+        [EasyDNNnews:IfExists:Gallery]
+        <div class="c-article-detail__gallery">[EasyDNNnews:GravityGallery]</div>
+        [EasyDNNnews:EndIf:Gallery]
+      </div>
+      <div class="o-grid-row">
+        <aside class="c-article-detail__aside-col">
+
+          <!-- Article date -->
+          <div class="c-article-detail__date">
+            [EasyDNNnews:PublishDate]
+          </div>
+
+          <!-- Article categories -->
+          <div class="c-article-detail-category">
+            <h4 class="c-heading-delta u-text-bold u-margin-bottom-small">[EasyDNNnewsLocalizedText:NewsDetailsCategory]</h4>
+            <div class="c-article-detail-category__list">
+              [EasyDNNnews:Categories separator=", "]
+            </div>
+          </div>
+
+          <!-- Article tags -->
+          [EasyDNNnews:IfExists:Tags]
+          <div class="c-article-detail-tags">
+            <h4 class="c-heading-delta u-text-bold u-margin-bottom-small">[EasyDNNnewsLocalizedText:Tags]:</h4>
+            <div class="c-article-detail-tags__list">
+              [EasyDNNnews:Tags separator=""]
+            </div>
+          </div>
+          [EasyDNNnews:EndIf:Tags]
+
+          <!-- Share this article -->
+          <div class="c-article-detail-share">
+            <h4 class="c-heading-delta u-text-bold u-margin-bottom-small">[EasyDNNnewsLocalizedText:NewsDetailsShare]</h4>
+            <ul class="o-list-inline o-list-inline--narrow">
+              <li class="o-list-inline__item">
+                <a href="https://www.facebook.com/sharer/sharer.php?&u=[EasyDNNnews:CurrentPageURL]" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" rel="nofollow" target="_new" id="js-fb-share-button">
+                  <svg class="c-article-detail-share__icon c-article-detail-share__icon--facebook u-icon">
+                    <use xlink:href="#icon-facebook" />
+                  </svg>
+                  <span class="u-hide-visually">Facebook</span>
+                </a>
+              </li>
+              <li class="o-list-inline__item">
+                <a href="https://twitter.com/share?url=[EasyDNNnews:CurrentPageURL]" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" rel="nofollow" target="_new" id="js-tw-share-button">
+                  <svg class="c-article-detail-share__icon c-article-detail-share__icon--twitter u-icon">
+                    <use xlink:href="#icon-twitter" />
+                  </svg>
+                  <span class="u-hide-visually">Twitter</span>
+                </a>
+              </li>
+              <li class="o-list-inline__item">
+                <a href="mailto:?subject=[EasyDNNnews:Title]&amp;body=[EasyDNNnews:CurrentPageURL]" id="js-email-share-button">
+                  <svg class="c-article-detail-share__icon c-article-detail-share__icon--mail u-icon">
+                    <use xlink:href="#icon-envelope" />
+                  </svg>
+                  <span class="u-hide-visually">Email</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+        <div class="c-article-detail__main-col">
+          <div class="c-article-detail__body c-text-body">
+            [EasyDNNnews:Article]
+          </div>
+          <div class="c-article-resource-list">
+            [EasyDNNnews:Links]
+            [EasyDNNnews:DocumentList]
+          </div>
+        </div>
+
+      </div>
+
+      [EasyDNNnews:RelatedArticles]
+
+    </EDNContent>
+
+    <EDNContentBottom>
+    </EDNContentBottom>
+    <!--Gallery BOTTOM position-->
+    <EDNFooter>
+    </article>
+    </EDNFooter>
+    <!--Comments position-->
+    <EDNBottom>
+    <script>
+      // Replace Sharing button urls
+      var currentPageURL = window.location.href;
+      document.getElementById("js-fb-share-button").href = "https://www.facebook.com/sharer/sharer.php?&u=" + encodeURIComponent(currentPageURL);
+      document.getElementById("js-tw-share-button").href = "https://twitter.com/share?url=" + encodeURIComponent(currentPageURL);
+      document.getElementById("js-email-share-button").href = "mailto:?subject=[EasyDNNnews:Title]&body=Članak s web-a: " + encodeURIComponent(currentPageURL);
+
+    </script>
+    </EDNBottom>
+    <!--ArticleEnd-->

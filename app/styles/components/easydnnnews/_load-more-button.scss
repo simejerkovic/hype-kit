@@ -1,0 +1,140 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #PAGINATION
+   ========================================================================== */
+
+// Settings
+$edn-button-animation-speed: $global-animation-speed-fast !default;
+$edn-button-background-color: transparent !default;
+$edn-button-background-color-hover: color(grey-20) !default;
+$edn-button-border-color: color(grey-20) !default;
+$edn-button-border-color-hover: color(grey-20) !default;
+$edn-button-text-color: color(grey-40) !default;
+$edn-button-text-color-hover: color(grey-40) !default;
+// Spinner
+$edn-button-spinner-color: color(brand) !default;
+$edn-button-spinner-animation-speed: $global-animation-speed !default;
+
+/* Base
+  =========================================== */
+
+.ednMoreArticlesTriggerWrapper {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/**
+ * Load more button
+ */
+
+.ednMoreArticlesTriggerWrapper > .trigger {
+  margin: 0;
+  vertical-align: baseline;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  padding: 0 30px;
+  height: 48px;
+  min-width: 190px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 46px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $edn-button-text-color;
+  border: 1px solid $edn-button-border-color;
+  background-color: $edn-button-background-color;
+
+  transition: $edn-button-animation-speed;
+  transition-property: border-color, background-color, color, opacity;
+
+  @include hocus() {
+    outline: none;
+    color: $edn-button-text-color-hover;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    display: block;
+    background-color: $edn-button-background-color-hover;
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: transform $edn-button-animation-speed ease-in;
+  }
+
+  &:hover:before {
+    transform: scaleY(1);
+    transform-origin: center bottom;
+  }
+}
+
+.ednMoreArticlesTriggerWrapper > .trigger > .actionTextContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.ednMoreArticlesTriggerWrapper > .trigger > .loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity $edn-button-animation-speed ease;
+  background-color: $edn-button-background-color-hover;
+}
+
+/**
+ * Spinner
+ *
+ * Spinner icon generated with css and animated with keyframes
+ */
+
+.ednMoreArticlesTriggerWrapper > .trigger > .loadingOverlay:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border-top: 2px solid $edn-button-spinner-color;
+  border-right: 2px solid transparent;
+  animation: spin $edn-button-spinner-animation-speed linear infinite;
+}
+
+/**
+ * State changes
+ * We hide certain texts and button elements based on current button status (clicked, loading etc.)
+ */
+
+.ednMoreArticlesTriggerWrapper .loadingOverlay > span {
+  display: none;
+}
+
+.ednMoreArticlesTriggerWrapper.loading .actionTextContainer {
+  opacity: 0;
+}
+
+.ednMoreArticlesTriggerWrapper.loading .loadingOverlay {
+  top: 0;
+  opacity: 1;
+}
+
+.ednMoreArticlesTriggerWrapper.hide {
+  display: none;
+}

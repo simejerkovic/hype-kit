@@ -1,0 +1,47 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #PAGINATION
+   ========================================================================== */
+
+// Settings
+$edn-template-name: "eds_news_Unist2017" !default;
+
+/* Article pager
+  =========================================== */
+
+.article_pager {
+  text-align: center;
+  margin-bottom: $global-spacing-unit * 2;
+
+  > a {
+    text-decoration: none;
+  }
+
+  .page {
+    padding: 5px 10px;
+    border: 1px solid color(brand);
+    margin: 5px;
+    color: color(brand);
+    @include hocus() {
+      color: color(brand);
+      background-color: color(highlight);
+    }
+  }
+
+  .active {
+    background-color: color(brand);
+    color: color(white);
+  }
+
+  .first,
+  .prev {
+    margin-right: 5px;
+  }
+
+  .next {
+    padding: 0 5px;
+  }
+
+  .last {
+    margin-left: 5px;
+  }
+}

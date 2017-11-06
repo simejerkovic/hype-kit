@@ -1,0 +1,75 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #DASHBOARD
+   ========================================================================== */
+
+// Settings
+$edn-template-name: "eds_news_Unist2017" !default;
+$edn-dashboard-background-color: #ebebeb !default;
+$edn-dashboard-spacing: $global-spacing-unit !default;
+$edn-dashboard-font-size: 13px !default;
+$edn-dashboard-icon-size: 25px !default;
+$edn-dashboard-text-color: color(text) !default;
+
+/* Base
+  =========================================== */
+
+.#{$edn-template-name} {
+  .user_dashboard {
+    padding: 8px 16px;
+    margin-bottom: $edn-dashboard-spacing;
+    background-color: $edn-dashboard-background-color;
+  }
+
+  .user_dashboard > a {
+    display: inline-block;
+    height: $edn-dashboard-icon-size;
+    padding-left: $edn-dashboard-icon-size + 4px;
+    margin-right: 16px;
+    //
+    font-size: $edn-dashboard-font-size;
+    font-weight: bold;
+    line-height: $edn-dashboard-icon-size;
+    color: $edn-dashboard-text-color;
+    //
+    background-repeat: no-repeat;
+  }
+
+  .user_dashboard .add_article {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/green_plus.png");
+  }
+
+  .user_dashboard .article_manager {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/papers.png");
+    background-position-y: 1px;
+  }
+
+  .user_dashboard .approve_articles {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/approve_articles.png");
+    background-position-y: 1px;
+  }
+
+  .user_dashboard .approve_comments {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/approve_comments.png");
+    background-position-y: 2px;
+  }
+
+  .user_dashboard .category_manager {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/categories.png");
+    background-position-y: 2px;
+  }
+
+  .user_dashboard .dashboard {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/monitor.png");
+    background-position-y: 3px;
+  }
+
+  .user_dashboard .settings {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/settings.png");
+    background-position-y: 1px;
+  }
+
+  .user_dashboard .author_profile {
+    background-image: url("images/vendor/easydnnnews/common/user_dashboard/profile.png");
+    background-position-y: 1px;
+  }
+}

@@ -1,0 +1,29 @@
+<!--HeaderTemplateBegin-->
+[Has:EDG:GalleryBackLink]<div class="edsgg_galleryBackLinkWrapper"><a class="edsgg_galleryBackLink" href="[EDG:GalleryBackLink]"><span>[EDG:LocalizedText:ViewInGravityGallery]</span></a></div>[/Has:EDG:GalleryBackLink]
+<div class="c-gallery-fotorama js-gallery-fotorama" data-width="880" data-max-width="100%" data-max-height="550px" data-nav="thumbs" data-keyboard="true" data-hash="true" data-click="false" data-allow-full-screen="true">
+<!--HeaderTemplateEnd-->
+
+<!--ItemTemplateBegin-->
+	[EDG:EmbedInPage]
+	[/EDG:EmbedInPage]
+	[EDG:DontEmbedInPage]
+	[Has:EDG:MediaDownload]
+	<div class="c-gallery-fotorama__item c-gallery-fotorama__item--[EDG:MediaType] js-gallery-unwrap" data-img="[EDG:MediaData]?w=880&h=450&mode=crop" data-thumb="[EDG:ItemThumbnail]" data-thumbratio="160/106" data-full="[EDG:MediaData]?w=2000">
+	</div>
+	[/Has:EDG:MediaDownload]
+
+	[/EDG:DontEmbedInPage]
+<!--ItemTemplateEnd-->
+
+<!--FooterTemplateBegin-->
+[EDG:ItemPaging]
+</div>
+<script>
+  // Unwrap GravityGallery div containers so Fotorama can work properly
+  $(".js-gallery-unwrap").unwrap().unwrap();
+  // Initalize Fotorama
+  setTimeout(function () {
+    $('.js-gallery-fotorama').fotorama();
+  }, 200);
+</script>
+<!--FooterTemplateEnd-->

@@ -1,0 +1,198 @@
+/* ==========================================================================
+   COMPONENTS / EASY-DNN-NEWS / #DETAIL-ARTICLE
+   ========================================================================== */
+
+// Settings
+$edn-article-spacing: 16px !default;
+$edn-article-animation-speed: $global-animation-speed !default;
+$edn-article-placeholder-background: color(grey-20) !default;
+
+$edn-article-title-color: color(black);
+$edn-article-subtitle-color: color(grey-40);
+
+$edn-article-body-font-size: 16px;
+
+// Article aside / sidebar
+$edn-article-date-color: color(grey-30) !default;
+$edn-article-aside-border-width: $global-border-width;
+$edn-article-aside-border: $edn-article-aside-border-width solid color(grey-20);
+
+// Article share
+$edn-article-share-icon-size: 24px;
+$edn-article-share-icon-color: color(grey-30);
+$edn-article-share-icon-facebook-color: #365397;
+$edn-article-share-icon-twitter-color: #00a9f1;
+$edn-article-share-icon-mail-color: #c71e52;
+
+/* Layout
+  =========================================== */
+
+//.c-article-detail {}
+//.c-article-detail--news-layout {}
+
+.c-article-detail__aside-col {
+  @include oGridColspan((default: 12, M: 3));
+  margin-bottom: $global-spacing-unit;
+}
+
+.c-article-detail__main-col {
+  @include oGridColspan((default: 12, M: 9));
+
+  @include oGridRespondTo($from: M) {
+    padding-left: $global-spacing-unit-large; // Custom offset spacing
+  }
+}
+
+/* Base
+  =========================================== */
+
+/**
+ * Article head
+ */
+
+.c-article-detail__head {
+  &-no-gallery-no-image {
+    margin-bottom: 40px;
+  }
+}
+
+.c-article-detail__title {
+  @include font-weight(bold);
+  margin-top: $global-spacing-unit;
+  margin-bottom: 16px;
+  color: $edn-article-title-color;
+
+  @include oGridRespondTo($from: L) {
+    margin-top: $global-spacing-unit-large;
+    margin-bottom: 32px;
+  }
+}
+
+.c-article-detail__subtitle {
+  @include font-weight(medium);
+  margin-top: -8px;
+  margin-bottom: 16px;
+  color: $edn-article-subtitle-color;
+
+  @include oGridRespondTo($from: L) {
+    margin-top: -15px;
+    margin-bottom: 32px;
+  }
+}
+
+.c-article-detail__media {
+  margin-bottom: $global-spacing-unit;
+
+  @include oGridRespondTo($from: L) {
+    margin-bottom: $global-spacing-unit-large;
+  }
+}
+
+.c-article-detail__gallery {
+  margin-bottom: $global-spacing-unit;
+
+  @include oGridRespondTo($from: L) {
+    margin-bottom: $global-spacing-unit-large;
+  }
+}
+
+.c-article-detail__body {
+  @include font-size($edn-article-body-font-size, 1.6);
+  margin-bottom: $global-spacing-unit;
+  word-wrap: break-word;
+
+  @include oGridRespondTo($from: L) {
+    margin-bottom: $global-spacing-unit-large;
+  }
+}
+
+/* Article aside section
+  =========================================== */
+
+//.c-article-detail__aside-col {}
+
+.c-article-detail__date {
+  @include font-weight(bold);
+  margin-bottom: $edn-article-spacing;
+  padding-bottom: $edn-article-spacing;
+  border-bottom: $edn-article-aside-border;
+}
+
+/**
+ * Article categories
+ */
+
+.c-article-detail-category {
+  margin-bottom: $edn-article-spacing;
+  padding-bottom: $edn-article-spacing;
+  border-bottom: $edn-article-aside-border;
+}
+
+/**
+ * Article tags
+ */
+
+.c-article-detail-tags {
+  margin-bottom: $edn-article-spacing;
+  padding-bottom: $edn-article-spacing;
+  border-bottom: $edn-article-aside-border;
+}
+
+.c-article-detail-tags__list {
+  > a {
+    display: inline-block;
+    padding: 4px 8px;
+    border: $edn-article-aside-border;
+    border-radius: $global-border-radius;
+    &:not(:last-child) {
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+/**
+ * Article share
+ */
+
+.c-article-detail-share {
+  margin-bottom: $edn-article-spacing;
+  padding-bottom: $edn-article-spacing;
+  border-bottom: $edn-article-aside-border;
+
+  > ul {
+    margin-bottom: 0;
+  }
+}
+
+.c-article-detail-share__icon {
+  @include size(24px);
+  fill: $edn-article-share-icon-color;
+
+  &--facebook {
+    fill: $edn-article-share-icon-facebook-color;
+  }
+  &--twitter {
+    fill: $edn-article-share-icon-twitter-color;
+  }
+  &--mail {
+    fill: $edn-article-share-icon-mail-color;
+  }
+}
+
+/* Article resource
+  =========================================== */
+
+.c-article-resource-list {
+  &:empty {
+    display: none;
+  }
+}
+
+.c-article-resource-list__item {
+  margin-bottom: 32px;
+}
+
+.c-article-resource-list__title {
+  @include font-weight(bold);
+}
