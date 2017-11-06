@@ -11,6 +11,7 @@ test/bower_components
 
 ## Don't ignore 2sxc Bower Components
 ![Ww]ebsite/[Dd]esktop[Mm]odules/[Tt]oSIC_SexyContent/bower_components
+![Ww]ebsite/[Pp]ortals/[0-9]*/2sxc/[Cc]ontent/dist
 
 ## Ignore distrubution files
 dist
